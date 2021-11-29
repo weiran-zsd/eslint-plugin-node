@@ -3,14 +3,14 @@
   "version": "12.0.0",
   "description": "Additional ESLint's rules for Node.js",
   "engines": {
-    "node": ">=8.10.0"
+    "node": ">=12.22.0"
   },
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
   "peerDependencies": {
-    "eslint": ">=5.16.0"
+    "eslint": ">=7.0.0"
   },
   "dependencies": {
     "eslint-plugin-es": "^4.1.0",
