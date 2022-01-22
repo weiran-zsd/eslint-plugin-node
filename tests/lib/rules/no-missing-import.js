@@ -88,6 +88,18 @@ ruleTester.run("no-missing-import", rule, {
         },
         {
             filename: fixture("test.js"),
+            code: "import something from 'cjs-module-with-no-main';",
+        },
+        {
+            filename: fixture("test.js"),
+            code: "import something from 'esm-module';",
+        },
+        {
+            filename: fixture("test.js"),
+            code: "import something from 'esm-module/sub';",
+        },
+        {
+            filename: fixture("test.js"),
             code: "import mocha from 'mocha!foo?a=b&c=d';",
         },
 
