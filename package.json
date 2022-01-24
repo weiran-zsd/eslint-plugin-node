@@ -96,6 +96,6 @@
     },
     "lint-staged": {
         "*.js": "eslint --cache --fix",
-        "*.{json,js,css,md}": "prettier --write --ignore-path .eslintignore"
+        "*.{json,js}": "prettier --write --ignore-path .eslintignore"
     }
 }
