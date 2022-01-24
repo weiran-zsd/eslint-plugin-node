@@ -25,6 +25,7 @@
         "@mysticatea/eslint-plugin": "^13.0.0",
         "codecov": "^3.3.0",
         "eslint": "^8.3.0",
+        "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-eslint-plugin": "^4.0.1",
         "eslint-plugin-n": "file:.",
         "fast-glob": "^2.2.6",
