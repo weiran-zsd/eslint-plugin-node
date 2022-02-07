@@ -4,7 +4,6 @@
  */
 "use strict"
 
-require("./convert-pure-esm-to-cjs")
 require("./update-docs-header-and-footer")
 require("./update-docs-header-and-footer")
 require("./update-lib-index")
