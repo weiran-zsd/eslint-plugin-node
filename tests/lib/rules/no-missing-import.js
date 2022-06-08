@@ -64,7 +64,7 @@ ruleTester.run("no-missing-import", rule, {
         },
         {
             filename: fixture("test.ts"),
-            code: "import a from './d.ts';",
+            code: "import a from './d.js';",
         },
         {
             filename: fixture("test.js"),
