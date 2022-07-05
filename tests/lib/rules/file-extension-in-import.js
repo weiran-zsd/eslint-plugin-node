@@ -46,6 +46,11 @@ new RuleTester({
             code: "import '@typescript-eslint/parser'",
         },
         {
+            filename: fixture("test.ts"),
+            code: "import {test} from '@typescript-eslint/parser/index'",
+            options: ["always"],
+        },
+        {
             filename: fixture("test.js"),
             code: "import '@typescript-eslint\\parser'",
         },
@@ -153,12 +158,6 @@ new RuleTester({
             filename: fixture("test.ts"),
             code: "import './a'",
             output: "import './a.js'",
-            errors: [{ messageId: "requireExt", data: { ext: ".js" } }],
-        },
-        {
-            filename: fixture("test.ts"),
-            code: "import './d'",
-            output: "import './d.js'",
             errors: [{ messageId: "requireExt", data: { ext: ".js" } }],
         },
         {
