@@ -5,7 +5,7 @@
 "use strict"
 
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../../lib/rules/prefer-promises/fs")
+const rule = require("../../../../lib/rules/prefer-promises/fs.js")
 
 new RuleTester({
     parserOptions: {

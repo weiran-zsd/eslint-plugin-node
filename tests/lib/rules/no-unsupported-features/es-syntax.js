@@ -8,7 +8,7 @@ const path = require("path")
 const { Linter, RuleTester } = require("eslint")
 const { builtin } = require("globals")
 const { Range } = require("semver")
-const rule = require("../../../../lib/rules/no-unsupported-features/es-syntax")
+const rule = require("../../../../lib/rules/no-unsupported-features/es-syntax.js")
 
 const ES2020Supported = (() => {
     const config = { parserOptions: { ecmaVersion: 2020 } }

@@ -5,7 +5,7 @@
 "use strict"
 
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../../lib/rules/prefer-global/text-decoder")
+const rule = require("../../../../lib/rules/prefer-global/text-decoder.js")
 
 new RuleTester({
     parserOptions: {

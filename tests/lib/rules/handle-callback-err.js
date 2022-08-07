@@ -5,7 +5,7 @@
 "use strict"
 
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../lib/rules/handle-callback-err")
+const rule = require("../../../lib/rules/handle-callback-err.js")
 
 const EXPECTED_DECL_ERROR = {
     messageId: "expected",

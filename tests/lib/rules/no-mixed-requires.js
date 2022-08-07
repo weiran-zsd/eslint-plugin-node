@@ -5,7 +5,7 @@
 "use strict"
 
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../lib/rules/no-mixed-requires")
+const rule = require("../../../lib/rules/no-mixed-requires.js")
 
 new RuleTester().run("no-mixed-requires", rule, {
     valid: [

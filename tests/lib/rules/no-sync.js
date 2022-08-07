@@ -5,7 +5,7 @@
 "use strict"
 
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../lib/rules/no-sync")
+const rule = require("../../../lib/rules/no-sync.js")
 
 new RuleTester().run("no-sync", rule, {
     valid: [

@@ -6,7 +6,7 @@
 
 const path = require("path")
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../lib/rules/no-unsupported-features")
+const rule = require("../../../lib/rules/no-unsupported-features.js")
 
 const VERSION_MAP = new Map([
     [0.1, "0.10.0"],

@@ -5,7 +5,7 @@
 "use strict"
 
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../../lib/rules/no-unsupported-features/node-builtins")
+const rule = require("../../../../lib/rules/no-unsupported-features/node-builtins.js")
 
 /**
  * Concatenate patterns.

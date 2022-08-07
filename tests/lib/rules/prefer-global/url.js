@@ -5,7 +5,7 @@
 "use strict"
 
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../../lib/rules/prefer-global/url")
+const rule = require("../../../../lib/rules/prefer-global/url.js")
 
 new RuleTester({
     parserOptions: {

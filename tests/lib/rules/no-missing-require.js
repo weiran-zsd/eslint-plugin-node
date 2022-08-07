@@ -6,7 +6,7 @@
 
 const path = require("path")
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../lib/rules/no-missing-require")
+const rule = require("../../../lib/rules/no-mixed-requires.js")
 
 /**
  * Makes a file path to a fixture.

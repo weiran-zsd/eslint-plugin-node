@@ -6,7 +6,7 @@
 
 const path = require("path")
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../lib/rules/no-path-concat")
+const rule = require("../../../lib/rules/no-path-concat.js")
 
 new RuleTester({
     parserOptions: {

@@ -4,7 +4,7 @@
  */
 "use strict"
 
-require("./update-docs-header-and-footer")
-require("./update-docs-header-and-footer")
-require("./update-lib-index")
-require("./update-readme")
+require("./update-docs-header-and-footer.js")
+require("./update-docs-header-and-footer.js")
+require("./update-lib-index.js")
+require("./update-readme.js")

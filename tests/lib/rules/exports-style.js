@@ -5,7 +5,7 @@
 "use strict"
 
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../lib/rules/exports-style")
+const rule = require("../../../lib/rules/exports-style.js")
 
 new RuleTester().run("exports-style", rule, {
     valid: [
@@ -182,10 +182,8 @@ new RuleTester().run("exports-style", rule, {
             ],
         },
         {
-            code:
-                "module.exports = { // before a\na: 1, // between a and b\nb: 2 // after b\n}",
-            output:
-                "// before a\nexports.a = 1;\n\n// between a and b\nexports.b = 2;\n// after b",
+            code: "module.exports = { // before a\na: 1, // between a and b\nb: 2 // after b\n}",
+            output: "// before a\nexports.a = 1;\n\n// between a and b\nexports.b = 2;\n// after b",
             options: ["exports"],
             globals: { module: false, exports: true },
             errors: [
@@ -202,8 +200,7 @@ new RuleTester().run("exports-style", rule, {
             ],
         },
         {
-            code:
-                "if(foo){ module.exports = { foo: 1};} else { module.exports = {foo: 2};}",
+            code: "if(foo){ module.exports = { foo: 1};} else { module.exports = {foo: 2};}",
             output: null,
             options: ["exports"],
             globals: { module: false, exports: true },

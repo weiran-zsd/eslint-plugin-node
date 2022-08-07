@@ -5,7 +5,7 @@
 "use strict"
 
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../lib/rules/global-require")
+const rule = require("../../../lib/rules/global-require.js")
 
 const ERROR = { messageId: "unexpected", type: "CallExpression" }
 

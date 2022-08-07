@@ -6,8 +6,8 @@
 
 const fs = require("fs")
 const path = require("path")
-const { categories, rules } = require("./rules")
-const { pluginName } = require("./utils")
+const { categories, rules } = require("./rules.js")
+const { pluginName } = require("./utils.js")
 
 /**
  * Render a given rule as a table row.

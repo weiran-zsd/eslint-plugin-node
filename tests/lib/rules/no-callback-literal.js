@@ -5,7 +5,7 @@
 "use strict"
 
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../../lib/rules/no-callback-literal")
+const rule = require("../../../lib/rules/no-callback-literal.js")
 
 const ruleTester = new RuleTester()
 ruleTester.run("no-callback-literal", rule, {
