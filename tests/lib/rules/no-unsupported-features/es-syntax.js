@@ -2639,6 +2639,12 @@ ruleTester.run(
                     options: [{ version: "7.10.0" }],
                 },
                 {
+                    code: "var a = async () => 1",
+                    settings: {
+                        node: { version: "7.10.0" },
+                    },
+                },
+                {
                     filename: fixture("without-node/a.js"),
                     code: "var a = () => 1",
                 },
@@ -2707,6 +2713,18 @@ ruleTester.run(
                 {
                     code: "var a = async () => 1",
                     options: [{ version: "7.1.0" }],
+                    errors: [
+                        {
+                            messageId: "no-async-functions",
+                            data: { supported: "7.6.0", version: "7.1.0" },
+                        },
+                    ],
+                },
+                {
+                    code: "var a = async () => 1",
+                    settings: {
+                        node: { version: "7.1.0" },
+                    },
                     errors: [
                         {
                             messageId: "no-async-functions",
