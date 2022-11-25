@@ -40,7 +40,7 @@ For Node.js packages, using the [`engines`] field is recommended because it's th
 }
 ```
 
-For packages with a different development environment (e.g. pre-compiled, web package, etc.), you can configure ESLint with `settings.node.version` to specify support.
+For [Shareable Configs](https://eslint.org/docs/latest/developer-guide/shareable-configs) or packages with a different development environment (e.g. pre-compiled, web package, etc.), you can configure ESLint with `settings.node.version` to specify support.
 
 
 ### Options
