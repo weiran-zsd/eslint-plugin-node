@@ -19,14 +19,14 @@ See also [TC39 finished proposals](https://github.com/tc39/proposals/blob/master
 
 ### Configured Node.js version range
 
-This rule gets the supported Node.js version range from the following, falling back to the next if unspecified: 
+This rule gets the supported Node.js version range from the following, falling back to the next if unspecified:
+
 1. Rule configuration `version`
 2. ESLint [shared setting](http://eslint.org/docs/user-guide/configuring.html#adding-shared-settings) `node.version`
 3. `package.json` [`engines`] field
 4. `>=8.0.0`
 
 The default version is `8.0.0` because it's the minimum version the community is maintaining (see also [Node.js Release Working Group](https://github.com/nodejs/Release#readme)).
-
 
 For Node.js packages, using the [`engines`] field is recommended because it's the official way to indicate support:
 
@@ -41,7 +41,6 @@ For Node.js packages, using the [`engines`] field is recommended because it's th
 ```
 
 For [Shareable Configs](https://eslint.org/docs/latest/developer-guide/shareable-configs) or packages with a different development environment (e.g. pre-compiled, web package, etc.), you can configure ESLint with `settings.node.version` to specify support.
-
 
 ### Options
 
