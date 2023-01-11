@@ -51,9 +51,9 @@ Default is `[]`
 
 #### convertPath
 
-* `include`: TODO
-* `exclude`: TODO
-* `replace`: TODO
+- `exclude`: TODO
+- `include`: TODO
+- `replace`: TODO
 
 ### Shared Settings
 
