@@ -57,7 +57,7 @@
         "lint:js": "eslint lib scripts tests/lib .eslintrc.js",
         "new": "node scripts/new-rule",
         "postversion": "git push && git push --tags",
-        "prepare": "husky install",
+        "prepare": "npx husky install",
         "pretest": "npm run -s lint",
         "preversion": "npm test",
         "test": "nyc npm run -s test:_mocha",
