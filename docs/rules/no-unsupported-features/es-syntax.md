@@ -27,9 +27,9 @@ This rule gets the supported Node.js version range from the following, falling b
 1. Rule configuration `version`
 2. ESLint [shared setting](http://eslint.org/docs/user-guide/configuring.html#adding-shared-settings) `node.version`
 3. `package.json` [`engines`] field
-4. `>=8.0.0`
+4. `>=16.0.0`
 
-The default version is `8.0.0` because it's the minimum version the community is maintaining (see also [Node.js Release Working Group](https://github.com/nodejs/Release#readme)).
+If you omit the [engines] field, this rule chooses `>=16.0.0` as the configured Node.js version since `16` is the active lts (see also [Node.js Release Working Group](https://github.com/nodejs/Release#readme)).
 
 For Node.js packages, using the [`engines`] field is recommended because it's the official way to indicate support:
 
@@ -38,7 +38,7 @@ For Node.js packages, using the [`engines`] field is recommended because it's th
     "name": "your-module",
     "version": "1.0.0",
     "engines": {
-        "node": ">=8.0.0"
+        "node": ">=16.0.0"
     }
 }
 ```
@@ -50,7 +50,7 @@ For [Shareable Configs](https://eslint.org/docs/latest/developer-guide/shareable
 ```json
 {
     "n/no-unsupported-features/es-syntax": ["error", {
-        "version": ">=8.0.0",
+        "version": ">=16.0.0",
         "ignores": []
     }]
 }
@@ -144,7 +144,7 @@ For Example:
 {
     "settings": {
         "node": {
-            "version": ">=8.0.0",
+            "version": ">=16.0.0",
         }
     },
     "rules": {
