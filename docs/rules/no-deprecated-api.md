@@ -141,22 +141,7 @@ This rule reports the following deprecated API.
 
 ### Configured Node.js version range
 
-This rule reads the [engines] field of `package.json` to detect which Node.js versions your module is supporting.
-
-I recommend the use of the [engines] field because it's the official way that indicates which Node.js versions your module is supporting.
-For example of `package.json`:
-
-```json
-{
-    "name": "your-module",
-    "version": "1.0.0",
-    "engines": {
-        "node": ">=16.0.0"
-    }
-}
-```
-
-If you omit the [engines] field, this rule chooses `>=16.0.0` as the configured Node.js version since `16` is the active lts (see also [Node.js Release Working Group](https://github.com/nodejs/Release#readme)).
+[Configured Node.js version range](../../README.md#configured-nodejs-version-range)
 
 ### Options
 
