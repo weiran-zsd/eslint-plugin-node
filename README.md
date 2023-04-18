@@ -60,7 +60,7 @@ The rules get the supported Node.js version range from the following, falling ba
 3. `package.json` [`engines`] field
 4. `>=16.0.0`
 
-If you omit the [engines] field, this rule chooses `>=16.0.0` as the configured Node.js version since `16` is the active lts (see also [Node.js Release Working Group](https://github.com/nodejs/Release#readme)).
+If you omit the [engines] field, this rule chooses `>=16.0.0` as the configured Node.js version since `16` is the maintained lts (see also [Node.js Release Working Group](https://github.com/nodejs/Release#readme)).
 
 For Node.js packages, using the [`engines`] field is recommended because it's the official way to indicate support:
 
