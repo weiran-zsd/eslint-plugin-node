@@ -9,5 +9,6 @@ const { configs, rules } = require("../lib/index.js")
 
 module.exports = {
     plugins: { n: { rules } },
+    languageOptions: { sourceType: "script" },
     rules: configs["recommended-script"].rules,
 }
