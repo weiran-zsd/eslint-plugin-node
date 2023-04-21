@@ -59,7 +59,7 @@
         "lint": "npm-run-all \"lint:*\"",
         "lint:docs": "markdownlint \"**/*.md\"",
         "lint:eslint-docs": "npm run update:eslint-docs -- --check",
-        "lint:js": "eslint lib scripts tests/lib .eslintrc.js",
+        "lint:js": "eslint lib scripts tests/lib eslint.config.js",
         "new": "node scripts/new-rule",
         "postversion": "git push && git push --tags",
         "prepare": "npx husky install",

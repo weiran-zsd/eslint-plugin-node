@@ -15,7 +15,7 @@ const compat = new FlatCompat({
 
 module.exports = [
     ...compat.extends(
-        "eslint:recommended",
+        // "eslint:recommended", // TODO: adding this line will cause commonjs globals to be undefined
         "plugin:eslint-plugin/recommended",
         "prettier"
     ),
