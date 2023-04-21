@@ -14,9 +14,9 @@
         "eslint": ">=7.0.0"
     },
     "dependencies": {
+        "@eslint-community/eslint-utils": "^4.4.0",
         "builtins": "^5.0.1",
         "eslint-plugin-es-x": "^6.1.0",
-        "@eslint-community/eslint-utils": "^4.4.0",
         "ignore": "^5.1.1",
         "is-core-module": "^2.12.0",
         "minimatch": "^3.1.2",
@@ -24,6 +24,8 @@
         "semver": "^7.5.0"
     },
     "devDependencies": {
+        "@eslint/eslintrc": "^2.0.2",
+        "@eslint/js": "^8.38.0",
         "@typescript-eslint/parser": "^5.59.0",
         "codecov": "^3.3.0",
         "esbuild": "^0.17.17",

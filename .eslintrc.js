@@ -1,5 +1,7 @@
 /**
  * @author Toru Nagashima
+ * @deprecated
+ * @description the file is no longer used, and will be removed in the future.
  * See LICENSE file in root directory for full license.
  */
 "use strict"
