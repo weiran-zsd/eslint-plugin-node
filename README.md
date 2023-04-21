@@ -15,7 +15,9 @@ npm install --save-dev eslint eslint-plugin-n
 - Requires Node.js `>=16.0.0`
 - Requires ESLint `>=7.0.0`
 
-**.eslintrc.json** (An example)
+**Note:** It recommends a use of [the "engines" field of package.json](https://docs.npmjs.com/files/package.json#engines). The "engines" field is used by `n/no-unsupported-features/*` rules.
+
+### **.eslintrc.json** (An example)
 
 ```jsonc
 {
@@ -24,17 +26,24 @@ npm install --save-dev eslint eslint-plugin-n
         "ecmaVersion": 2021
     },
     "rules": {
-        "n/exports-style": ["error", "module.exports"],
-        "n/file-extension-in-import": ["error", "always"],
-        "n/prefer-global/buffer": ["error", "always"],
-        "n/prefer-global/console": ["error", "always"],
-        "n/prefer-global/process": ["error", "always"],
-        "n/prefer-global/url-search-params": ["error", "always"],
-        "n/prefer-global/url": ["error", "always"],
-        "n/prefer-promises/dns": "error",
-        "n/prefer-promises/fs": "error"
+        "n/exports-style": ["error", "module.exports"]
     }
 }
+```
+
+### `eslint.config.js`
+
+```js
+const nodeRecommended = require("eslint-plugin-n/configs/recommended")
+
+module.exports = [
+    nodeRecommended,
+    {
+        rules: {
+            "n/exports-style": ["error", "module.exports"]
+        }
+    }
+]
 ```
 
 **package.json** (An example)
