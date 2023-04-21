@@ -17,7 +17,7 @@ npm install --save-dev eslint eslint-plugin-n
 
 **Note:** It recommends a use of [the "engines" field of package.json](https://docs.npmjs.com/files/package.json#engines). The "engines" field is used by `n/no-unsupported-features/*` rules.
 
-### **.eslintrc.json** (An example)
+### **[.eslintrc.json](https://eslint.org/docs/latest/use/configure/configuration-files)** (An example)
 
 ```jsonc
 {
@@ -31,7 +31,7 @@ npm install --save-dev eslint eslint-plugin-n
 }
 ```
 
-### `eslint.config.js`
+### [`eslint.config.js`](https://eslint.org/docs/latest/use/configure/configuration-files-new) (requires eslint>=v8.23.0)
 
 ```js
 const nodeRecommended = require("eslint-plugin-n/configs/recommended")
