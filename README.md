@@ -21,8 +21,7 @@ npm install --save-dev eslint eslint-plugin-n
 {
     "extends": ["eslint:recommended", "plugin:n/recommended"],
     "parserOptions": {
-        // Only ESLint 6.2.0 and later support ES2020.
-        "ecmaVersion": 2020
+        "ecmaVersion": 2021
     },
     "rules": {
         "n/exports-style": ["error", "module.exports"],
@@ -155,7 +154,7 @@ These preset configs:
 
 - enable [no-process-exit](http://eslint.org/docs/rules/no-process-exit) rule because [the official document](https://nodejs.org/api/process.html#process_process_exit_code) does not recommend a use of `process.exit()`.
 - enable plugin rules which are given ✅ in the above table.
-- add `{ecmaVersion: 2019}` and etc into `parserOptions`.
+- add `{ecmaVersion: 2021}` and etc into `parserOptions`.
 - add proper globals into `globals`.
 - add this plugin into `plugins`.
 
