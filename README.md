@@ -15,8 +15,6 @@ npm install --save-dev eslint eslint-plugin-n
 - Requires Node.js `>=16.0.0`
 - Requires ESLint `>=7.0.0`
 
-**Note:** It recommends a use of [the "engines" field of package.json](https://docs.npmjs.com/files/package.json#engines). The "engines" field is used by `n/no-unsupported-features/*` rules.
-
 **.eslintrc.json** (An example)
 
 ```jsonc
@@ -52,6 +50,31 @@ npm install --save-dev eslint eslint-plugin-n
     }
 }
 ```
+
+### Configured Node.js version range
+
+The rules get the supported Node.js version range from the following, falling back to the next if unspecified:
+
+1. Rule configuration `version`
+2. ESLint [shared setting](http://eslint.org/docs/user-guide/configuring.html#adding-shared-settings) `node.version`
+3. `package.json` [`engines`] field
+4. `>=16.0.0`
+
+If you omit the [engines] field, this rule chooses `>=16.0.0` as the configured Node.js version since `16` is the maintained lts (see also [Node.js Release Working Group](https://github.com/nodejs/Release#readme)).
+
+For Node.js packages, using the [`engines`] field is recommended because it's the official way to indicate support:
+
+```json
+{
+    "name": "your-module",
+    "version": "1.0.0",
+    "engines": {
+        "node": ">=16.0.0"
+    }
+}
+```
+
+For [Shareable Configs](https://eslint.org/docs/latest/developer-guide/shareable-configs) or packages with a different development environment (e.g. pre-compiled, web package, etc.), you can configure ESLint with `settings.node.version` to specify support.
 
 ## 📖 Rules
 

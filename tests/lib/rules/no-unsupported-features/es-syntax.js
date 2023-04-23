@@ -2663,6 +2663,7 @@ ruleTester.run(
                 {
                     filename: fixture("invalid/a.js"),
                     code: "var a = { ...obj }",
+                    options: [{version: '>=8.0.0'}],
                     errors: [
                         {
                             messageId: "no-rest-spread-properties",
@@ -2683,6 +2684,7 @@ ruleTester.run(
                 {
                     filename: fixture("nothing/a.js"),
                     code: "var a = { ...obj }",
+                    options: [{version: '>=8.0.0'}],
                     errors: [
                         {
                             messageId: "no-rest-spread-properties",
