@@ -15,7 +15,7 @@ const compat = new FlatCompat({
 
 module.exports = [
     ...compat.extends(
-        // "eslint:recommended", // TODO: adding this line will cause commonjs globals to be undefined
+        "eslint:recommended",
         "plugin:eslint-plugin/recommended",
         "prettier"
     ),
@@ -23,5 +23,8 @@ module.exports = [
     {
         languageOptions: { globals: globals.mocha },
         linterOptions: { reportUnusedDisableDirectives: true },
+    },
+    {
+        ignores: [".nyc_output/", "coverage/", "docs/", "lib/converted-esm/"],
     },
 ]
