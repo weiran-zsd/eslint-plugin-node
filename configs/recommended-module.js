@@ -5,10 +5,10 @@
 
 "use strict"
 
-const { configs, rules } = require("../lib/index.js")
+const mod = require("../lib/index.js")
 
 module.exports = {
-    plugins: { n: { rules } },
+    plugins: { n: mod },
     languageOptions: { sourceType: "module" },
-    rules: configs["recommended-module"].rules,
+    rules: mod.configs["recommended-module"].rules,
 }

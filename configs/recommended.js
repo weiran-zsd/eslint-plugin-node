@@ -5,9 +5,9 @@
 
 "use strict"
 
-const { configs, rules } = require("../lib/index.js")
+const mod = require("../lib/index.js")
 
 module.exports = {
-    plugins: { n: { rules } },
-    rules: configs.recommended.rules,
+    plugins: { n: mod },
+    rules: mod.configs.recommended.rules,
 }
