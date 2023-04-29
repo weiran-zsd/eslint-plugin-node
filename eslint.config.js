@@ -14,17 +14,12 @@ const compat = new FlatCompat({
 })
 
 module.exports = [
-    ...compat.extends(
-        "eslint:recommended",
-        "plugin:eslint-plugin/recommended",
-        "prettier"
-    ),
-    nodeRecommended,
     {
         languageOptions: { globals: globals.mocha },
         linterOptions: { reportUnusedDisableDirectives: true },
-    },
-    {
         ignores: [".nyc_output/", "coverage/", "docs/", "lib/converted-esm/"],
     },
+    js.configs.recommended,
+    nodeRecommended,
+    ...compat.extends("plugin:eslint-plugin/recommended", "prettier"),
 ]
