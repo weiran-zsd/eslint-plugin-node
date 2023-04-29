@@ -9,6 +9,9 @@ const mod = require("../lib/index.js")
 
 module.exports = {
     plugins: { n: mod },
-    languageOptions: { sourceType: "commonjs" },
+    languageOptions: {
+        sourceType: "commonjs",
+        globals: mod.configs["recommended-script"].globals,
+    },
     rules: mod.configs["recommended-script"].rules,
 }
