@@ -17,8 +17,8 @@ module.exports = [
     {
         languageOptions: { globals: globals.mocha },
         linterOptions: { reportUnusedDisableDirectives: true },
-        ignores: [".nyc_output/", "coverage/", "docs/", "lib/converted-esm/"],
     },
+    { ignores: [".nyc_output/", "coverage/", "docs/", "lib/converted-esm/"] },
     js.configs.recommended,
     nodeRecommended,
     ...compat.extends("plugin:eslint-plugin/recommended", "prettier"),
