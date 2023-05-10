@@ -97,6 +97,11 @@ new RuleTester({
             options: ["always"],
         },
         {
+            filename: fixture("test.tsx"),
+            code: "import './d.jsx'",
+            options: ["always"],
+        },
+        {
             filename: fixture("test.js"),
             code: "import './a'",
             options: ["never"],
