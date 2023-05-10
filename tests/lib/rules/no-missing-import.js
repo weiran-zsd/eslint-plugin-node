@@ -98,6 +98,10 @@ ruleTester.run("no-missing-import", rule, {
             filename: fixture("test.js"),
             code: "import mocha from 'mocha!foo?a=b&c=d';",
         },
+        {
+            filename: fixture("test.tsx"),
+            code: "import a from './e.jsx';",
+        },
 
         // Ignores it if the filename is unknown.
         "import abc from 'no-exist-package-0';",
