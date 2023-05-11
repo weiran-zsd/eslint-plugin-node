@@ -34,10 +34,10 @@ npm install --save-dev eslint eslint-plugin-n
 ### [`eslint.config.js`](https://eslint.org/docs/latest/use/configure/configuration-files-new) (requires eslint>=v8.23.0)
 
 ```js
-const nodeRecommended = require("eslint-plugin-n/configs/recommended")
+const nodeRecommendedScript = require("eslint-plugin-n/configs/recommended-script")
 
 module.exports = [
-    nodeRecommended,
+    nodeRecommendedScript,
     {
         rules: {
             "n/exports-style": ["error", "module.exports"]
@@ -171,6 +171,25 @@ These preset configs:
 
 - Q: The `no-missing-import` / `no-missing-require` rules don't work with nested folders in SublimeLinter-eslint
 - A: See [context.getFilename() in rule returns relative path](https://github.com/roadhump/SublimeLinter-eslint#contextgetfilename-in-rule-returns-relative-path) in the SublimeLinter-eslint FAQ.
+
+- Q: How to use the new eslint config with mixed commonjs and es modules?
+- A: The `recommended` config is no longer exported. You can create a config based on `recommended-script` and `recommended-module`.
+
+```js
+const nodeRecommendedScript = require("eslint-plugin-n/configs/recommended-script");
+const nodeRecommendedModule = require("eslint-plugin-n/configs/recommended-module");
+
+module.exports = [
+    {
+        files: ["**/*.js", "**/*.cjs"],
+        ...nodeRecommendedScript
+    },
+    {
+        files: ["**/*.mjs"],
+        ...nodeRecommendedModule
+    }
+]
+```
 
 ## 🚥 Semantic Versioning Policy
 
