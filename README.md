@@ -173,7 +173,7 @@ These preset configs:
 - A: See [context.getFilename() in rule returns relative path](https://github.com/roadhump/SublimeLinter-eslint#contextgetfilename-in-rule-returns-relative-path) in the SublimeLinter-eslint FAQ.
 
 - Q: How to use the new eslint config with mixed commonjs and es modules?
-- A: The `recommended` config is no longer exported. You can create a config based on `recommended-script` and `recommended-module`.
+- A: The `recommended` config is no longer exported. You can create a config based on `recommended-script` and `recommended-module`. An example:
 
 ```js
 const nodeRecommendedScript = require("eslint-plugin-n/configs/recommended-script");
