@@ -15,7 +15,9 @@ npm install --save-dev eslint eslint-plugin-n
 - Requires Node.js `>=16.0.0`
 - Requires ESLint `>=7.0.0`
 
-**.eslintrc.json** (An example)
+**Note:** It recommends a use of [the "engines" field of package.json](https://docs.npmjs.com/files/package.json#engines). The "engines" field is used by `n/no-unsupported-features/*` rules.
+
+### **[.eslintrc.json](https://eslint.org/docs/latest/use/configure/configuration-files)** (An example)
 
 ```jsonc
 {
@@ -24,17 +26,24 @@ npm install --save-dev eslint eslint-plugin-n
         "ecmaVersion": 2021
     },
     "rules": {
-        "n/exports-style": ["error", "module.exports"],
-        "n/file-extension-in-import": ["error", "always"],
-        "n/prefer-global/buffer": ["error", "always"],
-        "n/prefer-global/console": ["error", "always"],
-        "n/prefer-global/process": ["error", "always"],
-        "n/prefer-global/url-search-params": ["error", "always"],
-        "n/prefer-global/url": ["error", "always"],
-        "n/prefer-promises/dns": "error",
-        "n/prefer-promises/fs": "error"
+        "n/exports-style": ["error", "module.exports"]
     }
 }
+```
+
+### [`eslint.config.js`](https://eslint.org/docs/latest/use/configure/configuration-files-new) (requires eslint>=v8.23.0)
+
+```js
+const nodeRecommendedScript = require("eslint-plugin-n/configs/recommended-script")
+
+module.exports = [
+    nodeRecommendedScript,
+    {
+        rules: {
+            "n/exports-style": ["error", "module.exports"]
+        }
+    }
+]
 ```
 
 **package.json** (An example)
@@ -162,6 +171,25 @@ These preset configs:
 
 - Q: The `no-missing-import` / `no-missing-require` rules don't work with nested folders in SublimeLinter-eslint
 - A: See [context.getFilename() in rule returns relative path](https://github.com/roadhump/SublimeLinter-eslint#contextgetfilename-in-rule-returns-relative-path) in the SublimeLinter-eslint FAQ.
+
+- Q: How to use the new eslint config with mixed commonjs and es modules?
+- A: The `recommended` config is no longer exported. You can create a config based on `recommended-script` and `recommended-module`. An example:
+
+```js
+const nodeRecommendedScript = require("eslint-plugin-n/configs/recommended-script");
+const nodeRecommendedModule = require("eslint-plugin-n/configs/recommended-module");
+
+module.exports = [
+    {
+        files: ["**/*.js", "**/*.cjs"],
+        ...nodeRecommendedScript
+    },
+    {
+        files: ["**/*.mjs"],
+        ...nodeRecommendedModule
+    }
+]
+```
 
 ## 🚥 Semantic Versioning Policy
 
