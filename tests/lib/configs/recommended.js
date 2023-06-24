@@ -37,6 +37,7 @@ describe("node/recommended config", () => {
                     message:
                         "Parsing error: 'import' and 'export' may appear only with 'sourceType: module'",
                     ruleId: null,
+                    nodeType: null,
                     severity: 2,
                 },
             ])
@@ -55,6 +56,7 @@ describe("node/recommended config", () => {
                     message:
                         "Parsing error: 'import' and 'export' may appear only with 'sourceType: module'",
                     ruleId: null,
+                    nodeType: null,
                     severity: 2,
                 },
             ])
@@ -132,6 +134,7 @@ describe("node/recommended config", () => {
                     message:
                         "Parsing error: 'import' and 'export' may appear only with 'sourceType: module'",
                     ruleId: null,
+                    nodeType: null,
                     severity: 2,
                 },
             ])
