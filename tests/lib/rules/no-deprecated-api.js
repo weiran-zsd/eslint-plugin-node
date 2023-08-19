@@ -15,6 +15,10 @@ ruleTester.run("no-deprecated-api", rule, {
             env: { node: true },
         },
         {
+            code: "require('node:buffer').Buffer",
+            env: { node: true },
+        },
+        {
             code: "foo(require('buffer').Buffer)",
             env: { node: true },
         },
@@ -85,6 +89,16 @@ ruleTester.run("no-deprecated-api", rule, {
         },
         {
             code: "require('buffer').Buffer()",
+            options: [
+                {
+                    //
+                    ignoreModuleItems: ["buffer.Buffer()"],
+                },
+            ],
+            env: { node: true },
+        },
+        {
+            code: "require('node:buffer').Buffer()",
             options: [
                 {
                     //
@@ -190,7 +204,23 @@ ruleTester.run("no-deprecated-api", rule, {
             ],
         },
         {
+            code: "new (require('node:buffer').Buffer)()",
+            options: [{ version: "6.0.0" }],
+            env: { node: true },
+            errors: [
+                "'new buffer.Buffer()' was deprecated since v6.0.0. Use 'buffer.Buffer.alloc()' or 'buffer.Buffer.from()' instead.",
+            ],
+        },
+        {
             code: "require('buffer').Buffer()",
+            options: [{ version: "6.0.0" }],
+            env: { node: true },
+            errors: [
+                "'buffer.Buffer()' was deprecated since v6.0.0. Use 'buffer.Buffer.alloc()' or 'buffer.Buffer.from()' instead.",
+            ],
+        },
+        {
+            code: "require('node:buffer').Buffer()",
             options: [{ version: "6.0.0" }],
             env: { node: true },
             errors: [
@@ -272,6 +302,14 @@ ruleTester.run("no-deprecated-api", rule, {
         },
         {
             code: "require('buffer').SlowBuffer",
+            options: [{ version: "6.0.0" }],
+            env: { node: true },
+            errors: [
+                "'buffer.SlowBuffer' was deprecated since v6.0.0. Use 'buffer.Buffer.allocUnsafeSlow()' instead.",
+            ],
+        },
+        {
+            code: "require('node:buffer').SlowBuffer",
             options: [{ version: "6.0.0" }],
             env: { node: true },
             errors: [
@@ -706,6 +744,15 @@ ruleTester.run("no-deprecated-api", rule, {
         // ES2015 Modules
         {
             code: "import b from 'buffer'; new b.Buffer()",
+            options: [{ version: "6.0.0" }],
+            parserOptions: { sourceType: "module" },
+            env: { es6: true },
+            errors: [
+                "'new buffer.Buffer()' was deprecated since v6.0.0. Use 'buffer.Buffer.alloc()' or 'buffer.Buffer.from()' instead.",
+            ],
+        },
+        {
+            code: "import b from 'node:buffer'; new b.Buffer()",
             options: [{ version: "6.0.0" }],
             parserOptions: { sourceType: "module" },
             env: { es6: true },
