@@ -19,10 +19,12 @@ new RuleTester({
     valid: [
         "const dns = require('dns'); dns.lookupSync()",
         "const dns = require('dns'); dns.promises.lookup()",
+        "const dns = require('node:dns'); dns.promises.lookup()",
         "const {promises} = require('dns'); promises.lookup()",
         "const {promises: dns} = require('dns'); dns.lookup()",
         "const {promises: {lookup}} = require('dns'); lookup()",
         "import dns from 'dns'; dns.promises.lookup()",
+        "import dns from 'node:dns'; dns.promises.lookup()",
         "import * as dns from 'dns'; dns.promises.lookup()",
         "import {promises} from 'dns'; promises.lookup()",
         "import {promises as dns} from 'dns'; dns.lookup()",
@@ -33,11 +35,19 @@ new RuleTester({
             errors: [{ messageId: "preferPromises", data: { name: "lookup" } }],
         },
         {
+            code: "const dns = require('node:dns'); dns.lookup()",
+            errors: [{ messageId: "preferPromises", data: { name: "lookup" } }],
+        },
+        {
             code: "const {lookup} = require('dns'); lookup()",
             errors: [{ messageId: "preferPromises", data: { name: "lookup" } }],
         },
         {
             code: "import dns from 'dns'; dns.lookup()",
+            errors: [{ messageId: "preferPromises", data: { name: "lookup" } }],
+        },
+        {
+            code: "import dns from 'node:dns'; dns.lookup()",
             errors: [{ messageId: "preferPromises", data: { name: "lookup" } }],
         },
         {
