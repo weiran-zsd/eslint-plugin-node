@@ -20,10 +20,12 @@ new RuleTester({
         "const fs = require('fs'); fs.createReadStream()",
         "const fs = require('fs'); fs.accessSync()",
         "const fs = require('fs'); fs.promises.access()",
+        "const fs = require('node:fs'); fs.promises.access()",
         "const {promises} = require('fs'); promises.access()",
         "const {promises: fs} = require('fs'); fs.access()",
         "const {promises: {access}} = require('fs'); access()",
         "import fs from 'fs'; fs.promises.access()",
+        "import fs from 'node:fs'; fs.promises.access()",
         "import * as fs from 'fs'; fs.promises.access()",
         "import {promises} from 'fs'; promises.access()",
         "import {promises as fs} from 'fs'; fs.access()",
@@ -34,11 +36,19 @@ new RuleTester({
             errors: [{ messageId: "preferPromises", data: { name: "access" } }],
         },
         {
+            code: "const fs = require('node:fs'); fs.access()",
+            errors: [{ messageId: "preferPromises", data: { name: "access" } }],
+        },
+        {
             code: "const {access} = require('fs'); access()",
             errors: [{ messageId: "preferPromises", data: { name: "access" } }],
         },
         {
             code: "import fs from 'fs'; fs.access()",
+            errors: [{ messageId: "preferPromises", data: { name: "access" } }],
+        },
+        {
+            code: "import fs from 'node:fs'; fs.access()",
             errors: [{ messageId: "preferPromises", data: { name: "access" } }],
         },
         {

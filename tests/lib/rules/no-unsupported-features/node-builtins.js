@@ -53,6 +53,10 @@ new RuleTester({
                     options: [{ version: "0.12.0" }],
                 },
                 {
+                    code: "require('node:assert').strictEqual()",
+                    options: [{ version: "0.12.0" }],
+                },
+                {
                     code: "var assert = require('assert'); assert(); assert.strictEqual()",
                     options: [{ version: "0.12.0" }],
                 },
@@ -70,6 +74,10 @@ new RuleTester({
                 },
                 {
                     code: "import assert from 'assert'; assert.deepStrictEqual()",
+                    options: [{ version: "4.0.0" }],
+                },
+                {
+                    code: "import assert from 'node:assert'; assert.deepStrictEqual()",
                     options: [{ version: "4.0.0" }],
                 },
                 {
@@ -106,6 +114,15 @@ new RuleTester({
                 },
                 {
                     code: "require('assert').deepStrictEqual()",
+                    options: [
+                        {
+                            version: "3.9.9",
+                            ignores: ["assert.deepStrictEqual"],
+                        },
+                    ],
+                },
+                {
+                    code: "require('node:assert').deepStrictEqual()",
                     options: [
                         {
                             version: "3.9.9",
@@ -230,6 +247,20 @@ new RuleTester({
                     ],
                 },
                 {
+                    code: "require('node:assert').deepStrictEqual()",
+                    options: [{ version: "3.9.9" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "assert.deepStrictEqual",
+                                supported: "4.0.0",
+                                version: "3.9.9",
+                            },
+                        },
+                    ],
+                },
+                {
                     code: "var assert = require('assert'); assert.deepStrictEqual()",
                     options: [{ version: "3.9.9" }],
                     errors: [
@@ -259,6 +290,20 @@ new RuleTester({
                 },
                 {
                     code: "import assert from 'assert'; assert.deepStrictEqual()",
+                    options: [{ version: "3.9.9" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "assert.deepStrictEqual",
+                                supported: "4.0.0",
+                                version: "3.9.9",
+                            },
+                        },
+                    ],
+                },
+                {
+                    code: "import assert from 'node:assert'; assert.deepStrictEqual()",
                     options: [{ version: "3.9.9" }],
                     errors: [
                         {
@@ -432,7 +477,15 @@ new RuleTester({
                     options: [{ version: "8.0.0" }],
                 },
                 {
+                    code: "require('node:async_hooks')",
+                    options: [{ version: "8.0.0" }],
+                },
+                {
                     code: "import hooks from 'async_hooks'",
+                    options: [{ version: "8.0.0" }],
+                },
+                {
+                    code: "import hooks from 'node:async_hooks'",
                     options: [{ version: "8.0.0" }],
                 },
                 {
@@ -478,7 +531,15 @@ new RuleTester({
                     options: [{ version: "7.9.9", ignores: ["async_hooks"] }],
                 },
                 {
+                    code: "require('node:async_hooks')",
+                    options: [{ version: "7.9.9", ignores: ["async_hooks"] }],
+                },
+                {
                     code: "import hooks from 'async_hooks'",
+                    options: [{ version: "7.9.9", ignores: ["async_hooks"] }],
+                },
+                {
+                    code: "import hooks from 'node:async_hooks'",
                     options: [{ version: "7.9.9", ignores: ["async_hooks"] }],
                 },
                 {
@@ -588,7 +649,35 @@ new RuleTester({
                     ],
                 },
                 {
+                    code: "require('node:async_hooks')",
+                    options: [{ version: "7.9.9" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "async_hooks",
+                                supported: "8.0.0",
+                                version: "7.9.9",
+                            },
+                        },
+                    ],
+                },
+                {
                     code: "import hooks from 'async_hooks'",
+                    options: [{ version: "7.9.9" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "async_hooks",
+                                supported: "8.0.0",
+                                version: "7.9.9",
+                            },
+                        },
+                    ],
+                },
+                {
+                    code: "import hooks from 'node:async_hooks'",
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
@@ -3079,7 +3168,15 @@ new RuleTester({
                     options: [{ version: "14.0.0" }],
                 },
                 {
+                    code: "import * as fs from 'node:fs/promises';",
+                    options: [{ version: "14.0.0" }],
+                },
+                {
                     code: "require('fs/promise')",
+                    options: [{ version: "14.0.0" }],
+                },
+                {
+                    code: "require('node:fs/promise')",
                     options: [{ version: "14.0.0" }],
                 },
                 {
@@ -3087,7 +3184,15 @@ new RuleTester({
                     options: [{ version: "13.14.0", ignores: ["fs/promises"] }],
                 },
                 {
+                    code: "import * as fs from 'node:fs/promises';",
+                    options: [{ version: "13.14.0", ignores: ["fs/promises"] }],
+                },
+                {
                     code: "require('fs/promise')",
+                    options: [{ version: "13.14.0", ignores: ["fs/promises"] }],
+                },
+                {
+                    code: "require('node:fs/promise')",
                     options: [{ version: "13.14.0", ignores: ["fs/promises"] }],
                 },
             ],
@@ -3107,7 +3212,35 @@ new RuleTester({
                     ],
                 },
                 {
+                    code: "import * as fs from 'node:fs/promises';",
+                    options: [{ version: "13.14.0" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "fs/promises",
+                                supported: "14.0.0",
+                                version: "13.14.0",
+                            },
+                        },
+                    ],
+                },
+                {
                     code: "require('fs/promises');",
+                    options: [{ version: "13.14.0" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "fs/promises",
+                                supported: "14.0.0",
+                                version: "13.14.0",
+                            },
+                        },
+                    ],
+                },
+                {
+                    code: "require('node:fs/promises');",
                     options: [{ version: "13.14.0" }],
                     errors: [
                         {
