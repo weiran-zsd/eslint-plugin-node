@@ -8,6 +8,14 @@ const path = require("path")
 const RuleTester = require("eslint").RuleTester
 const rule = require("../../../lib/rules/no-missing-require")
 
+const tsReactExtensionMap = [
+    ["", ".js"],
+    [".ts", ".js"],
+    [".cts", ".cjs"],
+    [".mts", ".mjs"],
+    [".tsx", ".js"],
+]
+
 /**
  * Makes a file path to a fixture.
  * @param {string} name - A name.
@@ -212,6 +220,64 @@ ruleTester.run("no-missing-require", rule, {
             filename: fixture("test.js"),
             code: "require('jquery.cookie');",
             options: [{ allowModules: ["jquery.cookie"] }],
+            env: { node: true },
+        },
+
+        // typescriptExtensionMap
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./d.js');",
+            env: { node: true },
+            settings: {
+                node: { typescriptExtensionMap: tsReactExtensionMap },
+            },
+        },
+        {
+            filename: fixture("test.ts"),
+            code: "require('./d.js');",
+            env: { node: true },
+            settings: {
+                node: { typescriptExtensionMap: tsReactExtensionMap },
+            },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.js');",
+            env: { node: true },
+            settings: {
+                node: { typescriptExtensionMap: tsReactExtensionMap },
+            },
+        },
+        {
+            filename: fixture("test.ts"),
+            code: "require('./e.js');",
+            env: { node: true },
+            settings: {
+                node: { typescriptExtensionMap: tsReactExtensionMap },
+            },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./d.js');",
+            options: [{ typescriptExtensionMap: tsReactExtensionMap }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.ts"),
+            code: "require('./d.js');",
+            options: [{ typescriptExtensionMap: tsReactExtensionMap }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.js');",
+            options: [{ typescriptExtensionMap: tsReactExtensionMap }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.ts"),
+            code: "require('./e.js');",
+            options: [{ typescriptExtensionMap: tsReactExtensionMap }],
             env: { node: true },
         },
 
