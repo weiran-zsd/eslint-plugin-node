@@ -69,7 +69,7 @@
         "test": "nyc npm run -s test:_mocha",
         "test:_mocha": "_mocha \"tests/lib/**/*.js\" --reporter progress --timeout 4000",
         "test:ci": "nyc npm run -s test:_mocha",
-        "update:eslint-docs": "eslint-doc-generator --config-emoji recommended-module,☑️ --config-emoji recommended-script,✔️ --rule-list-split meta.docs.category --ignore-config recommended-module --ignore-config recommended-script --url-configs \"https://github.com/eslint-community/eslint-plugin-n#-configs\"",
+        "update:eslint-docs": "eslint-doc-generator",
         "version": "npm run -s build && eslint lib/rules --fix && git add .",
         "watch": "npm run test:_mocha -- --watch --growl"
     },

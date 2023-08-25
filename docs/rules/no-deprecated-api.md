@@ -1,6 +1,6 @@
 # Disallow deprecated APIs (`n/no-deprecated-api`)
 
-💼 This rule is enabled in the ✅ `recommended` [config](https://github.com/eslint-community/eslint-plugin-n#-configs).
+💼 This rule is enabled in the following [configs](https://github.com/eslint-community/eslint-plugin-n#-configs): `flat/recommended`, 🟢 `flat/recommended-module`, ✅ `flat/recommended-script`, ☑️ `recommended`, 🟢 `recommended-module`, ✅ `recommended-script`.
 
 <!-- end auto-generated rule header -->
 
