@@ -5,4 +5,4 @@
 "use strict"
 
 require("./update-rule-docs")
-require("./update-lib-index")
+// require("./update-lib-index") // TODO: the script needs to be updated.
