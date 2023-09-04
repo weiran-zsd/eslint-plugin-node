@@ -281,6 +281,64 @@ ruleTester.run("no-missing-require", rule, {
             env: { node: true },
         },
 
+        // tsx mapping by name
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.jsx');",
+            options: [{ typescriptExtensionMap: "preserve" }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.js');",
+            options: [{ typescriptExtensionMap: "react" }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.jsx');",
+            settings: { node: { typescriptExtensionMap: "preserve" } },
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.js');",
+            settings: { node: { typescriptExtensionMap: "react" } },
+            env: { node: true },
+        },
+
+        // tsx from config
+        {
+            filename: fixture("ts-react/test.tsx"),
+            code: "require('./e.js');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-react/test.ts"),
+            code: "require('./d.js');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-preserve/test.tsx"),
+            code: "require('./e.jsx');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-preserve/test.ts"),
+            code: "require('./d.js');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-extends/test.tsx"),
+            code: "require('./e.js');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-extends/test.ts"),
+            code: "require('./d.js');",
+            env: { node: true },
+        },
+
         // require.resolve
         {
             filename: fixture("test.js"),

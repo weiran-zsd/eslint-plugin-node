@@ -212,6 +212,64 @@ ruleTester.run("no-missing-import", rule, {
             env: { node: true },
         },
 
+        // tsx mapping by name
+        {
+            filename: fixture("test.tsx"),
+            code: "import e from './e.jsx';",
+            options: [{ typescriptExtensionMap: "preserve" }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "import e from './e.js';",
+            options: [{ typescriptExtensionMap: "react" }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "import e from './e.jsx';",
+            settings: { node: { typescriptExtensionMap: "preserve" } },
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "import e from './e.js';",
+            settings: { node: { typescriptExtensionMap: "react" } },
+            env: { node: true },
+        },
+
+        // tsx from config
+        {
+            filename: fixture("ts-react/test.tsx"),
+            code: "import e from './e.js';",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-react/test.ts"),
+            code: "import d from './d.js';",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-preserve/test.tsx"),
+            code: "import e from './e.jsx';",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-preserve/test.ts"),
+            code: "import d from './d.js';",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-extends/test.tsx"),
+            code: "import e from './e.js';",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-extends/test.ts"),
+            code: "import d from './d.js';",
+            env: { node: true },
+        },
+
         // import()
         ...(DynamicImportSupported
             ? [
