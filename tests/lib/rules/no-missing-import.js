@@ -21,6 +21,14 @@ if (!DynamicImportSupported) {
     )
 }
 
+const tsReactExtensionMap = [
+    ["", ".js"],
+    [".ts", ".js"],
+    [".cts", ".cjs"],
+    [".mts", ".mjs"],
+    [".tsx", ".js"],
+]
+
 /**
  * Makes a file path to a fixture.
  * @param {string} name - A name.
@@ -143,6 +151,64 @@ ruleTester.run("no-missing-import", rule, {
             filename: fixture("test.js"),
             code: "import a from './fixtures/no-missing/a.js';",
             options: [{ resolvePaths: ["tests"] }],
+            env: { node: true },
+        },
+
+        // typescriptExtensionMap
+        {
+            filename: fixture("test.tsx"),
+            code: "import a from './d.js';",
+            env: { node: true },
+            settings: {
+                node: { typescriptExtensionMap: tsReactExtensionMap },
+            },
+        },
+        {
+            filename: fixture("test.ts"),
+            code: "import a from './d.js';",
+            env: { node: true },
+            settings: {
+                node: { typescriptExtensionMap: tsReactExtensionMap },
+            },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "import a from './e.js';",
+            env: { node: true },
+            settings: {
+                node: { typescriptExtensionMap: tsReactExtensionMap },
+            },
+        },
+        {
+            filename: fixture("test.ts"),
+            code: "import a from './e.js';",
+            env: { node: true },
+            settings: {
+                node: { typescriptExtensionMap: tsReactExtensionMap },
+            },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "import a from './d.js';",
+            options: [{ typescriptExtensionMap: tsReactExtensionMap }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.ts"),
+            code: "import a from './d.js';",
+            options: [{ typescriptExtensionMap: tsReactExtensionMap }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "import a from './e.js';",
+            options: [{ typescriptExtensionMap: tsReactExtensionMap }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.ts"),
+            code: "import a from './e.js';",
+            options: [{ typescriptExtensionMap: tsReactExtensionMap }],
             env: { node: true },
         },
 

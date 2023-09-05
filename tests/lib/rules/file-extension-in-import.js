@@ -21,6 +21,14 @@ if (!DynamicImportSupported) {
     )
 }
 
+const tsReactExtensionMap = [
+    ["", ".js"],
+    [".ts", ".js"],
+    [".cts", ".cjs"],
+    [".mts", ".mjs"],
+    [".tsx", ".js"],
+]
+
 function fixture(filename) {
     return path.resolve(
         __dirname,
@@ -145,6 +153,32 @@ new RuleTester({
             filename: fixture("test.js"),
             code: "import './c'",
             options: ["never", { ".json": "always" }],
+        },
+
+        // typescriptExtensionMap
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./d.js');",
+            env: { node: true },
+            settings: { node: { typescriptExtensionMap: tsReactExtensionMap } },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.js');",
+            env: { node: true },
+            settings: { node: { typescriptExtensionMap: tsReactExtensionMap } },
+        },
+        {
+            filename: fixture("test.ts"),
+            code: "require('./d.js');",
+            env: { node: true },
+            settings: { node: { typescriptExtensionMap: tsReactExtensionMap } },
+        },
+        {
+            filename: fixture("test.ts"),
+            code: "require('./e.js');",
+            env: { node: true },
+            settings: { node: { typescriptExtensionMap: tsReactExtensionMap } },
         },
     ],
     invalid: [
