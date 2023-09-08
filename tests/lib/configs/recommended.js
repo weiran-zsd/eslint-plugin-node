@@ -7,6 +7,13 @@ const { gtEslintV8 } = require("../../helpers")
 
 const originalCwd = process.cwd()
 
+// this is needed as `recommended` config was cached
+function clearRequireCache() {
+    for (const k in require.cache) {
+        delete require.cache[k]
+    }
+}
+
 describe("node/recommended config", () => {
     ;(gtEslintV8 ? describe : describe.skip)("in CJS directory", () => {
         const root = path.resolve(__dirname, "../../fixtures/configs/cjs/")
@@ -16,6 +23,7 @@ describe("node/recommended config", () => {
 
         beforeEach(() => {
             process.chdir(root)
+            clearRequireCache()
             linter = new ESLint({
                 baseConfig: { extends: "plugin:n/recommended" },
                 useEslintrc: false,
@@ -93,6 +101,7 @@ describe("node/recommended config", () => {
 
         beforeEach(() => {
             process.chdir(root)
+            clearRequireCache()
             linter = new ESLint({
                 baseConfig: { extends: "plugin:n/recommended" },
                 useEslintrc: false,
