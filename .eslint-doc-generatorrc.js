@@ -7,6 +7,8 @@ const config = {
         ["recommended", "☑️"],
         ["flat/recommended-script", "✅"],
         ["flat/recommended-module", "🟢"],
+        ["flat/recommended", "☑️"],
+        ["flat/mixed-esm-and-cjs", "🟠"],
     ],
 }
 
