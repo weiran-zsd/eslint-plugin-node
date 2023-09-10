@@ -214,7 +214,41 @@ ruleTester.run("no-missing-import", rule, {
             env: { node: true },
         },
 
-        // tsx from config
+        // explicit tsx from config
+        {
+            // name: "options[0] - preserve - e.tsx as e.jsx",
+            filename: fixture("ts-react/test.tsx"),
+            code: "import e from './e.jsx';",
+            options: [{ tsconfigPath: fixture("ts-preserve/tsconfig.json") }],
+            env: { node: true },
+        },
+        {
+            // name: "options[0] - react - e.tsx as e.js",
+            filename: fixture("ts-preserve/test.tsx"),
+            code: "import e from './e.js';",
+            options: [{ tsconfigPath: fixture("ts-react/tsconfig.json") }],
+            env: { node: true },
+        },
+        {
+            // name: "settings.node - preserve - e.tsx as e.jsx",
+            filename: fixture("ts-react/test.tsx"),
+            code: "import e from './e.jsx';",
+            settings: {
+                node: { tsconfigPath: fixture("ts-preserve/tsconfig.json") },
+            },
+            env: { node: true },
+        },
+        {
+            // name: "settings.node - react - e.tsx as e.js",
+            filename: fixture("ts-preserve/test.tsx"),
+            code: "import e from './e.js';",
+            settings: {
+                node: { tsconfigPath: fixture("ts-react/tsconfig.json") },
+            },
+            env: { node: true },
+        },
+
+        // implicit tsx from config
         {
             // name: "tsconfig - jsx: react - e.tsx as e.js",
             filename: fixture("ts-react/test.tsx"),

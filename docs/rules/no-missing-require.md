@@ -106,6 +106,10 @@ Default is:
 ]
 ```
 
+#### tsconfigPath
+
+Adds the ability to specify the tsconfig used by the typescriptExtensionMap tool.
+
 ### Shared Settings
 
 The following options can be set by [shared settings](http://eslint.org/docs/user-guide/configuring.html#adding-shared-settings).
