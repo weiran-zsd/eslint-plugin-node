@@ -152,6 +152,45 @@ So in this example, `src/bin/index.js` is handled as `bin/index.js` but, we excl
 ] }
 ```
 
+## tryExtensions
+
+When an import path does not exist, this rule checks whether or not any of `path.js`, `path.json`, and `path.node` exists.
+`tryExtensions` option is the extension list this rule uses at the time.
+
+### Example tryExtensions
+
+In this example we only allow the .js, and .ts extensions to be tried.
+
+```json
+{ "tryExtensions": [ ".js", ".ts" ] }
+```
+
+### Default tryExtensions
+
+```json
+{ "tryExtensions": [ ".js", ".json", ".node" ] }
+```
+
+## tsconfigPath
+
+Adds the ability to specify the tsconfig used by the typescriptExtensionMap tool.
+
+### Example absolute tsconfigPath
+
+```json
+{ "tsconfigPath": "/path/to/tsconfig.json" }
+```
+
+### Example relative tsconfigPath
+
+```json
+{ "tsconfigPath": "./.tsconfig/development.json" }
+```
+
+### Default tsconfigPath
+
+By default the `tsconfigPath` is searched for up the file tree from the currently linted file.
+
 ## typescriptExtensionMap
 
 Adds the ability to change the extension mapping when converting between typescript and javascript
@@ -194,23 +233,3 @@ If we cannot find a tsconfig file, we fall back to using:
 ```json
 { "typescriptExtensionMap": "preserve" }
 ```
-
-## tsconfigPath
-
-Adds the ability to specify the tsconfig used by the typescriptExtensionMap tool.
-
-### Example absolute tsconfigPath
-
-```json
-{ "tsconfigPath": "/path/to/tsconfig.json" }
-```
-
-### Example relative tsconfigPath
-
-```json
-{ "tsconfigPath": "./.tsconfig/development.json" }
-```
-
-### Default tsconfigPath
-
-By default the `tsconfigPath` is searched for up the file tree from the currently linted file.

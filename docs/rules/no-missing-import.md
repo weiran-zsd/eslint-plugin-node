@@ -46,64 +46,23 @@ import existingModule from "existing-module";
 
 #### allowModules
 
-This can also be configured as a shared setting [`settings.allowModules`](../shared-settings.md#allowmodules)
-
-Some platforms have additional embedded modules.
-For example, Electron has `electron` module.
-
-We can specify additional embedded modules with this option.
-This option is an array of strings as module names.
-
-```json
-{
-    "rules": {
-        "n/no-missing-import": ["error", {
-            "allowModules": ["electron"]
-        }]
-    }
-}
-```
+This can be configured in the rule options or as a shared setting [`settings.allowModules`](../shared-settings.md#allowmodules).
+Please see the shared settings documentation for more information.
 
 #### resolvePaths
 
-This can also be configured as a shared setting [`settings.resolvePaths`](../shared-settings.md#resolvepaths)
-
-Adds additional paths to try for when resolving imports.
-If a path is relative, it will be resolved from CWD.
-
-Default is `[]`
-
-#### typescriptExtensionMap
-
-This can also be configured as a shared setting [`settings.typescriptExtensionMap`](../shared-settings.md#typescriptextensionmap)
-
-Adds the ability to change the extension mapping when converting between typescript and javascript
-
-You can also use the [typescript compiler jsx options](https://www.typescriptlang.org/tsconfig#jsx) to automatically use the correct mapping.
-
-If this option is left undefined we:
-
-1. Check the Shared Settings
-2. Check your `tsconfig.json` `compilerOptions.jsx`
-3. Return the default mapping (jsx = `preserve`)
-
-Default is:
-
-```json
-[
-    [ "", ".js" ],
-    [ ".ts", ".js" ],
-    [ ".cts", ".cjs" ],
-    [ ".mts", ".mjs" ],
-    [ ".tsx", ".jsx" ],
-]
-```
+This can be configured in the rule options or as a shared setting [`settings.resolvePaths`](../shared-settings.md#resolvepaths).
+Please see the shared settings documentation for more information.
 
 #### tsconfigPath
 
-This can also be configured as a shared setting [`settings.tsconfigPath`](../shared-settings.md#tsconfigpath)
+This can be configured in the rule options or as a shared setting [`settings.tsconfigPath`](../shared-settings.md#tsconfigpath).
+Please see the shared settings documentation for more information.
 
-Adds the ability to specify the tsconfig used by the typescriptExtensionMap tool.
+#### typescriptExtensionMap
+
+This can be configured in the rule options or as a shared setting [`settings.typescriptExtensionMap`](../shared-settings.md#typescriptextensionmap).
+Please see the shared settings documentation for more information.
 
 ## 🔎 Implementation
 

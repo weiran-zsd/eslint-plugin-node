@@ -67,80 +67,8 @@ console.log("hello");
 
 #### convertPath
 
-If we use transpilers (e.g. Babel), perhaps the file path to a source code is never handled as a bin file.
-`convertPath` option tells to the rule, it needs to convert file paths.
-
-For example:
-
-```json
-{
-    "rules": {
-        "n/shebang": ["error", {
-            "convertPath": {
-                "src/**/*.jsx": ["^src/(.+?)\\.jsx$", "lib/$1.js"]
-            }
-        }]
-    }
-}
-```
-
-This option has the following shape: `<targetFiles>: [<fromRegExp>, <toString>]`
-
-`targetFiles` is a glob pattern.
-It converts paths which are matched to the pattern with the following way.
-
-```js
-path.replace(new RegExp(fromRegExp), toString);
-```
-
-So on this example, `src/a/foo.jsx` is handled as `lib/a/foo.js`.
-
-The `convertPath` option can be an array as well.
-
-For example:
-
-```json
-{
-    "rules": {
-        "n/shebang": ["error", {
-            "convertPath": [
-                {
-                    "include": ["src/**/*.js"],
-                    "exclude": ["**/*.spec.js"],
-                    "replace": ["^src/(.+)$", "lib/$1"]
-                }
-            ]
-        }]
-    }
-}
-```
-
-In this style, this option has the following shape as the same expression as above: `{include: [<targetFiles>], replace: [<fromRegExp>, <toString>]}`.
-In addition, we can specify glob patterns to exclude files.
-
-### Shared Settings
-
-The following options can be set by [shared settings](http://eslint.org/docs/user-guide/configuring.html#adding-shared-settings).
-Several rules have the same option, but we can set this option at once.
-
-- `convertPath`
-
-For Example:
-
-```json
-{
-    "settings": {
-        "node": {
-            "convertPath": {
-                "src/**/*.jsx": ["^src/(.+?)\\.jsx$", "lib/$1.js"]
-            }
-        }
-    },
-    "rules": {
-        "n/shebang": "error"
-    }
-}
-```
+This can be configured in the rule options or as a shared setting [`settings.convertPath`](../shared-settings.md#convertpath).
+Please see the shared settings documentation for more information.
 
 ## 🔎 Implementation
 
