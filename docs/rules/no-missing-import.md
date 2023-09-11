@@ -46,6 +46,8 @@ import existingModule from "existing-module";
 
 #### allowModules
 
+This can also be configured as a shared setting [`settings.allowModules`](../shared-settings.md#allowmodules)
+
 Some platforms have additional embedded modules.
 For example, Electron has `electron` module.
 
@@ -64,12 +66,16 @@ This option is an array of strings as module names.
 
 #### resolvePaths
 
+This can also be configured as a shared setting [`settings.resolvePaths`](../shared-settings.md#resolvepaths)
+
 Adds additional paths to try for when resolving imports.
 If a path is relative, it will be resolved from CWD.
 
 Default is `[]`
 
 #### typescriptExtensionMap
+
+This can also be configured as a shared setting [`settings.typescriptExtensionMap`](../shared-settings.md#typescriptextensionmap)
 
 Adds the ability to change the extension mapping when converting between typescript and javascript
 
@@ -95,38 +101,9 @@ Default is:
 
 #### tsconfigPath
 
+This can also be configured as a shared setting [`settings.tsconfigPath`](../shared-settings.md#tsconfigpath)
+
 Adds the ability to specify the tsconfig used by the typescriptExtensionMap tool.
-
-### Shared Settings
-
-The following options can be set by [shared settings](http://eslint.org/docs/user-guide/configuring.html#adding-shared-settings).
-Several rules have the same option, but we can set this option at once.
-
-- `allowModules`
-- `resolvePaths`
-- `typescriptExtensionMap`
-
-```js
-// .eslintrc.js
-module.exports = {
-    "settings": {
-        "node": {
-            "allowModules": ["electron"],
-            "resolvePaths": [__dirname],
-            "typescriptExtensionMap": [
-                [ "", ".js" ],
-                [ ".ts", ".js" ],
-                [ ".cts", ".cjs" ],
-                [ ".mts", ".mjs" ],
-                [ ".tsx", ".js" ],
-            ]
-        }
-    },
-    "rules": {
-        "n/no-missing-import": "error"
-    }
-}
-```
 
 ## 🔎 Implementation
 
