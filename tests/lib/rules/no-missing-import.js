@@ -156,59 +156,133 @@ ruleTester.run("no-missing-import", rule, {
 
         // typescriptExtensionMap
         {
+            // name: "settings.node - [] as react - d.ts as d.js",
             filename: fixture("test.tsx"),
-            code: "import a from './d.js';",
+            code: "import d from './d.js';",
             env: { node: true },
-            settings: {
-                node: { typescriptExtensionMap: tsReactExtensionMap },
-            },
+            settings: { node: { typescriptExtensionMap: tsReactExtensionMap } },
         },
         {
-            filename: fixture("test.ts"),
-            code: "import a from './d.js';",
-            env: { node: true },
-            settings: {
-                node: { typescriptExtensionMap: tsReactExtensionMap },
-            },
-        },
-        {
+            // name: "settings.node - [] as react - e.tsx as e.js",
             filename: fixture("test.tsx"),
-            code: "import a from './e.js';",
+            code: "import e from './e.js';",
             env: { node: true },
-            settings: {
-                node: { typescriptExtensionMap: tsReactExtensionMap },
-            },
+            settings: { node: { typescriptExtensionMap: tsReactExtensionMap } },
         },
         {
-            filename: fixture("test.ts"),
-            code: "import a from './e.js';",
-            env: { node: true },
-            settings: {
-                node: { typescriptExtensionMap: tsReactExtensionMap },
-            },
-        },
-        {
+            // name: "options[0] - [] as react - d.ts as d.js",
             filename: fixture("test.tsx"),
-            code: "import a from './d.js';",
+            code: "import d from './d.js';",
             options: [{ typescriptExtensionMap: tsReactExtensionMap }],
             env: { node: true },
         },
         {
-            filename: fixture("test.ts"),
-            code: "import a from './d.js';",
-            options: [{ typescriptExtensionMap: tsReactExtensionMap }],
-            env: { node: true },
-        },
-        {
+            // name: "options[0] - [] as react - e.tsx as e.js",
             filename: fixture("test.tsx"),
-            code: "import a from './e.js';",
+            code: "import e from './e.js';",
             options: [{ typescriptExtensionMap: tsReactExtensionMap }],
             env: { node: true },
         },
+
+        // tsx mapping by name
         {
-            filename: fixture("test.ts"),
-            code: "import a from './e.js';",
-            options: [{ typescriptExtensionMap: tsReactExtensionMap }],
+            // name: "options[0] - preserve - e.tsx as e.jsx",
+            filename: fixture("test.tsx"),
+            code: "import e from './e.jsx';",
+            options: [{ typescriptExtensionMap: "preserve" }],
+            env: { node: true },
+        },
+        {
+            // name: "options[0] - react - e.tsx as e.js",
+            filename: fixture("test.tsx"),
+            code: "import e from './e.js';",
+            options: [{ typescriptExtensionMap: "react" }],
+            env: { node: true },
+        },
+        {
+            // name: "settings.node - preserve - e.tsx as e.jsx",
+            filename: fixture("test.tsx"),
+            code: "import e from './e.jsx';",
+            settings: { node: { typescriptExtensionMap: "preserve" } },
+            env: { node: true },
+        },
+        {
+            // name: "settings.node - react - e.tsx as e.js",
+            filename: fixture("test.tsx"),
+            code: "import e from './e.js';",
+            settings: { node: { typescriptExtensionMap: "react" } },
+            env: { node: true },
+        },
+
+        // explicit tsx from config
+        {
+            // name: "options[0] - preserve - e.tsx as e.jsx",
+            filename: fixture("ts-react/test.tsx"),
+            code: "import e from './e.jsx';",
+            options: [{ tsconfigPath: fixture("ts-preserve/tsconfig.json") }],
+            env: { node: true },
+        },
+        {
+            // name: "options[0] - react - e.tsx as e.js",
+            filename: fixture("ts-preserve/test.tsx"),
+            code: "import e from './e.js';",
+            options: [{ tsconfigPath: fixture("ts-react/tsconfig.json") }],
+            env: { node: true },
+        },
+        {
+            // name: "settings.node - preserve - e.tsx as e.jsx",
+            filename: fixture("ts-react/test.tsx"),
+            code: "import e from './e.jsx';",
+            settings: {
+                node: { tsconfigPath: fixture("ts-preserve/tsconfig.json") },
+            },
+            env: { node: true },
+        },
+        {
+            // name: "settings.node - react - e.tsx as e.js",
+            filename: fixture("ts-preserve/test.tsx"),
+            code: "import e from './e.js';",
+            settings: {
+                node: { tsconfigPath: fixture("ts-react/tsconfig.json") },
+            },
+            env: { node: true },
+        },
+
+        // implicit tsx from config
+        {
+            // name: "tsconfig - jsx: react - e.tsx as e.js",
+            filename: fixture("ts-react/test.tsx"),
+            code: "import e from './e.js';",
+            env: { node: true },
+        },
+        {
+            // name: "tsconfig - jsx: react - d.ts as d.js",
+            filename: fixture("ts-react/test.ts"),
+            code: "import d from './d.js';",
+            env: { node: true },
+        },
+        {
+            // name: "tsconfig - jsx: preserve - e.tsx as e.jsx",
+            filename: fixture("ts-preserve/test.tsx"),
+            code: "import e from './e.jsx';",
+            env: { node: true },
+        },
+        {
+            // name: "tsconfig - jsx: preserve - d.ts as d.js",
+            filename: fixture("ts-preserve/test.ts"),
+            code: "import d from './d.js';",
+            env: { node: true },
+        },
+        {
+            // name: "tsconfig - extends: base (jsx: react) - e.tsx as e.js",
+            filename: fixture("ts-extends/test.tsx"),
+            code: "import e from './e.js';",
+            env: { node: true },
+        },
+        {
+            // name: "tsconfig - extends: base (jsx: react) - d.ts as d.js",
+            filename: fixture("ts-extends/test.ts"),
+            code: "import d from './d.js';",
             env: { node: true },
         },
 

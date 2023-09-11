@@ -86,6 +86,14 @@ Default is `[".js", ".json", ".node"]`.
 
 Adds the ability to change the extension mapping when converting between typescript and javascript
 
+You can also use the [typescript compiler jsx options](https://www.typescriptlang.org/tsconfig#jsx) to automatically use the correct mapping.
+
+If this option is left undefined we:
+
+1. Check the Shared Settings
+2. Check your `tsconfig.json` `compilerOptions.jsx`
+3. Return the default mapping (jsx = `preserve`)
+
 Default is:
 
 ```json
@@ -97,6 +105,10 @@ Default is:
     [ ".tsx", ".jsx" ],
 ]
 ```
+
+#### tsconfigPath
+
+Adds the ability to specify the tsconfig used by the typescriptExtensionMap tool.
 
 ### Shared Settings
 

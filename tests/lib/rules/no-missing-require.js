@@ -281,6 +281,98 @@ ruleTester.run("no-missing-require", rule, {
             env: { node: true },
         },
 
+        // tsx mapping by name
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.jsx');",
+            options: [{ typescriptExtensionMap: "preserve" }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.js');",
+            options: [{ typescriptExtensionMap: "react" }],
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.jsx');",
+            settings: { node: { typescriptExtensionMap: "preserve" } },
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.tsx"),
+            code: "require('./e.js');",
+            settings: { node: { typescriptExtensionMap: "react" } },
+            env: { node: true },
+        },
+
+        // explicit tsx from config
+        {
+            // name: "options[0] - preserve - e.tsx as e.jsx",
+            filename: fixture("ts-react/test.tsx"),
+            code: "require('./e.jsx');",
+            options: [{ tsconfigPath: fixture("ts-preserve/tsconfig.json") }],
+            env: { node: true },
+        },
+        {
+            // name: "options[0] - react - e.tsx as e.js",
+            filename: fixture("ts-preserve/test.tsx"),
+            code: "require('./e.js');",
+            options: [{ tsconfigPath: fixture("ts-react/tsconfig.json") }],
+            env: { node: true },
+        },
+        {
+            // name: "settings.node - preserve - e.tsx as e.jsx",
+            filename: fixture("ts-react/test.tsx"),
+            code: "require('./e.jsx');",
+            settings: {
+                node: { tsconfigPath: fixture("ts-preserve/tsconfig.json") },
+            },
+            env: { node: true },
+        },
+        {
+            // name: "settings.node - react - e.tsx as e.js",
+            filename: fixture("ts-preserve/test.tsx"),
+            code: "require('./e.js');",
+            settings: {
+                node: { tsconfigPath: fixture("ts-react/tsconfig.json") },
+            },
+            env: { node: true },
+        },
+
+        // implicit tsx from config
+        {
+            filename: fixture("ts-react/test.tsx"),
+            code: "require('./e.js');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-react/test.ts"),
+            code: "require('./d.js');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-preserve/test.tsx"),
+            code: "require('./e.jsx');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-preserve/test.ts"),
+            code: "require('./d.js');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-extends/test.tsx"),
+            code: "require('./e.js');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-extends/test.ts"),
+            code: "require('./d.js');",
+            env: { node: true },
+        },
+
         // require.resolve
         {
             filename: fixture("test.js"),
