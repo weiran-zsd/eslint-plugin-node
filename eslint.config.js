@@ -4,14 +4,10 @@
 "use strict"
 
 const js = require("@eslint/js")
-const { FlatCompat } = require("@eslint/eslintrc")
 const globals = require("globals")
 const nodeRecommended = require("eslint-plugin-n/configs/recommended-script")
-
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-})
+const eslintPluginConfig = require("eslint-plugin-eslint-plugin/configs/recommended")
+const prettierConfig = require("eslint-config-prettier")
 
 module.exports = [
     {
@@ -29,7 +25,8 @@ module.exports = [
     },
     js.configs.recommended,
     nodeRecommended,
-    ...compat.extends("plugin:eslint-plugin/recommended", "prettier"),
+    eslintPluginConfig,
+    prettierConfig,
     { rules: { "eslint-plugin/require-meta-docs-description": "error" } },
     {
         // these messageIds were used outside
