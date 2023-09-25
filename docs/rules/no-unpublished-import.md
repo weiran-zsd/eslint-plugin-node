@@ -35,78 +35,18 @@ Then this rule warns `import` declarations in \*published\* files if the `import
 
 #### allowModules
 
-Some platforms have additional embedded modules.
-For example, Electron has `electron` module.
-
-We can specify additional embedded modules with this option.
-This option is an array of strings as module names.
-
-```json
-{
-    "rules": {
-        "n/no-unpublished-import": ["error", {
-            "allowModules": ["electron"]
-        }]
-    }
-}
-```
-
-#### convertPath
-
-If we use transpilers (e.g. Babel), perhaps the file path to a source code is never published.
-`convertPath` option tells to the rule, it needs to convert file paths.
-
-For example:
-
-```json
-{
-    "rules": {
-        "n/no-unpublished-import": ["error", {
-            "convertPath": {
-                "src/**/*.jsx": ["^src/(.+?)\\.jsx$", "lib/$1.js"]
-            }
-        }]
-    }
-}
-```
-
-This option has the following shape: `<targetFiles>: [<fromRegExp>, <toString>]`
-
-`targetFiles` is a glob pattern.
-It converts paths which are matched to the pattern with the following way.
-
-```js
-path.replace(new RegExp(fromRegExp), toString);
-```
-
-So on this example, `src/a/foo.jsx` is handled as `lib/a/foo.js`.
-
-The `convertPath` option can be an array as well.
-
-For example:
-
-```json
-{
-    "rules": {
-        "n/no-unpublished-import": ["error", {
-            "convertPath": [
-                {
-                    "include": ["src/**/*.js"],
-                    "exclude": ["**/*.spec.js"],
-                    "replace": ["^src/(.+)$", "lib/$1"]
-                }
-            ]
-        }]
-    }
-}
-```
-
-In this style, this option has the following shape as the same expression as above: `{include: [<targetFiles>], replace: [<fromRegExp>, <toString>]}`.
-In addition, we can specify glob patterns to exclude files.
+This can be configured in the rule options or as a shared setting [`settings.allowModules`](../shared-settings.md#allowmodules).
+Please see the shared settings documentation for more information.
 
 #### resolvePaths
 
-TODO
+This can be configured in the rule options or as a shared setting [`settings.resolvePaths`](../shared-settings.md#resolvepaths).
+Please see the shared settings documentation for more information.
+
+#### convertPath
+
+This can be configured in the rule options or as a shared setting [`settings.convertPath`](../shared-settings.md#convertpath).
+Please see the shared settings documentation for more information.
 
 ### ignoreTypeImport
 
@@ -126,32 +66,6 @@ In this way, the following code will not be reported:
 
 ```ts
 import type foo from "foo";
-```
-
-### Shared Settings
-
-The following options can be set by [shared settings](http://eslint.org/docs/user-guide/configuring.html#adding-shared-settings).
-Several rules have the same option, but we can set this option at once.
-
-- `allowModules`
-- `convertPath`
-
-For Example:
-
-```json
-{
-    "settings": {
-        "node": {
-            "allowModules": ["electron"],
-            "convertPath": {
-                "src/**/*.jsx": ["^src/(.+?)\\.jsx$", "lib/$1.js"]
-            }
-        }
-    },
-    "rules": {
-        "n/no-unpublished-import": "error"
-    }
-}
 ```
 
 ## 🔎 Implementation

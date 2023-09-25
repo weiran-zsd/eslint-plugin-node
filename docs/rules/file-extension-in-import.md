@@ -92,39 +92,15 @@ import logo from "./logo.png"
 
 ### Shared Settings
 
-The following options can be set by [shared settings](http://eslint.org/docs/user-guide/configuring.html#adding-shared-settings).
-Several rules have the same option, but we can set this option at once.
+#### tsconfigPath
+
+This can be configured in the shared settings [`settings.tsconfigPath`](../shared-settings.md#tsconfigpath).
+Please see the shared settings documentation for more information.
 
 #### typescriptExtensionMap
 
-Adds the ability to change the extension mapping when converting between typescript and javascript
-
-You can also use the [typescript compiler jsx options](https://www.typescriptlang.org/tsconfig#jsx) to automatically use the correct mapping.
-
-If this option is left undefined we:
-
-1. Check your `tsconfig.json` `compilerOptions.jsx`
-2. Return the default mapping (jsx = `preserve`)
-
-```js
-// .eslintrc.js
-module.exports = {
-    "settings": {
-        "node": {
-            "typescriptExtensionMap": [
-                [ "", ".js" ],
-                [ ".ts", ".js" ],
-                [ ".cts", ".cjs" ],
-                [ ".mts", ".mjs" ],
-                [ ".tsx", ".jsx" ],
-            ]
-        }
-    },
-    "rules": {
-        "n/file-extension-in-import": "error"
-    }
-}
-```
+This can be configured in the shared settings [`settings.typescriptExtensionMap`](../shared-settings.md#typescriptextensionmap).
+Please see the shared settings documentation for more information.
 
 ## 🔎 Implementation
 

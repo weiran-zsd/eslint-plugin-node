@@ -27,66 +27,23 @@ This rule warns `require()` of extraneous modules.
 
 #### allowModules
 
-Some platforms have additional embedded modules.
-For example, Electron has `electron` module.
-
-We can specify additional embedded modules with this option.
-This option is an array of strings as module names.
-
-```json
-{
-    "rules": {
-        "n/no-extraneous-require": ["error", {
-            "allowModules": ["electron"]
-        }]
-    }
-}
-```
+This can be configured in the rule options or as a shared setting [`settings.allowModules`](../shared-settings.md#allowmodules).
+Please see the shared settings documentation for more information.
 
 #### resolvePaths
 
-Adds additional paths to try for when resolving imports.
-If a path is relative, it will be resolved from CWD.
-
-Default is `[]`
-
-#### tryExtensions
-
-When an import path does not exist, this rule checks whether or not any of `path.js`, `path.json`, and `path.node` exists.
-`tryExtensions` option is the extension list this rule uses at the time.
-
-Default is `[".js", ".json", ".node"]`.
+This can be configured in the rule options or as a shared setting [`settings.resolvePaths`](../shared-settings.md#resolvepaths).
+Please see the shared settings documentation for more information.
 
 #### convertPath
 
-- `exclude`: TODO
-- `include`: TODO
-- `replace`: TODO
+This can be configured in the rule options or as a shared setting [`settings.convertPath`](../shared-settings.md#convertpath).
+Please see the shared settings documentation for more information.
 
-### Shared Settings
+#### tryExtensions
 
-The following options can be set by [shared settings](http://eslint.org/docs/user-guide/configuring.html#adding-shared-settings).
-Several rules have the same option, but we can set this option at once.
-
-- `allowModules`
-- `resolvePaths`
-- `tryExtensions`
-
-```js
-// .eslintrc.js
-module.exports = {
-    "settings": {
-        "node": {
-            "allowModules": ["electron"],
-            "resolvePaths": [__dirname],
-            "tryExtensions": [".js", ".json", ".node"]
-        }
-    },
-    "rules": {
-        "n/no-extraneous-require": "error"
-    }
-}
-```
+This can be configured in the rule options or as a shared setting [`settings.tryExtensions`](../shared-settings.md#tryextensions).
+Please see the shared settings documentation for more information.
 
 ## 🔎 Implementation
 
