@@ -240,6 +240,18 @@ ruleTester.run("no-unpublished-require", rule, {
             env: { node: true },
         },
 
+        // Allow files to start with './' in package.json#files
+        {
+            filename: fixture("issue99/test/bin.js"),
+            code: "require('./index.js');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("issue99/test/bin.js"),
+            code: "require('.');",
+            env: { node: true },
+        },
+
         // allowModules option
         {
             filename: fixture("1/test.js"),
