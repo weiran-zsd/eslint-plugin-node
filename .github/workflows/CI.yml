@@ -19,7 +19,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node: 20.x
+          node-version: 20.x
       - name: Install Packages
         run: npm install
       - name: Lint
