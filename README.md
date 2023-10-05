@@ -209,7 +209,7 @@ Deprecated rules follow ESLint's [deprecation policy](https://eslint.org/docs/us
 
 ## 📰 Changelog
 
-- [GitHub Releases](https://github.com/weiran-zsd/eslint-plugin-node/releases)
+- [GitHub Releases](https://github.com/eslint-community/eslint-plugin-n/releases)
 
 ## ❤️ Contributing
 
