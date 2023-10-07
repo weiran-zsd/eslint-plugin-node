@@ -61,7 +61,3 @@ jobs:
           npm install --no-save eslint@${{ matrix.eslint }}
       - name: Test
         run: npm run -s test:ci
-      - name: Send Coverage
-        run: npm run -s codecov
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

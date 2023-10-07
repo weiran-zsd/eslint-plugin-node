@@ -2,7 +2,9 @@
 
 > forked from [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node) v11.1.0. as the original repository seems [no longer maintained](https://github.com/mysticatea/eslint-plugin-node/issues/300).
 
-[![npm version](https://img.shields.io/npm/v/eslint-plugin-n.svg)](https://www.npmjs.com/package/eslint-plugin-n) [![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-n.svg)](http://www.npmtrends.com/eslint-plugin-n) [![Build Status](https://github.com/weiran-zsd/eslint-plugin-node/workflows/CI/badge.svg)](https://github.com/weiran-zsd/eslint-plugin-node/actions) [![Coverage Status](https://codecov.io/gh/weiran-zsd/eslint-plugin-node/branch/master/graph/badge.svg)](https://codecov.io/gh/weiran-zsd/eslint-plugin-node) [![Dependency Status](https://david-dm.org/weiran-zsd/eslint-plugin-node.svg)](https://david-dm.org/weiran-zsd/eslint-plugin-node)
+[![npm version](https://img.shields.io/npm/v/eslint-plugin-n.svg)](https://www.npmjs.com/package/eslint-plugin-n)
+[![Downloads](https://img.shields.io/npm/dm/eslint-plugin-n.svg)](https://www.npmjs.com/package/eslint-plugin-n)
+[![Build Status](https://github.com/eslint-community/eslint-plugin-n/workflows/CI/badge.svg)](https://github.com/eslint-community/eslint-plugin-n/actions)
 
 Additional ESLint's rules for Node.js
 
@@ -207,7 +209,7 @@ Deprecated rules follow ESLint's [deprecation policy](https://eslint.org/docs/us
 
 ## 📰 Changelog
 
-- [GitHub Releases](https://github.com/weiran-zsd/eslint-plugin-node/releases)
+- [GitHub Releases](https://github.com/eslint-community/eslint-plugin-n/releases)
 
 ## ❤️ Contributing
 

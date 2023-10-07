@@ -28,7 +28,6 @@
         "@eslint/js": "^8.43.0",
         "@types/eslint": "^8.44.2",
         "@typescript-eslint/parser": "^5.60.0",
-        "codecov": "^3.8.2",
         "esbuild": "^0.18.7",
         "eslint": "^8.43.0",
         "eslint-config-prettier": "^8.8.0",
@@ -54,7 +53,6 @@
     "scripts": {
         "build": "node scripts/update",
         "clean": "rimraf .nyc_output coverage",
-        "codecov": "nyc report --reporter text-lcov | codecov --pipe --disable=gcov -t $CODECOV_TOKEN",
         "coverage": "opener ./coverage/lcov-report/index.html",
         "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\"",
         "lint": "npm-run-all \"lint:*\"",
