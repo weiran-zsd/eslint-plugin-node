@@ -1,0 +1,8 @@
+{
+    "bin": "./bin.js",
+    "exports": "./index.js",
+    "files": [
+        "./index.js",
+        "bin.js"
+    ]
+}
