@@ -240,6 +240,7 @@ ruleTester.run("no-unpublished-require", rule, {
             env: { node: true },
         },
 
+        // https://github.com/eslint-community/eslint-plugin-n/issues/122
         // Allow files to start with './' in package.json#files
         {
             filename: fixture("issue99/test/bin.js"),
