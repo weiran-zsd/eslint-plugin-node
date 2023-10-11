@@ -15,13 +15,51 @@ new RuleTester().run("no-sync", rule, {
             options: [{ allowAtRootLevel: true }],
         },
         {
+            code: "var foo = fooSync;",
+            options: [{ allowAtRootLevel: true }],
+        },
+        {
             code: "if (true) {fs.fooSync();}",
+            options: [{ allowAtRootLevel: true }],
+        },
+        {
+            code: "if (true) {fooSync();}",
             options: [{ allowAtRootLevel: true }],
         },
     ],
     invalid: [
         {
             code: "var foo = fs.fooSync();",
+            errors: [
+                {
+                    messageId: "noSync",
+                    data: { propertyName: "fooSync" },
+                    type: "MemberExpression",
+                },
+            ],
+        },
+        {
+            code: "var foo = fs.fooSync.apply();",
+            errors: [
+                {
+                    messageId: "noSync",
+                    data: { propertyName: "fooSync" },
+                    type: "MemberExpression",
+                },
+            ],
+        },
+        {
+            code: "var foo = fooSync();",
+            errors: [
+                {
+                    messageId: "noSync",
+                    data: { propertyName: "fooSync" },
+                    type: "CallExpression",
+                },
+            ],
+        },
+        {
+            code: "var foo = fooSync.apply();",
             errors: [
                 {
                     messageId: "noSync",
