@@ -6,7 +6,7 @@
 [![Downloads](https://img.shields.io/npm/dm/eslint-plugin-n.svg)](https://www.npmjs.com/package/eslint-plugin-n)
 [![Build Status](https://github.com/eslint-community/eslint-plugin-n/workflows/CI/badge.svg)](https://github.com/eslint-community/eslint-plugin-n/actions)
 
-Additional ESLint's rules for Node.js
+Additional ESLint rules for Node.js
 
 ## 💿 Install & Usage
 
