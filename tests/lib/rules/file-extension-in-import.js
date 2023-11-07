@@ -155,6 +155,23 @@ new RuleTester({
             options: ["never", { ".json": "always" }],
         },
 
+        // Ignore sub-paths of modules
+        {
+            filename: fixture("test.js"),
+            code: "import '@apollo/client/core'",
+            options: ["always"],
+        },
+        {
+            filename: fixture("test.js"),
+            code: "import 'yargs/helpers'",
+            options: ["always"],
+        },
+        {
+            filename: fixture("test.js"),
+            code: "import 'firebase-functions/v1/auth'",
+            options: ["always"],
+        },
+
         // typescriptExtensionMap
         {
             filename: fixture("test.tsx"),
