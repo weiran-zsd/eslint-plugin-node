@@ -42,10 +42,6 @@ ruleTester.run("no-missing-require", rule, {
         },
         {
             filename: fixture("test.js"),
-            code: "require('eslint/lib/api');",
-        },
-        {
-            filename: fixture("test.js"),
             code: "require('./a');",
         },
         {
@@ -107,12 +103,12 @@ ruleTester.run("no-missing-require", rule, {
         },
         {
             filename: fixture("test.js"),
-            code: "require('fixtures/no-missing/a');",
+            code: "require('./fixtures/no-missing/a');",
             options: [{ resolvePaths: [path.resolve(__dirname, "../../")] }],
         },
         {
             filename: fixture("test.js"),
-            code: "require('fixtures/no-missing/a');",
+            code: "require('./fixtures/no-missing/a');",
             options: [{ resolvePaths: ["tests"] }],
         },
 
