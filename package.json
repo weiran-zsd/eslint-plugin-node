@@ -16,6 +16,7 @@
     "dependencies": {
         "@eslint-community/eslint-utils": "^4.4.0",
         "builtins": "^5.0.1",
+        "enhanced-resolve": "^5.15.0",
         "eslint-plugin-es-x": "^7.5.0",
         "get-tsconfig": "^4.7.0",
         "globals": "^13.24.0",
@@ -38,7 +39,6 @@
         "eslint-plugin-n": "file:.",
         "fast-glob": "^3.2.12",
         "husky": "^8.0.3",
-        "import-meta-resolve": "^3.0.0",
         "lint-staged": "^13.2.2",
         "markdownlint-cli": "^0.35.0",
         "mocha": "^10.2.0",

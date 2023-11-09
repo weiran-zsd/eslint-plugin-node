@@ -129,12 +129,6 @@ ruleTester.run("no-unpublished-import", rule, {
             options: [{ allowModules: ["electron"] }],
         },
 
-        // Should not fill in the extension
-        {
-            filename: fixture("2/test.js"),
-            code: "import ignore1 from './ignore1';",
-        },
-
         // Auto-published files only apply to root package directory
         {
             filename: fixture("3/src/readme.js"),
