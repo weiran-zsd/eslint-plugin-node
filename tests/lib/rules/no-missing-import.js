@@ -266,6 +266,17 @@ ruleTester.run("no-missing-import", rule, {
             code: "import d from './d.js';",
         },
 
+        // type only tests
+        {
+            filename: fixture("test.ts"),
+            parser: path.join(
+                __dirname,
+                "../../../node_modules/@typescript-eslint/parser"
+            ),
+            code: "import type d from 'types-only';",
+            env: { node: true },
+        },
+
         // import()
         ...(DynamicImportSupported
             ? [
