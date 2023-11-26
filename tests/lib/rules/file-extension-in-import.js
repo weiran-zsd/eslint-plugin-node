@@ -193,6 +193,17 @@ new RuleTester({
             code: "require('./e.js');",
             settings: { node: { typescriptExtensionMap: tsReactExtensionMap } },
         },
+
+        {
+            filename: fixture("ts-allow-extension/test.ts"),
+            code: "require('./file.js');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-allow-extension/test.ts"),
+            code: "require('./file.ts');",
+            env: { node: true },
+        },
     ],
     invalid: [
         {
