@@ -266,8 +266,21 @@ ruleTester.run("no-missing-import", rule, {
             code: "import d from './d.js';",
         },
 
-        // type only tests
         {
+            // name: "tsconfig - compilerOptions.paths - direct reference",
+            filename: fixture("ts-paths/test.ts"),
+            code: "import before from '@direct';",
+            env: { node: true },
+        },
+        {
+            // name: "tsconfig - compilerOptions.paths - wildcard reference",
+            filename: fixture("ts-paths/test.ts"),
+            code: "import before from '@wild/where.js';",
+            env: { node: true },
+        },
+
+        {
+            // name: 'Ensure type only packages can be imported',
             filename: fixture("test.ts"),
             parser: path.join(
                 __dirname,
