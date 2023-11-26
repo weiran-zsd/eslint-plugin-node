@@ -290,6 +290,17 @@ ruleTester.run("no-missing-import", rule, {
             env: { node: true },
         },
 
+        {
+            filename: fixture("ts-allow-extension/test.ts"),
+            code: "import './file.js';",
+            env: { node: true },
+        },
+        {
+            filename: fixture("ts-allow-extension/test.ts"),
+            code: "import './file.ts';",
+            env: { node: true },
+        },
+
         // import()
         ...(DynamicImportSupported
             ? [
