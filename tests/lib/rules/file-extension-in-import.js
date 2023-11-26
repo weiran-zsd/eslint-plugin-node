@@ -309,21 +309,28 @@ new RuleTester({
             options: ["never", { ".json": "always" }],
             errors: [{ messageId: "forbidExt", data: { ext: ".mjs" } }],
         },
+
         {
+            // name: '.js has a higher priority than .json'
             filename: fixture("test.js"),
             code: "import './multi'",
-            output: null,
+            output: "import './multi.js'",
             options: ["always"],
-            errors: [
-                { messageId: "requireExt", data: { ext: ".cjs or .mjs" } },
-            ],
+            errors: [{ messageId: "requireExt", data: { ext: ".js" } }],
         },
         {
             filename: fixture("test.js"),
-            code: "import './multi.cjs'",
+            code: "import './multi.js'",
             output: null,
             options: ["never"],
-            errors: [{ messageId: "forbidExt", data: { ext: ".cjs" } }],
+            errors: [{ messageId: "forbidExt", data: { ext: ".js" } }],
+        },
+        {
+            filename: fixture("test.js"),
+            code: "import './multi.json'",
+            output: null,
+            options: ["never"],
+            errors: [{ messageId: "forbidExt", data: { ext: ".json" } }],
         },
 
         // import()
