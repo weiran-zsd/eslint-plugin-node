@@ -8,6 +8,10 @@
 
 Additional ESLint rules for Node.js
 
+## 🎨 Playground
+
+[online-playground](https://eslint-online-playground.netlify.app/#eNp1jzEOwjAMRa9SeWFpYS8rOwtiIQxRalWBxIniFIFQ747bCASV2BK/Lz//J3AyG7xrHx2uLwwtWB9DytXKW2ZLfVP+q60iqGGN7CzlZCQbSNJPRVWlAO8ZqWMFbXWS3xxqE5rgvcyxU1BLKrqht9TS5oec67Kj0PcO+gI6MaZ9zDYUPEtnrfH6iIkFTHMFTmfkLLZ3gsOQDB4eEUvAh25w8p74qGiUTlGbq+6n9t+NOrztME4nkrG40M79/hgLbEqbZnHXRzu+APYwfks=)
+
 ## 💿 Install & Usage
 
 ```sh
