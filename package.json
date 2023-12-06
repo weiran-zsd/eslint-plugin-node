@@ -16,7 +16,7 @@
     "dependencies": {
         "@eslint-community/eslint-utils": "^4.4.0",
         "builtins": "^5.0.1",
-        "eslint-plugin-es-x": "^7.1.0",
+        "eslint-plugin-es-x": "^7.5.0",
         "get-tsconfig": "^4.7.0",
         "ignore": "^5.2.4",
         "is-builtin-module": "^3.2.1",
