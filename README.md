@@ -150,18 +150,30 @@ For [Shareable Configs](https://eslint.org/docs/latest/developer-guide/shareable
 
 ## 🔧 Configs
 
-This plugin provides three configs:
+<!-- begin auto-generated configs list -->
 
-| Name | Description |
-| :-- | :-- |
-| `plugin:n/recommended` | Considers both CommonJS and ES Modules. If [`"type":"module"` field](https://medium.com/@nodejs/announcing-a-new-experimental-modules-1be8d2d6c2ff#b023) existed in package.json then it considers files as ES Modules. Otherwise it considers files as CommonJS. In addition, it considers `*.mjs` files as ES Modules and `*.cjs` files as CommonJS. |
-| `plugin:n/recommended-module` | Considers all files as ES Modules. |
-| `plugin:n/recommended-script` | Considers all files as CommonJS. |
+|    | Name                      |
+| :- | :------------------------ |
+| 🟠 | `flat/mixed-esm-and-cjs`  |
+| ☑️ | `flat/recommended`        |
+| 🟢 | `flat/recommended-module` |
+| ✅  | `flat/recommended-script` |
+| ☑️ | `recommended`             |
+| 🟢 | `recommended-module`      |
+| ✅  | `recommended-script`      |
+
+<!-- end auto-generated configs list -->
+
+About each config:
+
+- `recommended`: Considers both CommonJS and ES Modules. If [`"type":"module"` field](https://medium.com/@nodejs/announcing-a-new-experimental-modules-1be8d2d6c2ff#b023) existed in package.json then it considers files as ES Modules. Otherwise it considers files as CommonJS. In addition, it considers `*.mjs` files as ES Modules and `*.cjs` files as CommonJS.
+- `recommended-module`: Considers all files as ES Modules.
+- `recommended-script`: Considers all files as CommonJS.
 
 These preset configs:
 
 - enable [no-process-exit](http://eslint.org/docs/rules/no-process-exit) rule because [the official document](https://nodejs.org/api/process.html#process_process_exit_code) does not recommend a use of `process.exit()`.
-- enable plugin rules which are given ✅ in the above table.
+- enable plugin rules indicated by emojis in the [rules table](#-rules).
 - add `{ecmaVersion: 2021}` and etc into `parserOptions`.
 - add proper globals into `globals`.
 - add this plugin into `plugins`.
