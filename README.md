@@ -95,56 +95,53 @@ For [Shareable Configs](https://eslint.org/docs/latest/developer-guide/shareable
 <!-- begin auto-generated rules list -->
 
 💼 [Configurations](https://github.com/eslint-community/eslint-plugin-n#-configs) enabled in.\
-☑️ Set in the `flat/recommended` [configuration](https://github.com/eslint-community/eslint-plugin-n#-configs).\
-🟢 Set in the `flat/recommended-module` [configuration](https://github.com/eslint-community/eslint-plugin-n#-configs).\
-✅ Set in the `flat/recommended-script` [configuration](https://github.com/eslint-community/eslint-plugin-n#-configs).\
 ☑️ Set in the `recommended` [configuration](https://github.com/eslint-community/eslint-plugin-n#-configs).\
 🟢 Set in the `recommended-module` [configuration](https://github.com/eslint-community/eslint-plugin-n#-configs).\
 ✅ Set in the `recommended-script` [configuration](https://github.com/eslint-community/eslint-plugin-n#-configs).\
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).\
 ❌ Deprecated.
 
-| Name                                                                                         | Description                                                                 | 💼              | 🔧 | ❌  |
-| :------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- | :-------------- | :- | :- |
-| [callback-return](docs/rules/callback-return.md)                                             | require `return` statements after callbacks                                 |                 |    |    |
-| [exports-style](docs/rules/exports-style.md)                                                 | enforce either `module.exports` or `exports`                                |                 | 🔧 |    |
-| [file-extension-in-import](docs/rules/file-extension-in-import.md)                           | enforce the style of file extensions in `import` declarations               |                 | 🔧 |    |
-| [global-require](docs/rules/global-require.md)                                               | require `require()` calls to be placed at top-level module scope            |                 |    |    |
-| [handle-callback-err](docs/rules/handle-callback-err.md)                                     | require error handling in callbacks                                         |                 |    |    |
-| [no-callback-literal](docs/rules/no-callback-literal.md)                                     | enforce Node.js-style error-first callback pattern is followed              |                 |    |    |
-| [no-deprecated-api](docs/rules/no-deprecated-api.md)                                         | disallow deprecated APIs                                                    | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-exports-assign](docs/rules/no-exports-assign.md)                                         | disallow the assignment to `exports`                                        | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-extraneous-import](docs/rules/no-extraneous-import.md)                                   | disallow `import` declarations which import extraneous modules              | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-extraneous-require](docs/rules/no-extraneous-require.md)                                 | disallow `require()` expressions which import extraneous modules            | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-hide-core-modules](docs/rules/no-hide-core-modules.md)                                   | disallow third-party modules which are hiding core modules                  |                 |    | ❌  |
-| [no-missing-import](docs/rules/no-missing-import.md)                                         | disallow `import` declarations which import non-existence modules           | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-missing-require](docs/rules/no-missing-require.md)                                       | disallow `require()` expressions which import non-existence modules         | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-mixed-requires](docs/rules/no-mixed-requires.md)                                         | disallow `require` calls to be mixed with regular variable declarations     |                 |    |    |
-| [no-new-require](docs/rules/no-new-require.md)                                               | disallow `new` operators with calls to `require`                            |                 |    |    |
-| [no-path-concat](docs/rules/no-path-concat.md)                                               | disallow string concatenation with `__dirname` and `__filename`             |                 |    |    |
-| [no-process-env](docs/rules/no-process-env.md)                                               | disallow the use of `process.env`                                           |                 |    |    |
-| [no-process-exit](docs/rules/no-process-exit.md)                                             | disallow the use of `process.exit()`                                        | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-restricted-import](docs/rules/no-restricted-import.md)                                   | disallow specified modules when loaded by `import` declarations             |                 |    |    |
-| [no-restricted-require](docs/rules/no-restricted-require.md)                                 | disallow specified modules when loaded by `require`                         |                 |    |    |
-| [no-sync](docs/rules/no-sync.md)                                                             | disallow synchronous methods                                                |                 |    |    |
-| [no-unpublished-bin](docs/rules/no-unpublished-bin.md)                                       | disallow `bin` files that npm ignores                                       | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-unpublished-import](docs/rules/no-unpublished-import.md)                                 | disallow `import` declarations which import private modules                 | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-unpublished-require](docs/rules/no-unpublished-require.md)                               | disallow `require()` expressions which import private modules               | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-unsupported-features](docs/rules/no-unsupported-features.md)                             | disallow unsupported ECMAScript features on the specified version           |                 |    | ❌  |
-| [no-unsupported-features/es-builtins](docs/rules/no-unsupported-features/es-builtins.md)     | disallow unsupported ECMAScript built-ins on the specified version          | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-unsupported-features/es-syntax](docs/rules/no-unsupported-features/es-syntax.md)         | disallow unsupported ECMAScript syntax on the specified version             | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [no-unsupported-features/node-builtins](docs/rules/no-unsupported-features/node-builtins.md) | disallow unsupported Node.js built-in APIs on the specified version         | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [prefer-global/buffer](docs/rules/prefer-global/buffer.md)                                   | enforce either `Buffer` or `require("buffer").Buffer`                       |                 |    |    |
-| [prefer-global/console](docs/rules/prefer-global/console.md)                                 | enforce either `console` or `require("console")`                            |                 |    |    |
-| [prefer-global/process](docs/rules/prefer-global/process.md)                                 | enforce either `process` or `require("process")`                            |                 |    |    |
-| [prefer-global/text-decoder](docs/rules/prefer-global/text-decoder.md)                       | enforce either `TextDecoder` or `require("util").TextDecoder`               |                 |    |    |
-| [prefer-global/text-encoder](docs/rules/prefer-global/text-encoder.md)                       | enforce either `TextEncoder` or `require("util").TextEncoder`               |                 |    |    |
-| [prefer-global/url](docs/rules/prefer-global/url.md)                                         | enforce either `URL` or `require("url").URL`                                |                 |    |    |
-| [prefer-global/url-search-params](docs/rules/prefer-global/url-search-params.md)             | enforce either `URLSearchParams` or `require("url").URLSearchParams`        |                 |    |    |
-| [prefer-promises/dns](docs/rules/prefer-promises/dns.md)                                     | enforce `require("dns").promises`                                           |                 |    |    |
-| [prefer-promises/fs](docs/rules/prefer-promises/fs.md)                                       | enforce `require("fs").promises`                                            |                 |    |    |
-| [process-exit-as-throw](docs/rules/process-exit-as-throw.md)                                 | require that `process.exit()` expressions use the same code path as `throw` | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [shebang](docs/rules/shebang.md)                                                             | require correct usage of shebang                                            | ☑️ 🟢 ✅ ☑️ 🟢 ✅ | 🔧 |    |
+| Name                                                                                         | Description                                                                 | 💼      | 🔧 | ❌  |
+| :------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- | :------ | :- | :- |
+| [callback-return](docs/rules/callback-return.md)                                             | require `return` statements after callbacks                                 |         |    |    |
+| [exports-style](docs/rules/exports-style.md)                                                 | enforce either `module.exports` or `exports`                                |         | 🔧 |    |
+| [file-extension-in-import](docs/rules/file-extension-in-import.md)                           | enforce the style of file extensions in `import` declarations               |         | 🔧 |    |
+| [global-require](docs/rules/global-require.md)                                               | require `require()` calls to be placed at top-level module scope            |         |    |    |
+| [handle-callback-err](docs/rules/handle-callback-err.md)                                     | require error handling in callbacks                                         |         |    |    |
+| [no-callback-literal](docs/rules/no-callback-literal.md)                                     | enforce Node.js-style error-first callback pattern is followed              |         |    |    |
+| [no-deprecated-api](docs/rules/no-deprecated-api.md)                                         | disallow deprecated APIs                                                    | ☑️ 🟢 ✅ |    |    |
+| [no-exports-assign](docs/rules/no-exports-assign.md)                                         | disallow the assignment to `exports`                                        | ☑️ 🟢 ✅ |    |    |
+| [no-extraneous-import](docs/rules/no-extraneous-import.md)                                   | disallow `import` declarations which import extraneous modules              | ☑️ 🟢 ✅ |    |    |
+| [no-extraneous-require](docs/rules/no-extraneous-require.md)                                 | disallow `require()` expressions which import extraneous modules            | ☑️ 🟢 ✅ |    |    |
+| [no-hide-core-modules](docs/rules/no-hide-core-modules.md)                                   | disallow third-party modules which are hiding core modules                  |         |    | ❌  |
+| [no-missing-import](docs/rules/no-missing-import.md)                                         | disallow `import` declarations which import non-existence modules           | ☑️ 🟢 ✅ |    |    |
+| [no-missing-require](docs/rules/no-missing-require.md)                                       | disallow `require()` expressions which import non-existence modules         | ☑️ 🟢 ✅ |    |    |
+| [no-mixed-requires](docs/rules/no-mixed-requires.md)                                         | disallow `require` calls to be mixed with regular variable declarations     |         |    |    |
+| [no-new-require](docs/rules/no-new-require.md)                                               | disallow `new` operators with calls to `require`                            |         |    |    |
+| [no-path-concat](docs/rules/no-path-concat.md)                                               | disallow string concatenation with `__dirname` and `__filename`             |         |    |    |
+| [no-process-env](docs/rules/no-process-env.md)                                               | disallow the use of `process.env`                                           |         |    |    |
+| [no-process-exit](docs/rules/no-process-exit.md)                                             | disallow the use of `process.exit()`                                        | ☑️ 🟢 ✅ |    |    |
+| [no-restricted-import](docs/rules/no-restricted-import.md)                                   | disallow specified modules when loaded by `import` declarations             |         |    |    |
+| [no-restricted-require](docs/rules/no-restricted-require.md)                                 | disallow specified modules when loaded by `require`                         |         |    |    |
+| [no-sync](docs/rules/no-sync.md)                                                             | disallow synchronous methods                                                |         |    |    |
+| [no-unpublished-bin](docs/rules/no-unpublished-bin.md)                                       | disallow `bin` files that npm ignores                                       | ☑️ 🟢 ✅ |    |    |
+| [no-unpublished-import](docs/rules/no-unpublished-import.md)                                 | disallow `import` declarations which import private modules                 | ☑️ 🟢 ✅ |    |    |
+| [no-unpublished-require](docs/rules/no-unpublished-require.md)                               | disallow `require()` expressions which import private modules               | ☑️ 🟢 ✅ |    |    |
+| [no-unsupported-features](docs/rules/no-unsupported-features.md)                             | disallow unsupported ECMAScript features on the specified version           |         |    | ❌  |
+| [no-unsupported-features/es-builtins](docs/rules/no-unsupported-features/es-builtins.md)     | disallow unsupported ECMAScript built-ins on the specified version          | ☑️ 🟢 ✅ |    |    |
+| [no-unsupported-features/es-syntax](docs/rules/no-unsupported-features/es-syntax.md)         | disallow unsupported ECMAScript syntax on the specified version             | ☑️ 🟢 ✅ |    |    |
+| [no-unsupported-features/node-builtins](docs/rules/no-unsupported-features/node-builtins.md) | disallow unsupported Node.js built-in APIs on the specified version         | ☑️ 🟢 ✅ |    |    |
+| [prefer-global/buffer](docs/rules/prefer-global/buffer.md)                                   | enforce either `Buffer` or `require("buffer").Buffer`                       |         |    |    |
+| [prefer-global/console](docs/rules/prefer-global/console.md)                                 | enforce either `console` or `require("console")`                            |         |    |    |
+| [prefer-global/process](docs/rules/prefer-global/process.md)                                 | enforce either `process` or `require("process")`                            |         |    |    |
+| [prefer-global/text-decoder](docs/rules/prefer-global/text-decoder.md)                       | enforce either `TextDecoder` or `require("util").TextDecoder`               |         |    |    |
+| [prefer-global/text-encoder](docs/rules/prefer-global/text-encoder.md)                       | enforce either `TextEncoder` or `require("util").TextEncoder`               |         |    |    |
+| [prefer-global/url](docs/rules/prefer-global/url.md)                                         | enforce either `URL` or `require("url").URL`                                |         |    |    |
+| [prefer-global/url-search-params](docs/rules/prefer-global/url-search-params.md)             | enforce either `URLSearchParams` or `require("url").URLSearchParams`        |         |    |    |
+| [prefer-promises/dns](docs/rules/prefer-promises/dns.md)                                     | enforce `require("dns").promises`                                           |         |    |    |
+| [prefer-promises/fs](docs/rules/prefer-promises/fs.md)                                       | enforce `require("fs").promises`                                            |         |    |    |
+| [process-exit-as-throw](docs/rules/process-exit-as-throw.md)                                 | require that `process.exit()` expressions use the same code path as `throw` | ☑️ 🟢 ✅ |    |    |
+| [shebang](docs/rules/shebang.md)                                                             | require correct usage of shebang                                            | ☑️ 🟢 ✅ | 🔧 |    |
 
 <!-- end auto-generated rules list -->
 
