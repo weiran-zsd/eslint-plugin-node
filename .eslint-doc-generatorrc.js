@@ -1,4 +1,6 @@
 "use strict"
+
+/** @type {import('eslint-doc-generator').GenerateOptions} */
 const config = {
     urlConfigs: "https://github.com/eslint-community/eslint-plugin-n#-configs",
     configEmoji: [
