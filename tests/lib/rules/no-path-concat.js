@@ -169,5 +169,3 @@ new RuleTester({
         },
     ],
 })
-
-/*eslint-enable no-template-curly-in-string */
