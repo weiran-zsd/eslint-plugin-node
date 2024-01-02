@@ -22,10 +22,8 @@ if (!DynamicImportSupported) {
 }
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-        sourceType: "module",
-    },
+    parserOptions: { sourceType: "module" },
+    env: { node: true, es6: true },
 }).run("no-restricted-import", rule, {
     valid: [
         { code: 'import "fs"', options: [["crypto"]] },

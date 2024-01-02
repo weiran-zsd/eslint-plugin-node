@@ -6,8 +6,9 @@
 
 const RuleTester = require("eslint").RuleTester
 const rule = require("../../../lib/rules/no-mixed-requires")
+const ruleTester = new RuleTester({ env: { node: true, es6: true } })
 
-new RuleTester().run("no-mixed-requires", rule, {
+ruleTester.run("no-mixed-requires", rule, {
     valid: [
         { code: "var a, b = 42, c = doStuff()", options: [false] },
         {

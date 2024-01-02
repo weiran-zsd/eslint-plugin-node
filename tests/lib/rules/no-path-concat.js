@@ -9,13 +9,9 @@ const RuleTester = require("eslint").RuleTester
 const rule = require("../../../lib/rules/no-path-concat")
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-    },
-    globals: {
-        __dirname: "readonly",
-        __filename: "readonly",
-        require: "readonly",
+    env: {
+        node: true,
+        es6: true,
     },
 }).run("no-path-concat", rule, {
     valid: [

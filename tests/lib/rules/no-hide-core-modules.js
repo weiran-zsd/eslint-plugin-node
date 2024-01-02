@@ -39,11 +39,8 @@ const INDIRECT_THIRD_PERTY = path.resolve(
 //------------------------------------------------------------------------------
 
 const tester = new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-        sourceType: "module",
-    },
-    globals: { require: false },
+    parserOptions: { sourceType: "module" },
+    env: { node: true, es6: true },
 })
 
 tester.run("no-hide-core-modules", rule, {

@@ -123,7 +123,7 @@ function fixture(name) {
     )
 }
 
-const ruleTester = new RuleTester()
+const ruleTester = new RuleTester({ env: { node: true, es6: true } })
 ruleTester.run(
     "no-unsupported-features",
     rule,

@@ -9,7 +9,7 @@ const rule = require("../../../lib/rules/global-require")
 
 const ERROR = { messageId: "unexpected", type: "CallExpression" }
 
-new RuleTester().run("global-require", rule, {
+new RuleTester({ env: { node: true, es6: true } }).run("global-require", rule, {
     valid: [
         "var x = require('y');",
         "if (x) { x.require('y'); }",
@@ -51,12 +51,10 @@ new RuleTester().run("global-require", rule, {
         // non-block statements
         {
             code: "var getModule = x => require(x);",
-            parserOptions: { ecmaVersion: 6 },
             errors: [ERROR],
         },
         {
             code: "var x = (x => require(x))('weird')",
-            parserOptions: { ecmaVersion: 6 },
             errors: [ERROR],
         },
         {

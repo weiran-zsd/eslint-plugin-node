@@ -7,7 +7,7 @@
 const RuleTester = require("eslint").RuleTester
 const rule = require("../../../lib/rules/no-new-require")
 
-new RuleTester().run("no-new-require", rule, {
+new RuleTester({ env: { node: true, es6: true } }).run("no-new-require", rule, {
     valid: [
         "var appHeader = require('app-header')",
         "var AppHeader = new (require('app-header'))",

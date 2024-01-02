@@ -8,13 +8,7 @@ const RuleTester = require("eslint").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/text-decoder")
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-    },
-    globals: {
-        TextDecoder: false,
-        require: false,
-    },
+    env: { node: true, es6: true },
 }).run("prefer-global/text-decoder", rule, {
     valid: [
         "var b = new TextDecoder(s)",

@@ -25,68 +25,56 @@ function fixture(name) {
     return path.resolve(__dirname, "../../fixtures/no-missing", name)
 }
 
-const ruleTester = new RuleTester()
+const ruleTester = new RuleTester({ env: { node: true, es6: true } })
 ruleTester.run("no-missing-require", rule, {
     valid: [
         {
             filename: fixture("test.js"),
             code: "require('fs');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('node:fs');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('eslint');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('eslint/lib/api');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./a');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./a.js');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./a.config');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./a.config.js');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./b');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./b.json');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./c.coffee');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('mocha');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
@@ -96,7 +84,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require('mocha!foo?a=b&c=d');",
-            env: { node: true },
         },
 
         // tryExtensions
@@ -104,12 +91,10 @@ ruleTester.run("no-missing-require", rule, {
             filename: fixture("test.js"),
             code: "require('./c');",
             options: [{ tryExtensions: [".coffee"] }],
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./c');",
-            env: { node: true },
             settings: { node: { tryExtensions: [".coffee"] } },
         },
 
@@ -117,7 +102,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require('fixtures/no-missing/a');",
-            env: { node: true },
             settings: {
                 node: { resolvePaths: [path.resolve(__dirname, "../../")] },
             },
@@ -126,48 +110,42 @@ ruleTester.run("no-missing-require", rule, {
             filename: fixture("test.js"),
             code: "require('fixtures/no-missing/a');",
             options: [{ resolvePaths: [path.resolve(__dirname, "../../")] }],
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('fixtures/no-missing/a');",
             options: [{ resolvePaths: ["tests"] }],
-            env: { node: true },
         },
 
         // Ignores it if not callee.
         {
             filename: fixture("test.js"),
             code: "require;",
-            env: { node: true },
         },
 
         // Ignores it if the global variable of `require` is not defined.
         {
             filename: fixture("test.js"),
             code: "require('no-exist-package-0');",
+            globals: { require: "off" },
         },
 
         // Ignores it if the filename is unknown.
         {
             code: "require('no-exist-package-0');",
-            env: { node: true },
         },
         {
             code: "require('./b');",
-            env: { node: true },
         },
 
         // Ignores it if the target is not string.
         {
             filename: fixture("test.js"),
             code: "require();",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require(foo);",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
@@ -179,34 +157,28 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: "tests/fixtures/no-missing/test.js",
             code: "require('eslint');",
-            env: { node: true },
         },
         {
             filename: "tests/fixtures/no-missing/test.js",
             code: "require('./a');",
-            env: { node: true },
         },
 
         // Relative paths to a directory should work.
         {
             filename: fixture("test.js"),
             code: "require('.');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./foo');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('./foo/');",
-            env: { node: true },
         },
 
         // allow option
@@ -214,20 +186,17 @@ ruleTester.run("no-missing-require", rule, {
             filename: fixture("test.js"),
             code: "require('electron');",
             options: [{ allowModules: ["electron"] }],
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
             code: "require('jquery.cookie');",
             options: [{ allowModules: ["jquery.cookie"] }],
-            env: { node: true },
         },
 
         // typescriptExtensionMap
         {
             filename: fixture("test.tsx"),
             code: "require('./d.js');",
-            env: { node: true },
             settings: {
                 node: { typescriptExtensionMap: tsReactExtensionMap },
             },
@@ -235,7 +204,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.ts"),
             code: "require('./d.js');",
-            env: { node: true },
             settings: {
                 node: { typescriptExtensionMap: tsReactExtensionMap },
             },
@@ -243,7 +211,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.tsx"),
             code: "require('./e.js');",
-            env: { node: true },
             settings: {
                 node: { typescriptExtensionMap: tsReactExtensionMap },
             },
@@ -251,7 +218,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.ts"),
             code: "require('./e.js');",
-            env: { node: true },
             settings: {
                 node: { typescriptExtensionMap: tsReactExtensionMap },
             },
@@ -260,25 +226,21 @@ ruleTester.run("no-missing-require", rule, {
             filename: fixture("test.tsx"),
             code: "require('./d.js');",
             options: [{ typescriptExtensionMap: tsReactExtensionMap }],
-            env: { node: true },
         },
         {
             filename: fixture("test.ts"),
             code: "require('./d.js');",
             options: [{ typescriptExtensionMap: tsReactExtensionMap }],
-            env: { node: true },
         },
         {
             filename: fixture("test.tsx"),
             code: "require('./e.js');",
             options: [{ typescriptExtensionMap: tsReactExtensionMap }],
-            env: { node: true },
         },
         {
             filename: fixture("test.ts"),
             code: "require('./e.js');",
             options: [{ typescriptExtensionMap: tsReactExtensionMap }],
-            env: { node: true },
         },
 
         // tsx mapping by name
@@ -286,25 +248,21 @@ ruleTester.run("no-missing-require", rule, {
             filename: fixture("test.tsx"),
             code: "require('./e.jsx');",
             options: [{ typescriptExtensionMap: "preserve" }],
-            env: { node: true },
         },
         {
             filename: fixture("test.tsx"),
             code: "require('./e.js');",
             options: [{ typescriptExtensionMap: "react" }],
-            env: { node: true },
         },
         {
             filename: fixture("test.tsx"),
             code: "require('./e.jsx');",
             settings: { node: { typescriptExtensionMap: "preserve" } },
-            env: { node: true },
         },
         {
             filename: fixture("test.tsx"),
             code: "require('./e.js');",
             settings: { node: { typescriptExtensionMap: "react" } },
-            env: { node: true },
         },
 
         // explicit tsx from config
@@ -313,14 +271,12 @@ ruleTester.run("no-missing-require", rule, {
             filename: fixture("ts-react/test.tsx"),
             code: "require('./e.jsx');",
             options: [{ tsconfigPath: fixture("ts-preserve/tsconfig.json") }],
-            env: { node: true },
         },
         {
             // name: "options[0] - react - e.tsx as e.js",
             filename: fixture("ts-preserve/test.tsx"),
             code: "require('./e.js');",
             options: [{ tsconfigPath: fixture("ts-react/tsconfig.json") }],
-            env: { node: true },
         },
         {
             // name: "settings.node - preserve - e.tsx as e.jsx",
@@ -329,7 +285,6 @@ ruleTester.run("no-missing-require", rule, {
             settings: {
                 node: { tsconfigPath: fixture("ts-preserve/tsconfig.json") },
             },
-            env: { node: true },
         },
         {
             // name: "settings.node - react - e.tsx as e.js",
@@ -338,77 +293,64 @@ ruleTester.run("no-missing-require", rule, {
             settings: {
                 node: { tsconfigPath: fixture("ts-react/tsconfig.json") },
             },
-            env: { node: true },
         },
 
         // implicit tsx from config
         {
             filename: fixture("ts-react/test.tsx"),
             code: "require('./e.js');",
-            env: { node: true },
         },
         {
             filename: fixture("ts-react/test.ts"),
             code: "require('./d.js');",
-            env: { node: true },
         },
         {
             filename: fixture("ts-preserve/test.tsx"),
             code: "require('./e.jsx');",
-            env: { node: true },
         },
         {
             filename: fixture("ts-preserve/test.ts"),
             code: "require('./d.js');",
-            env: { node: true },
         },
         {
             filename: fixture("ts-extends/test.tsx"),
             code: "require('./e.js');",
-            env: { node: true },
         },
         {
             filename: fixture("ts-extends/test.ts"),
             code: "require('./d.js');",
-            env: { node: true },
         },
 
         // require.resolve
         {
             filename: fixture("test.js"),
             code: "require.resolve('eslint');",
-            env: { node: true },
         },
     ],
     invalid: [
         {
             filename: fixture("test.js"),
             code: "require('no-exist-package-0');",
-            env: { node: true },
             errors: ['"no-exist-package-0" is not found.'],
         },
         {
             filename: fixture("test.js"),
             code: "require('@mysticatea/test');",
-            env: { node: true },
             errors: ['"@mysticatea/test" is not found.'],
         },
         {
             filename: fixture("test.js"),
             code: "require('./c');",
-            env: { node: true },
             errors: ['"./c" is not found.'],
         },
         {
             filename: fixture("test.js"),
             code: "require('./d');",
-            env: { node: true },
             errors: ['"./d" is not found.'],
         },
         {
             filename: fixture("test.js"),
             code: "require('./a.json');",
-            env: { node: true },
             errors: ['"./a.json" is not found.'],
         },
 
@@ -416,13 +358,11 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: "tests/fixtures/no-missing/test.js",
             code: "require('no-exist-package-0');",
-            env: { node: true },
             errors: ['"no-exist-package-0" is not found.'],
         },
         {
             filename: "tests/fixtures/no-missing/test.js",
             code: "require('./c');",
-            env: { node: true },
             errors: ['"./c" is not found.'],
         },
 
@@ -430,13 +370,11 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require('./bar');",
-            env: { node: true },
             errors: ['"./bar" is not found.'],
         },
         {
             filename: fixture("test.js"),
             code: "require('./bar/');",
-            env: { node: true },
             errors: ['"./bar/" is not found.'],
         },
 
@@ -444,7 +382,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require('./A');",
-            env: { node: true },
             errors: ['"./A" is not found.'],
         },
 
@@ -452,7 +389,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require.resolve('no-exist-package-0');",
-            env: { node: true },
             errors: ['"no-exist-package-0" is not found.'],
         },
     ],
@@ -475,7 +411,6 @@ describe("On specific working directory:", () => {
             {
                 filename: fixture("test.js"),
                 code: "require('../../lib/rules/no-missing-require');",
-                env: { node: true },
             },
         ],
         invalid: [],

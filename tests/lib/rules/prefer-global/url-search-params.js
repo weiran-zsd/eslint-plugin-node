@@ -8,13 +8,7 @@ const RuleTester = require("eslint").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/url-search-params")
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-    },
-    globals: {
-        URLSearchParams: false,
-        require: false,
-    },
+    env: { node: true, es6: true },
 }).run("prefer-global/url-search-params", rule, {
     valid: [
         "var b = new URLSearchParams(s)",

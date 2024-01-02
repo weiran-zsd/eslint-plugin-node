@@ -7,7 +7,7 @@
 const RuleTester = require("eslint").RuleTester
 const rule = require("../../../lib/rules/no-callback-literal")
 
-const ruleTester = new RuleTester()
+const ruleTester = new RuleTester({ env: { node: true, es6: true } })
 ruleTester.run("no-callback-literal", rule, {
     valid: [
         // random stuff

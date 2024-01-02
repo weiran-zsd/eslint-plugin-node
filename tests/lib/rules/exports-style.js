@@ -7,69 +7,69 @@
 const RuleTester = require("eslint").RuleTester
 const rule = require("../../../lib/rules/exports-style")
 
-new RuleTester().run("exports-style", rule, {
+new RuleTester({
+    env: { node: true, es6: true },
+    parserOptions: { ecmaVersion: 11 },
+}).run("exports-style", rule, {
     valid: [
         {
             code: "module.exports = {foo: 1}",
-            globals: { module: false, exports: true },
         },
         {
             code: "module.exports = {foo: 1}",
             options: ["module.exports"],
-            globals: { module: false, exports: true },
         },
         {
             code: "exports.foo = 1",
             options: ["exports"],
-            globals: { module: false, exports: true },
         },
         {
             code: "exports = module.exports = {foo: 1}",
             options: ["module.exports", { allowBatchAssign: true }],
-            globals: { module: false, exports: true },
         },
         {
             code: "module.exports = exports = {foo: 1}",
             options: ["module.exports", { allowBatchAssign: true }],
-            globals: { module: false, exports: true },
         },
         {
             code: "exports = module.exports = {foo: 1}",
             options: ["exports", { allowBatchAssign: true }],
-            globals: { module: false, exports: true },
         },
         {
             code: "module.exports = exports = {foo: 1}",
             options: ["exports", { allowBatchAssign: true }],
-            globals: { module: false, exports: true },
         },
         {
             code: "exports = module.exports = {foo: 1}; exports.bar = 2",
             options: ["exports", { allowBatchAssign: true }],
-            globals: { module: false, exports: true },
         },
         {
             code: "module.exports = exports = {foo: 1}; exports.bar = 2",
             options: ["exports", { allowBatchAssign: true }],
-            globals: { module: false, exports: true },
         },
 
         // allow accesses of `modules` except `module.exports`
         {
             code: "module = {}; module.foo = 1",
             options: ["exports"],
-            globals: { module: false, exports: true },
         },
 
         // Ignores if it's not defined.
-        { code: "exports.foo = 1", options: ["module.exports"] },
-        { code: "module.exports = {foo: 1}", options: ["exports"] },
+        {
+            code: "exports.foo = 1",
+            options: ["module.exports"],
+            globals: { exports: "off" },
+        },
+        {
+            code: "module.exports = {foo: 1}",
+            options: ["exports"],
+            globals: { module: "off" },
+        },
     ],
     invalid: [
         {
             code: "exports = {foo: 1}",
             output: null,
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'exports'. Use 'module.exports' instead.",
             ],
@@ -77,7 +77,6 @@ new RuleTester().run("exports-style", rule, {
         {
             code: "exports.foo = 1",
             output: null,
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'exports'. Use 'module.exports' instead.",
             ],
@@ -85,7 +84,6 @@ new RuleTester().run("exports-style", rule, {
         {
             code: "module.exports = exports = {foo: 1}",
             output: null,
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'exports'. Use 'module.exports' instead.",
             ],
@@ -93,7 +91,6 @@ new RuleTester().run("exports-style", rule, {
         {
             code: "exports = module.exports = {foo: 1}",
             output: null,
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'exports'. Use 'module.exports' instead.",
             ],
@@ -103,7 +100,6 @@ new RuleTester().run("exports-style", rule, {
             code: "exports = {foo: 1}",
             output: null,
             options: ["module.exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'exports'. Use 'module.exports' instead.",
             ],
@@ -112,7 +108,6 @@ new RuleTester().run("exports-style", rule, {
             code: "exports.foo = 1",
             output: null,
             options: ["module.exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'exports'. Use 'module.exports' instead.",
             ],
@@ -121,7 +116,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = exports = {foo: 1}",
             output: null,
             options: ["module.exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'exports'. Use 'module.exports' instead.",
             ],
@@ -130,7 +124,6 @@ new RuleTester().run("exports-style", rule, {
             code: "exports = module.exports = {foo: 1}",
             output: null,
             options: ["module.exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'exports'. Use 'module.exports' instead.",
             ],
@@ -140,7 +133,6 @@ new RuleTester().run("exports-style", rule, {
             code: "exports = {foo: 1}",
             output: null,
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected assignment to 'exports'. Don't modify 'exports' itself.",
             ],
@@ -149,7 +141,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = {foo: 1}",
             output: "exports.foo = 1;",
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -158,7 +149,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports.foo = 1",
             output: "exports.foo = 1",
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -167,7 +157,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { a: 1 }",
             output: "exports.a = 1;",
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -176,18 +165,14 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { a: 1, b: 2 }",
             output: "exports.a = 1;\n\nexports.b = 2;",
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
         },
         {
-            code:
-                "module.exports = { // before a\na: 1, // between a and b\nb: 2 // after b\n}",
-            output:
-                "// before a\nexports.a = 1;\n\n// between a and b\nexports.b = 2;\n// after b",
+            code: "module.exports = { // before a\na: 1, // between a and b\nb: 2 // after b\n}",
+            output: "// before a\nexports.a = 1;\n\n// between a and b\nexports.b = 2;\n// after b",
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -196,17 +181,14 @@ new RuleTester().run("exports-style", rule, {
             code: "foo(module.exports = {foo: 1})",
             output: null,
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
         },
         {
-            code:
-                "if(foo){ module.exports = { foo: 1};} else { module.exports = {foo: 2};}",
+            code: "if(foo){ module.exports = { foo: 1};} else { module.exports = {foo: 2};}",
             output: null,
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
@@ -216,7 +198,6 @@ new RuleTester().run("exports-style", rule, {
             code: "function bar() { module.exports = { foo: 1 }; }",
             output: null,
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -225,7 +206,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { get a() {} }",
             output: null,
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -234,7 +214,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { set a(a) {} }",
             output: null,
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -243,8 +222,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { a }",
             output: "exports.a = a;",
             options: ["exports"],
-            parserOptions: { ecmaVersion: 6 },
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -253,8 +230,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { ...a }",
             output: null,
             options: ["exports"],
-            parserOptions: { ecmaVersion: 9 },
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -263,8 +238,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { ['a' + 'b']: 1 }",
             output: "exports['a' + 'b'] = 1;",
             options: ["exports"],
-            parserOptions: { ecmaVersion: 6 },
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -273,8 +246,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { 'foo': 1 }",
             output: "exports['foo'] = 1;",
             options: ["exports"],
-            parserOptions: { ecmaVersion: 6 },
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -283,8 +254,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { foo(a) {} }",
             output: "exports.foo = function (a) {};",
             options: ["exports"],
-            parserOptions: { ecmaVersion: 8 },
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -293,8 +262,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { *foo(a) {} }",
             output: "exports.foo = function* (a) {};",
             options: ["exports"],
-            parserOptions: { ecmaVersion: 6 },
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -303,8 +270,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = { async foo(a) {} }",
             output: "exports.foo = async function (a) {};",
             options: ["exports"],
-            parserOptions: { ecmaVersion: 8 },
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -313,8 +278,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports.foo()",
             output: "exports.foo()",
             options: ["exports"],
-            parserOptions: { ecmaVersion: 8 },
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
             ],
@@ -323,8 +286,6 @@ new RuleTester().run("exports-style", rule, {
             code: "a = module.exports.foo + module.exports['bar']",
             output: "a = exports.foo + exports['bar']",
             options: ["exports"],
-            parserOptions: { ecmaVersion: 8 },
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
@@ -334,7 +295,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = exports = {foo: 1}",
             output: null,
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
                 "Unexpected assignment to 'exports'. Don't modify 'exports' itself.",
@@ -344,7 +304,6 @@ new RuleTester().run("exports-style", rule, {
             code: "exports = module.exports = {foo: 1}",
             output: null,
             options: ["exports"],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected assignment to 'exports'. Don't modify 'exports' itself.",
                 "Unexpected access to 'module.exports'. Use 'exports' instead.",
@@ -354,7 +313,6 @@ new RuleTester().run("exports-style", rule, {
             code: "module.exports = exports = {foo: 1}; exports = obj",
             output: null,
             options: ["exports", { allowBatchAssign: true }],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected assignment to 'exports'. Don't modify 'exports' itself.",
             ],
@@ -363,7 +321,6 @@ new RuleTester().run("exports-style", rule, {
             code: "exports = module.exports = {foo: 1}; exports = obj",
             output: null,
             options: ["exports", { allowBatchAssign: true }],
-            globals: { module: false, exports: true },
             errors: [
                 "Unexpected assignment to 'exports'. Don't modify 'exports' itself.",
             ],

@@ -8,13 +8,7 @@ const RuleTester = require("eslint").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/console")
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-    },
-    globals: {
-        console: false,
-        require: false,
-    },
+    env: { node: true, es6: true },
 }).run("prefer-global/console", rule, {
     valid: [
         "console.log(10)",

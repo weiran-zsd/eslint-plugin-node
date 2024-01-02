@@ -7,7 +7,7 @@
 const RuleTester = require("eslint").RuleTester
 const rule = require("../../../lib/rules/no-sync")
 
-new RuleTester().run("no-sync", rule, {
+new RuleTester({ env: { node: true, es6: true } }).run("no-sync", rule, {
     valid: [
         "var foo = fs.foo.foo();",
         {

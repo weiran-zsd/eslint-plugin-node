@@ -27,18 +27,8 @@ function concat(patterns) {
 }
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-        sourceType: "module",
-    },
-    globals: {
-        Buffer: false,
-        URL: false,
-        URLSearchParams: false,
-        console: false,
-        process: false,
-        require: false,
-    },
+    parserOptions: { sourceType: "module" },
+    env: { node: true, es6: true },
 }).run(
     "no-unsupported-features/node-builtins",
     rule,
