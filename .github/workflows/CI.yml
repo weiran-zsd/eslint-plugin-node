@@ -31,10 +31,9 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
-        eslint: [8.x, 7.x]
+        eslint: [8.x]
         node: [18.x, 20.x]
         include:
-          # run on node lts(ubuntu-latest)
           - os: ubuntu-latest
             node: "16.0.x"
             eslint: "8.x"
@@ -44,6 +43,9 @@ jobs:
           - os: ubuntu-latest
             node: "19.x"
             eslint: "8.x"
+          - os: ubuntu-latest
+            node: "20.x"
+            eslint: "7.0.x"
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -57,10 +59,7 @@ jobs:
       - name: Install Packages
         run: npm install
       - name: Install ESLint ${{ matrix.eslint }}
-        # We need to execute this command twice because of npm's bug.
-        # See also: https://npm.community/t/error-node-modules-staging-eslint-e7cf6846-node-modules-eslint
         run: |
-          npm install --no-save eslint@${{ matrix.eslint }}
-          npm install --no-save eslint@${{ matrix.eslint }}
+          npm install --no-save --force eslint@${{ matrix.eslint }}
       - name: Test
         run: npm run -s test:ci
