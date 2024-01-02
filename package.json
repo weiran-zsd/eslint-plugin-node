@@ -31,7 +31,6 @@
         "@eslint/js": "^8.43.0",
         "@types/eslint": "^8.44.6",
         "@typescript-eslint/parser": "^5.60.0",
-        "esbuild": "^0.18.7",
         "eslint": "^8",
         "eslint-config-prettier": "^8.8.0",
         "eslint-doc-generator": "^1.6.1",
