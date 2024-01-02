@@ -42,7 +42,7 @@ ruleTester.run("no-missing-require", rule, {
         },
         {
             filename: fixture("test.js"),
-            code: "require('eslint/use-at-your-own-risk');",
+            code: "require('rimraf/package.json');",
             env: { node: true },
         },
         {
