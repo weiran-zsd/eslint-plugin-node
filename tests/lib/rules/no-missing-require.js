@@ -42,6 +42,11 @@ ruleTester.run("no-missing-require", rule, {
         },
         {
             filename: fixture("test.js"),
+            code: "require('eslint/use-at-your-own-risk');",
+            env: { node: true },
+        },
+        {
+            filename: fixture("test.js"),
             code: "require('./a');",
         },
         {
