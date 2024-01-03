@@ -17,7 +17,7 @@ function fixture(name) {
     return path.resolve(__dirname, "../../fixtures/shebang", name)
 }
 
-const ruleTester = new RuleTester()
+const ruleTester = new RuleTester({ env: { node: true, es6: true } })
 ruleTester.run("shebang", rule, {
     valid: [
         {

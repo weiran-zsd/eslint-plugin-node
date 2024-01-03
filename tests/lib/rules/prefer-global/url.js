@@ -8,13 +8,7 @@ const RuleTester = require("eslint").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/url")
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-    },
-    globals: {
-        URL: false,
-        require: false,
-    },
+    env: { node: true, es6: true },
 }).run("prefer-global/url", rule, {
     valid: [
         "var b = new URL(s)",

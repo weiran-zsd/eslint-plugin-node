@@ -7,7 +7,7 @@
 const RuleTester = require("eslint").RuleTester
 const rule = require("../../../lib/rules/no-process-env")
 
-new RuleTester().run("no-process-env", rule, {
+new RuleTester({ env: { node: true, es6: true } }).run("no-process-env", rule, {
     valid: [
         "Process.env",
         "process[env]",

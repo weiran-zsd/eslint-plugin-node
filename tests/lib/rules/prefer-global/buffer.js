@@ -8,13 +8,7 @@ const RuleTester = require("eslint").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/buffer")
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-    },
-    globals: {
-        Buffer: false,
-        require: false,
-    },
+    env: { node: true, es6: true },
 }).run("prefer-global/buffer", rule, {
     valid: [
         "var b = Buffer.alloc(10)",

@@ -8,13 +8,7 @@ const RuleTester = require("eslint").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/process")
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-    },
-    globals: {
-        process: false,
-        require: false,
-    },
+    env: { node: true, es6: true },
 }).run("prefer-global/process", rule, {
     valid: [
         "process.exit(0)",

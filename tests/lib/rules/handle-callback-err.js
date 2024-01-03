@@ -6,6 +6,7 @@
 
 const RuleTester = require("eslint").RuleTester
 const rule = require("../../../lib/rules/handle-callback-err")
+const ruleTester = new RuleTester({ env: { node: true, es6: true } })
 
 const EXPECTED_DECL_ERROR = {
     messageId: "expected",
@@ -16,7 +17,7 @@ const EXPECTED_FUNC_ERROR = {
     type: "FunctionExpression",
 }
 
-new RuleTester().run("handle-callback-err", rule, {
+ruleTester.run("handle-callback-err", rule, {
     valid: [
         "function test(error) {}",
         "function test(err) {console.log(err);}",
@@ -34,11 +35,14 @@ new RuleTester().run("handle-callback-err", rule, {
         "function userHandler(err) {process.nextTick(function() {if (err) {}})}",
         "function help() { function userHandler(err) {function tester() { err; process.nextTick(function() { err; }); } } }",
         "function help(done) { var err = new Error('error'); done(); }",
-        { code: "var test = err => err;", parserOptions: { ecmaVersion: 6 } },
-        { code: "var test = err => !err;", parserOptions: { ecmaVersion: 6 } },
+        {
+            code: "var test = err => err;",
+        },
+        {
+            code: "var test = err => !err;",
+        },
         {
             code: "var test = err => err.message;",
-            parserOptions: { ecmaVersion: 6 },
         },
         {
             code: "var test = function(error) {if(error){/* do nothing */}};",
@@ -47,7 +51,6 @@ new RuleTester().run("handle-callback-err", rule, {
         {
             code: "var test = (error) => {if(error){/* do nothing */}};",
             options: ["error"],
-            parserOptions: { ecmaVersion: 6 },
         },
         {
             code: "var test = function(error) {if(! error){doSomethingHere();}};",
@@ -76,7 +79,10 @@ new RuleTester().run("handle-callback-err", rule, {
     ],
     invalid: [
         { code: "function test(err) {}", errors: [EXPECTED_DECL_ERROR] },
-        { code: "function test(err, data) {}", errors: [EXPECTED_DECL_ERROR] },
+        {
+            code: "function test(err, data) {}",
+            errors: [EXPECTED_DECL_ERROR],
+        },
         {
             code: "function test(err) {errorLookingWord();}",
             errors: [EXPECTED_DECL_ERROR],
@@ -91,10 +97,12 @@ new RuleTester().run("handle-callback-err", rule, {
         },
         {
             code: "var test = (err) => {};",
-            parserOptions: { ecmaVersion: 6 },
             errors: [{ messageId: "expected" }],
         },
-        { code: "var test = function(err) {};", errors: [EXPECTED_FUNC_ERROR] },
+        {
+            code: "var test = function(err) {};",
+            errors: [EXPECTED_FUNC_ERROR],
+        },
         {
             code: "var test = function test(err, data) {};",
             errors: [EXPECTED_FUNC_ERROR],

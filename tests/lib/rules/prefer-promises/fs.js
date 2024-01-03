@@ -8,13 +8,8 @@ const RuleTester = require("eslint").RuleTester
 const rule = require("../../../../lib/rules/prefer-promises/fs")
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-        sourceType: "module",
-    },
-    globals: {
-        require: false,
-    },
+    parserOptions: { sourceType: "module" },
+    env: { node: true, es6: true },
 }).run("prefer-promises/fs", rule, {
     valid: [
         "const fs = require('fs'); fs.createReadStream()",

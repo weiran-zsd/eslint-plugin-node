@@ -31,10 +31,8 @@ function fixture(name) {
 }
 
 const ruleTester = new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
-        sourceType: "module",
-    },
+    parserOptions: { sourceType: "module" },
+    env: { node: true, es6: true },
 })
 ruleTester.run("no-extraneous-import", rule, {
     valid: [

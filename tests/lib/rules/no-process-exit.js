@@ -6,8 +6,9 @@
 
 const RuleTester = require("eslint").RuleTester
 const rule = require("../../../lib/rules/no-process-exit")
+const ruleTester = new RuleTester({ env: { node: true, es6: true } })
 
-new RuleTester().run("no-process-exit", rule, {
+ruleTester.run("no-process-exit", rule, {
     valid: ["Process.exit()", "var exit = process.exit;", "f(process.exit)"],
 
     invalid: [
