@@ -5,7 +5,8 @@
 "use strict"
 
 const path = require("path")
-const { Linter, RuleTester } = require("eslint")
+const { Linter } = require("eslint")
+const { RuleTester } = require("#eslint-rule-tester")
 const rule = require("../../../lib/rules/no-restricted-import")
 
 const DynamicImportSupported = (() => {
