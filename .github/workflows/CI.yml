@@ -35,17 +35,11 @@ jobs:
         node: [18.x, 20.x]
         include:
           - os: ubuntu-latest
-            node: "16.0.x"
-            eslint: "8.x"
-          - os: ubuntu-latest
-            node: "16.x"
-            eslint: "8.x"
-          - os: ubuntu-latest
-            node: "19.x"
+            node: "21.x"
             eslint: "8.x"
           - os: ubuntu-latest
             node: "20.x"
-            eslint: "7.0.x"
+            eslint: "9.0.0-alpha.0"
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -53,7 +47,7 @@ jobs:
         with:
           fetch-depth: 1
       - name: Install Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
       - name: Install Packages
