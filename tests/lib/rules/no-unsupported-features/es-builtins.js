@@ -4,8 +4,7 @@
  */
 "use strict"
 
-const { RuleTester } = require("eslint")
-const { builtin } = require("globals")
+const { RuleTester } = require("#eslint-rule-tester")
 const rule = require("../../../../lib/rules/no-unsupported-features/es-builtins")
 
 /**
@@ -65,8 +64,7 @@ function concat(patterns) {
 }
 
 const ruleTester = new RuleTester({
-    parserOptions: { ecmaVersion: 2018 },
-    globals: builtin,
+    languageOptions: { ecmaVersion: 2018, env: {node: false} },
 })
 ruleTester.run(
     "no-unsupported-features/es-builtins",

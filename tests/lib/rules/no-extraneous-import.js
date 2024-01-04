@@ -9,7 +9,7 @@ const { Linter, RuleTester } = require("eslint")
 const rule = require("../../../lib/rules/no-extraneous-import")
 
 const DynamicImportSupported = (() => {
-    const config = { parserOptions: { ecmaVersion: 2020 } }
+    const config = { languageOptions: { ecmaVersion: 2020 } }
     const messages = new Linter().verify("import(s)", config)
     return messages.length === 0
 })()
@@ -31,8 +31,7 @@ function fixture(name) {
 }
 
 const ruleTester = new RuleTester({
-    parserOptions: { sourceType: "module" },
-    env: { node: true, es6: true },
+    languageOptions: { sourceType: "module" },
 })
 ruleTester.run("no-extraneous-import", rule, {
     valid: [
@@ -103,7 +102,7 @@ ruleTester.run("no-extraneous-import", rule, {
                   {
                       filename: fixture("dependencies/a.js"),
                       code: "function f() { import('bbb') }",
-                      parserOptions: { ecmaVersion: 2020 },
+                      languageOptions: { ecmaVersion: 2020 },
                       errors: ['"bbb" is extraneous.'],
                   },
               ]

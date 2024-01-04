@@ -4,9 +4,9 @@
  */
 "use strict"
 
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/handle-callback-err")
-const ruleTester = new RuleTester({ env: { node: true, es6: true } })
+const ruleTester = new RuleTester()
 
 const EXPECTED_DECL_ERROR = {
     messageId: "expected",

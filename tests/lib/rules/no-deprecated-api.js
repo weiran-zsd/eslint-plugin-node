@@ -4,10 +4,10 @@
  */
 "use strict"
 
-const { RuleTester } = require("eslint")
+const { RuleTester } = require("#eslint-rule-tester")
 const rule = require("../../../lib/rules/no-deprecated-api")
 
-const ruleTester = new RuleTester({ env: { node: true, es6: true } })
+const ruleTester = new RuleTester()
 ruleTester.run("no-deprecated-api", rule, {
     valid: [
         {
@@ -36,13 +36,11 @@ ruleTester.run("no-deprecated-api", rule, {
         },
         {
             code: "import {Buffer} from 'another-buffer'; new Buffer()",
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
         },
         {
             code: "import {request} from 'http'; request()",
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
         },
 
         // On Node v6.8.0, fs.existsSync revived.
@@ -56,8 +54,7 @@ ruleTester.run("no-deprecated-api", rule, {
         },
         {
             code: "import domain from 'domain/';",
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
         },
 
         // https://github.com/mysticatea/eslint-plugin-node/issues/55
@@ -648,8 +645,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "import b from 'buffer'; new b.Buffer()",
             options: [{ version: "6.0.0" }],
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
             errors: [
                 "'new buffer.Buffer()' was deprecated since v6.0.0. Use 'buffer.Buffer.alloc()' or 'buffer.Buffer.from()' instead.",
             ],
@@ -657,8 +653,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "import b from 'node:buffer'; new b.Buffer()",
             options: [{ version: "6.0.0" }],
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
             errors: [
                 "'new buffer.Buffer()' was deprecated since v6.0.0. Use 'buffer.Buffer.alloc()' or 'buffer.Buffer.from()' instead.",
             ],
@@ -666,8 +661,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "import * as b from 'buffer'; new b.Buffer()",
             options: [{ version: "6.0.0" }],
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
             errors: [
                 "'new buffer.Buffer()' was deprecated since v6.0.0. Use 'buffer.Buffer.alloc()' or 'buffer.Buffer.from()' instead.",
             ],
@@ -675,8 +669,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "import * as b from 'buffer'; new b.default.Buffer()",
             options: [{ version: "6.0.0" }],
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
             errors: [
                 "'new buffer.Buffer()' was deprecated since v6.0.0. Use 'buffer.Buffer.alloc()' or 'buffer.Buffer.from()' instead.",
             ],
@@ -684,8 +677,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "import {Buffer as b} from 'buffer'; new b()",
             options: [{ version: "6.0.0" }],
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
             errors: [
                 "'new buffer.Buffer()' was deprecated since v6.0.0. Use 'buffer.Buffer.alloc()' or 'buffer.Buffer.from()' instead.",
             ],
@@ -693,8 +685,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "import b from 'buffer'; b.SlowBuffer",
             options: [{ version: "6.0.0" }],
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
             errors: [
                 "'buffer.SlowBuffer' was deprecated since v6.0.0. Use 'buffer.Buffer.allocUnsafeSlow()' instead.",
             ],
@@ -702,8 +693,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "import * as b from 'buffer'; b.SlowBuffer",
             options: [{ version: "6.0.0" }],
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
             errors: [
                 "'buffer.SlowBuffer' was deprecated since v6.0.0. Use 'buffer.Buffer.allocUnsafeSlow()' instead.",
             ],
@@ -711,8 +701,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "import * as b from 'buffer'; b.default.SlowBuffer",
             options: [{ version: "6.0.0" }],
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
             errors: [
                 "'buffer.SlowBuffer' was deprecated since v6.0.0. Use 'buffer.Buffer.allocUnsafeSlow()' instead.",
             ],
@@ -720,8 +709,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "import {SlowBuffer as b} from 'buffer';",
             options: [{ version: "6.0.0" }],
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
             errors: [
                 "'buffer.SlowBuffer' was deprecated since v6.0.0. Use 'buffer.Buffer.allocUnsafeSlow()' instead.",
             ],
@@ -729,8 +717,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "import domain from 'domain';",
             options: [{ version: "4.0.0" }],
-            parserOptions: { sourceType: "module" },
-            env: { es6: true },
+            languageOptions: { sourceType: "module" },
             errors: ["'domain' module was deprecated since v4.0.0."],
         },
 

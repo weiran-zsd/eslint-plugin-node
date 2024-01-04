@@ -9,7 +9,7 @@ const { Linter, RuleTester } = require("eslint")
 const rule = require("../../../lib/rules/no-missing-import")
 
 const DynamicImportSupported = (() => {
-    const config = { parserOptions: { ecmaVersion: 2020 } }
+    const config = { languageOptions: { ecmaVersion: 2020 } }
     const messages = new Linter().verify("import(s)", config)
     return messages.length === 0
 })()
@@ -39,12 +39,8 @@ function fixture(name) {
 }
 
 const ruleTester = new RuleTester({
-    parserOptions: {
+    languageOptions: {
         sourceType: "module",
-    },
-    env: {
-        node: true,
-        es6: true,
     },
 })
 ruleTester.run("no-missing-import", rule, {
@@ -275,7 +271,7 @@ ruleTester.run("no-missing-import", rule, {
                   {
                       filename: fixture("test.js"),
                       code: "function f() { import(foo) }",
-                      parserOptions: { ecmaVersion: 2020 },
+                      languageOptions: { ecmaVersion: 2020 },
                   },
               ]
             : []),
@@ -375,7 +371,7 @@ ruleTester.run("no-missing-import", rule, {
                   {
                       filename: fixture("test.js"),
                       code: "function f() { import('no-exist-package-0') }",
-                      parserOptions: { ecmaVersion: 2020 },
+                      languageOptions: { ecmaVersion: 2020 },
                       errors: ['"no-exist-package-0" is not found.'],
                   },
               ]

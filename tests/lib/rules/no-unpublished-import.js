@@ -9,7 +9,7 @@ const { Linter, RuleTester } = require("eslint")
 const rule = require("../../../lib/rules/no-unpublished-import")
 
 const DynamicImportSupported = (() => {
-    const config = { parserOptions: { ecmaVersion: 2020 } }
+    const config = { languageOptions: { ecmaVersion: 2020 } }
     const messages = new Linter().verify("import(s)", config)
     return messages.length === 0
 })()
@@ -31,9 +31,9 @@ function fixture(name) {
 }
 
 const ruleTester = new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
+    languageOptions: {
         sourceType: "module",
+        env: {node: false},
     },
 })
 ruleTester.run("no-unpublished-import", rule, {
@@ -278,7 +278,7 @@ ruleTester.run("no-unpublished-import", rule, {
                   {
                       filename: fixture("2/test.js"),
                       code: "function f() { import('./ignore1.js') }",
-                      parserOptions: { ecmaVersion: 2020 },
+                      languageOptions: { ecmaVersion: 2020 },
                       errors: ['"./ignore1.js" is not published.'],
                   },
               ]

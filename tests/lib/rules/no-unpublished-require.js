@@ -5,7 +5,7 @@
 "use strict"
 
 const path = require("path")
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/no-unpublished-require")
 
 /**
@@ -17,7 +17,7 @@ function fixture(name) {
     return path.resolve(__dirname, "../../fixtures/no-unpublished", name)
 }
 
-const ruleTester = new RuleTester({ env: { node: true, es6: true } })
+const ruleTester = new RuleTester()
 ruleTester.run("no-unpublished-require", rule, {
     valid: [
         {
@@ -181,7 +181,7 @@ ruleTester.run("no-unpublished-require", rule, {
         {
             filename: fixture("1/test.js"),
             code: "require(`foo${bar}`);",
-            env: { node: true, es6: true },
+            env: { node: true },
         },
 
         // Should work fine if the filename is relative.

@@ -13,6 +13,9 @@ module.exports = [
     {
         languageOptions: { globals: globals.mocha },
         linterOptions: { reportUnusedDisableDirectives: true },
+        settings: {
+            n: { allowModules: ["#eslint-rule-tester"] }, // the plugin does not support import-maps yet.
+        },
     },
     {
         ignores: [
@@ -27,7 +30,9 @@ module.exports = [
     nodeRecommended,
     eslintPluginConfig,
     prettierConfig,
-    { rules: { "eslint-plugin/require-meta-docs-description": "error" } },
+    {
+        rules: { "eslint-plugin/require-meta-docs-description": "error" },
+    },
     {
         // these messageIds were used outside
         files: ["lib/rules/prefer-global/*.js"],

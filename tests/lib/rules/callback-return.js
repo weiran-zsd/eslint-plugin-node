@@ -4,9 +4,9 @@
  */
 "use strict"
 
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/callback-return")
-const ruleTester = new RuleTester({ env: { node: true, es6: true } })
+const ruleTester = new RuleTester()
 
 ruleTester.run("callback-return", rule, {
     valid: [

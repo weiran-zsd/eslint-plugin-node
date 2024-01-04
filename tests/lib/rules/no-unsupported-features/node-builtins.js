@@ -4,7 +4,7 @@
  */
 "use strict"
 
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../../lib/rules/no-unsupported-features/node-builtins")
 
 /**
@@ -27,8 +27,7 @@ function concat(patterns) {
 }
 
 new RuleTester({
-    parserOptions: { sourceType: "module" },
-    env: { node: true, es6: true },
+    languageOptions: { sourceType: "module" },
 }).run(
     "no-unsupported-features/node-builtins",
     rule,

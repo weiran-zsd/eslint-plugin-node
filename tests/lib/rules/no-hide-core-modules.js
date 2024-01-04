@@ -14,7 +14,7 @@
 //------------------------------------------------------------------------------
 
 const path = require("path")
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/no-hide-core-modules")
 
 //------------------------------------------------------------------------------
@@ -39,8 +39,7 @@ const INDIRECT_THIRD_PERTY = path.resolve(
 //------------------------------------------------------------------------------
 
 const tester = new RuleTester({
-    parserOptions: { sourceType: "module" },
-    env: { node: true, es6: true },
+    languageOptions: { sourceType: "module" },
 })
 
 tester.run("no-hide-core-modules", rule, {

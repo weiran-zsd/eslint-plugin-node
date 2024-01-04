@@ -9,7 +9,7 @@ const { Linter, RuleTester } = require("eslint")
 const rule = require("../../../lib/rules/no-restricted-import")
 
 const DynamicImportSupported = (() => {
-    const config = { parserOptions: { ecmaVersion: 2020 } }
+    const config = { languageOptions: { ecmaVersion: 2020 } }
     const messages = new Linter().verify("import(s)", config)
     return messages.length === 0
 })()
@@ -22,8 +22,7 @@ if (!DynamicImportSupported) {
 }
 
 new RuleTester({
-    parserOptions: { sourceType: "module" },
-    env: { node: true, es6: true },
+    languageOptions: { sourceType: "module" },
 }).run("no-restricted-import", rule, {
     valid: [
         { code: 'import "fs"', options: [["crypto"]] },
@@ -74,7 +73,7 @@ new RuleTester({
                   {
                       code: "import(fs)",
                       options: [["fs"]],
-                      parserOptions: { ecmaVersion: 2020 },
+                      languageOptions: { ecmaVersion: 2020 },
                   },
               ]
             : []),
@@ -271,7 +270,7 @@ new RuleTester({
                   {
                       code: 'import("fs")',
                       options: [["fs"]],
-                      parserOptions: { ecmaVersion: 2020 },
+                      languageOptions: { ecmaVersion: 2020 },
                       errors: [
                           {
                               messageId: "restricted",

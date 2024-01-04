@@ -4,13 +4,11 @@
  */
 "use strict"
 
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/exports-style")
 
-new RuleTester({
-    env: { node: true, es6: true },
-    parserOptions: { ecmaVersion: 11 },
-}).run("exports-style", rule, {
+new RuleTester({ languageOptions: { ecmaVersion: 11 }, })
+    .run("exports-style", rule, {
     valid: [
         {
             code: "module.exports = {foo: 1}",

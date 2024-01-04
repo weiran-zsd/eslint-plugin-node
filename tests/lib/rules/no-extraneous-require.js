@@ -5,7 +5,7 @@
 "use strict"
 
 const path = require("path")
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/no-extraneous-require")
 
 /**
@@ -17,7 +17,7 @@ function fixture(name) {
     return path.resolve(__dirname, "../../fixtures/no-extraneous", name)
 }
 
-const tester = new RuleTester({ env: { node: true } })
+const tester = new RuleTester()
 
 tester.run("no-extraneous-require", rule, {
     valid: [

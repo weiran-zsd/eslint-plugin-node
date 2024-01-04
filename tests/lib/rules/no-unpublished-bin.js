@@ -5,7 +5,7 @@
 "use strict"
 
 const path = require("path")
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/no-unpublished-bin")
 
 /**
@@ -17,7 +17,7 @@ function fixture(name) {
     return path.resolve(__dirname, "../../fixtures/no-unpublished-bin", name)
 }
 
-new RuleTester({ env: { node: true, es6: true } }).run(
+new RuleTester().run(
     "no-unpublished-bin",
     rule,
     {

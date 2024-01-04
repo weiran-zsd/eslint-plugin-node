@@ -4,12 +4,10 @@
  */
 "use strict"
 
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/text-decoder")
 
-new RuleTester({
-    env: { node: true, es6: true },
-}).run("prefer-global/text-decoder", rule, {
+new RuleTester().run("prefer-global/text-decoder", rule, {
     valid: [
         "var b = new TextDecoder(s)",
         {

@@ -4,12 +4,10 @@
  */
 "use strict"
 
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/url-search-params")
 
-new RuleTester({
-    env: { node: true, es6: true },
-}).run("prefer-global/url-search-params", rule, {
+new RuleTester().run("prefer-global/url-search-params", rule, {
     valid: [
         "var b = new URLSearchParams(s)",
         {
