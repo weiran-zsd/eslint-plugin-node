@@ -18,19 +18,23 @@ exports.FlatRuleTester = exports.gteEslintV9
 // to support the `env:{ es6: true, node: true}` rule-tester (env has been away in flat config.)
 // * enabled by default as it's most commonly used in the package.
 // * to disable the node.js globals: {languageOptions: {env: {node: false}}}.
-exports.RuleTester = function (
-    config = {
-        languageOptions: {
-            ecmaVersion: 6,
-            sourceType: "commonjs",
-            globals: globals.node,
-        },
-    }
-) {
-    config.languageOptions = config.languageOptions || {}
+const defaultConfig = {
+    languageOptions: {
+        ecmaVersion: 6,
+        sourceType: "commonjs",
+        globals: globals.node,
+    },
+}
+exports.RuleTester = function (config = defaultConfig) {
     if (config.languageOptions.env?.node === false)
         config.languageOptions.globals = config.languageOptions.globals || {}
     delete config.languageOptions.env
+
+    config.languageOptions = Object.assign(
+        {},
+        defaultConfig.languageOptions,
+        config.languageOptions
+    )
 
     const ruleTester = new exports.FlatRuleTester(config)
     return ruleTester

@@ -3,9 +3,9 @@
  * See LICENSE file in root directory for full license.
  */
 "use strict"
-
 const { RuleTester } = require("#eslint-rule-tester")
 const rule = require("../../../../lib/rules/no-unsupported-features/es-builtins")
+const globals = require("globals")
 
 /**
  * Clone given invalid patterns with adding `ignores` option.
@@ -64,7 +64,7 @@ function concat(patterns) {
 }
 
 const ruleTester = new RuleTester({
-    languageOptions: { ecmaVersion: 2018, env: {node: false} },
+    languageOptions: { ecmaVersion: 2018, globals: globals.builtin },
 })
 ruleTester.run(
     "no-unsupported-features/es-builtins",

@@ -26,9 +26,7 @@ function concat(patterns) {
     return ret
 }
 
-new RuleTester({
-    languageOptions: { sourceType: "module" },
-}).run(
+new RuleTester({ languageOptions: { sourceType: "module" } }).run(
     "no-unsupported-features/node-builtins",
     rule,
     concat([
