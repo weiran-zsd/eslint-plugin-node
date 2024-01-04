@@ -5,8 +5,8 @@
 "use strict"
 
 const path = require("path")
-const { Linter, RuleTester } = require("eslint")
-const { builtin } = require("globals")
+const { Linter } = require("eslint")
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const { Range } = require("semver")
 const rule = require("../../../../lib/rules/no-unsupported-features/es-syntax")
 
@@ -100,7 +100,7 @@ function concat(patterns) {
 }
 
 const ruleTester = new RuleTester({
-    languageOptions: { ecmaVersion, env: {node: false} },
+    languageOptions: { ecmaVersion, env: { node: false } },
 })
 ruleTester.run(
     "no-unsupported-features/es-syntax",

@@ -68,11 +68,11 @@ function convertPattern(retv, pattern) {
             // If this is supported, add to a valid pattern.
             retv.valid.push({
                 code: `/*${pattern.name}: ${versionText}*/ ${pattern.code}`,
-                globals: { SharedArrayBuffer: false, Atomics: false },
                 options: [version],
                 languageOptions: {
                     ecmaVersion: 2018,
                     sourceType: pattern.modules ? "module" : "script",
+                    globals: { SharedArrayBuffer: false, Atomics: false },
                 },
             })
         } else {
@@ -81,12 +81,11 @@ function convertPattern(retv, pattern) {
                 retv.valid,
                 pattern.keys.map(key => ({
                     code: `/*${pattern.name}: ${versionText}, ignores: ["${key}"]*/ ${pattern.code}`,
-
-                    globals: { SharedArrayBuffer: false, Atomics: false },
                     options: [{ version, ignores: [key] }],
                     languageOptions: {
                         ecmaVersion: 2018,
                         sourceType: pattern.modules ? "module" : "script",
+                        globals: { SharedArrayBuffer: false, Atomics: false },
                     },
                 }))
             )
@@ -94,11 +93,11 @@ function convertPattern(retv, pattern) {
             // If this is not supported, add to a invalid pattern.
             retv.invalid.push({
                 code: `/*${pattern.name}: ${versionText}*/ ${pattern.code}`,
-                globals: { SharedArrayBuffer: false, Atomics: false },
                 options: [version],
                 languageOptions: {
                     ecmaVersion: 2018,
                     sourceType: pattern.modules ? "module" : "script",
+                    globals: { SharedArrayBuffer: false, Atomics: false },
                 },
                 errors: errors.map(message => `${message + versionText}.`),
             })

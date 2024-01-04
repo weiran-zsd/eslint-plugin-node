@@ -79,7 +79,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require(`eslint`);",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
@@ -127,7 +126,7 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require('no-exist-package-0');",
-            globals: { require: "off" },
+            languageOptions: { globals: { require: "off" } },
         },
 
         // Ignores it if the filename is unknown.
@@ -150,7 +149,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require(`foo${bar}`);",
-            env: { node: true },
         },
 
         // Should work fine if the filename is relative.

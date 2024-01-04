@@ -803,7 +803,7 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "root;",
             options: [{ version: "6.0.0" }],
-            globals: { root: false },
+            languageOptions: { globals: { root: false } },
             errors: [
                 "'root' was deprecated since v6.0.0. Use 'global' instead.",
             ],

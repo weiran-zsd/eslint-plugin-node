@@ -5,6 +5,7 @@
 "use strict"
 
 const path = require("path")
+const globals = require("globals")
 const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/no-unpublished-require")
 
@@ -181,7 +182,7 @@ ruleTester.run("no-unpublished-require", rule, {
         {
             filename: fixture("1/test.js"),
             code: "require(`foo${bar}`);",
-            env: { node: true },
+            languageOptions: { globals: globals.node },
         },
 
         // Should work fine if the filename is relative.
