@@ -4,8 +4,8 @@
  */
 "use strict"
 const eslintVersion = require("eslint/package.json").version
-const RuleTester = require("eslint").RuleTester
-const unofficialApis = require("eslint/use-at-your-own-risk")
+const { RuleTester } = require("eslint")
+const { FlatRuleTester } = require("eslint/use-at-your-own-risk")
 const globals = require("globals")
 
 // greater than or equal to ESLint v9
