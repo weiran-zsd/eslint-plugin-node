@@ -37,6 +37,15 @@ jobs:
         node: [18.x, 20.x]
         include:
           - os: ubuntu-latest
+            node: "18.8.0"
+            eslint: "8.x"
+          - os: ubuntu-latest
+            node: "20.9.0"
+            eslint: "8.x"
+          - os: ubuntu-latest
+            node: "21.1.0"
+            eslint: "8.x"
+          - os: ubuntu-latest
             node: "21.x"
             eslint: "8.x"
     runs-on: ${{ matrix.os }}
