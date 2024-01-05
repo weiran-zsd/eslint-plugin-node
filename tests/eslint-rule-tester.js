@@ -11,9 +11,7 @@ const globals = require("globals")
 // greater than or equal to ESLint v9
 exports.gteEslintV9 = +eslintVersion.split(".")[0] >= 9
 
-exports.FlatRuleTester = exports.gteEslintV9
-    ? RuleTester
-    : unofficialApis.FlatRuleTester
+exports.FlatRuleTester = exports.gteEslintV9 ? RuleTester : FlatRuleTester
 
 // to support the `env:{ es6: true, node: true}` rule-tester (env has been away in flat config.)
 // * enabled by default as it's most commonly used in the package.
