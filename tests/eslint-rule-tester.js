@@ -7,9 +7,12 @@ const eslintVersion = require("eslint/package.json").version
 const { RuleTester } = require("eslint")
 const { FlatRuleTester } = require("eslint/use-at-your-own-risk")
 const globals = require("globals")
+const semverSatisfies = require("semver/functions/satisfies")
 
 // greater than or equal to ESLint v9
-exports.gteEslintV9 = +eslintVersion.split(".")[0] >= 9
+exports.gteEslintV9 = semverSatisfies(eslintVersion, ">=9", {
+    includePrerelease: true,
+})
 
 exports.FlatRuleTester = exports.gteEslintV9 ? RuleTester : FlatRuleTester
 
