@@ -4,12 +4,12 @@
  */
 "use strict"
 
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/global-require")
 
 const ERROR = { messageId: "unexpected", type: "CallExpression" }
 
-new RuleTester({ env: { node: true, es6: true } }).run("global-require", rule, {
+new RuleTester().run("global-require", rule, {
     valid: [
         "var x = require('y');",
         "if (x) { x.require('y'); }",

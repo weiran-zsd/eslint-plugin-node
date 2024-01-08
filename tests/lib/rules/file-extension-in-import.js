@@ -5,11 +5,12 @@
 "use strict"
 
 const path = require("path")
-const { Linter, RuleTester } = require("eslint")
+const { Linter } = require("eslint")
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/file-extension-in-import")
 
 const DynamicImportSupported = (() => {
-    const config = { parserOptions: { ecmaVersion: 2020 } }
+    const config = { languageOptions: { ecmaVersion: 2020 } }
     const messages = new Linter().verify("import(s)", config)
     return messages.length === 0
 })()
@@ -38,8 +39,7 @@ function fixture(filename) {
 }
 
 new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
+    languageOptions: {
         sourceType: "module",
     },
     settings: {},
@@ -333,7 +333,7 @@ new RuleTester({
                       filename: fixture("test.js"),
                       code: "function f() { import('./a') }",
                       output: "function f() { import('./a.js') }",
-                      parserOptions: { ecmaVersion: 2020 },
+                      languageOptions: { ecmaVersion: 2020 },
                       errors: [
                           { messageId: "requireExt", data: { ext: ".js" } },
                       ],
@@ -343,7 +343,7 @@ new RuleTester({
                       code: "function f() { import('./a.js') }",
                       output: "function f() { import('./a') }",
                       options: ["never"],
-                      parserOptions: { ecmaVersion: 2020 },
+                      languageOptions: { ecmaVersion: 2020 },
                       errors: [
                           { messageId: "forbidExt", data: { ext: ".js" } },
                       ],

@@ -5,11 +5,13 @@
 "use strict"
 
 const path = require("path")
-const { Linter, RuleTester } = require("eslint")
+const { Linter } = require("eslint")
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/no-unpublished-import")
+const globals = require("globals")
 
 const DynamicImportSupported = (() => {
-    const config = { parserOptions: { ecmaVersion: 2020 } }
+    const config = { languageOptions: { ecmaVersion: 2020 } }
     const messages = new Linter().verify("import(s)", config)
     return messages.length === 0
 })()
@@ -31,9 +33,9 @@ function fixture(name) {
 }
 
 const ruleTester = new RuleTester({
-    parserOptions: {
-        ecmaVersion: 2015,
+    languageOptions: {
         sourceType: "module",
+        env: { node: false },
     },
 })
 ruleTester.run("no-unpublished-import", rule, {
@@ -137,7 +139,7 @@ ruleTester.run("no-unpublished-import", rule, {
         {
             filename: fixture("3/src/readme.js"),
             code: "import bbb from 'bbb';",
-            env: { node: true },
+            languageOptions: { globals: globals.node },
         },
 
         // Negative patterns in files field.
@@ -155,10 +157,7 @@ ruleTester.run("no-unpublished-import", rule, {
         // https://github.com/eslint-community/eslint-plugin-n/issues/78
         {
             filename: fixture("1/test.ts"),
-            parser: path.join(
-                __dirname,
-                "../../../node_modules/@typescript-eslint/parser"
-            ),
+            languageOptions: { parser: require("@typescript-eslint/parser") },
             code: "import type foo from 'foo';",
             options: [{ ignoreTypeImport: true }],
         },
@@ -268,7 +267,7 @@ ruleTester.run("no-unpublished-import", rule, {
         {
             filename: fixture("1/test.js"),
             code: "import a from '../2/a.js';",
-            env: { node: true },
+            languageOptions: { globals: globals.node },
             errors: ['"../2/a.js" is not published.'],
         },
 
@@ -278,7 +277,7 @@ ruleTester.run("no-unpublished-import", rule, {
                   {
                       filename: fixture("2/test.js"),
                       code: "function f() { import('./ignore1.js') }",
-                      parserOptions: { ecmaVersion: 2020 },
+                      languageOptions: { ecmaVersion: 2020 },
                       errors: ['"./ignore1.js" is not published.'],
                   },
               ]
@@ -287,10 +286,7 @@ ruleTester.run("no-unpublished-import", rule, {
         // https://github.com/eslint-community/eslint-plugin-n/issues/78
         {
             filename: fixture("1/test.ts"),
-            parser: path.join(
-                __dirname,
-                "../../../node_modules/@typescript-eslint/parser"
-            ),
+            languageOptions: { parser: require("@typescript-eslint/parser") },
             code: "import type foo from 'foo';",
             options: [{ ignoreTypeImport: false }],
             errors: [{ messageId: "notPublished" }],
@@ -298,10 +294,7 @@ ruleTester.run("no-unpublished-import", rule, {
 
         {
             filename: fixture("1/test.ts"),
-            parser: path.join(
-                __dirname,
-                "../../../node_modules/@typescript-eslint/parser"
-            ),
+            languageOptions: { parser: require("@typescript-eslint/parser") },
             code: "import type foo from 'foo';",
             errors: [{ messageId: "notPublished" }],
         },

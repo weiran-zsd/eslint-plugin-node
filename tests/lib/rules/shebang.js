@@ -5,7 +5,7 @@
 "use strict"
 
 const path = require("path")
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/shebang")
 
 /**
@@ -17,7 +17,7 @@ function fixture(name) {
     return path.resolve(__dirname, "../../fixtures/shebang", name)
 }
 
-const ruleTester = new RuleTester({ env: { node: true, es6: true } })
+const ruleTester = new RuleTester()
 ruleTester.run("shebang", rule, {
     valid: [
         {

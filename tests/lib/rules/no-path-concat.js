@@ -5,15 +5,10 @@
 "use strict"
 
 const path = require("path")
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/no-path-concat")
 
-new RuleTester({
-    env: {
-        node: true,
-        es6: true,
-    },
-}).run("no-path-concat", rule, {
+new RuleTester().run("no-path-concat", rule, {
     valid: [
         'var fullPath = dirname + "foo.js";',
         'var fullPath = __dirname == "foo.js";',

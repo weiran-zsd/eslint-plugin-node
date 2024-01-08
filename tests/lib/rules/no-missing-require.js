@@ -5,7 +5,7 @@
 "use strict"
 
 const path = require("path")
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/no-missing-require")
 
 const tsReactExtensionMap = [
@@ -25,7 +25,7 @@ function fixture(name) {
     return path.resolve(__dirname, "../../fixtures/no-missing", name)
 }
 
-const ruleTester = new RuleTester({ env: { node: true, es6: true } })
+const ruleTester = new RuleTester()
 ruleTester.run("no-missing-require", rule, {
     valid: [
         {
@@ -79,7 +79,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require(`eslint`);",
-            env: { node: true, es6: true },
         },
         {
             filename: fixture("test.js"),
@@ -127,7 +126,7 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require('no-exist-package-0');",
-            globals: { require: "off" },
+            languageOptions: { globals: { require: "off" } },
         },
 
         // Ignores it if the filename is unknown.
@@ -150,7 +149,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require(`foo${bar}`);",
-            env: { node: true, es6: true },
         },
 
         // Should work fine if the filename is relative.

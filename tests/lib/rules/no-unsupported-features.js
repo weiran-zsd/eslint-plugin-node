@@ -5,7 +5,7 @@
 "use strict"
 
 const path = require("path")
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/no-unsupported-features")
 
 const VERSION_MAP = new Map([
@@ -68,12 +68,11 @@ function convertPattern(retv, pattern) {
             // If this is supported, add to a valid pattern.
             retv.valid.push({
                 code: `/*${pattern.name}: ${versionText}*/ ${pattern.code}`,
-                env: { es6: true },
-                globals: { SharedArrayBuffer: false, Atomics: false },
                 options: [version],
-                parserOptions: {
+                languageOptions: {
                     ecmaVersion: 2018,
                     sourceType: pattern.modules ? "module" : "script",
+                    globals: { SharedArrayBuffer: false, Atomics: false },
                 },
             })
         } else {
@@ -82,12 +81,11 @@ function convertPattern(retv, pattern) {
                 retv.valid,
                 pattern.keys.map(key => ({
                     code: `/*${pattern.name}: ${versionText}, ignores: ["${key}"]*/ ${pattern.code}`,
-                    env: { es6: true },
-                    globals: { SharedArrayBuffer: false, Atomics: false },
                     options: [{ version, ignores: [key] }],
-                    parserOptions: {
+                    languageOptions: {
                         ecmaVersion: 2018,
                         sourceType: pattern.modules ? "module" : "script",
+                        globals: { SharedArrayBuffer: false, Atomics: false },
                     },
                 }))
             )
@@ -95,12 +93,11 @@ function convertPattern(retv, pattern) {
             // If this is not supported, add to a invalid pattern.
             retv.invalid.push({
                 code: `/*${pattern.name}: ${versionText}*/ ${pattern.code}`,
-                env: { es6: true },
-                globals: { SharedArrayBuffer: false, Atomics: false },
                 options: [version],
-                parserOptions: {
+                languageOptions: {
                     ecmaVersion: 2018,
                     sourceType: pattern.modules ? "module" : "script",
+                    globals: { SharedArrayBuffer: false, Atomics: false },
                 },
                 errors: errors.map(message => `${message + versionText}.`),
             })
@@ -123,7 +120,7 @@ function fixture(name) {
     )
 }
 
-const ruleTester = new RuleTester({ env: { node: true, es6: true } })
+const ruleTester = new RuleTester()
 ruleTester.run(
     "no-unsupported-features",
     rule,
@@ -1299,64 +1296,56 @@ ruleTester.run(
             {
                 filename: fixture("gte-4.0.0/a.js"),
                 code: "var a = () => 1",
-                env: { es6: true },
             },
             {
                 filename: fixture("gte-4.4.0-lt-5.0.0/a.js"),
                 code: "var a = () => 1",
-                env: { es6: true },
             },
             {
                 filename: fixture("hat-4.1.2/a.js"),
                 code: "var a = () => 1",
-                env: { es6: true },
             },
             {
                 code: "'\\\\u{0123}'",
-                env: { es6: true },
             },
             {
                 filename: fixture("gte-4.0.0/a.js"),
                 code: "var a = async () => 1",
-                parserOptions: { ecmaVersion: 2017 },
+                languageOptions: { ecmaVersion: 2017 },
                 options: [{ ignores: ["asyncAwait"] }],
             },
             {
                 filename: fixture("gte-7.6.0/a.js"),
                 code: "var a = async () => 1",
-                parserOptions: { ecmaVersion: 2017 },
+                languageOptions: { ecmaVersion: 2017 },
             },
             {
                 filename: fixture("gte-7.10.0/a.js"),
                 code: "var a = async () => 1",
-                parserOptions: { ecmaVersion: 2017 },
+                languageOptions: { ecmaVersion: 2017 },
             },
             {
                 filename: fixture("invalid/a.js"),
                 code: "var a = () => 1",
-                env: { es6: true },
             },
             {
                 filename: fixture("nothing/a.js"),
                 code: "var a = () => 1",
-                env: { es6: true },
             },
             {
                 code: "var a = async () => 1",
-                parserOptions: { ecmaVersion: 2017 },
+                languageOptions: { ecmaVersion: 2017 },
                 options: ["7.10.0"],
             },
             {
                 filename: fixture("without-node/a.js"),
                 code: "var a = () => 1",
-                env: { es6: true },
             },
         ],
         invalid: [
             {
                 filename: fixture("gte-0.12.8/a.js"),
                 code: "var a = () => 1",
-                env: { es6: true },
                 errors: [
                     "Arrow functions are not supported yet on Node >=0.12.8.",
                 ],
@@ -1364,8 +1353,7 @@ ruleTester.run(
             {
                 filename: fixture("invalid/a.js"),
                 code: "var a = (b,) => 1",
-                parserOptions: { ecmaVersion: 2017 },
-                env: { es6: true },
+                languageOptions: { ecmaVersion: 2017 },
                 errors: [
                     "Trailing commas in functions are not supported yet on Node 4.0.0.",
                 ],
@@ -1373,8 +1361,7 @@ ruleTester.run(
             {
                 filename: fixture("lt-6.0.0/a.js"),
                 code: "var a = () => 1",
-                parserOptions: { ecmaVersion: 2017 },
-                env: { es6: true },
+                languageOptions: { ecmaVersion: 2017 },
                 errors: [
                     "Arrow functions are not supported yet on Node <6.0.0.",
                 ],
@@ -1382,8 +1369,7 @@ ruleTester.run(
             {
                 filename: fixture("nothing/a.js"),
                 code: "var a = (b,) => 1",
-                parserOptions: { ecmaVersion: 2017 },
-                env: { es6: true },
+                languageOptions: { ecmaVersion: 2017 },
                 errors: [
                     "Trailing commas in functions are not supported yet on Node 4.0.0.",
                 ],
@@ -1391,14 +1377,14 @@ ruleTester.run(
             {
                 filename: fixture("gte-7.5.0/a.js"),
                 code: "var a = async () => 1",
-                parserOptions: { ecmaVersion: 2017 },
+                languageOptions: { ecmaVersion: 2017 },
                 errors: [
                     "Async functions are not supported yet on Node >=7.5.0.",
                 ],
             },
             {
                 code: "var a = async () => 1",
-                parserOptions: { ecmaVersion: 2017 },
+                languageOptions: { ecmaVersion: 2017 },
                 options: ["7.1.0"],
                 errors: [
                     "Async functions are not supported yet on Node 7.1.0.",

@@ -4,12 +4,11 @@
  */
 "use strict"
 
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../../lib/rules/prefer-promises/dns")
 
 new RuleTester({
-    parserOptions: { sourceType: "module" },
-    env: { node: true, es6: true },
+    languageOptions: { sourceType: "module" },
 }).run("prefer-promises/dns", rule, {
     valid: [
         "const dns = require('dns'); dns.lookupSync()",

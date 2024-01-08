@@ -4,12 +4,10 @@
  */
 "use strict"
 
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/process")
 
-new RuleTester({
-    env: { node: true, es6: true },
-}).run("prefer-global/process", rule, {
+new RuleTester().run("prefer-global/process", rule, {
     valid: [
         "process.exit(0)",
         {

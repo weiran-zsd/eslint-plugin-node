@@ -2,9 +2,9 @@
 
 const assert = require("assert")
 const path = require("path")
-const { ESLint } = require("eslint")
+const { LegacyESLint } = require("eslint/use-at-your-own-risk")
+// const {ESLint} = require("eslint")
 const { gtEslintV8 } = require("../../helpers")
-
 const originalCwd = process.cwd()
 
 // this is needed as `recommended` config was cached
@@ -24,7 +24,7 @@ describe("node/recommended config", () => {
         beforeEach(() => {
             process.chdir(root)
             clearRequireCache()
-            linter = new ESLint({
+            linter = new LegacyESLint({
                 baseConfig: { extends: "plugin:n/recommended" },
                 useEslintrc: false,
             })
@@ -102,7 +102,7 @@ describe("node/recommended config", () => {
         beforeEach(() => {
             process.chdir(root)
             clearRequireCache()
-            linter = new ESLint({
+            linter = new LegacyESLint({
                 baseConfig: { extends: "plugin:n/recommended" },
                 useEslintrc: false,
             })

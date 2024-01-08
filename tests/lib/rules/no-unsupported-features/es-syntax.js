@@ -5,20 +5,20 @@
 "use strict"
 
 const path = require("path")
-const { Linter, RuleTester } = require("eslint")
-const { builtin } = require("globals")
+const { Linter } = require("eslint")
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const { Range } = require("semver")
 const rule = require("../../../../lib/rules/no-unsupported-features/es-syntax")
 
 const ES2021Supported = (() => {
-    const config = { parserOptions: { ecmaVersion: 2021 } }
+    const config = { languageOptions: { ecmaVersion: 2021 } }
     const messages = new Linter().verify("0n", config)
     return messages.length === 0
 })()
 const ES2020Supported =
     ES2021Supported ||
     (() => {
-        const config = { parserOptions: { ecmaVersion: 2020 } }
+        const config = { languageOptions: { ecmaVersion: 2020 } }
         const messages = new Linter().verify("0n", config)
         return messages.length === 0
     })()
@@ -100,8 +100,7 @@ function concat(patterns) {
 }
 
 const ruleTester = new RuleTester({
-    parserOptions: { ecmaVersion },
-    globals: builtin,
+    languageOptions: { ecmaVersion, env: { node: false } },
 })
 ruleTester.run(
     "no-unsupported-features/es-syntax",
@@ -859,29 +858,29 @@ ruleTester.run(
                 },
                 {
                     code: "import a from 'a'",
-                    parserOptions: { sourceType: "module" },
+                    languageOptions: { sourceType: "module" },
                     options: [{ version: "13.1.0", ignores: ["modules"] }],
                 },
                 {
                     code: "export default {}",
-                    parserOptions: { sourceType: "module" },
+                    languageOptions: { sourceType: "module" },
                     options: [{ version: "13.1.0", ignores: ["modules"] }],
                 },
                 {
                     code: "export const a = {}",
-                    parserOptions: { sourceType: "module" },
+                    languageOptions: { sourceType: "module" },
                     options: [{ version: "13.1.0", ignores: ["modules"] }],
                 },
                 {
                     code: "export {}",
-                    parserOptions: { sourceType: "module" },
+                    languageOptions: { sourceType: "module" },
                     options: [{ version: "13.1.0", ignores: ["modules"] }],
                 },
             ],
             invalid: [
                 {
                     code: "import a from 'a'",
-                    parserOptions: { sourceType: "module" },
+                    languageOptions: { sourceType: "module" },
                     options: [{ version: "10.0.0" }],
                     errors: [
                         {
@@ -892,7 +891,7 @@ ruleTester.run(
                 },
                 {
                     code: "export default {}",
-                    parserOptions: { sourceType: "module" },
+                    languageOptions: { sourceType: "module" },
                     options: [{ version: "10.0.0" }],
                     errors: [
                         {
@@ -903,7 +902,7 @@ ruleTester.run(
                 },
                 {
                     code: "export const a = {}",
-                    parserOptions: { sourceType: "module" },
+                    languageOptions: { sourceType: "module" },
                     options: [{ version: "10.0.0" }],
                     errors: [
                         {
@@ -914,7 +913,7 @@ ruleTester.run(
                 },
                 {
                     code: "export {}",
-                    parserOptions: { sourceType: "module" },
+                    languageOptions: { sourceType: "module" },
                     options: [{ version: "10.0.0" }],
                     errors: [
                         {

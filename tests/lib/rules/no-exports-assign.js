@@ -4,13 +4,15 @@
  */
 "use strict"
 
-const { RuleTester } = require("eslint")
+const { RuleTester } = require("#eslint-rule-tester")
 const rule = require("../../../lib/rules/no-exports-assign.js")
 
 new RuleTester({
-    globals: {
-        exports: "writable",
-        module: "readonly",
+    languageOptions: {
+        globals: {
+            exports: "writable",
+            module: "readonly",
+        }
     },
 }).run("no-exports-assign", rule, {
     valid: [

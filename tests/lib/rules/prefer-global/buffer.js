@@ -4,12 +4,10 @@
  */
 "use strict"
 
-const RuleTester = require("eslint").RuleTester
+const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/buffer")
 
-new RuleTester({
-    env: { node: true, es6: true },
-}).run("prefer-global/buffer", rule, {
+new RuleTester().run("prefer-global/buffer", rule, {
     valid: [
         "var b = Buffer.alloc(10)",
         {
