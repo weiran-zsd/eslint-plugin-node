@@ -6,6 +6,7 @@
 
 const RuleTester = require("#eslint-rule-tester").RuleTester
 const rule = require("../../../lib/rules/no-callback-literal")
+const tsParser = require("@typescript-eslint/parser")
 
 const ruleTester = new RuleTester()
 ruleTester.run("no-callback-literal", rule, {
@@ -40,6 +41,11 @@ ruleTester.run("no-callback-literal", rule, {
         "cb(null)",
         'cb(undefined, "super")',
         'cb(null, "super")',
+        // https://github.com/eslint-community/eslint-plugin-n/issues/162
+        {
+            code: "cb(e as Error)",
+            languageOptions: { parser: tsParser },
+        },
     ],
 
     invalid: [
