@@ -270,35 +270,27 @@ ruleTester.run("no-missing-import", rule, {
             // name: "tsconfig - compilerOptions.paths - direct reference",
             filename: fixture("ts-paths/test.ts"),
             code: "import before from '@direct';",
-            env: { node: true },
         },
         {
             // name: "tsconfig - compilerOptions.paths - wildcard reference",
             filename: fixture("ts-paths/test.ts"),
             code: "import before from '@wild/where.js';",
-            env: { node: true },
         },
 
         {
             // name: 'Ensure type only packages can be imported',
             filename: fixture("test.ts"),
-            parser: path.join(
-                __dirname,
-                "../../../node_modules/@typescript-eslint/parser"
-            ),
+            languageOptions: { parser: require("@typescript-eslint/parser") },
             code: "import type d from 'types-only';",
-            env: { node: true },
         },
 
         {
             filename: fixture("ts-allow-extension/test.ts"),
             code: "import './file.js';",
-            env: { node: true },
         },
         {
             filename: fixture("ts-allow-extension/test.ts"),
             code: "import './file.ts';",
-            env: { node: true },
         },
 
         // import()
