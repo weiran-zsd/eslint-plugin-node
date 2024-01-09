@@ -68,6 +68,10 @@ ruleTester.run("no-extraneous-import", rule, {
             filename: fixture("optionalDependencies/a.js"),
             code: "import aaa from 'aaa'",
         },
+        {
+            filename: fixture("import-map/a.js"),
+            code: "import '#b'",
+        },
 
         // missing packages are warned by no-missing-import
         {

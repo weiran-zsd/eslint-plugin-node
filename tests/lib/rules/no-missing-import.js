@@ -266,6 +266,33 @@ ruleTester.run("no-missing-import", rule, {
             code: "import d from './d.js';",
         },
 
+        {
+            // name: "tsconfig - compilerOptions.paths - direct reference",
+            filename: fixture("ts-paths/test.ts"),
+            code: "import before from '@direct';",
+        },
+        {
+            // name: "tsconfig - compilerOptions.paths - wildcard reference",
+            filename: fixture("ts-paths/test.ts"),
+            code: "import before from '@wild/where.js';",
+        },
+
+        {
+            // name: 'Ensure type only packages can be imported',
+            filename: fixture("test.ts"),
+            languageOptions: { parser: require("@typescript-eslint/parser") },
+            code: "import type d from 'types-only';",
+        },
+
+        {
+            filename: fixture("ts-allow-extension/test.ts"),
+            code: "import './file.js';",
+        },
+        {
+            filename: fixture("ts-allow-extension/test.ts"),
+            code: "import './file.ts';",
+        },
+
         // import()
         ...(DynamicImportSupported
             ? [

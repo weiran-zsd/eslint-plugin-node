@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@direct": ["./some/where.ts"],
+            "@wild/*": ["./some/*"]
+        }
+    }
+}
