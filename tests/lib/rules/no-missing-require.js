@@ -43,7 +43,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require('rimraf/package.json');",
-            env: { node: true },
         },
         {
             filename: fixture("test.js"),
@@ -102,7 +101,6 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require('./fixtures/no-missing/a');",
-            env: { node: true },
             settings: {
                 node: { resolvePaths: [path.resolve(__dirname, "../../")] },
             },
