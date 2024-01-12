@@ -27,22 +27,22 @@
     },
     "devDependencies": {
         "@eslint/js": "^8.43.0",
-        "@types/eslint": "^8.44.6",
+        "@types/eslint": "^8.56.2",
         "@typescript-eslint/parser": "^5.60.0",
         "eslint": "^8",
-        "eslint-config-prettier": "^8.8.0",
+        "eslint-config-prettier": "^9.1.0",
         "eslint-doc-generator": "^1.6.1",
         "eslint-plugin-eslint-plugin": "^5.2.1",
         "eslint-plugin-n": "file:.",
         "fast-glob": "^3.2.12",
         "husky": "^8.0.3",
-        "lint-staged": "^13.2.2",
+        "lint-staged": "^15.2.0",
         "markdownlint-cli": "^0.35.0",
         "mocha": "^10.2.0",
         "npm-run-all2": "^6.1.1",
         "nyc": "^15.1.0",
         "opener": "^1.5.2",
-        "prettier": "^2.8.8",
+        "prettier": "^3.1.1",
         "punycode": "^2.3.0",
         "release-it": "^15.11.0",
         "rimraf": "^5.0.1",
@@ -52,7 +52,7 @@
         "build": "node scripts/update",
         "clean": "rimraf .nyc_output coverage",
         "coverage": "opener ./coverage/lcov-report/index.html",
-        "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\"",
+        "format": "prettier --write \"**/*.{js,json}\"",
         "lint": "npm-run-all \"lint:*\"",
         "lint:docs": "markdownlint \"**/*.md\"",
         "lint:eslint-docs": "npm run update:eslint-docs -- --check",
@@ -107,7 +107,8 @@
     },
     "lint-staged": {
         "*.js": "eslint --cache --fix",
-        "*.{json,js}": "prettier --write --ignore-path .eslintignore"
+        "*.{json,js}": "prettier --write --ignore-path .eslintignore",
+        "*.md": "markdownlint --fix"
     },
     "imports": {
         "#eslint-rule-tester": "./tests/eslint-rule-tester.js"
