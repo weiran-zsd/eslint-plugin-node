@@ -28,7 +28,7 @@
     "devDependencies": {
         "@eslint/js": "^8.43.0",
         "@types/eslint": "^8.56.2",
-        "@typescript-eslint/parser": "^5.60.0",
+        "@typescript-eslint/parser": "^6.0.0",
         "eslint": "^8",
         "eslint-config-prettier": "^9.1.0",
         "eslint-doc-generator": "^1.6.1",
