@@ -33,7 +33,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
-        eslint: [8.x, "9.0.0-alpha.0"]
+        eslint: [8.x, "9.0.0-alpha.*"]
         node: [18.x, 20.x]
         include:
           - os: ubuntu-latest
