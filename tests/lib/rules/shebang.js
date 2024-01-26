@@ -124,6 +124,16 @@ ruleTester.run("shebang", rule, {
             filename: fixture("object-bin/bin/index.js"),
             code: "#!/usr/bin/env node\nhello();",
         },
+
+        // ignored files are executable
+        {
+            filename: fixture("ignored/executable.js"),
+            code: "#!/usr/bin/env node\nhello();",
+        },
+        {
+            filename: fixture("ignored/normal.js"),
+            code: "hello();",
+        },
     ],
     invalid: [
         {
@@ -318,6 +328,20 @@ ruleTester.run("shebang", rule, {
             code: "hello();",
             output: "#!/usr/bin/env node\nhello();",
             errors: ['This file needs shebang "#!/usr/bin/env node".'],
+        },
+
+        // ignored files are executable
+        {
+            filename: fixture("ignored/executable.js"),
+            code: "hello();",
+            output: "#!/usr/bin/env node\nhello();",
+            errors: ['This file needs shebang "#!/usr/bin/env node".'],
+        },
+        {
+            filename: fixture("ignored/normal.js"),
+            code: "#!/usr/bin/env node\nhello();",
+            output: "hello();",
+            errors: ["This file needs no shebang."],
         },
     ],
 })
