@@ -3441,7 +3441,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             data: {
                                 name: "module.builtinModules",
                                 supported:
-                                    "9.3.0 (backported: ^6.13.0, ^8.10.0)",
+                                    "9.3.0 (backported: ^8.10.0, ^6.13.0)",
                                 version: "9.2.9",
                             },
                         },
@@ -4161,7 +4161,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             data: {
                                 name: "process.ppid",
                                 supported:
-                                    "9.2.0 (backported: ^6.13.0, ^8.10.0)",
+                                    "9.2.0 (backported: ^8.10.0, ^6.13.0)",
                                 version: "9.1.9",
                             },
                         },
