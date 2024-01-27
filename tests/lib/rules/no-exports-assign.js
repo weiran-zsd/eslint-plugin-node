@@ -12,7 +12,7 @@ new RuleTester({
         globals: {
             exports: "writable",
             module: "readonly",
-        }
+        },
     },
 }).run("no-exports-assign", rule, {
     valid: [

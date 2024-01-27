@@ -2,7 +2,7 @@
     "compilerOptions": {
         "paths": {
             "@direct": ["./some/where.ts"],
-            "@wild/*": ["./some/*"]
-        }
-    }
+            "@wild/*": ["./some/*"],
+        },
+    },
 }
