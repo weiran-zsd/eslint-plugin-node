@@ -13,9 +13,6 @@ module.exports = [
     {
         languageOptions: { globals: globals.mocha },
         linterOptions: { reportUnusedDisableDirectives: true },
-        settings: {
-            n: { allowModules: ["#eslint-rule-tester"] }, // the plugin does not support import-maps yet.
-        },
     },
     {
         ignores: [
