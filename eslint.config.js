@@ -23,7 +23,7 @@ module.exports = [
             "coverage/",
             "docs/",
             "lib/converted-esm/",
-            "test/fixtures/",
+            "tests/fixtures/",
         ],
     },
     js.configs.recommended,
