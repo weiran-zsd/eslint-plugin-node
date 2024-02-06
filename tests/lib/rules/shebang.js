@@ -172,6 +172,13 @@ ruleTester.run("shebang", rule, {
             code: "hello();",
             options: [{ ignoreUnpublished: true }],
         },
+
+        {
+            name: "file matching additionalExecutables",
+            filename: fixture("unpublished/something.test.js"),
+            code: "#!/usr/bin/env node\nhello();",
+            options: [{ additionalExecutables: ["*.test.js"] }],
+        },
     ],
     invalid: [
         {
@@ -409,6 +416,23 @@ ruleTester.run("shebang", rule, {
             filename: fixture("unpublished/published.js"),
             code: "#!/usr/bin/env node\nhello();",
             options: [{ ignoreUnpublished: true }],
+            output: "hello();",
+            errors: ["This file needs no shebang."],
+        },
+
+        {
+            name: "executable in additionalExecutables without shebang",
+            filename: fixture("unpublished/something.test.js"),
+            code: "hello();",
+            options: [{ additionalExecutables: ["*.test.js"] }],
+            output: "#!/usr/bin/env node\nhello();",
+            errors: ['This file needs shebang "#!/usr/bin/env node".'],
+        },
+        {
+            name: "file not in additionalExecutables with shebang",
+            filename: fixture("unpublished/not-a-test.js"),
+            code: "#!/usr/bin/env node\nhello();",
+            options: [{ additionalExecutables: ["*.test.js"] }],
             output: "hello();",
             errors: ["This file needs no shebang."],
         },
