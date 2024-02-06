@@ -153,16 +153,24 @@ ruleTester.run("shebang", rule, {
             code: "#!/usr/bin/env node\nhello();",
         },
 
-        // npm ignored files are ignored!
+        // npm unpublished files are ignored
         {
-            name: "ignored file is executable",
-            filename: fixture("ignored/executable.js"),
-            code: "#!/usr/bin/env node\nhello();",
+            name: "published file cant have shebang",
+            filename: fixture("unpublished/published.js"),
+            code: "hello();",
+            options: [{ ignoreUnpublished: true }],
         },
         {
-            name: "ignored file is not executable",
-            filename: fixture("ignored/normal.js"),
+            name: "unpublished file can have shebang",
+            filename: fixture("unpublished/unpublished.js"),
+            code: "#!/usr/bin/env node\nhello();",
+            options: [{ ignoreUnpublished: true }],
+        },
+        {
+            name: "unpublished file can have noshebang",
+            filename: fixture("unpublished/unpublished.js"),
             code: "hello();",
+            options: [{ ignoreUnpublished: true }],
         },
     ],
     invalid: [
@@ -378,6 +386,31 @@ ruleTester.run("shebang", rule, {
             code: "hello();",
             output: "#!/usr/bin/env node\nhello();",
             errors: ['This file needs shebang "#!/usr/bin/env node".'],
+        },
+
+        // npm unpublished files are ignored
+        {
+            name: "unpublished file should not have shebang",
+            filename: fixture("unpublished/unpublished.js"),
+            code: "#!/usr/bin/env node\nhello();",
+            output: "hello();",
+            errors: ["This file needs no shebang."],
+        },
+        {
+            name: "published file should have shebang",
+            filename: fixture("unpublished/published.js"),
+            code: "#!/usr/bin/env node\nhello();",
+            output: "hello();",
+            errors: ["This file needs no shebang."],
+        },
+
+        {
+            name: "unpublished file shebang ignored",
+            filename: fixture("unpublished/published.js"),
+            code: "#!/usr/bin/env node\nhello();",
+            options: [{ ignoreUnpublished: true }],
+            output: "hello();",
+            errors: ["This file needs no shebang."],
         },
     ],
 })
