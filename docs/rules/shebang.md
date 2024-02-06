@@ -61,7 +61,11 @@ console.log("hello");
 
 ```json
 {
-    "n/shebang": ["error", {"convertPath": null}]
+    "n/shebang": ["error", {
+        "convertPath": null,
+        "ignoreUnpublished": false,
+        "additionalExecutables": [],
+    }]
 }
 ```
 
@@ -69,6 +73,14 @@ console.log("hello");
 
 This can be configured in the rule options or as a shared setting [`settings.convertPath`](../shared-settings.md#convertpath).
 Please see the shared settings documentation for more information.
+
+#### ignoreUnpublished
+
+Allow for files that are not published to npm to be ignored by this rule.
+
+#### additionalExecutables
+
+Mark files as executable that are not referenced by the package.json#bin property
 
 ## 🔎 Implementation
 
