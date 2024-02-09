@@ -40,10 +40,6 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "0.12.0" }],
                 },
                 {
-                    code: "require('node:assert').strictEqual()",
-                    options: [{ version: "0.12.0" }],
-                },
-                {
                     code: "var assert = require('assert'); assert(); assert.strictEqual()",
                     options: [{ version: "0.12.0" }],
                 },
@@ -61,10 +57,6 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                 },
                 {
                     code: "import assert from 'assert'; assert.deepStrictEqual()",
-                    options: [{ version: "4.0.0" }],
-                },
-                {
-                    code: "import assert from 'node:assert'; assert.deepStrictEqual()",
                     options: [{ version: "4.0.0" }],
                 },
                 {
@@ -101,15 +93,6 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                 },
                 {
                     code: "require('assert').deepStrictEqual()",
-                    options: [
-                        {
-                            version: "3.9.9",
-                            ignores: ["assert.deepStrictEqual"],
-                        },
-                    ],
-                },
-                {
-                    code: "require('node:assert').deepStrictEqual()",
                     options: [
                         {
                             version: "3.9.9",
@@ -217,116 +200,106 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         { version: "14.2.0", ignores: ["assert.CallTracker"] },
                     ],
                 },
+
+                {
+                    code: "const assert = require('node:assert'); assert.deepStrictEqual()",
+                    options: [{ version: "12.20.0" }],
+                },
+                {
+                    code: "import assert from 'node:assert'; assert.deepStrictEqual()",
+                    options: [{ version: "14.13.1" }],
+                },
+                {
+                    code: "require('node:assert').match()",
+                    options: [
+                        {
+                            version: "15.0.0",
+                            ignores: ["assert.match"],
+                        },
+                    ],
+                },
             ],
             invalid: [
                 {
                     code: "require('assert').deepStrictEqual()",
-                    options: [{ version: "3.9.9" }],
+                    options: [{ version: "1.1.0" }],
                     errors: [
                         {
                             messageId: "unsupported",
                             data: {
                                 name: "assert.deepStrictEqual",
-                                supported: "4.0.0",
-                                version: "3.9.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "require('node:assert').deepStrictEqual()",
-                    options: [{ version: "3.9.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "assert.deepStrictEqual",
-                                supported: "4.0.0",
-                                version: "3.9.9",
+                                supported: "1.2.0",
+                                version: "1.1.0",
                             },
                         },
                     ],
                 },
                 {
                     code: "var assert = require('assert'); assert.deepStrictEqual()",
-                    options: [{ version: "3.9.9" }],
+                    options: [{ version: "1.1.0" }],
                     errors: [
                         {
                             messageId: "unsupported",
                             data: {
                                 name: "assert.deepStrictEqual",
-                                supported: "4.0.0",
-                                version: "3.9.9",
+                                supported: "1.2.0",
+                                version: "1.1.0",
                             },
                         },
                     ],
                 },
                 {
                     code: "var { deepStrictEqual } = require('assert'); deepStrictEqual()",
-                    options: [{ version: "3.9.9" }],
+                    options: [{ version: "1.1.0" }],
                     errors: [
                         {
                             messageId: "unsupported",
                             data: {
                                 name: "assert.deepStrictEqual",
-                                supported: "4.0.0",
-                                version: "3.9.9",
+                                supported: "1.2.0",
+                                version: "1.1.0",
                             },
                         },
                     ],
                 },
                 {
                     code: "import assert from 'assert'; assert.deepStrictEqual()",
-                    options: [{ version: "3.9.9" }],
+                    options: [{ version: "1.1.0" }],
                     errors: [
                         {
                             messageId: "unsupported",
                             data: {
                                 name: "assert.deepStrictEqual",
-                                supported: "4.0.0",
-                                version: "3.9.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "import assert from 'node:assert'; assert.deepStrictEqual()",
-                    options: [{ version: "3.9.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "assert.deepStrictEqual",
-                                supported: "4.0.0",
-                                version: "3.9.9",
+                                supported: "1.2.0",
+                                version: "1.1.0",
                             },
                         },
                     ],
                 },
                 {
                     code: "import { deepStrictEqual } from 'assert'; deepStrictEqual()",
-                    options: [{ version: "3.9.9" }],
+                    options: [{ version: "1.1.0" }],
                     errors: [
                         {
                             messageId: "unsupported",
                             data: {
                                 name: "assert.deepStrictEqual",
-                                supported: "4.0.0",
-                                version: "3.9.9",
+                                supported: "1.2.0",
+                                version: "1.1.0",
                             },
                         },
                     ],
                 },
                 {
                     code: "require('assert').notDeepStrictEqual()",
-                    options: [{ version: "3.9.9" }],
+                    options: [{ version: "1.1.0" }],
                     errors: [
                         {
                             messageId: "unsupported",
                             data: {
                                 name: "assert.notDeepStrictEqual",
-                                supported: "4.0.0",
-                                version: "3.9.9",
+                                supported: "1.2.0",
+                                version: "1.1.0",
                             },
                         },
                     ],
@@ -451,6 +424,34 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         },
                     ],
                 },
+                {
+                    code: "require('node:assert').deepStrictEqual()",
+                    options: [{ version: "3.9.9" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "node:assert",
+                                supported: "14.13.1 (backported: ^12.20.0)",
+                                version: "3.9.9",
+                            },
+                        },
+                    ],
+                },
+                {
+                    code: "import assert from 'node:assert';",
+                    options: [{ version: "3.9.9" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "node:assert",
+                                supported: "14.13.1 (backported: ^12.20.0)",
+                                version: "3.9.9",
+                            },
+                        },
+                    ],
+                },
             ],
         },
 
@@ -461,180 +462,162 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
             valid: [
                 {
                     code: "require('async_hooks')",
-                    options: [{ version: "8.0.0" }],
-                },
-                {
-                    code: "require('node:async_hooks')",
-                    options: [{ version: "8.0.0" }],
+                    options: [{ version: "16.4.0" }],
                 },
                 {
                     code: "import hooks from 'async_hooks'",
-                    options: [{ version: "8.0.0" }],
-                },
-                {
-                    code: "import hooks from 'node:async_hooks'",
-                    options: [{ version: "8.0.0" }],
-                },
-                {
-                    code: "require('async_hooks').createHook()",
-                    options: [{ version: "8.1.0" }],
-                },
-                {
-                    code: "var hooks = require('async_hooks'); hooks.createHook()",
-                    options: [{ version: "8.1.0" }],
-                },
-                {
-                    code: "var { createHook } = require('async_hooks'); createHook()",
-                    options: [{ version: "8.1.0" }],
-                },
-                {
-                    code: "import hooks from 'async_hooks'; hooks.createHook()",
-                    options: [{ version: "8.1.0" }],
-                },
-                {
-                    code: "import { createHook } from 'async_hooks'; createHook()",
-                    options: [{ version: "8.1.0" }],
+                    options: [{ version: "16.4.0" }],
                 },
                 {
                     code: "const { AsyncLocalStorage } = require('async_hooks'); new AsyncLocalStorage();",
-                    options: [{ version: "13.10.0" }],
+                    options: [{ version: "16.4.0" }],
                 },
                 {
                     code: "import hooks from 'async_hooks'; new hooks.AsyncLocalStorage();",
-                    options: [{ version: "13.10.0" }],
-                },
-                {
-                    code: "const { AsyncLocalStorage } = require('async_hooks'); new AsyncLocalStorage();",
-                    options: [{ version: "12.17.0" }],
-                },
-                {
-                    code: "import hooks from 'async_hooks'; new hooks.AsyncLocalStorage();",
-                    options: [{ version: "12.17.0" }],
+                    options: [{ version: "16.4.0" }],
                 },
 
                 // Ignores
-                {
-                    code: "require('async_hooks')",
-                    options: [{ version: "7.9.9", ignores: ["async_hooks"] }],
-                },
+                ...[
+                    "require('async_hooks')",
+                    "import hooks from 'async_hooks'",
+
+                    "require('async_hooks').createHook()",
+                    "const hooks = require('async_hooks'); hooks.createHook()",
+                    "const { createHook } = require('async_hooks'); createHook()",
+
+                    "import * as hooks from 'async_hooks'; hooks.createHook()",
+                    "import hooks from 'async_hooks'; hooks.createHook()",
+                    "import { createHook } from 'async_hooks'; createHook()",
+
+                    "new require('async_hooks').AsyncLocalStorage()",
+                    "const hooks = require('async_hooks'); new hooks.AsyncLocalStorage()",
+                    "const { AsyncLocalStorage } = require('async_hooks'); new AsyncLocalStorage()",
+
+                    "import * as hooks from 'async_hooks'; new hooks.AsyncLocalStorage()",
+                    "import hooks from 'async_hooks'; new hooks.AsyncLocalStorage()",
+                    "import { AsyncLocalStorage } from 'async_hooks'; new AsyncLocalStorage()",
+
+                    "require('node:async_hooks').createHook()",
+                    "const hooks = require('node:async_hooks'); hooks.createHook()",
+                    "const { createHook } = require('node:async_hooks'); createHook()",
+
+                    "import * as hooks from 'node:async_hooks'; hooks.createHook()",
+                    "import hooks from 'node:async_hooks'; hooks.createHook()",
+                    "import { createHook } from 'node:async_hooks'; createHook()",
+
+                    "new require('node:async_hooks').AsyncLocalStorage()",
+                    "const hooks = require('node:async_hooks'); new hooks.AsyncLocalStorage()",
+                    "const { AsyncLocalStorage } = require('node:async_hooks'); new AsyncLocalStorage()",
+
+                    "import * as hooks from 'node:async_hooks'; new hooks.AsyncLocalStorage()",
+                    "import hooks from 'node:async_hooks'; new hooks.AsyncLocalStorage()",
+                    "import { AsyncLocalStorage } from 'node:async_hooks'; new AsyncLocalStorage()",
+                ].map(code => ({
+                    code: code,
+                    options: [
+                        {
+                            version: "14.0.0",
+                            ignores: [
+                                "async_hooks",
+                                "async_hooks.createHook",
+                                "async_hooks.AsyncLocalStorage",
+                            ],
+                        },
+                    ],
+                })),
+
                 {
                     code: "require('node:async_hooks')",
-                    options: [{ version: "7.9.9", ignores: ["async_hooks"] }],
-                },
-                {
-                    code: "import hooks from 'async_hooks'",
-                    options: [{ version: "7.9.9", ignores: ["async_hooks"] }],
+                    options: [{ version: "16.4.0" }],
                 },
                 {
                     code: "import hooks from 'node:async_hooks'",
-                    options: [{ version: "7.9.9", ignores: ["async_hooks"] }],
+                    options: [{ version: "16.4.0" }],
                 },
                 {
-                    code: "import { createHook } from 'async_hooks'",
-                    options: [
-                        {
-                            version: "7.9.9",
-                            ignores: ["async_hooks", "async_hooks.createHook"],
-                        },
-                    ],
+                    code: "require('node:async_hooks')",
+                    options: [{ version: "12.0.0", ignores: ["async_hooks"] }],
                 },
                 {
-                    code: "require('async_hooks').createHook()",
-                    options: [
-                        {
-                            version: "8.0.9",
-                            ignores: ["async_hooks.createHook"],
-                        },
-                    ],
-                },
-                {
-                    code: "var hooks = require('async_hooks'); hooks.createHook()",
-                    options: [
-                        {
-                            version: "8.0.9",
-                            ignores: ["async_hooks.createHook"],
-                        },
-                    ],
-                },
-                {
-                    code: "var { createHook } = require('async_hooks'); createHook()",
-                    options: [
-                        {
-                            version: "8.0.9",
-                            ignores: ["async_hooks.createHook"],
-                        },
-                    ],
-                },
-                {
-                    code: "import async_hooks from 'async_hooks'; async_hooks.createHook()",
-                    options: [
-                        {
-                            version: "8.0.9",
-                            ignores: ["async_hooks.createHook"],
-                        },
-                    ],
-                },
-                {
-                    code: "import { createHook } from 'async_hooks'; createHook()",
-                    options: [
-                        {
-                            version: "8.0.9",
-                            ignores: ["async_hooks.createHook"],
-                        },
-                    ],
-                },
-                {
-                    code: "const { AsyncLocalStorage } = require('async_hooks'); new AsyncLocalStorage();",
-                    options: [
-                        {
-                            version: "13.9.0",
-                            ignores: ["async_hooks.AsyncLocalStorage"],
-                        },
-                    ],
-                },
-                {
-                    code: "import hooks from 'async_hooks'; new hooks.AsyncLocalStorage();",
-                    options: [
-                        {
-                            version: "13.9.0",
-                            ignores: ["async_hooks.AsyncLocalStorage"],
-                        },
-                    ],
-                },
-                {
-                    code: "const { AsyncLocalStorage } = require('async_hooks'); new AsyncLocalStorage();",
-                    options: [
-                        {
-                            version: "12.16.0",
-                            ignores: ["async_hooks.AsyncLocalStorage"],
-                        },
-                    ],
-                },
-                {
-                    code: "import hooks from 'async_hooks'; new hooks.AsyncLocalStorage();",
-                    options: [
-                        {
-                            version: "12.16.0",
-                            ignores: ["async_hooks.AsyncLocalStorage"],
-                        },
-                    ],
+                    code: "import hooks from 'node:async_hooks'",
+                    options: [{ version: "12.0.0", ignores: ["async_hooks"] }],
                 },
             ],
             invalid: [
-                {
-                    code: "require('async_hooks')",
+                ...[
+                    "require('async_hooks')",
+                    "import hooks from 'async_hooks'",
+                ].map(code => ({
+                    code: code,
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
                             messageId: "unsupported",
                             data: {
                                 name: "async_hooks",
-                                supported: "8.0.0",
+                                supported: "16.4.0",
                                 version: "7.9.9",
                             },
                         },
                     ],
-                },
+                })),
+
+                ...[
+                    "require('async_hooks').createHook()",
+                    "const { createHook } = require('async_hooks')",
+                    "const { createHook } = require('async_hooks'); createHook()",
+                    "const hooks = require('async_hooks'); hooks.createHook()",
+
+                    "import { createHook } from 'async_hooks'",
+                    "import { createHook } from 'async_hooks'; createHook()",
+                    "import async_hooks from 'async_hooks'; async_hooks.createHook()",
+                ].map(code => ({
+                    code: code,
+                    options: [{ version: "16.5.0" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "async_hooks.createHook",
+                                supported: "(none yet)",
+                                version: "16.5.0",
+                            },
+                        },
+                    ],
+                })),
+
+                ...[
+                    // "new require('async_hooks').AsyncLocalStorage()",
+                    "const hooks = require('async_hooks'); new hooks.AsyncLocalStorage()",
+                    // "const { AsyncLocalStorage } = require('async_hooks'); new AsyncLocalStorage()",
+
+                    "import * as hooks from 'async_hooks'; new hooks.AsyncLocalStorage()",
+                    "import hooks from 'async_hooks'; new hooks.AsyncLocalStorage()",
+                    "import { AsyncLocalStorage } from 'async_hooks'; new AsyncLocalStorage()",
+                ].map(code => ({
+                    code: code,
+                    options: [{ version: "13.9.0" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "async_hooks",
+                                supported: "16.4.0",
+                                version: "13.9.0",
+                            },
+                        },
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "async_hooks.AsyncLocalStorage",
+                                supported: "16.4.0",
+                                version: "13.9.0",
+                            },
+                        },
+                    ],
+                })),
+
                 {
                     code: "require('node:async_hooks')",
                     options: [{ version: "7.9.9" }],
@@ -642,22 +625,8 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         {
                             messageId: "unsupported",
                             data: {
-                                name: "async_hooks",
-                                supported: "8.0.0",
-                                version: "7.9.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "import hooks from 'async_hooks'",
-                    options: [{ version: "7.9.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks",
-                                supported: "8.0.0",
+                                name: "node:async_hooks",
+                                supported: "16.4.0",
                                 version: "7.9.9",
                             },
                         },
@@ -670,157 +639,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         {
                             messageId: "unsupported",
                             data: {
-                                name: "async_hooks",
-                                supported: "8.0.0",
+                                name: "node:async_hooks",
+                                supported: "16.4.0",
                                 version: "7.9.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "import { createHook } from 'async_hooks'",
-                    options: [{ version: "7.9.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks",
-                                supported: "8.0.0",
-                                version: "7.9.9",
-                            },
-                        },
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks.createHook",
-                                supported: "8.1.0",
-                                version: "7.9.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "require('async_hooks').createHook()",
-                    options: [{ version: "8.0.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks.createHook",
-                                supported: "8.1.0",
-                                version: "8.0.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "var hooks = require('async_hooks'); hooks.createHook()",
-                    options: [{ version: "8.0.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks.createHook",
-                                supported: "8.1.0",
-                                version: "8.0.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "var { createHook } = require('async_hooks'); createHook()",
-                    options: [{ version: "8.0.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks.createHook",
-                                supported: "8.1.0",
-                                version: "8.0.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "import async_hooks from 'async_hooks'; async_hooks.createHook()",
-                    options: [{ version: "8.0.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks.createHook",
-                                supported: "8.1.0",
-                                version: "8.0.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "import { createHook } from 'async_hooks'; createHook()",
-                    options: [{ version: "8.0.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks.createHook",
-                                supported: "8.1.0",
-                                version: "8.0.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "const { AsyncLocalStorage } = require('async_hooks'); new AsyncLocalStorage();",
-                    options: [{ version: "13.9.0" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks.AsyncLocalStorage",
-                                supported: "13.10.0 (backported: ^12.17.0)",
-                                version: "13.9.0",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "import hooks from 'async_hooks'; new hooks.AsyncLocalStorage();",
-                    options: [{ version: "13.9.0" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks.AsyncLocalStorage",
-                                supported: "13.10.0 (backported: ^12.17.0)",
-                                version: "13.9.0",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "const { AsyncLocalStorage } = require('async_hooks'); new AsyncLocalStorage();",
-                    options: [{ version: "12.16.0" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks.AsyncLocalStorage",
-                                supported: "13.10.0 (backported: ^12.17.0)",
-                                version: "12.16.0",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "import hooks from 'async_hooks'; new hooks.AsyncLocalStorage();",
-                    options: [{ version: "12.16.0" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "async_hooks.AsyncLocalStorage",
-                                supported: "13.10.0 (backported: ^12.17.0)",
-                                version: "12.16.0",
                             },
                         },
                     ],
@@ -1008,7 +829,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "Buffer.alloc",
-                                supported: "4.5.0",
+                                supported: "5.10.0 (backported: ^4.5.0)",
                                 version: "4.4.9",
                             },
                         },
@@ -1022,7 +843,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "Buffer.allocUnsafe",
-                                supported: "4.5.0",
+                                supported: "5.10.0 (backported: ^4.5.0)",
                                 version: "4.4.9",
                             },
                         },
@@ -1036,7 +857,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "Buffer.allocUnsafeSlow",
-                                supported: "4.5.0",
+                                supported: "5.12.0 (backported: ^4.5.0)",
                                 version: "4.4.9",
                             },
                         },
@@ -1050,7 +871,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "Buffer.from",
-                                supported: "4.5.0",
+                                supported: "5.10.0 (backported: ^4.5.0)",
                                 version: "4.4.9",
                             },
                         },
@@ -1134,7 +955,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "buffer.Buffer.alloc",
-                                supported: "4.5.0",
+                                supported: "5.10.0 (backported: ^4.5.0)",
                                 version: "4.4.9",
                             },
                         },
@@ -1148,7 +969,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "buffer.Buffer.allocUnsafe",
-                                supported: "4.5.0",
+                                supported: "5.10.0 (backported: ^4.5.0)",
                                 version: "4.4.9",
                             },
                         },
@@ -1162,7 +983,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "buffer.Buffer.allocUnsafeSlow",
-                                supported: "4.5.0",
+                                supported: "5.12.0 (backported: ^4.5.0)",
                                 version: "4.4.9",
                             },
                         },
@@ -1176,7 +997,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "buffer.Buffer.from",
-                                supported: "4.5.0",
+                                supported: "5.10.0 (backported: ^4.5.0)",
                                 version: "4.4.9",
                             },
                         },
@@ -1218,7 +1039,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "buffer.Blob",
-                                supported: "(none yet)",
+                                supported: "18.0.0 (backported: ^16.17.0)",
                                 version: "15.7.0",
                             },
                         },
@@ -1232,7 +1053,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "buffer.Blob",
-                                supported: "(none yet)",
+                                supported: "18.0.0 (backported: ^16.17.0)",
                                 version: "15.7.0",
                             },
                         },
@@ -1535,12 +1356,6 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9", ignores: ["console.table"] }],
                 },
                 {
-                    code: "console.markTimeline()",
-                    options: [
-                        { version: "7.9.9", ignores: ["console.markTimeline"] },
-                    ],
-                },
-                {
                     code: "console.profile()",
                     options: [
                         { version: "7.9.9", ignores: ["console.profile"] },
@@ -1556,18 +1371,6 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     code: "console.timeStamp()",
                     options: [
                         { version: "7.9.9", ignores: ["console.timeStamp"] },
-                    ],
-                },
-                {
-                    code: "console.timeline()",
-                    options: [
-                        { version: "7.9.9", ignores: ["console.timeline"] },
-                    ],
-                },
-                {
-                    code: "console.timelineEnd()",
-                    options: [
-                        { version: "7.9.9", ignores: ["console.timelineEnd"] },
                     ],
                 },
             ],
@@ -1755,20 +1558,6 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     ],
                 },
                 {
-                    code: "console.markTimeline()",
-                    options: [{ version: "7.9.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "console.markTimeline",
-                                supported: "8.0.0",
-                                version: "7.9.9",
-                            },
-                        },
-                    ],
-                },
-                {
                     code: "console.profile()",
                     options: [{ version: "7.9.9" }],
                     errors: [
@@ -1804,34 +1593,6 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "console.timeStamp",
-                                supported: "8.0.0",
-                                version: "7.9.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "console.timeline()",
-                    options: [{ version: "7.9.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "console.timeline",
-                                supported: "8.0.0",
-                                version: "7.9.9",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "console.timelineEnd()",
-                    options: [{ version: "7.9.9" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "console.timelineEnd",
                                 supported: "8.0.0",
                                 version: "7.9.9",
                             },
@@ -3045,62 +2806,6 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     ],
                 },
                 {
-                    code: "require('fs').read",
-                    options: [{ version: "13.10.0" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "fs.read",
-                                supported: "13.11.0 (backported: ^12.17.0)",
-                                version: "13.10.0",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "require('fs').readSync",
-                    options: [{ version: "13.10.0" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "fs.readSync",
-                                supported: "13.11.0 (backported: ^12.17.0)",
-                                version: "13.10.0",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "require('fs').read",
-                    options: [{ version: "12.16.0" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "fs.read",
-                                supported: "13.11.0 (backported: ^12.17.0)",
-                                version: "12.16.0",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "require('fs').readSync",
-                    options: [{ version: "12.16.0" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "fs.readSync",
-                                supported: "13.11.0 (backported: ^12.17.0)",
-                                version: "12.16.0",
-                            },
-                        },
-                    ],
-                },
-                {
                     code: "require('fs').Dir",
                     options: [{ version: "12.11.0" }],
                     errors: [
@@ -3155,16 +2860,16 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "14.0.0" }],
                 },
                 {
-                    code: "import * as fs from 'node:fs/promises';",
-                    options: [{ version: "14.0.0" }],
-                },
-                {
                     code: "require('fs/promise')",
                     options: [{ version: "14.0.0" }],
                 },
                 {
+                    code: "import * as fs from 'node:fs/promises';",
+                    options: [{ version: "14.13.1" }],
+                },
+                {
                     code: "require('node:fs/promise')",
-                    options: [{ version: "14.0.0" }],
+                    options: [{ version: "14.13.1" }],
                 },
                 {
                     code: "import * as fs from 'fs/promises';",
@@ -3199,35 +2904,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     ],
                 },
                 {
-                    code: "import * as fs from 'node:fs/promises';",
-                    options: [{ version: "13.14.0" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "fs/promises",
-                                supported: "14.0.0",
-                                version: "13.14.0",
-                            },
-                        },
-                    ],
-                },
-                {
                     code: "require('fs/promises');",
-                    options: [{ version: "13.14.0" }],
-                    errors: [
-                        {
-                            messageId: "unsupported",
-                            data: {
-                                name: "fs/promises",
-                                supported: "14.0.0",
-                                version: "13.14.0",
-                            },
-                        },
-                    ],
-                },
-                {
-                    code: "require('node:fs/promises');",
                     options: [{ version: "13.14.0" }],
                     errors: [
                         {
@@ -3249,6 +2926,35 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             data: {
                                 name: "fs/promises",
                                 supported: "14.0.0",
+                                version: "13.14.0",
+                            },
+                        },
+                    ],
+                },
+
+                {
+                    code: "require('node:fs/promises');",
+                    options: [{ version: "13.14.0" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "node:fs/promises",
+                                supported: "14.13.1",
+                                version: "13.14.0",
+                            },
+                        },
+                    ],
+                },
+                {
+                    code: "import * as fs from 'node:fs/promises';",
+                    options: [{ version: "13.14.0" }],
+                    errors: [
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "node:fs/promises",
+                                supported: "14.13.1",
                                 version: "13.14.0",
                             },
                         },
@@ -3320,6 +3026,14 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                                 version: "8.3.9",
                             },
                         },
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "http2.createServer",
+                                supported: "8.4.0",
+                                version: "8.3.9",
+                            },
+                        },
                     ],
                 },
             ],
@@ -3338,6 +3052,15 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     code: "import inspector from 'inspector'",
                     options: [{ version: "7.9.9", ignores: ["inspector"] }],
                 },
+                {
+                    code: "import { open } from 'inspector'",
+                    options: [
+                        {
+                            version: "7.9.9",
+                            ignores: ["inspector", "inspector.open"],
+                        },
+                    ],
+                },
             ],
             invalid: [
                 {
@@ -3348,7 +3071,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "inspector",
-                                supported: "(none yet)",
+                                supported: "14.0.0",
                                 version: "7.9.9",
                             },
                         },
@@ -3362,7 +3085,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "inspector",
-                                supported: "(none yet)",
+                                supported: "14.0.0",
                                 version: "7.9.9",
                             },
                         },
@@ -3376,7 +3099,15 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "inspector",
-                                supported: "(none yet)",
+                                supported: "14.0.0",
+                                version: "7.9.9",
+                            },
+                        },
+                        {
+                            messageId: "unsupported",
+                            data: {
+                                name: "inspector.open",
+                                supported: "8.0.0",
                                 version: "7.9.9",
                             },
                         },
@@ -3523,7 +3254,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "os.constants",
-                                supported: "6.3.0",
+                                supported: "6.3.0 (backported: ^5.11.0)",
                                 version: "6.2.9",
                             },
                         },
@@ -3537,7 +3268,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "os.constants",
-                                supported: "6.3.0",
+                                supported: "6.3.0 (backported: ^5.11.0)",
                                 version: "6.2.9",
                             },
                         },
@@ -3551,7 +3282,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "os.constants",
-                                supported: "6.3.0",
+                                supported: "6.3.0 (backported: ^5.11.0)",
                                 version: "6.2.9",
                             },
                         },
@@ -3565,7 +3296,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "os.constants",
-                                supported: "6.3.0",
+                                supported: "6.3.0 (backported: ^5.11.0)",
                                 version: "6.2.9",
                             },
                         },
@@ -3579,7 +3310,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "os.constants",
-                                supported: "6.3.0",
+                                supported: "6.3.0 (backported: ^5.11.0)",
                                 version: "6.2.9",
                             },
                         },
@@ -4389,19 +4120,11 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
             valid: [
                 {
                     code: "require('trace_events')",
-                    options: [{ version: "10.0.0" }],
+                    options: [{ version: "10.0.0", ignores: ["trace_events"] }],
                 },
                 {
                     code: "import trace_events from 'trace_events'",
-                    options: [{ version: "10.0.0" }],
-                },
-                {
-                    code: "require('trace_events')",
-                    options: [{ version: "9.9.9", ignores: ["trace_events"] }],
-                },
-                {
-                    code: "import trace_events from 'trace_events'",
-                    options: [{ version: "9.9.9", ignores: ["trace_events"] }],
+                    options: [{ version: "10.0.0", ignores: ["trace_events"] }],
                 },
             ],
             invalid: [
@@ -4413,7 +4136,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "trace_events",
-                                supported: "10.0.0",
+                                supported: "(none yet)",
                                 version: "9.9.9",
                             },
                         },
@@ -4427,7 +4150,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "trace_events",
-                                supported: "10.0.0",
+                                supported: "(none yet)",
                                 version: "9.9.9",
                             },
                         },
@@ -4435,14 +4158,14 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                 },
                 {
                     code: "import { createTracing } from 'trace_events'",
-                    options: [{ version: "9.9.9" }],
+                    options: [{ version: "10.0.0" }],
                     errors: [
                         {
                             messageId: "unsupported",
                             data: {
                                 name: "trace_events",
-                                supported: "10.0.0",
-                                version: "9.9.9",
+                                supported: "(none yet)",
+                                version: "10.0.0",
                             },
                         },
                     ],
@@ -4675,7 +4398,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "url.domainToASCII",
-                                supported: "7.4.0",
+                                supported: "7.4.0 (backported: ^6.13.0)",
                                 version: "7.3.9",
                             },
                         },
@@ -4689,7 +4412,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "url.domainToUnicode",
-                                supported: "7.4.0",
+                                supported: "7.4.0 (backported: ^6.13.0)",
                                 version: "7.3.9",
                             },
                         },
@@ -5454,23 +5177,15 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
         {
             valid: [
                 {
-                    code: "require('vm').Module",
+                    code: "require('vm')",
                     options: [{ version: "9.6.0" }],
                 },
                 {
-                    code: "var vm = require('vm'); vm.Module",
+                    code: "import vm from 'vm';",
                     options: [{ version: "9.6.0" }],
                 },
                 {
-                    code: "var { Module } = require('vm'); Module",
-                    options: [{ version: "9.6.0" }],
-                },
-                {
-                    code: "import vm from 'vm'; vm.Module",
-                    options: [{ version: "9.6.0" }],
-                },
-                {
-                    code: "import { Module } from 'vm'; Module",
+                    code: "import * as vm from 'vm';",
                     options: [{ version: "9.6.0" }],
                 },
 
@@ -5505,7 +5220,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "vm.Module",
-                                supported: "9.6.0",
+                                supported: "(none yet)",
                                 version: "9.5.9",
                             },
                         },
@@ -5519,7 +5234,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "vm.Module",
-                                supported: "9.6.0",
+                                supported: "(none yet)",
                                 version: "9.5.9",
                             },
                         },
@@ -5533,7 +5248,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "vm.Module",
-                                supported: "9.6.0",
+                                supported: "(none yet)",
                                 version: "9.5.9",
                             },
                         },
@@ -5547,7 +5262,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "vm.Module",
-                                supported: "9.6.0",
+                                supported: "(none yet)",
                                 version: "9.5.9",
                             },
                         },
@@ -5561,7 +5276,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             messageId: "unsupported",
                             data: {
                                 name: "vm.Module",
-                                supported: "9.6.0",
+                                supported: "(none yet)",
                                 version: "9.5.9",
                             },
                         },
