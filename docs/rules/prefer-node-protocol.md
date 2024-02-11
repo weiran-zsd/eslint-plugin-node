@@ -29,6 +29,8 @@ This rule enforces that `node:` protocol is prepended to built-in Node modules w
 
 import fs from "node:fs"
 
+export { promises } from "node:fs"
+
 const fs = require("node:fs")
 ```
 
@@ -38,6 +40,8 @@ const fs = require("node:fs")
 /*eslint n/prefer-node-protocol: error */
 
 import fs from "fs"
+
+export { promises } from "fs"
 
 const fs = require("fs")
 ```

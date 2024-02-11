@@ -38,6 +38,7 @@ new RuleTester({
         'import "bun";',
         'import "bun:jsc";',
         'import "bun:sqlite";',
+        'export {promises} from "node:fs";',
 
         // `require`
         'const fs = require("node:fs");',
