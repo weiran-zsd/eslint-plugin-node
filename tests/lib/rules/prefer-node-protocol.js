@@ -38,6 +38,20 @@ new RuleTester({
         'import "bun";',
         'import "bun:jsc";',
         'import "bun:sqlite";',
+
+        // `require`
+        'const fs = require("node:fs");',
+        'const fs = require("node:fs/promises");',
+        "const fs = require(fs);",
+        'const fs = notRequire("fs");',
+        'const fs = foo.require("fs");',
+        'const fs = require.resolve("fs");',
+        "const fs = require(`fs`);",
+        'const fs = require?.("fs");',
+        'const fs = require("fs", extra);',
+        "const fs = require();",
+        'const fs = require(...["fs"]);',
+        'const fs = require("eslint-plugin-n");',
     ],
     invalid: [
         {
@@ -140,6 +154,18 @@ new RuleTester({
         {
             code: 'import "timers/promises";',
             output: 'import "node:timers/promises";',
+            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+        },
+
+        // `require`
+        {
+            code: 'const {promises} = require("fs")',
+            output: 'const {promises} = require("node:fs")',
+            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+        },
+        {
+            code: "const fs = require('fs/promises')",
+            output: "const fs = require('node:fs/promises')",
             errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
         },
     ],

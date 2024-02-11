@@ -27,7 +27,9 @@ This rule enforces that `node:` protocol is prepended to built-in Node modules w
 ```js
 /*eslint n/prefer-node-protocol: error */
 
-import fs from "node:fs";
+import fs from "node:fs"
+
+const fs = require("node:fs")
 ```
 
 👎 Examples of **incorrect** code for this rule:
@@ -35,7 +37,9 @@ import fs from "node:fs";
 ```js
 /*eslint n/prefer-node-protocol: error */
 
-import fs from "fs";
+import fs from "fs"
+
+const fs = require("fs")
 ```
 
 ## 🔎 Implementation
