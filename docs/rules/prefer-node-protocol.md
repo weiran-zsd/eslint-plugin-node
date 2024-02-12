@@ -46,6 +46,27 @@ export { promises } from "fs"
 const fs = require("fs")
 ```
 
+### Configured Node.js version range
+
+[Configured Node.js version range](../../../README.md#configured-nodejs-version-range)
+
+### Options
+
+```json
+{
+    "n/prefer-node-protocol": ["error", {
+        "version": ">=16.0.0",
+    }]
+}
+```
+
+#### version
+
+As mentioned above, this rule reads the [`engines`] field of `package.json`.
+But, you can overwrite the version by `version` option.
+
+The `version` option accepts [the valid version range of `node-semver`](https://github.com/npm/node-semver#range-grammar).
+
 ## 🔎 Implementation
 
 - [Rule source](../../lib/rules/prefer-node-protocol.js)

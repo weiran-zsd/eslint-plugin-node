@@ -53,6 +53,28 @@ new RuleTester({
         "const fs = require();",
         'const fs = require(...["fs"]);',
         'const fs = require("eslint-plugin-n");',
+
+        // check disabling by supported Node.js versions
+        {
+            options: [{ version: "12.19.1" }],
+            code: 'import fs from "fs";',
+        },
+        {
+            options: [{ version: "13.14.0" }],
+            code: 'import fs from "fs";',
+        },
+        {
+            options: [{ version: "14.13.0" }],
+            code: 'import fs from "fs";',
+        },
+        {
+            options: [{ version: "14.17.6" }],
+            code: 'const fs = require("fs");',
+        },
+        {
+            options: [{ version: "15.14.0" }],
+            code: 'const fs = require("fs");',
+        },
     ],
     invalid: [
         {
@@ -167,6 +189,32 @@ new RuleTester({
         {
             code: "const fs = require('fs/promises')",
             output: "const fs = require('node:fs/promises')",
+            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+        },
+
+        // check enabling by supported Node.js versions
+        {
+            options: [{ version: "12.20.0" }],
+            code: 'import fs from "fs";',
+            output: 'import fs from "node:fs";',
+            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+        },
+        {
+            options: [{ version: "14.13.1" }],
+            code: 'import fs from "fs";',
+            output: 'import fs from "node:fs";',
+            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+        },
+        {
+            options: [{ version: "14.18.0" }],
+            code: 'const fs = require("fs");',
+            output: 'const fs = require("node:fs");',
+            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+        },
+        {
+            options: [{ version: "16.0.0" }],
+            code: 'const fs = require("fs");',
+            output: 'const fs = require("node:fs");',
             errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
         },
     ],
