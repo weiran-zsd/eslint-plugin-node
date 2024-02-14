@@ -18,7 +18,7 @@
         "enhanced-resolve": "^5.15.0",
         "eslint-plugin-es-x": "^7.5.0",
         "get-tsconfig": "^4.7.0",
-        "globals": "^13.24.0",
+        "globals": "^14.0.0",
         "ignore": "^5.2.4",
         "is-builtin-module": "^3.2.1",
         "is-core-module": "^2.12.1",
