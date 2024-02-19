@@ -15,6 +15,7 @@ jobs:
         id: release
         with:
           release-type: node
+          prerelease: beta
           package-name: 'eslint-plugin-n'
           changelog-types: >
             [
