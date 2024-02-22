@@ -225,7 +225,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.1.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.deepStrictEqual",
                                 supported: "1.2.0",
@@ -239,7 +239,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.1.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.deepStrictEqual",
                                 supported: "1.2.0",
@@ -253,7 +253,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.1.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.deepStrictEqual",
                                 supported: "1.2.0",
@@ -267,7 +267,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.1.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.deepStrictEqual",
                                 supported: "1.2.0",
@@ -281,7 +281,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.1.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.deepStrictEqual",
                                 supported: "1.2.0",
@@ -295,7 +295,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.1.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.notDeepStrictEqual",
                                 supported: "1.2.0",
@@ -309,7 +309,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.rejects",
                                 supported: "10.0.0",
@@ -323,7 +323,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.doesNotReject",
                                 supported: "10.0.0",
@@ -337,7 +337,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.strict.rejects",
                                 supported: "10.0.0",
@@ -351,7 +351,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.strict.doesNotReject",
                                 supported: "10.0.0",
@@ -365,7 +365,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.8.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.strict",
                                 supported: "9.9.0 (backported: ^8.13.0)",
@@ -379,7 +379,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.8.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.strict",
                                 supported: "9.9.0 (backported: ^8.13.0)",
@@ -387,7 +387,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             },
                         },
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "assert.strict.rejects",
                                 supported: "10.0.0",
@@ -401,10 +401,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "14.2.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "assert.CallTracker",
-                                supported: "(none yet)",
                                 version: "14.2.0",
                             },
                         },
@@ -415,10 +414,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "14.2.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "assert.CallTracker",
-                                supported: "(none yet)",
                                 version: "14.2.0",
                             },
                         },
@@ -429,7 +427,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "3.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "node:assert",
                                 supported: "14.13.1 (backported: ^12.20.0)",
@@ -443,7 +441,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "3.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "node:assert",
                                 supported: "14.13.1 (backported: ^12.20.0)",
@@ -553,7 +551,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "async_hooks",
                                 supported: "16.4.0",
@@ -577,10 +575,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "16.5.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "async_hooks.createHook",
-                                supported: "(none yet)",
                                 version: "16.5.0",
                             },
                         },
@@ -600,7 +597,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "13.9.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "async_hooks",
                                 supported: "16.4.0",
@@ -608,7 +605,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             },
                         },
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "async_hooks.AsyncLocalStorage",
                                 supported: "16.4.0",
@@ -623,7 +620,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "node:async_hooks",
                                 supported: "16.4.0",
@@ -637,7 +634,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "node:async_hooks",
                                 supported: "16.4.0",
@@ -826,7 +823,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "4.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "Buffer.alloc",
                                 supported: "5.10.0 (backported: ^4.5.0)",
@@ -840,7 +837,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "4.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "Buffer.allocUnsafe",
                                 supported: "5.10.0 (backported: ^4.5.0)",
@@ -854,7 +851,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "4.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "Buffer.allocUnsafeSlow",
                                 supported: "5.12.0 (backported: ^4.5.0)",
@@ -868,7 +865,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "4.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "Buffer.from",
                                 supported: "5.10.0 (backported: ^4.5.0)",
@@ -882,7 +879,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.constants",
                                 supported: "8.2.0",
@@ -896,7 +893,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.constants",
                                 supported: "8.2.0",
@@ -910,7 +907,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.constants",
                                 supported: "8.2.0",
@@ -924,7 +921,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.constants",
                                 supported: "8.2.0",
@@ -938,7 +935,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.constants",
                                 supported: "8.2.0",
@@ -952,7 +949,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "4.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.Buffer.alloc",
                                 supported: "5.10.0 (backported: ^4.5.0)",
@@ -966,7 +963,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "4.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.Buffer.allocUnsafe",
                                 supported: "5.10.0 (backported: ^4.5.0)",
@@ -980,7 +977,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "4.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.Buffer.allocUnsafeSlow",
                                 supported: "5.12.0 (backported: ^4.5.0)",
@@ -994,7 +991,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "4.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.Buffer.from",
                                 supported: "5.10.0 (backported: ^4.5.0)",
@@ -1008,7 +1005,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "2.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.kMaxLength",
                                 supported: "3.0.0",
@@ -1022,7 +1019,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.0.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.transcode",
                                 supported: "7.1.0",
@@ -1036,7 +1033,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "15.7.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.Blob",
                                 supported: "18.0.0 (backported: ^16.17.0)",
@@ -1050,7 +1047,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "15.7.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "buffer.Blob",
                                 supported: "18.0.0 (backported: ^16.17.0)",
@@ -1141,7 +1138,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "2.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "child_process.ChildProcess",
                                 supported: "2.2.0",
@@ -1155,7 +1152,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "2.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "child_process.ChildProcess",
                                 supported: "2.2.0",
@@ -1169,7 +1166,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "2.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "child_process.ChildProcess",
                                 supported: "2.2.0",
@@ -1183,7 +1180,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "2.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "child_process.ChildProcess",
                                 supported: "2.2.0",
@@ -1197,7 +1194,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "2.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "child_process.ChildProcess",
                                 supported: "2.2.0",
@@ -1380,7 +1377,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.clear",
                                 supported: "8.3.0 (backported: ^6.13.0)",
@@ -1394,7 +1391,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.clear",
                                 supported: "8.3.0 (backported: ^6.13.0)",
@@ -1408,7 +1405,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.clear",
                                 supported: "8.3.0 (backported: ^6.13.0)",
@@ -1422,7 +1419,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.clear",
                                 supported: "8.3.0 (backported: ^6.13.0)",
@@ -1436,7 +1433,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.clear",
                                 supported: "8.3.0 (backported: ^6.13.0)",
@@ -1450,7 +1447,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.count",
                                 supported: "8.3.0 (backported: ^6.13.0)",
@@ -1464,7 +1461,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.countReset",
                                 supported: "8.3.0 (backported: ^6.13.0)",
@@ -1478,7 +1475,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.debug",
                                 supported: "8.0.0",
@@ -1492,7 +1489,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.dirxml",
                                 supported: "8.0.0",
@@ -1506,7 +1503,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.group",
                                 supported: "8.5.0",
@@ -1520,7 +1517,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.groupCollapsed",
                                 supported: "8.5.0",
@@ -1534,7 +1531,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.groupEnd",
                                 supported: "8.5.0",
@@ -1548,7 +1545,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.table",
                                 supported: "10.0.0",
@@ -1562,7 +1559,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.profile",
                                 supported: "8.0.0",
@@ -1576,7 +1573,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.profileEnd",
                                 supported: "8.0.0",
@@ -1590,7 +1587,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "console.timeStamp",
                                 supported: "8.0.0",
@@ -1835,7 +1832,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.constants",
                                 supported: "6.3.0",
@@ -1849,7 +1846,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.constants",
                                 supported: "6.3.0",
@@ -1863,7 +1860,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.constants",
                                 supported: "6.3.0",
@@ -1877,7 +1874,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.constants",
                                 supported: "6.3.0",
@@ -1891,7 +1888,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.constants",
                                 supported: "6.3.0",
@@ -1905,7 +1902,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.Certificate.exportChallenge",
                                 supported: "9.0.0",
@@ -1919,7 +1916,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.Certificate.exportChallenge",
                                 supported: "9.0.0",
@@ -1933,7 +1930,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.Certificate.exportPublicKey",
                                 supported: "9.0.0",
@@ -1947,7 +1944,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.Certificate.verifySpkac",
                                 supported: "9.0.0",
@@ -1961,7 +1958,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "5.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.fips",
                                 supported: "6.0.0",
@@ -1975,7 +1972,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "2.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.getCurves",
                                 supported: "2.3.0",
@@ -1989,7 +1986,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.getFips",
                                 supported: "10.0.0",
@@ -2003,7 +2000,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.0.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.privateEncrypt",
                                 supported: "1.1.0",
@@ -2017,7 +2014,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.0.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.publicDecrypt",
                                 supported: "1.1.0",
@@ -2031,7 +2028,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.randomFillSync",
                                 supported: "7.10.0 (backported: ^6.13.0)",
@@ -2045,7 +2042,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.randomFill",
                                 supported: "7.10.0 (backported: ^6.13.0)",
@@ -2059,7 +2056,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "10.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.scrypt",
                                 supported: "10.5.0",
@@ -2073,7 +2070,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "10.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.scryptSync",
                                 supported: "10.5.0",
@@ -2087,7 +2084,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.setFips",
                                 supported: "10.0.0",
@@ -2101,7 +2098,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.5.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "crypto.timingSafeEqual",
                                 supported: "6.6.0",
@@ -2187,7 +2184,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "dns.Resolver",
                                 supported: "8.3.0",
@@ -2201,7 +2198,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "dns.Resolver",
                                 supported: "8.3.0",
@@ -2215,7 +2212,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "dns.Resolver",
                                 supported: "8.3.0",
@@ -2229,7 +2226,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "dns.Resolver",
                                 supported: "8.3.0",
@@ -2243,7 +2240,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "dns.Resolver",
                                 supported: "8.3.0",
@@ -2257,7 +2254,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "5.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "dns.resolvePtr",
                                 supported: "6.0.0",
@@ -2271,7 +2268,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "11.13.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "dns.promises",
                                 supported: "11.14.0 (backported: ^10.17.0)",
@@ -2540,7 +2537,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "11.13.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.promises",
                                 supported: "11.14.0 (backported: ^10.17.0)",
@@ -2554,7 +2551,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "11.13.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.promises",
                                 supported: "11.14.0 (backported: ^10.17.0)",
@@ -2568,7 +2565,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "11.13.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.promises",
                                 supported: "11.14.0 (backported: ^10.17.0)",
@@ -2582,7 +2579,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "11.13.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.promises",
                                 supported: "11.14.0 (backported: ^10.17.0)",
@@ -2596,7 +2593,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "11.13.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.promises",
                                 supported: "11.14.0 (backported: ^10.17.0)",
@@ -2610,7 +2607,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.copyFile",
                                 supported: "8.5.0",
@@ -2624,7 +2621,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.copyFileSync",
                                 supported: "8.5.0",
@@ -2638,7 +2635,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "5.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.mkdtemp",
                                 supported: "5.10.0",
@@ -2652,7 +2649,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "5.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.mkdtempSync",
                                 supported: "5.10.0",
@@ -2666,7 +2663,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.realpath.native",
                                 supported: "9.2.0",
@@ -2680,7 +2677,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.realpathSync.native",
                                 supported: "9.2.0",
@@ -2694,7 +2691,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "14.4.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.lutimes",
                                 supported: "14.5.0 (backported: ^12.19.0)",
@@ -2708,7 +2705,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "14.4.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.lutimesSync",
                                 supported: "14.5.0 (backported: ^12.19.0)",
@@ -2722,7 +2719,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "13.12.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.readv",
                                 supported: "13.13.0 (backported: ^12.17.0)",
@@ -2740,7 +2737,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     ],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.readvSync",
                                 supported: "13.13.0 (backported: ^12.17.0)",
@@ -2754,7 +2751,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "12.11.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.opendir",
                                 supported: "12.12.0",
@@ -2768,7 +2765,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "12.11.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.opendirSync",
                                 supported: "12.12.0",
@@ -2782,7 +2779,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "14.13.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.rm",
                                 supported: "14.14.0",
@@ -2796,7 +2793,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "14.13.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.rmSync",
                                 supported: "14.14.0",
@@ -2810,7 +2807,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "12.11.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.Dir",
                                 supported: "12.12.0",
@@ -2824,7 +2821,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "14.2.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.StatWatcher",
                                 supported: "14.3.0 (backported: ^12.20.0)",
@@ -2838,7 +2835,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "12.19.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs.StatWatcher",
                                 supported: "14.3.0 (backported: ^12.20.0)",
@@ -2894,7 +2891,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "13.14.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs/promises",
                                 supported: "14.0.0",
@@ -2908,7 +2905,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "13.14.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs/promises",
                                 supported: "14.0.0",
@@ -2922,7 +2919,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "13.14.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "fs/promises",
                                 supported: "14.0.0",
@@ -2937,7 +2934,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "13.14.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "node:fs/promises",
                                 supported: "14.13.1",
@@ -2951,7 +2948,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "13.14.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "node:fs/promises",
                                 supported: "14.13.1",
@@ -2991,7 +2988,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "http2",
                                 supported: "10.10.0 (backported: ^8.13.0)",
@@ -3005,7 +3002,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "http2",
                                 supported: "10.10.0 (backported: ^8.13.0)",
@@ -3019,7 +3016,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "http2",
                                 supported: "10.10.0 (backported: ^8.13.0)",
@@ -3027,7 +3024,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             },
                         },
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "http2.createServer",
                                 supported: "8.4.0",
@@ -3068,7 +3065,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "inspector",
                                 supported: "14.0.0",
@@ -3082,7 +3079,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "inspector",
                                 supported: "14.0.0",
@@ -3096,7 +3093,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "inspector",
                                 supported: "14.0.0",
@@ -3104,7 +3101,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             },
                         },
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "inspector.open",
                                 supported: "8.0.0",
@@ -3154,7 +3151,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.8.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "require.resolve.paths",
                                 supported: "8.9.0",
@@ -3168,7 +3165,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "module.builtinModules",
                                 supported:
@@ -3251,7 +3248,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "os.constants",
                                 supported: "6.3.0 (backported: ^5.11.0)",
@@ -3265,7 +3262,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "os.constants",
                                 supported: "6.3.0 (backported: ^5.11.0)",
@@ -3279,7 +3276,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "os.constants",
                                 supported: "6.3.0 (backported: ^5.11.0)",
@@ -3293,7 +3290,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "os.constants",
                                 supported: "6.3.0 (backported: ^5.11.0)",
@@ -3307,7 +3304,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "os.constants",
                                 supported: "6.3.0 (backported: ^5.11.0)",
@@ -3321,7 +3318,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "2.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "os.homedir",
                                 supported: "2.3.0",
@@ -3335,7 +3332,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "5.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "os.userInfo",
                                 supported: "6.0.0",
@@ -3426,7 +3423,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "path.toNamespacedPath",
                                 supported: "9.0.0",
@@ -3440,7 +3437,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "path.toNamespacedPath",
                                 supported: "9.0.0",
@@ -3454,7 +3451,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "path.toNamespacedPath",
                                 supported: "9.0.0",
@@ -3468,7 +3465,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "path.toNamespacedPath",
                                 supported: "9.0.0",
@@ -3482,7 +3479,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "path.toNamespacedPath",
                                 supported: "9.0.0",
@@ -3522,7 +3519,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "perf_hooks",
                                 supported: "8.5.0",
@@ -3536,7 +3533,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "perf_hooks",
                                 supported: "8.5.0",
@@ -3550,7 +3547,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "perf_hooks",
                                 supported: "8.5.0",
@@ -3734,7 +3731,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.argv0",
                                 supported: "6.4.0",
@@ -3748,7 +3745,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.argv0",
                                 supported: "6.4.0",
@@ -3762,7 +3759,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.argv0",
                                 supported: "6.4.0",
@@ -3776,7 +3773,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.argv0",
                                 supported: "6.4.0",
@@ -3790,7 +3787,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.argv0",
                                 supported: "6.4.0",
@@ -3804,7 +3801,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.0.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.channel",
                                 supported: "7.1.0",
@@ -3818,7 +3815,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.0.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.cpuUsage",
                                 supported: "6.1.0",
@@ -3832,7 +3829,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "5.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.emitWarning",
                                 supported: "6.0.0",
@@ -3846,7 +3843,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.getegid",
                                 supported: "2.0.0",
@@ -3860,7 +3857,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.geteuid",
                                 supported: "2.0.0",
@@ -3874,7 +3871,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.hasUncaughtExceptionCaptureCallback",
                                 supported: "9.3.0",
@@ -3888,7 +3885,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.ppid",
                                 supported:
@@ -3903,7 +3900,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "2.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.release",
                                 supported: "3.0.0",
@@ -3917,7 +3914,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.setegid",
                                 supported: "2.0.0",
@@ -3931,7 +3928,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "1.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.seteuid",
                                 supported: "2.0.0",
@@ -3945,7 +3942,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.2.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "process.setUncaughtExceptionCaptureCallback",
                                 supported: "9.3.0",
@@ -4031,7 +4028,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "stream.finished",
                                 supported: "10.0.0",
@@ -4045,7 +4042,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "stream.finished",
                                 supported: "10.0.0",
@@ -4059,7 +4056,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "stream.finished",
                                 supported: "10.0.0",
@@ -4073,7 +4070,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "stream.finished",
                                 supported: "10.0.0",
@@ -4087,7 +4084,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "stream.finished",
                                 supported: "10.0.0",
@@ -4101,7 +4098,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "stream.pipeline",
                                 supported: "10.0.0",
@@ -4133,10 +4130,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "trace_events",
-                                supported: "(none yet)",
                                 version: "9.9.9",
                             },
                         },
@@ -4147,10 +4143,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "trace_events",
-                                supported: "(none yet)",
                                 version: "9.9.9",
                             },
                         },
@@ -4161,10 +4156,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "10.0.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "trace_events",
-                                supported: "(none yet)",
                                 version: "10.0.0",
                             },
                         },
@@ -4283,7 +4277,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "URL",
                                 supported: "10.0.0",
@@ -4297,7 +4291,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "URLSearchParams",
                                 supported: "10.0.0",
@@ -4311,7 +4305,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "url.URL",
                                 supported: "7.0.0 (backported: ^6.13.0)",
@@ -4325,7 +4319,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "url.URL",
                                 supported: "7.0.0 (backported: ^6.13.0)",
@@ -4339,7 +4333,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "url.URL",
                                 supported: "7.0.0 (backported: ^6.13.0)",
@@ -4353,7 +4347,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "url.URL",
                                 supported: "7.0.0 (backported: ^6.13.0)",
@@ -4367,7 +4361,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "url.URL",
                                 supported: "7.0.0 (backported: ^6.13.0)",
@@ -4381,7 +4375,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.4.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "url.URLSearchParams",
                                 supported: "7.5.0 (backported: ^6.13.0)",
@@ -4395,7 +4389,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "url.domainToASCII",
                                 supported: "7.4.0 (backported: ^6.13.0)",
@@ -4409,7 +4403,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "url.domainToUnicode",
                                 supported: "7.4.0 (backported: ^6.13.0)",
@@ -4585,7 +4579,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.callbackify",
                                 supported: "8.2.0",
@@ -4599,7 +4593,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.callbackify",
                                 supported: "8.2.0",
@@ -4613,7 +4607,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.callbackify",
                                 supported: "8.2.0",
@@ -4627,7 +4621,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.callbackify",
                                 supported: "8.2.0",
@@ -4641,7 +4635,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.1.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.callbackify",
                                 supported: "8.2.0",
@@ -4655,7 +4649,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.formatWithOptions",
                                 supported: "10.0.0",
@@ -4669,7 +4663,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.6.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.getSystemErrorName",
                                 supported: "9.7.0 (backported: ^8.12.0)",
@@ -4683,7 +4677,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.5.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.inspect.custom",
                                 supported: "6.6.0",
@@ -4697,7 +4691,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "6.3.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.inspect.defaultOptions",
                                 supported: "6.4.0",
@@ -4711,7 +4705,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.isDeepStrictEqual",
                                 supported: "9.0.0",
@@ -4725,7 +4719,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.promisify",
                                 supported: "8.0.0",
@@ -4739,7 +4733,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.8.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.TextDecoder",
                                 supported: "8.9.0",
@@ -4753,7 +4747,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "8.8.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.TextEncoder",
                                 supported: "8.9.0",
@@ -4767,7 +4761,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "util.types",
                                 supported: "10.0.0",
@@ -4955,7 +4949,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "0.12.99" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8",
                                 supported: "1.0.0",
@@ -4969,7 +4963,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "0.12.99" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8",
                                 supported: "1.0.0",
@@ -4983,7 +4977,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "0.12.99" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8",
                                 supported: "1.0.0",
@@ -4991,7 +4985,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                             },
                         },
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.cachedDataVersionTag",
                                 supported: "8.0.0",
@@ -5005,7 +4999,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.cachedDataVersionTag",
                                 supported: "8.0.0",
@@ -5019,7 +5013,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.cachedDataVersionTag",
                                 supported: "8.0.0",
@@ -5033,7 +5027,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.cachedDataVersionTag",
                                 supported: "8.0.0",
@@ -5047,7 +5041,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.cachedDataVersionTag",
                                 supported: "8.0.0",
@@ -5061,7 +5055,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.cachedDataVersionTag",
                                 supported: "8.0.0",
@@ -5075,7 +5069,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "5.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.getHeapSpaceStatistics",
                                 supported: "6.0.0",
@@ -5089,7 +5083,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.serialize",
                                 supported: "8.0.0",
@@ -5103,7 +5097,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.deserialize",
                                 supported: "8.0.0",
@@ -5117,7 +5111,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.Serializer",
                                 supported: "8.0.0",
@@ -5131,7 +5125,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.Deserializer",
                                 supported: "8.0.0",
@@ -5145,7 +5139,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.DefaultSerializer",
                                 supported: "8.0.0",
@@ -5159,7 +5153,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "7.9.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "v8.DefaultDeserializer",
                                 supported: "8.0.0",
@@ -5217,10 +5211,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.5.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "vm.Module",
-                                supported: "(none yet)",
                                 version: "9.5.9",
                             },
                         },
@@ -5231,10 +5224,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.5.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "vm.Module",
-                                supported: "(none yet)",
                                 version: "9.5.9",
                             },
                         },
@@ -5245,10 +5237,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.5.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "vm.Module",
-                                supported: "(none yet)",
                                 version: "9.5.9",
                             },
                         },
@@ -5259,10 +5250,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.5.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "vm.Module",
-                                supported: "(none yet)",
                                 version: "9.5.9",
                             },
                         },
@@ -5273,10 +5263,9 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "9.5.9" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-yet",
                             data: {
                                 name: "vm.Module",
-                                supported: "(none yet)",
                                 version: "9.5.9",
                             },
                         },
@@ -5323,7 +5312,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "10.5.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "worker_threads",
                                 supported: "12.11.0",
@@ -5337,7 +5326,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "10.5.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "worker_threads",
                                 supported: "12.11.0",
@@ -5351,7 +5340,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     options: [{ version: "10.5.0" }],
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "worker_threads",
                                 supported: "12.11.0",
@@ -5367,7 +5356,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                     },
                     errors: [
                         {
-                            messageId: "unsupported",
+                            messageId: "not-supported-till",
                             data: {
                                 name: "worker_threads",
                                 supported: "12.11.0",
