@@ -4,11 +4,11 @@
  */
 "use strict"
 
-const { RuleTester } = require("#eslint-rule-tester")
+const { RuleTester } = require("eslint")
 const rule = require("../../../lib/rules/prefer-node-protocol.js")
 
 new RuleTester({
-    languageOptions: {
+    parserOptions: {
         ecmaVersion: 2020,
         sourceType: "module",
     },
