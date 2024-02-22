@@ -11,7 +11,6 @@ import foo from "./path/to/a/file" // maybe it's resolved to 'file.js' or 'file.
 export * from "./path/to/a/file"
 ```
 
-
 We can also import a variety of file types with bundlers such as Webpack. In this situation, explicit file extensions can help to identify the type of file being imported.
 
 ## 📖 Rule Details
