@@ -174,7 +174,7 @@
     "no-regexp-prototype-compile": { "supported": ">=0.10.0" },
     "no-regexp-prototype-flags": { "supported": ">=6.0.0" },
     "no-regexp-s-flag": { "supported": ">=8.10.0" },
-    "no-regexp-u-flag": { "supported": ">=6.0.0" }, // 8.3.0?
+    "no-regexp-u-flag": { "supported": ">=6.0.0" },
     "no-regexp-unicode-property-escapes-2019": {
         "supported": ">=12.1.0 || ^10.16.0"
     },
