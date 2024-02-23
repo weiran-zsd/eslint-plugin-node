@@ -6,3 +6,5 @@
 .eslintcache
 .vscode
 .idea/
+
+types/
