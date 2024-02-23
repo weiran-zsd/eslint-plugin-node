@@ -77,7 +77,7 @@ runTests([
                 options: [{ version: "14.0.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "AggregateError",
                             supported: "15.0.0",
@@ -110,7 +110,7 @@ runTests([
                 options: [{ version: "3.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Array.from",
                             supported: "4.0.0",
@@ -143,7 +143,7 @@ runTests([
                 options: [{ version: "3.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Array.of",
                             supported: "4.0.0",
@@ -176,7 +176,7 @@ runTests([
                 options: [{ version: "10.3.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "BigInt",
                             supported: "10.4.0",
@@ -190,7 +190,7 @@ runTests([
                 options: [{ version: "10.3.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "BigInt",
                             supported: "10.4.0",
@@ -215,7 +215,7 @@ runTests([
                 options: [{ version: "14.5.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "FinalizationRegistry",
                             supported: "14.6.0",
@@ -248,7 +248,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Map",
                             supported: "0.12.0",
@@ -262,7 +262,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Map",
                             supported: "0.12.0",
@@ -295,7 +295,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.acosh",
                             supported: "0.12.0",
@@ -328,7 +328,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.asinh",
                             supported: "0.12.0",
@@ -361,7 +361,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.atanh",
                             supported: "0.12.0",
@@ -394,7 +394,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.cbrt",
                             supported: "0.12.0",
@@ -427,7 +427,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.clz32",
                             supported: "0.12.0",
@@ -460,7 +460,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.cosh",
                             supported: "0.12.0",
@@ -493,7 +493,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.expm1",
                             supported: "0.12.0",
@@ -526,7 +526,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.fround",
                             supported: "0.12.0",
@@ -559,7 +559,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.hypot",
                             supported: "0.12.0",
@@ -592,7 +592,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.imul",
                             supported: "0.12.0",
@@ -625,7 +625,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.log10",
                             supported: "0.12.0",
@@ -658,7 +658,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.log1p",
                             supported: "0.12.0",
@@ -691,7 +691,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.log2",
                             supported: "0.12.0",
@@ -724,7 +724,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.sign",
                             supported: "0.12.0",
@@ -757,7 +757,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.sinh",
                             supported: "0.12.0",
@@ -790,7 +790,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.tanh",
                             supported: "0.12.0",
@@ -823,7 +823,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Math.trunc",
                             supported: "0.12.0",
@@ -856,7 +856,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Number.isFinite",
                             supported: "0.10.0",
@@ -889,7 +889,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Number.isInteger",
                             supported: "0.12.0",
@@ -922,7 +922,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Number.isNaN",
                             supported: "0.10.0",
@@ -955,7 +955,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Number.isSafeInteger",
                             supported: "0.12.0",
@@ -988,7 +988,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Number.parseFloat",
                             supported: "0.12.0",
@@ -1021,7 +1021,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Number.parseInt",
                             supported: "0.12.0",
@@ -1054,7 +1054,7 @@ runTests([
                 options: [{ version: "3.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Object.assign",
                             supported: "4.0.0",
@@ -1087,7 +1087,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Object.getOwnPropertySymbols",
                             supported: "0.12.0",
@@ -1120,7 +1120,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Object.is",
                             supported: "0.10.0",
@@ -1153,7 +1153,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Object.setPrototypeOf",
                             supported: "0.12.0",
@@ -1182,7 +1182,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Promise",
                             supported: "0.12.0",
@@ -1196,7 +1196,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Promise",
                             supported: "0.12.0",
@@ -1225,7 +1225,7 @@ runTests([
                 options: [{ version: "12.8.1" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Promise.allSettled",
                             supported: "12.9.0",
@@ -1239,7 +1239,7 @@ runTests([
                 options: [{ version: "12.8.1" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Promise.allSettled",
                             supported: "12.9.0",
@@ -1268,7 +1268,7 @@ runTests([
                 options: [{ version: "14.0.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Promise.any",
                             supported: "15.0.0",
@@ -1282,7 +1282,7 @@ runTests([
                 options: [{ version: "14.0.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Promise.any",
                             supported: "15.0.0",
@@ -1311,7 +1311,7 @@ runTests([
                 options: [{ version: "5.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Proxy",
                             supported: "6.0.0",
@@ -1325,7 +1325,7 @@ runTests([
                 options: [{ version: "5.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Proxy",
                             supported: "6.0.0",
@@ -1354,7 +1354,7 @@ runTests([
                 options: [{ version: "5.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Reflect",
                             supported: "6.0.0",
@@ -1368,7 +1368,7 @@ runTests([
                 options: [{ version: "5.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Reflect",
                             supported: "6.0.0",
@@ -1397,7 +1397,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Set",
                             supported: "0.12.0",
@@ -1411,7 +1411,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Set",
                             supported: "0.12.0",
@@ -1444,7 +1444,7 @@ runTests([
                 options: [{ version: "3.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "String.fromCodePoint",
                             supported: "4.0.0",
@@ -1477,7 +1477,7 @@ runTests([
                 options: [{ version: "3.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "String.raw",
                             supported: "4.0.0",
@@ -1506,7 +1506,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Symbol",
                             supported: "0.12.0",
@@ -1520,7 +1520,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Symbol",
                             supported: "0.12.0",
@@ -1549,7 +1549,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Int8Array",
                             supported: "0.10.0",
@@ -1563,7 +1563,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Int8Array",
                             supported: "0.10.0",
@@ -1592,7 +1592,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Uint8Array",
                             supported: "0.10.0",
@@ -1606,7 +1606,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Uint8Array",
                             supported: "0.10.0",
@@ -1635,7 +1635,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Uint8ClampedArray",
                             supported: "0.10.0",
@@ -1649,7 +1649,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Uint8ClampedArray",
                             supported: "0.10.0",
@@ -1678,7 +1678,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Int16Array",
                             supported: "0.10.0",
@@ -1692,7 +1692,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Int16Array",
                             supported: "0.10.0",
@@ -1721,7 +1721,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Uint16Array",
                             supported: "0.10.0",
@@ -1735,7 +1735,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Uint16Array",
                             supported: "0.10.0",
@@ -1764,7 +1764,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Int32Array",
                             supported: "0.10.0",
@@ -1778,7 +1778,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Int32Array",
                             supported: "0.10.0",
@@ -1807,7 +1807,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Uint32Array",
                             supported: "0.10.0",
@@ -1821,7 +1821,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Uint32Array",
                             supported: "0.10.0",
@@ -1850,7 +1850,7 @@ runTests([
                 options: [{ version: "10.3.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "BigInt64Array",
                             supported: "10.4.0",
@@ -1864,7 +1864,7 @@ runTests([
                 options: [{ version: "10.3.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "BigInt64Array",
                             supported: "10.4.0",
@@ -1893,7 +1893,7 @@ runTests([
                 options: [{ version: "10.3.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "BigUint64Array",
                             supported: "10.4.0",
@@ -1907,7 +1907,7 @@ runTests([
                 options: [{ version: "10.3.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "BigUint64Array",
                             supported: "10.4.0",
@@ -1936,7 +1936,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Float32Array",
                             supported: "0.10.0",
@@ -1950,7 +1950,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Float32Array",
                             supported: "0.10.0",
@@ -1979,7 +1979,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Float64Array",
                             supported: "0.10.0",
@@ -1993,7 +1993,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Float64Array",
                             supported: "0.10.0",
@@ -2022,7 +2022,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "DataView",
                             supported: "0.10.0",
@@ -2036,7 +2036,7 @@ runTests([
                 options: [{ version: "0.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "DataView",
                             supported: "0.10.0",
@@ -2065,7 +2065,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "WeakMap",
                             supported: "0.12.0",
@@ -2079,7 +2079,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "WeakMap",
                             supported: "0.12.0",
@@ -2108,7 +2108,7 @@ runTests([
                 options: [{ version: "14.5.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "WeakRef",
                             supported: "14.6.0",
@@ -2122,7 +2122,7 @@ runTests([
                 options: [{ version: "14.5.0" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "WeakRef",
                             supported: "14.6.0",
@@ -2151,7 +2151,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "WeakSet",
                             supported: "0.12.0",
@@ -2165,7 +2165,7 @@ runTests([
                 options: [{ version: "0.11.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "WeakSet",
                             supported: "0.12.0",
@@ -2194,7 +2194,7 @@ runTests([
                 options: [{ version: "8.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Atomics",
                             supported: "8.10.0",
@@ -2208,7 +2208,7 @@ runTests([
                 options: [{ version: "8.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Atomics",
                             supported: "8.10.0",
@@ -2241,7 +2241,7 @@ runTests([
                 options: [{ version: "6.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Object.values",
                             supported: "7.0.0",
@@ -2274,7 +2274,7 @@ runTests([
                 options: [{ version: "6.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Object.entries",
                             supported: "7.0.0",
@@ -2307,7 +2307,7 @@ runTests([
                 options: [{ version: "6.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "Object.getOwnPropertyDescriptors",
                             supported: "7.0.0",
@@ -2336,7 +2336,7 @@ runTests([
                 options: [{ version: "8.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "SharedArrayBuffer",
                             supported: "8.10.0",
@@ -2350,7 +2350,7 @@ runTests([
                 options: [{ version: "8.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "SharedArrayBuffer",
                             supported: "8.10.0",
@@ -2385,7 +2385,7 @@ runTests([
                 options: [{ version: "11.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "globalThis",
                             supported: "12.0.0",
@@ -2399,7 +2399,7 @@ runTests([
                 options: [{ version: "11.9.9" }],
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "globalThis",
                             supported: "12.0.0",
@@ -2415,7 +2415,7 @@ runTests([
                 },
                 errors: [
                     {
-                        messageId: "unsupported",
+                        messageId: "not-supported-till",
                         data: {
                             name: "globalThis",
                             supported: "12.0.0",
