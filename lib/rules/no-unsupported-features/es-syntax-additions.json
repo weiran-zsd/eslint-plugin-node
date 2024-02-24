@@ -3,12 +3,12 @@
         "name": "no-bigint-property-names",
         "supported": ">=14.0.0"
     },
-    "[shorthand=true][kind='get']": {
-        "name": "no-property-shorthands-getter",
+    "[shorthand=true][kind='get'], [shorthand=true][key.name='get']": {
+        "name": "no-property-shorthands-get",
         "supported": ">=6.0.0"
     },
-    "[shorthand=true][kind='set']": {
-        "name": "no-property-shorthands-setter",
+    "[shorthand=true][kind='set'], [shorthand=true][key.name='set']": {
+        "name": "no-property-shorthands-set",
         "supported": ">=6.0.0"
     },
     "CallExpression[optional=true] > SpreadElement.arguments": {
