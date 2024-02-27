@@ -28,13 +28,22 @@ module.exports = [
     eslintPluginConfig,
     prettierConfig,
     {
-        rules: { "eslint-plugin/require-meta-docs-description": "error" },
+        rules: {
+            "eslint-plugin/require-meta-docs-description": "error",
+        },
     },
     {
         // these messageIds were used outside
         files: ["lib/rules/prefer-global/*.js"],
         rules: {
             "eslint-plugin/no-unused-message-ids": 0,
+        },
+    },
+    {
+        // these messageIds were used outside
+        files: ["lib/**/*.js"],
+        rules: {
+            strict: ["error", "global"],
         },
     },
 ]
