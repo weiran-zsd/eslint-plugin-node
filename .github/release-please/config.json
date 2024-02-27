@@ -1,6 +1,6 @@
 {
     "release-type": "node",
-    "prerelease": "",
+    "prerelease": "next",
     "versioning-strategy": "prerelease",
     "include-component-in-tag": false,
     "changelog-sections": [
