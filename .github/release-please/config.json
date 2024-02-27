@@ -2,6 +2,7 @@
     "release-type": "node",
     "prerelease": "next",
     "versioning-strategy": "prerelease",
+    "bootstrap-sha": "7d44c5a9ce784789a9345742d5355639ad4fd9c5",
     "include-component-in-tag": false,
     "changelog-sections": [
         { "type": "feat", "section": "Features", "hidden": false },
