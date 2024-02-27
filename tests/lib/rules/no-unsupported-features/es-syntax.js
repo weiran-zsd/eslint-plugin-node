@@ -108,7 +108,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-arrow-functions",
+                            ruleId: "arrow-functions",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -122,7 +122,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-arrow-functions",
+                            ruleId: "arrow-functions",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -155,7 +155,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-binary-numeric-literals",
+                            ruleId: "binary-numeric-literals",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -192,7 +192,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-block-scoped-functions",
+                            ruleId: "block-scoped-functions",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -206,7 +206,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-block-scoped-functions",
+                            ruleId: "block-scoped-functions",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -255,7 +255,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-block-scoped-variables",
+                            ruleId: "block-scoped-variables",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -269,7 +269,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-block-scoped-variables",
+                            ruleId: "block-scoped-variables",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -283,7 +283,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-block-scoped-variables",
+                            ruleId: "block-scoped-variables",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -297,7 +297,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-block-scoped-variables",
+                            ruleId: "block-scoped-variables",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -334,7 +334,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-classes",
+                            ruleId: "classes",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -348,7 +348,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-classes",
+                            ruleId: "classes",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -391,7 +391,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-computed-properties",
+                            ruleId: "computed-properties",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -407,7 +407,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-computed-properties",
+                            ruleId: "computed-properties",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -421,7 +421,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-computed-properties",
+                            ruleId: "computed-properties",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -435,7 +435,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-computed-properties",
+                            ruleId: "computed-properties",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -530,7 +530,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-default-parameters",
+                            ruleId: "default-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -544,7 +544,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-default-parameters",
+                            ruleId: "default-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -558,7 +558,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-default-parameters",
+                            ruleId: "default-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -572,7 +572,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-default-parameters",
+                            ruleId: "default-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -586,7 +586,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-default-parameters",
+                            ruleId: "default-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -600,7 +600,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-default-parameters",
+                            ruleId: "default-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -657,7 +657,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-destructuring",
+                            ruleId: "destructuring",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -671,7 +671,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-destructuring",
+                            ruleId: "destructuring",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -685,7 +685,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-destructuring",
+                            ruleId: "destructuring",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -699,7 +699,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-destructuring",
+                            ruleId: "destructuring",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -714,7 +714,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-destructuring",
+                            ruleId: "destructuring",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -728,7 +728,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-destructuring",
+                            ruleId: "destructuring",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -742,7 +742,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-destructuring",
+                            ruleId: "destructuring",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -756,7 +756,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-destructuring",
+                            ruleId: "destructuring",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -797,7 +797,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-for-of-loops",
+                            ruleId: "for-of-loops",
                             supported: ">=0.12.0",
                             version: "0.11.9",
                         },
@@ -811,7 +811,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-for-of-loops",
+                            ruleId: "for-of-loops",
                             supported: ">=0.12.0",
                             version: "0.11.9",
                         },
@@ -830,7 +830,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-for-of-loops",
+                            ruleId: "for-of-loops",
                             supported: ">=0.12.0",
                             version: "0.11.9",
                         },
@@ -881,7 +881,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-generators",
+                            ruleId: "generators",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -895,7 +895,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-generators",
+                            ruleId: "generators",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -911,7 +911,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-generators",
+                            ruleId: "generators",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -925,7 +925,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-generators",
+                            ruleId: "generators",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -939,7 +939,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-generators",
+                            ruleId: "generators",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -993,7 +993,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-modules",
+                            ruleId: "modules",
                             supported: "^12.17.0 || >=13.2.0",
                             version: "10.0.0",
                         },
@@ -1008,7 +1008,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-modules",
+                            ruleId: "modules",
                             supported: "^12.17.0 || >=13.2.0",
                             version: "10.0.0",
                         },
@@ -1023,7 +1023,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-modules",
+                            ruleId: "modules",
                             supported: "^12.17.0 || >=13.2.0",
                             version: "10.0.0",
                         },
@@ -1038,7 +1038,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-modules",
+                            ruleId: "modules",
                             supported: "^12.17.0 || >=13.2.0",
                             version: "10.0.0",
                         },
@@ -1071,7 +1071,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-new-target",
+                            ruleId: "new-target",
                             supported: ">=5.0.0",
                             version: "4.9.9",
                         },
@@ -1085,7 +1085,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-new-target",
+                            ruleId: "new-target",
                             supported: ">=5.0.0",
                             version: "4.9.9",
                         },
@@ -1132,7 +1132,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-object-super-properties",
+                            ruleId: "object-super-properties",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1148,7 +1148,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-object-super-properties",
+                            ruleId: "object-super-properties",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1207,7 +1207,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-octal-numeric-literals",
+                            ruleId: "octal-numeric-literals",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1221,7 +1221,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-octal-numeric-literals",
+                            ruleId: "octal-numeric-literals",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1280,7 +1280,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-property-shorthands",
+                            ruleId: "property-shorthands",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1294,7 +1294,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-property-shorthands",
+                            ruleId: "property-shorthands",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1310,7 +1310,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-property-shorthands",
+                            ruleId: "property-shorthands",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1324,7 +1324,7 @@ runTests([
             //     errors: [
             //         {
             //             messageId: "not-supported-till",
-            //             data: { ruleId: "no-property-shorthands-getset", supported: ">=6.0.0", version: "3.9.9" },
+            //             data: { ruleId: "property-shorthands-getset", supported: ">=6.0.0", version: "3.9.9" },
             //         },
             //     ],
             // },
@@ -1334,7 +1334,7 @@ runTests([
             //     errors: [
             //         {
             //             messageId: "not-supported-till",
-            //             data: { ruleId: "no-property-shorthands-getset", supported: ">=6.0.0", version: "3.9.9" },
+            //             data: { ruleId: "property-shorthands-getset", supported: ">=6.0.0", version: "3.9.9" },
             //         },
             //     ],
             // },
@@ -1344,7 +1344,7 @@ runTests([
             //     errors: [
             //         {
             //             messageId: "not-supported-till",
-            //             data: { ruleId: "no-property-shorthands-getset", supported: ">=6.0.0", version: "5.9.9" },
+            //             data: { ruleId: "property-shorthands-getset", supported: ">=6.0.0", version: "5.9.9" },
             //         },
             //     ],
             // },
@@ -1354,7 +1354,7 @@ runTests([
             //     errors: [
             //         {
             //             messageId: "not-supported-till",
-            //             data: { ruleId: "no-property-shorthands-getset", supported: ">=6.0.0", version: "5.9.9" },
+            //             data: { ruleId: "property-shorthands-getset", supported: ">=6.0.0", version: "5.9.9" },
             //         },
             //     ],
             // },
@@ -1388,7 +1388,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-u-flag",
+                            ruleId: "regexp-u-flag",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -1425,7 +1425,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-y-flag",
+                            ruleId: "regexp-y-flag",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -1501,7 +1501,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-parameters",
+                            ruleId: "rest-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -1515,7 +1515,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-parameters",
+                            ruleId: "rest-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -1529,7 +1529,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-parameters",
+                            ruleId: "rest-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -1543,7 +1543,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-parameters",
+                            ruleId: "rest-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -1557,7 +1557,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-parameters",
+                            ruleId: "rest-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -1571,7 +1571,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-parameters",
+                            ruleId: "rest-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -1585,7 +1585,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-parameters",
+                            ruleId: "rest-parameters",
                             supported: ">=6.0.0",
                             version: "5.9.9",
                         },
@@ -1648,7 +1648,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-spread-elements",
+                            ruleId: "spread-elements",
                             supported: ">=5.0.0",
                             version: "4.9.9",
                         },
@@ -1662,7 +1662,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-spread-elements",
+                            ruleId: "spread-elements",
                             supported: ">=5.0.0",
                             version: "4.9.9",
                         },
@@ -1670,7 +1670,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-spread-elements",
+                            ruleId: "spread-elements",
                             supported: ">=5.0.0",
                             version: "4.9.9",
                         },
@@ -1684,7 +1684,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-spread-elements",
+                            ruleId: "spread-elements",
                             supported: ">=5.0.0",
                             version: "4.9.9",
                         },
@@ -1698,7 +1698,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-spread-elements",
+                            ruleId: "spread-elements",
                             supported: ">=5.0.0",
                             version: "4.9.9",
                         },
@@ -1739,7 +1739,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-template-literals",
+                            ruleId: "template-literals",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1753,7 +1753,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-template-literals",
+                            ruleId: "template-literals",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1767,7 +1767,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-template-literals",
+                            ruleId: "template-literals",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1781,7 +1781,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-template-literals",
+                            ruleId: "template-literals",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1830,7 +1830,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-unicode-codepoint-escapes",
+                            ruleId: "unicode-codepoint-escapes",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1844,7 +1844,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-unicode-codepoint-escapes",
+                            ruleId: "unicode-codepoint-escapes",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1858,7 +1858,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-unicode-codepoint-escapes",
+                            ruleId: "unicode-codepoint-escapes",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1872,7 +1872,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-unicode-codepoint-escapes",
+                            ruleId: "unicode-codepoint-escapes",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1886,7 +1886,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-unicode-codepoint-escapes",
+                            ruleId: "unicode-codepoint-escapes",
                             supported: ">=4.0.0",
                             version: "3.9.9",
                         },
@@ -1927,7 +1927,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-exponential-operators",
+                            ruleId: "exponential-operators",
                             supported: ">=7.0.0",
                             version: "6.9.9",
                         },
@@ -1941,7 +1941,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-exponential-operators",
+                            ruleId: "exponential-operators",
                             supported: ">=7.0.0",
                             version: "6.9.9",
                         },
@@ -1994,7 +1994,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-functions",
+                            ruleId: "async-functions",
                             supported: ">=7.6.0",
                             version: "7.5.9",
                         },
@@ -2008,7 +2008,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-functions",
+                            ruleId: "async-functions",
                             supported: ">=7.6.0",
                             version: "7.5.9",
                         },
@@ -2022,7 +2022,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-functions",
+                            ruleId: "async-functions",
                             supported: ">=7.6.0",
                             version: "7.5.9",
                         },
@@ -2036,7 +2036,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-functions",
+                            ruleId: "async-functions",
                             supported: ">=7.6.0",
                             version: "7.5.9",
                         },
@@ -2050,7 +2050,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-functions",
+                            ruleId: "async-functions",
                             supported: ">=7.6.0",
                             version: "7.5.9",
                         },
@@ -2064,7 +2064,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-functions",
+                            ruleId: "async-functions",
                             supported: ">=7.6.0",
                             version: "7.5.9",
                         },
@@ -2078,7 +2078,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-functions",
+                            ruleId: "async-functions",
                             supported: ">=7.6.0",
                             version: "7.5.9",
                         },
@@ -2131,7 +2131,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-trailing-function-commas",
+                            ruleId: "trailing-function-commas",
                             supported: ">=8.0.0",
                             version: "7.9.9",
                         },
@@ -2145,7 +2145,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-trailing-function-commas",
+                            ruleId: "trailing-function-commas",
                             supported: ">=8.0.0",
                             version: "7.9.9",
                         },
@@ -2159,7 +2159,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-trailing-function-commas",
+                            ruleId: "trailing-function-commas",
                             supported: ">=8.0.0",
                             version: "7.9.9",
                         },
@@ -2173,7 +2173,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-trailing-function-commas",
+                            ruleId: "trailing-function-commas",
                             supported: ">=8.0.0",
                             version: "7.9.9",
                         },
@@ -2187,7 +2187,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-trailing-function-commas",
+                            ruleId: "trailing-function-commas",
                             supported: ">=8.0.0",
                             version: "7.9.9",
                         },
@@ -2201,7 +2201,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-trailing-function-commas",
+                            ruleId: "trailing-function-commas",
                             supported: ">=8.0.0",
                             version: "7.9.9",
                         },
@@ -2215,7 +2215,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-trailing-function-commas",
+                            ruleId: "trailing-function-commas",
                             supported: ">=8.0.0",
                             version: "7.9.9",
                         },
@@ -2229,7 +2229,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-trailing-function-commas",
+                            ruleId: "trailing-function-commas",
                             supported: ">=8.0.0",
                             version: "7.9.9",
                         },
@@ -2290,7 +2290,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-iteration",
+                            ruleId: "async-iteration",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2304,7 +2304,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-iteration",
+                            ruleId: "async-iteration",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2318,7 +2318,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-iteration",
+                            ruleId: "async-iteration",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2332,7 +2332,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-iteration",
+                            ruleId: "async-iteration",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2346,7 +2346,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-iteration",
+                            ruleId: "async-iteration",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2360,7 +2360,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-iteration",
+                            ruleId: "async-iteration",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2385,7 +2385,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-malformed-template-literals",
+                            ruleId: "malformed-template-literals",
                             supported: ">=8.10.0",
                             version: "8.9.9",
                         },
@@ -2430,7 +2430,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-lookbehind-assertions",
+                            ruleId: "regexp-lookbehind-assertions",
                             supported: ">=8.10.0",
                             version: "8.9.9",
                         },
@@ -2444,7 +2444,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-lookbehind-assertions",
+                            ruleId: "regexp-lookbehind-assertions",
                             supported: ">=8.10.0",
                             version: "8.9.9",
                         },
@@ -2458,7 +2458,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-lookbehind-assertions",
+                            ruleId: "regexp-lookbehind-assertions",
                             supported: ">=8.10.0",
                             version: "8.9.9",
                         },
@@ -2503,7 +2503,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-named-capture-groups",
+                            ruleId: "regexp-named-capture-groups",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2517,7 +2517,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-named-capture-groups",
+                            ruleId: "regexp-named-capture-groups",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2531,7 +2531,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-named-capture-groups",
+                            ruleId: "regexp-named-capture-groups",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2568,7 +2568,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-s-flag",
+                            ruleId: "regexp-s-flag",
                             supported: ">=8.10.0",
                             version: "8.9.9",
                         },
@@ -2582,7 +2582,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-s-flag",
+                            ruleId: "regexp-s-flag",
                             supported: ">=8.10.0",
                             version: "8.9.9",
                         },
@@ -2627,7 +2627,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-unicode-property-escapes",
+                            ruleId: "regexp-unicode-property-escapes",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2641,7 +2641,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-unicode-property-escapes",
+                            ruleId: "regexp-unicode-property-escapes",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2655,7 +2655,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-regexp-unicode-property-escapes",
+                            ruleId: "regexp-unicode-property-escapes",
                             supported: ">=10.0.0",
                             version: "9.9.9",
                         },
@@ -2708,7 +2708,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-spread-properties",
+                            ruleId: "rest-spread-properties",
                             supported: ">=8.3.0",
                             version: "8.2.9",
                         },
@@ -2722,7 +2722,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-spread-properties",
+                            ruleId: "rest-spread-properties",
                             supported: ">=8.3.0",
                             version: "8.2.9",
                         },
@@ -2767,7 +2767,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-json-superset",
+                            ruleId: "json-superset",
                             code: "2028",
                             supported: ">=10.0.0",
                             version: "9.99.99",
@@ -2782,7 +2782,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-json-superset",
+                            ruleId: "json-superset",
                             code: "2029",
                             supported: ">=10.0.0",
                             version: "9.99.99",
@@ -2812,7 +2812,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-optional-catch-binding",
+                            ruleId: "optional-catch-binding",
                             supported: ">=10.0.0",
                             version: "9.99.99",
                         },
@@ -2862,7 +2862,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-bigint",
+                            ruleId: "bigint",
                             supported: ">=10.4.0",
                             version: "10.3.0",
                         },
@@ -2876,7 +2876,7 @@ runTests([
             //         {
             //             messageId: "not-supported-till",
             //             data: {
-            //                 ruleId: "no-bigint-property-names",
+            //                 ruleId: "bigint-property-names",
             //                 supported: null,
             //                 version: "12.0.0",
             //             },
@@ -2890,7 +2890,7 @@ runTests([
             //         {
             //             messageId: "not-supported-till",
             //             data: {
-            //                 ruleId: "no-bigint-property-names",
+            //                 ruleId: "bigint-property-names",
             //                 supported: null,
             //                 version: "12.0.0",
             //             },
@@ -2923,7 +2923,7 @@ runTests([
                 {
                     messageId: "not-supported-till",
                     data: {
-                        ruleId: "no-dynamic-import",
+                        ruleId: "dynamic-import",
                         supported: "^12.17.0 || >=13.2.0",
                         version: version,
                     },
@@ -2948,7 +2948,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-optional-chaining",
+                            ruleId: "optional-chaining",
                             supported: ">=14.0.0",
                             version: "13.0.0",
                         },
@@ -2980,7 +2980,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-nullish-coalescing-operators",
+                            ruleId: "nullish-coalescing-operators",
                             supported: ">=14.0.0",
                             version: "13.0.0",
                         },
@@ -2996,7 +2996,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-nullish-coalescing-operators",
+                            ruleId: "nullish-coalescing-operators",
                             supported: ">=14.0.0",
                             version: "13.0.0",
                         },
@@ -3034,7 +3034,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-logical-assignment-operators",
+                            ruleId: "logical-assignment-operators",
                             supported: ">=15.0.0",
                             version: "14.0.0",
                         },
@@ -3048,7 +3048,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-logical-assignment-operators",
+                            ruleId: "logical-assignment-operators",
                             supported: ">=15.0.0",
                             version: "14.0.0",
                         },
@@ -3062,7 +3062,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-logical-assignment-operators",
+                            ruleId: "logical-assignment-operators",
                             supported: ">=15.0.0",
                             version: "14.0.0",
                         },
@@ -3088,7 +3088,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-numeric-separators",
+                            ruleId: "numeric-separators",
                             supported: ">=12.5.0",
                             version: "12.4.0",
                         },
@@ -3162,7 +3162,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-arrow-functions",
+                            ruleId: "arrow-functions",
                             supported: ">=4.0.0",
                             version: ">=0.12.8",
                         },
@@ -3177,7 +3177,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-spread-properties",
+                            ruleId: "rest-spread-properties",
                             supported: ">=8.3.0",
                             version: ">=8.0.0",
                         },
@@ -3191,7 +3191,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-arrow-functions",
+                            ruleId: "arrow-functions",
                             supported: ">=4.0.0",
                             version: "<6.0.0",
                         },
@@ -3206,7 +3206,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-rest-spread-properties",
+                            ruleId: "rest-spread-properties",
                             supported: ">=8.3.0",
                             version: ">=8.0.0",
                         },
@@ -3220,7 +3220,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-functions",
+                            ruleId: "async-functions",
                             supported: ">=7.6.0",
                             version: ">=7.5.0",
                         },
@@ -3234,7 +3234,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-block-scoped-variables",
+                            ruleId: "block-scoped-variables",
                             supported: ">=4.0.0",
                             version: "*",
                         },
@@ -3248,7 +3248,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-functions",
+                            ruleId: "async-functions",
                             supported: ">=7.6.0",
                             version: "7.1.0",
                         },
@@ -3264,7 +3264,7 @@ runTests([
                     {
                         messageId: "not-supported-till",
                         data: {
-                            ruleId: "no-async-functions",
+                            ruleId: "async-functions",
                             supported: ">=7.6.0",
                             version: "7.1.0",
                         },
