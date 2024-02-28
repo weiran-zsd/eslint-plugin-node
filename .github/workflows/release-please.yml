@@ -14,21 +14,9 @@ jobs:
       - uses: google-github-actions/release-please-action@v4
         id: release
         with:
-          release-type: node
-          prerelease: beta
-          package-name: 'eslint-plugin-n'
-          changelog-types: >
-            [
-              { "type": "feat", "section": "Features", "hidden": false },
-              { "type": "fix", "section": "Bug Fixes", "hidden": false },
-              { "type": "docs", "section": "Documentation", "hidden": false },
-              { "type": "build", "section": "Build Related", "hidden": false },
-              { "type": "chore", "section": "Chores", "hidden": false },
-              { "type": "perf", "section": "Chores", "hidden": false },
-              { "type": "ci", "section": "Chores", "hidden": false },
-              { "type": "refactor", "section": "Chores", "hidden": false },
-              { "type": "test", "section": "Chores", "hidden": false }
-            ]
+          config-file: .github/release-please/config.json
+          manifest-file: .github/release-please/manifest.json
+
       - uses: actions/checkout@v4
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v4
@@ -38,7 +26,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - run: |
           npm install
-          npm publish --provenance
+          npm publish --provenance --tag next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}
