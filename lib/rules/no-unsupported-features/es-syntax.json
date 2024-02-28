@@ -307,6 +307,7 @@
         "supported": "^12.17.0 || >=13.2.0"
     },
     "no-new-target": {
+        "aliases": ["new.target"],
         "supported": ">=5.0.0"
     },
     "no-nullish-coalescing-operators": {
@@ -454,6 +455,7 @@
         "supported": ">=16.0.0"
     },
     "no-regexp-lookbehind-assertions": {
+        "aliases": ["regexpLookbehind"],
         "supported": ">=8.10.0"
     },
     "no-regexp-named-capture-groups": {
@@ -466,9 +468,11 @@
         "supported": ">=6.0.0"
     },
     "no-regexp-s-flag": {
+        "aliases": ["regexpS"],
         "supported": ">=8.10.0"
     },
     "no-regexp-u-flag": {
+        "aliases": ["regexpU"],
         "supported": ">=6.0.0"
     },
     "no-regexp-unicode-property-escapes-2019": {
@@ -487,12 +491,14 @@
         "supported": null
     },
     "no-regexp-unicode-property-escapes": {
+        "aliases": ["regexpUnicodeProperties"],
         "supported": ">=10.0.0"
     },
     "no-regexp-v-flag": {
         "supported": ">=20.0.0"
     },
     "no-regexp-y-flag": {
+        "aliases": ["regexpY"],
         "supported": ">=6.0.0"
     },
     "no-resizable-and-growable-arraybuffers": {
@@ -587,12 +593,14 @@
         "supported": ">=0.10.0"
     },
     "no-trailing-function-commas": {
+        "aliases": ["trailingCommasInFunctions"],
         "supported": ">=8.0.0"
     },
     "no-typed-arrays": {
         "supported": ">=0.10.0"
     },
     "no-unicode-codepoint-escapes": {
+        "aliases": ["unicodeCodePointEscapes"],
         "supported": ">=4.0.0"
     },
     "no-weak-map": {

@@ -67,8 +67,14 @@ function runTests(patterns) {
         }
 
         // Add the invalid patterns with `ignores` option into the valid patterns.
-        if (pattern.keyword) {
-            tests.valid.push(...pattern.invalid.map(ignores(pattern.keyword)))
+        if (typeof pattern.keyword === "string") {
+            pattern.keyword = [pattern.keyword]
+        }
+
+        if (Array.isArray(pattern.keyword)) {
+            for (const keyword of pattern.keyword) {
+                tests.valid.push(...pattern.invalid.map(ignores(keyword)))
+            }
         }
 
         ruleTester.run("no-unsupported-features/es-builtins", rule, tests)
@@ -1047,7 +1053,7 @@ runTests([
         ],
     },
     {
-        keyword: "newTarget",
+        keyword: ["newTarget", "new.target"],
         valid: [
             {
                 code: "new target",
@@ -1360,7 +1366,7 @@ runTests([
         ],
     },
     {
-        keyword: "regexpUFlag",
+        keyword: ["regexpU", "regexpUFlag"],
         valid: [
             {
                 code: "/foo/",
@@ -1397,7 +1403,7 @@ runTests([
         ],
     },
     {
-        keyword: "regexpYFlag",
+        keyword: ["regexpY", "regexpYFlag"],
         valid: [
             {
                 code: "/foo/",
@@ -1790,7 +1796,7 @@ runTests([
         ],
     },
     {
-        keyword: "unicodeCodepointEscapes",
+        keyword: ["unicodeCodePointEscapes", "unicodeCodepointEscapes"],
         valid: [
             {
                 code: String.raw`var a = "\x61"`,
@@ -2087,7 +2093,7 @@ runTests([
         ],
     },
     {
-        keyword: "trailingFunctionCommas",
+        keyword: ["trailingCommasInFunctions", "trailingFunctionCommas"],
         valid: [
             {
                 code: "function f(a,) {}",
@@ -2394,7 +2400,7 @@ runTests([
         ],
     },
     {
-        keyword: "regexpLookbehindAssertions",
+        keyword: ["regexpLookbehind", "regexpLookbehindAssertions"],
         valid: [
             {
                 code: "var a = /(?<=a)foo/",
@@ -2540,7 +2546,7 @@ runTests([
         ],
     },
     {
-        keyword: "regexpSFlag",
+        keyword: ["regexpS", "regexpSFlag"],
         valid: [
             {
                 code: "var a = /foo/s",
@@ -2591,7 +2597,7 @@ runTests([
         ],
     },
     {
-        keyword: "regexpUnicodePropertyEscapes",
+        keyword: ["regexpUnicodeProperties", "regexpUnicodePropertyEscapes"],
         valid: [
             {
                 code: "var a = /\\p{Letter}/u",
