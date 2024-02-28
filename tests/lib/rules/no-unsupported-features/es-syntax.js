@@ -56,7 +56,6 @@ function ignores(keyword) {
 }
 
 function runTests(patterns) {
-    // for (const pattern of patterns.filter(v => v.keyword === "bigint")) {
     for (const pattern of patterns) {
         const ruleTester = new RuleTester({
             languageOptions: { ecmaVersion: "latest", env: { node: false } },
