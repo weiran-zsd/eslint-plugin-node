@@ -42,6 +42,16 @@ ruleTester.run("shebang", rule, {
             code: "#!/usr/bin/env node\nhello();",
         },
         {
+            name: "string-bin/bin/test.js",
+            filename: fixture("string-bin/bin/test.js"),
+            code: "#!/usr/bin/env -S node\nhello();",
+        },
+        {
+            name: "string-bin/bin/test.js",
+            filename: fixture("string-bin/bin/test.js"),
+            code: "#!/usr/bin/env -S node --loader tsm\nhello();",
+        },
+        {
             name: "object-bin/bin/c.js",
             filename: fixture("object-bin/bin/c.js"),
             code: "hello();",
