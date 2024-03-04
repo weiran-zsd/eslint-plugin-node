@@ -52,6 +52,21 @@ ruleTester.run("shebang", rule, {
             code: "#!/usr/bin/env -S node --loader tsm\nhello();",
         },
         {
+            name: "string-bin/bin/test.js",
+            filename: fixture("string-bin/bin/test.js"),
+            code: "#!/usr/bin/env --ignore-environment node\nhello();",
+        },
+        {
+            name: "string-bin/bin/test.js",
+            filename: fixture("string-bin/bin/test.js"),
+            code: "#!/usr/bin/env -i -S node --loader tsm\nhello();",
+        },
+        {
+            name: "string-bin/bin/test.js",
+            filename: fixture("string-bin/bin/test.js"),
+            code: "#!/usr/bin/env --block-signal=SIGINT -S FOO=bar node --loader tsm\nhello();",
+        },
+        {
             name: "object-bin/bin/c.js",
             filename: fixture("object-bin/bin/c.js"),
             code: "hello();",
