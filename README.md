@@ -114,6 +114,7 @@ For [Shareable Configs](https://eslint.org/docs/latest/developer-guide/shareable
 | [file-extension-in-import](docs/rules/file-extension-in-import.md)                           | enforce the style of file extensions in `import` declarations               |                 | 🔧 |    |
 | [global-require](docs/rules/global-require.md)                                               | require `require()` calls to be placed at top-level module scope            |                 |    |    |
 | [handle-callback-err](docs/rules/handle-callback-err.md)                                     | require error handling in callbacks                                         |                 |    |    |
+| [hashbang](docs/rules/hashbang.md)                                                           | require correct usage of hashbang                                           | ☑️ 🟢 ✅ ☑️ 🟢 ✅ | 🔧 |    |
 | [no-callback-literal](docs/rules/no-callback-literal.md)                                     | enforce Node.js-style error-first callback pattern is followed              |                 |    |    |
 | [no-deprecated-api](docs/rules/no-deprecated-api.md)                                         | disallow deprecated APIs                                                    | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
 | [no-exports-assign](docs/rules/no-exports-assign.md)                                         | disallow the assignment to `exports`                                        | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
@@ -147,7 +148,7 @@ For [Shareable Configs](https://eslint.org/docs/latest/developer-guide/shareable
 | [prefer-promises/dns](docs/rules/prefer-promises/dns.md)                                     | enforce `require("dns").promises`                                           |                 |    |    |
 | [prefer-promises/fs](docs/rules/prefer-promises/fs.md)                                       | enforce `require("fs").promises`                                            |                 |    |    |
 | [process-exit-as-throw](docs/rules/process-exit-as-throw.md)                                 | require that `process.exit()` expressions use the same code path as `throw` | ☑️ 🟢 ✅ ☑️ 🟢 ✅ |    |    |
-| [shebang](docs/rules/shebang.md)                                                             | require correct usage of shebang                                            | ☑️ 🟢 ✅ ☑️ 🟢 ✅ | 🔧 |    |
+| [shebang](docs/rules/shebang.md)                                                             | require correct usage of hashbang                                           |                 | 🔧 | ❌  |
 
 <!-- end auto-generated rules list -->
 
