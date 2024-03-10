@@ -6,8 +6,6 @@
 
 This is similar to [no-missing-require](no-missing-require.md), but this rule handles `import` and `export` declarations.
 
-⚠️ ECMAScript 2015 (ES6) does not define the lookup logic and Node does not support modules yet. So this rule spec might be changed in future.
-
 ## 📖 Rule Details
 
 This rule checks the file paths of `import` and `export` declarations.
