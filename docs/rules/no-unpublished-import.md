@@ -6,8 +6,6 @@
 
 This is similar to [no-unpublished-require](no-unpublished-require.md), but this rule handles `import` declarations.
 
-⚠️ ECMAScript 2015 (ES6) does not define the lookup logic and Node does not support modules yet. So this rule spec might be changed in future.
-
 ## 📖 Rule Details
 
 If a source code file satisfies all of the following conditions, the file is \*published\*.
