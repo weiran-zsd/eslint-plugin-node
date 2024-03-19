@@ -80,12 +80,12 @@ new RuleTester({
         {
             code: 'import fs from "fs";',
             output: 'import fs from "node:fs";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
         {
             code: 'export {promises} from "fs";',
             output: 'export {promises} from "node:fs";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
         {
             code: `
@@ -98,17 +98,17 @@ new RuleTester({
                     const fs = await import('node:fs');
                 }
             `,
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
         {
             code: 'import fs from "fs/promises";',
             output: 'import fs from "node:fs/promises";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs/promises` over `fs/promises`."],
         },
         {
             code: 'export {default} from "fs/promises";',
             output: 'export {default} from "node:fs/promises";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs/promises` over `fs/promises`."],
         },
         {
             code: `
@@ -121,22 +121,22 @@ new RuleTester({
                     const fs = await import('node:fs/promises');
                 }
             `,
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs/promises` over `fs/promises`."],
         },
         {
             code: 'import {promises} from "fs";',
             output: 'import {promises} from "node:fs";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
         {
             code: 'export {default as promises} from "fs";',
             output: 'export {default as promises} from "node:fs";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
         {
             code: "import {promises} from 'fs';",
             output: "import {promises} from 'node:fs';",
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
         {
             code: `
@@ -149,7 +149,7 @@ new RuleTester({
                     const fs = await import("node:fs/promises");
                 }
             `,
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs/promises` over `fs/promises`."],
         },
         {
             code: `
@@ -162,34 +162,34 @@ new RuleTester({
                     const fs = await import(/* escaped */"node:\\u{66}s/promises");
                 }
             `,
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs/promises` over `fs/promises`."],
         },
         {
             code: 'import "buffer";',
             output: 'import "node:buffer";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:buffer` over `buffer`."],
         },
         {
             code: 'import "child_process";',
             output: 'import "node:child_process";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:child_process` over `child_process`."],
         },
         {
             code: 'import "timers/promises";',
             output: 'import "node:timers/promises";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:timers/promises` over `timers/promises`."],
         },
 
         // `require`
         {
             code: 'const {promises} = require("fs")',
             output: 'const {promises} = require("node:fs")',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
         {
             code: "const fs = require('fs/promises')",
             output: "const fs = require('node:fs/promises')",
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs/promises` over `fs/promises`."],
         },
 
         // check enabling by supported Node.js versions
@@ -197,25 +197,25 @@ new RuleTester({
             options: [{ version: "12.20.0" }],
             code: 'import fs from "fs";',
             output: 'import fs from "node:fs";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
         {
             options: [{ version: "14.13.1" }],
             code: 'import fs from "fs";',
             output: 'import fs from "node:fs";',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
         {
             options: [{ version: "14.18.0" }],
             code: 'const fs = require("fs");',
             output: 'const fs = require("node:fs");',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
         {
             options: [{ version: "16.0.0" }],
             code: 'const fs = require("fs");',
             output: 'const fs = require("node:fs");',
-            errors: ["Prefer `node:{{moduleName}}` over `{{moduleName}}`."],
+            errors: ["Prefer `node:fs` over `fs`."],
         },
     ],
 })
