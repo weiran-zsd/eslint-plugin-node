@@ -228,5 +228,17 @@ new RuleTester({
             output: 'const fs = require("node:fs");',
             errors: ["Prefer `node:fs` over `fs`."],
         },
+        {
+            options: [{ version: "12.20.0" }],
+            code: `
+                const fs = require("fs");
+                import buffer from 'buffer'
+            `,
+            output: `
+                const fs = require("fs");
+                import buffer from 'node:buffer'
+            `,
+            errors: ["Prefer `node:buffer` over `buffer`."],
+        },
     ],
 })
