@@ -191,6 +191,17 @@ new RuleTester({
             output: "const fs = require('node:fs/promises')",
             errors: ["Prefer `node:fs/promises` over `fs/promises`."],
         },
+        {
+            code: `
+                const express = require('express');
+                const fs = require('fs/promises');
+            `,
+            output: `
+                const express = require('express');
+                const fs = require('node:fs/promises');
+            `,
+            errors: ["Prefer `node:fs/promises` over `fs/promises`."],
+        },
 
         // check enabling by supported Node.js versions
         {
