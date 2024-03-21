@@ -21,5 +21,6 @@
         "skipDefaultLibCheck": false,
         "skipLibCheck": false
     },
+    "include": ["./lib/eslint-utils.d.ts"],
     "files": ["./lib/index.js"]
 }
