@@ -28,11 +28,14 @@ declare module "@eslint-community/eslint-utils" {
         export { ESM };
     }
     type ReferenceType = typeof READ | typeof CALL | typeof CONSTRUCT;
-    type TraceMap<Info extends unknown = boolean> =
-        & { [key: string]: TraceMap; }
-        & Partial<Record<ReferenceType, Info>>;
+    type TraceMap<Info extends unknown> = {
+        [READ]?: Info;
+        [CALL]?: Info;
+        [CONSTRUCT]?: Info;
+        [key: string]: TraceMap<Info>;
+    }
     type RichNode = eslint.Rule.Node | Node;
-    type Reference<Info extends unknown = boolean> = {
+    type Reference<Info extends unknown> = {
         node: RichNode;
         path: string[];
         type: ReferenceType;
