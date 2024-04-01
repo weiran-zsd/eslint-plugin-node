@@ -68,11 +68,10 @@
         "prepack": "tsc --emitDeclarationOnly",
         "prepare": "husky",
         "preversion": "npm test",
-        "test": "run-p test:types test:lint test:tests",
-        "test:lint": "npm run -s lint",
+        "test": "run-p lint:* test:types test:tests",
+        "test:mocha": "_mocha  --reporter progress --timeout 4000",
         "test:tests": "npm run test:mocha \"tests/lib/**/*.js\"",
         "test:types": "tsc --noEmit --emitDeclarationOnly false",
-        "test:mocha": "_mocha  --reporter progress --timeout 4000",
         "update:eslint-docs": "eslint-doc-generator",
         "version": "npm run -s build && eslint lib/rules --fix && git add .",
         "watch": "npm run test:_mocha -- --watch --growl"

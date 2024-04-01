@@ -22,10 +22,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20.x
-      - name: Install Packages
-        run: npm install
-      - name: Lint
-        run: npm run -s lint
+      - run: npm install
+      - run: npm run -s lint
+      - run: npm run -s test:types
 
   test:
     name: Test
@@ -64,7 +63,6 @@ jobs:
       - name: Install Packages
         run: npm install
       - name: Install ESLint ${{ matrix.eslint }}
-        run: |
-          npm install --no-save --force eslint@${{ matrix.eslint }}
+        run: npm install --no-save --force eslint@${{ matrix.eslint }}
       - name: Test
-        run: npm run -s test
+        run: npm run -s test:tests
