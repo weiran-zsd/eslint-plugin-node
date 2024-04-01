@@ -6,15 +6,18 @@
         "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
     },
     "main": "lib/index.js",
+    "types": "types/index.d.ts",
     "files": [
         "lib/",
-        "configs/"
+        "configs/",
+        "types/index.d.ts"
     ],
     "peerDependencies": {
         "eslint": ">=8.23.0"
     },
     "dependencies": {
         "@eslint-community/eslint-utils": "^4.4.0",
+        "@types/eslint": "^8.56.2",
         "enhanced-resolve": "^5.15.0",
         "eslint-plugin-es-x": "^7.5.0",
         "get-tsconfig": "^4.7.0",
