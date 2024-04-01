@@ -67,4 +67,4 @@ jobs:
         run: |
           npm install --no-save --force eslint@${{ matrix.eslint }}
       - name: Test
-        run: npm run -s test:ci
+        run: npm run -s test
