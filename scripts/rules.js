@@ -10,7 +10,7 @@ const rootDir = path.resolve(__dirname, "../lib/rules/")
 const { pluginName } = require("./utils")
 
 /**
- * @typedef {Object} RuleInfo
+ * @typedef RuleInfo
  * @property {string} filePath The path to the rule definition.
  * @property {string} id The rule ID. (This includes `n/` prefix.)
  * @property {string} name The rule name. (This doesn't include `n/` prefix.)
@@ -23,7 +23,7 @@ const { pluginName } = require("./utils")
  */
 
 /**
- * @typedef {Object} CategoryInfo
+ * @typedef CategoryInfo
  * @property {string} id The category ID.
  * @property {RuleInfo[]} rules The rules which belong to this category.
  */
