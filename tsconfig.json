@@ -20,6 +20,6 @@
         "skipDefaultLibCheck": false,
         "skipLibCheck": false
     },
-    "include": ["./lib/eslint-utils.d.ts", "lib/typescript-fixes.d.ts"],
+    "include": ["./lib/eslint-utils.d.ts"],
     "files": ["./lib/index.js"]
 }
