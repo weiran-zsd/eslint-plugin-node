@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "moduleResolution": "node16",
+
+        "module": "nodenext",
+
+        "allowJs": true,
+        "checkJs": true,
+
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "declarationDir": "./types",
+
+        "allowSyntheticDefaultImports": false,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+
+        "strict": true,
+        "skipDefaultLibCheck": false,
+        "skipLibCheck": false
+    },
+    "include": ["./lib/eslint-utils.d.ts"],
+    "files": ["./lib/index.js"]
+}
