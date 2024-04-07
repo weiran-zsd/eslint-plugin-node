@@ -56,11 +56,11 @@ function ignores(keyword) {
 }
 
 function runTests(patterns) {
-    for (const pattern of patterns) {
-        const ruleTester = new RuleTester({
-            languageOptions: { ecmaVersion: "latest", env: { node: false } },
-        })
+    const ruleTester = new RuleTester({
+        languageOptions: { ecmaVersion: "latest", env: { node: false } },
+    })
 
+    for (const pattern of patterns) {
         const tests = {
             valid: pattern.valid,
             invalid: pattern.invalid,
@@ -492,40 +492,42 @@ runTests([
                 code: "(class { key(a = 0) {} })",
                 options: [{ version: "6.0.0" }],
             },
-            {
-                code: "function f(a = 0) {}",
-                options: [{ version: "5.9.9", ignores: ["defaultParameters"] }],
-            },
-            {
-                code: "(function(a = 0) {})",
-                options: [{ version: "5.9.9", ignores: ["defaultParameters"] }],
-            },
-            {
-                code: "((a = 0) => a)",
-                options: [{ version: "5.9.9", ignores: ["defaultParameters"] }],
-            },
-            {
-                code: "({ key(a = 0) {} })",
-                options: [{ version: "5.9.9", ignores: ["defaultParameters"] }],
-            },
-            {
-                code: "class A { key(a = 0) {} }",
-                options: [
-                    {
-                        version: "5.9.9",
-                        ignores: ["classes", "defaultParameters"],
-                    },
-                ],
-            },
-            {
-                code: "(class { key(a = 0) {} })",
-                options: [
-                    {
-                        version: "5.9.9",
-                        ignores: ["classes", "defaultParameters"],
-                    },
-                ],
-            },
+
+            // detected duplicate tests by eslint v9
+            // {
+            //     code: "function f(a = 0) {}",
+            //     options: [{ version: "5.9.9", ignores: ["defaultParameters"] }],
+            // },
+            // {
+            //     code: "(function(a = 0) {})",
+            //     options: [{ version: "5.9.9", ignores: ["defaultParameters"] }],
+            // },
+            // {
+            //     code: "((a = 0) => a)",
+            //     options: [{ version: "5.9.9", ignores: ["defaultParameters"] }],
+            // },
+            // {
+            //     code: "({ key(a = 0) {} })",
+            //     options: [{ version: "5.9.9", ignores: ["defaultParameters"] }],
+            // },
+            // {
+            //     code: "class A { key(a = 0) {} }",
+            //     options: [
+            //         {
+            //             version: "5.9.9",
+            //             ignores: ["classes", "defaultParameters"],
+            //         },
+            //     ],
+            // },
+            // {
+            //     code: "(class { key(a = 0) {} })",
+            //     options: [
+            //         {
+            //             version: "5.9.9",
+            //             ignores: ["classes", "defaultParameters"],
+            //         },
+            //     ],
+            // },
         ],
         invalid: [
             {

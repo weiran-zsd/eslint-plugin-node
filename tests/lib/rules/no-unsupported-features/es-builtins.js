@@ -42,14 +42,14 @@ function ignores(keyword) {
 }
 
 function runTests(patterns) {
-    for (const pattern of patterns) {
-        const ruleTester = new RuleTester({
-            languageOptions: {
-                ecmaVersion: "latest",
-                globals: globals.builtin,
-            },
-        })
+    const ruleTester = new RuleTester({
+        languageOptions: {
+            ecmaVersion: "latest",
+            globals: globals.builtin,
+        },
+    })
 
+    for (const pattern of patterns) {
         const tests = {
             valid: pattern.valid,
             invalid: pattern.invalid,
