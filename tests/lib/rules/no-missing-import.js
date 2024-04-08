@@ -39,6 +39,18 @@ function fixture(name) {
     return path.resolve(__dirname, "../../fixtures/no-missing", name)
 }
 
+function cantResolve(name, dir = "") {
+    return [
+        {
+            messageId: "notFound",
+            data: {
+                resolveError: `Can't resolve '${name}' in '${fixture(dir)}'`,
+            },
+        },
+    ]
+}
+
+/** @type {import('eslint').RuleTester} */
 const ruleTester = new RuleTester({
     languageOptions: {
         sourceType: "module",
@@ -320,89 +332,114 @@ ruleTester.run("no-missing-import", rule, {
         {
             filename: fixture("test.js"),
             code: "import abc from 'no-exist-package-0';",
-            errors: ['"no-exist-package-0" is not found.'],
+            errors: cantResolve("no-exist-package-0"),
         },
         {
             filename: fixture("test.js"),
             code: "import abcdef from 'esm-module/sub.mjs';",
-            errors: ['"esm-module/sub.mjs" is not found.'],
+            errors: [
+                {
+                    messageId: "notFound",
+                    data: {
+                        resolveError: [
+                            "Package path ./sub.mjs is not exported from package",
+                            fixture("node_modules/esm-module"),
+                            `(see exports field in ${fixture("node_modules/esm-module/package.json")})`,
+                        ].join(" "),
+                    },
+                },
+            ],
         },
         {
             filename: fixture("test.js"),
             code: "import test from '@mysticatea/test';",
-            errors: ['"@mysticatea/test" is not found.'],
+            errors: cantResolve("@mysticatea/test"),
         },
         {
             filename: fixture("test.js"),
             code: "import c from './c';",
-            errors: ['"./c" is not found.'],
+            errors: cantResolve("./c"),
         },
         {
             filename: fixture("test.ts"),
             code: "import d from './d';",
-            errors: ['"./d" is not found.'],
+            errors: cantResolve("./d"),
         },
         {
             filename: fixture("test.js"),
             code: "import d from './d';",
-            errors: ['"./d" is not found.'],
+            errors: cantResolve("./d"),
         },
         {
             filename: fixture("test.js"),
             code: "import a from './a.json';",
-            errors: ['"./a.json" is not found.'],
+            errors: cantResolve("./a.json"),
         },
 
         // Should work fine if the filename is relative.
         {
-            filename: "tests/fixtures/no-missing/test.js",
+            filename: fixture("test.js"),
             code: "import eslint from 'no-exist-package-0';",
-            errors: ['"no-exist-package-0" is not found.'],
+            errors: cantResolve("no-exist-package-0"),
         },
         {
             filename: "tests/fixtures/no-missing/test.js",
             code: "import c from './c';",
-            errors: ['"./c" is not found.'],
+            errors: cantResolve("./c"),
         },
 
         // Relative paths to a directory should work.
         {
             filename: fixture("test.js"),
             code: "import a from './bar';",
-            errors: ['"./bar" is not found.'],
+            errors: cantResolve("./bar"),
         },
         {
             filename: fixture("test.js"),
             code: "import a from './bar/';",
-            errors: ['"./bar/" is not found.'],
+            errors: cantResolve("./bar/"),
         },
         // Relative paths to an existing directory should not work.
         {
             filename: fixture("test.js"),
             code: "import a from '.';",
-            errors: ['"." is not found.'],
+            errors: cantResolve("."),
         },
         {
             filename: fixture("test.js"),
             code: "import a from './';",
-            errors: ['"./" is not found.'],
+            errors: cantResolve("./"),
         },
         {
             filename: fixture("test.js"),
             code: "import a from './foo';",
-            errors: ['"./foo" is not found.'],
+            errors: cantResolve("./foo"),
         },
         {
             filename: fixture("test.js"),
             code: "import a from './foo/';",
-            errors: ['"./foo/" is not found.'],
+            errors: cantResolve("./foo/"),
         },
 
         // Case sensitive
         {
             filename: fixture("test.js"),
             code: "import a from './A.js';",
-            errors: ['"./A.js" is not found.'],
+            errors: cantResolve("./A.js"),
+        },
+
+        {
+            filename: fixture("test.js"),
+            code: "import 'misconfigured-default';",
+            errors: [
+                {
+                    messageId: "notFound",
+                    data: {
+                        name: "misconfigured-default",
+                        resolveError: "Default condition should be last one",
+                    },
+                },
+            ],
         },
 
         // import()
@@ -412,7 +449,7 @@ ruleTester.run("no-missing-import", rule, {
                       filename: fixture("test.js"),
                       code: "function f() { import('no-exist-package-0') }",
                       languageOptions: { ecmaVersion: 2020 },
-                      errors: ['"no-exist-package-0" is not found.'],
+                      errors: cantResolve("no-exist-package-0"),
                   },
               ]
             : []),
