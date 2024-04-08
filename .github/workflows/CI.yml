@@ -58,8 +58,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - name: npm latest
-        run: npm i -g npm@latest # use latest npm
       - name: Install Packages
         run: npm install
       - name: Install ESLint ${{ matrix.eslint }}
