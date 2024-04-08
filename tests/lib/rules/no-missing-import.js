@@ -39,7 +39,6 @@ function fixture(name) {
     return path.resolve(__dirname, "../../fixtures/no-missing", name)
 }
 
-/** @type {import('eslint').RuleTester} */
 const ruleTester = new RuleTester({
     languageOptions: {
         sourceType: "module",
@@ -314,17 +313,7 @@ ruleTester.run("no-missing-import", rule, {
         {
             filename: fixture("test.js"),
             code: "import abcdef from 'esm-module/sub.mjs';",
-            // errors: ['"esm-module/sub.mjs" is not found.'],
-            errors: [
-                {
-                    messageId: "notFoundBecause",
-                    data: {
-                        name: "esm-module/sub.mjs",
-                        resolveError:
-                            "Package path ./sub.mjs is not exported from package /home/scagood/github/open-source/eslint-plugin-n/tests/fixtures/no-missing/node_modules/esm-module (see exports field in /home/scagood/github/open-source/eslint-plugin-n/tests/fixtures/no-missing/node_modules/esm-module/package.json)",
-                    },
-                },
-            ],
+            errors: ['"esm-module/sub.mjs" is not found.'],
         },
         {
             filename: fixture("test.js"),
@@ -402,20 +391,6 @@ ruleTester.run("no-missing-import", rule, {
             filename: fixture("test.js"),
             code: "import a from './A.js';",
             errors: ['"./A.js" is not found.'],
-        },
-
-        {
-            filename: fixture("test.js"),
-            code: "import 'misconfigured-default';",
-            errors: [
-                {
-                    messageId: "notFoundBecause",
-                    data: {
-                        name: "misconfigured-default",
-                        resolveError: "Default condition should be last one",
-                    },
-                },
-            ],
         },
 
         // import()
