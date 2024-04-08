@@ -1,7 +1,6 @@
 {
     "release-type": "node",
-    "prerelease": true,
-    "versioning": "prerelease",
+    "prerelease": false,
     "include-component-in-tag": false,
     "changelog-sections": [
         { "type": "feat", "section": "Features", "hidden": false },
