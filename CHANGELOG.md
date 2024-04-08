@@ -1,5 +1,12 @@
 # Changelog
 
+## [17.0.1-8](https://github.com/eslint-community/eslint-plugin-n/compare/v17.0.0-8...v17.0.1-8) (2024-04-08)
+
+
+### Chores
+
+* release latest version ([#218](https://github.com/eslint-community/eslint-plugin-n/issues/218)) ([9814627](https://github.com/eslint-community/eslint-plugin-n/commit/9814627748f07129659f7d86ee500f8465c1ab26))
+
 ## [17.0.0-8](https://github.com/eslint-community/eslint-plugin-n/compare/v17.0.0-7...v17.0.0-8) (2024-04-08)
 
 
