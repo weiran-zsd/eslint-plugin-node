@@ -38,6 +38,10 @@ ruleTester.run("no-missing-require", rule, {
         },
         {
             filename: fixture("test.js"),
+            code: "require('node:test');",
+        },
+        {
+            filename: fixture("test.js"),
             code: "require('eslint');",
         },
         {

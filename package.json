@@ -22,7 +22,6 @@
         "get-tsconfig": "^4.7.0",
         "globals": "^14.0.0",
         "ignore": "^5.2.4",
-        "is-builtin-module": "^3.2.1",
         "minimatch": "^9.0.0",
         "semver": "^7.5.3"
     },
