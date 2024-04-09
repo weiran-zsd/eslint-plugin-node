@@ -111,6 +111,18 @@ ruleTester.run("no-missing-import", rule, {
             code: "import a from './e.jsx';",
         },
 
+        // tryExtensions
+        {
+            filename: fixture("test.js"),
+            code: "import './c';",
+            options: [{ tryExtensions: [".coffee"] }],
+        },
+        {
+            filename: fixture("test.js"),
+            code: "import './c';",
+            settings: { node: { tryExtensions: [".coffee"] } },
+        },
+
         // Ignores it if the filename is unknown.
         "import abc from 'no-exist-package-0';",
         "import b from './b';",
