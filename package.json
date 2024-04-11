@@ -35,7 +35,7 @@
         "eslint": "^9.0.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-doc-generator": "^1.6.1",
-        "eslint-plugin-eslint-plugin": "^5.2.1",
+        "eslint-plugin-eslint-plugin": "^6.0.0",
         "eslint-plugin-n": "file:.",
         "fast-glob": "^3.2.12",
         "husky": "^9.0.0",
