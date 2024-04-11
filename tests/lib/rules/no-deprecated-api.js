@@ -791,7 +791,16 @@ ruleTester.run("no-deprecated-api", rule, {
         {
             code: "Intl.v8BreakIterator;",
             options: [{ version: "7.0.0" }],
-            errors: ["'Intl.v8BreakIterator' was deprecated since v7.0.0."],
+            errors: [
+                {
+                    messageId: "removed",
+                    data: {
+                        name: "'Intl.v8BreakIterator'",
+                        version: "7.0.0",
+                        removed: "9.0.0",
+                    },
+                },
+            ],
         },
         {
             code: "require.extensions;",
