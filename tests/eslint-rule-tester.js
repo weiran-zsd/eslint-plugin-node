@@ -23,7 +23,7 @@ const defaultConfig = {
     languageOptions: {
         ecmaVersion: 6,
         sourceType: "commonjs",
-        globals: globals.node,
+        globals: { ...globals.es2015, ...globals.node },
     },
 }
 exports.RuleTester = function (config = defaultConfig) {
