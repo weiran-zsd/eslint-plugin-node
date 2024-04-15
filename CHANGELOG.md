@@ -1,5 +1,18 @@
 # Changelog
 
+## [17.2.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.2.0...v17.2.1) (2024-04-15)
+
+
+### 🩹 Fixes
+
+* **unsupported-features:** Improve URL module ([#244](https://github.com/eslint-community/eslint-plugin-n/issues/244)) ([6581979](https://github.com/eslint-community/eslint-plugin-n/commit/6581979cfb6afa6a50531d37303af24aa7b4db37)), closes [#243](https://github.com/eslint-community/eslint-plugin-n/issues/243)
+
+
+### 🧹 Chores
+
+* update dependency @typescript-eslint/typescript-estree to v7 ([#236](https://github.com/eslint-community/eslint-plugin-n/issues/236)) ([a0b45ee](https://github.com/eslint-community/eslint-plugin-n/commit/a0b45ee9c35279c29d3602609dad3b36d95d6f5f))
+* update dependency eslint-plugin-eslint-plugin to v6 ([#237](https://github.com/eslint-community/eslint-plugin-n/issues/237)) ([7addf99](https://github.com/eslint-community/eslint-plugin-n/commit/7addf998e72d0f8ae92c52b112667bcb2c9558cd))
+
 ## [17.2.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.1.0...v17.2.0) (2024-04-10)
 
 
