@@ -98,7 +98,7 @@
         "url": "https://github.com/eslint-community/eslint-plugin-n/issues"
     },
     "homepage": "https://github.com/eslint-community/eslint-plugin-n#readme",
-    "funding": "https://github.com/sponsors/mysticatea",
+    "funding": "https://opencollective.com/eslint",
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.org/"
