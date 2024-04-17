@@ -23,7 +23,9 @@ const defaultConfig = {
     languageOptions: {
         ecmaVersion: 6,
         sourceType: "commonjs",
-        globals: globals.node,
+        // TODO: remove global.es2105 when dropping eslint v8 -- it has been fixed in eslint v9
+        // see: https://github.com/eslint/eslint/commit/0db676f9c64d2622ada86b653136d2bda4f0eee0
+        globals: { ...globals.es2015, ...globals.node },
     },
 }
 exports.RuleTester = function (config = defaultConfig) {
