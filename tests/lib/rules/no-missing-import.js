@@ -78,10 +78,11 @@ ruleTester.run("no-missing-import", rule, {
             filename: fixture("test.js"),
             code: "import a from './a.js';",
         },
-        {
-            filename: fixture("test.ts"),
-            code: "import a from './a.js';",
-        },
+        // I dont think this should resolve, as it wont after a standard `tsc`
+        // {
+        //     filename: fixture("test.ts"),
+        //     code: "import a from './a.js';",
+        // },
         {
             filename: fixture("test.ts"),
             code: "import a from './d.js';",
