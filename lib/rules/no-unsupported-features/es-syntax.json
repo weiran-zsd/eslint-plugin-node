@@ -133,11 +133,11 @@
     },
     "no-date-prototype-getyear-setyear": {
         "supported": ">=0.10.0",
-        "supported": ">=0.10.0"
+        "deprecated": ">=0.10.0"
     },
     "no-date-prototype-togmtstring": {
         "supported": ">=0.10.0",
-        "supported": ">=0.10.0"
+        "deprecated": ">=0.10.0"
     },
     "no-default-parameters": {
         "supported": ">=6.0.0"
@@ -153,7 +153,7 @@
     },
     "no-escape-unescape": {
         "supported": ">=0.10.0",
-        "supported": ">=0.10.0"
+        "deprecated": ">=0.10.0"
     },
     "no-exponential-operators": {
         "supported": ">=7.0.0"
@@ -241,7 +241,7 @@
     },
     "no-legacy-object-prototype-accessor-methods": {
         "supported": ">=0.10.0",
-        "supported": ">=0.10.0"
+        "deprecated": ">=0.10.0"
     },
     "no-logical-assignment-operators": {
         "supported": ">=15.0.0"
@@ -524,7 +524,7 @@
     },
     "no-string-create-html-methods": {
         "supported": ">=0.10.0",
-        "supported": ">=0.10.0"
+        "deprecated": ">=0.10.0"
     },
     "no-string-fromcodepoint": {
         "supported": ">=4.0.0"
