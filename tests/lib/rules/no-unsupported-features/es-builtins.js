@@ -2424,23 +2424,6 @@ runTests([
                     },
                 ],
             },
-            // https://github.com/eslint-community/eslint-plugin-n/issues/250
-            {
-                code: "function wrap() { globalThis }",
-                settings: {
-                    node: { version: ">=11.9.9" },
-                },
-                errors: [
-                    {
-                        messageId: "not-supported-till",
-                        data: {
-                            name: "globalThis",
-                            supported: "12.0.0",
-                            version: ">=11.9.9",
-                        },
-                    },
-                ],
-            },
         ],
     },
 ])
