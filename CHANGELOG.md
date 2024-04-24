@@ -1,5 +1,23 @@
 # Changelog
 
+## [17.3.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.2.1...v17.3.0) (2024-04-24)
+
+
+### 🌟 Features
+
+* More es-syntax deprecations ([#249](https://github.com/eslint-community/eslint-plugin-n/issues/249)) ([2ecee79](https://github.com/eslint-community/eslint-plugin-n/commit/2ecee796c53733c70ea671a1e029aed9cf06d050))
+
+
+### 🩹 Fixes
+
+* unsupported-features/node-builtins-modules range compare ([#252](https://github.com/eslint-community/eslint-plugin-n/issues/252)) ([d50ae85](https://github.com/eslint-community/eslint-plugin-n/commit/d50ae85c209a47a8a5d4c1bedaa94e6a77540095))
+
+
+### 🧹 Chores
+
+* update outdated funding ([#246](https://github.com/eslint-community/eslint-plugin-n/issues/246)) ([8d711f5](https://github.com/eslint-community/eslint-plugin-n/commit/8d711f5446655c9874aeffb2ef28b3c4d8463fb6))
+* upgrade globals v15 ([#241](https://github.com/eslint-community/eslint-plugin-n/issues/241)) ([eb11b5b](https://github.com/eslint-community/eslint-plugin-n/commit/eb11b5b35a6a797dc7fba6df53b1c4dada3a2a55))
+
 ## [17.2.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.2.0...v17.2.1) (2024-04-15)
 
 
