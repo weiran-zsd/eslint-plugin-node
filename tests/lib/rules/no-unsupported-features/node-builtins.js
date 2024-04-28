@@ -5305,6 +5305,12 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         node: { version: "12.11.0" },
                     },
                 },
+
+                // https://github.com/eslint-community/eslint-plugin-n/issues/253
+                {
+                    code: `fetch("/api/xxx");`,
+                    settings: { node: { version: ">=18.2.0" } },
+                },
             ],
             invalid: [
                 {
