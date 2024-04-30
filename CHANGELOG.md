@@ -1,5 +1,22 @@
 # Changelog
 
+## [17.4.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.3.1...v17.4.0) (2024-04-30)
+
+
+### 🌟 Features
+
+* no-deprecated-api support removed api ([#240](https://github.com/eslint-community/eslint-plugin-n/issues/240)) ([36fd35d](https://github.com/eslint-community/eslint-plugin-n/commit/36fd35d9bbbaec43dd911e06bd83625cd1650fb3))
+
+
+### 🩹 Fixes
+
+* unsupported-features/node-builtins-modules version comparation ([#257](https://github.com/eslint-community/eslint-plugin-n/issues/257)) ([5c67787](https://github.com/eslint-community/eslint-plugin-n/commit/5c67787cb191ff7409fa17ec5b12cfdc3a7a26d3))
+
+
+### 🧹 Chores
+
+* Update release manifest (17.3.1) ([#255](https://github.com/eslint-community/eslint-plugin-n/issues/255)) ([cf576cb](https://github.com/eslint-community/eslint-plugin-n/commit/cf576cb45bd1f13b675b1612e79f571acfb780af))
+
 ## [17.3.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.2.1...v17.3.0) (2024-04-24)
 
 
