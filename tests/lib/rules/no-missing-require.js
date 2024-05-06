@@ -5,7 +5,7 @@
 "use strict"
 
 const path = require("path")
-const RuleTester = require("#eslint-rule-tester").RuleTester
+const { RuleTester, isCaseSensitiveFileSystem } = require("#eslint-rule-tester")
 const rule = require("../../../lib/rules/no-missing-require")
 
 const tsReactExtensionMap = [
@@ -396,6 +396,7 @@ ruleTester.run("no-missing-require", rule, {
             filename: fixture("test.js"),
             code: "require('./A');",
             errors: cantResolve("./A"),
+            skip: !isCaseSensitiveFileSystem,
         },
 
         // require.resolve

@@ -6,7 +6,7 @@
 
 const path = require("path")
 const { Linter } = require("eslint")
-const { RuleTester } = require("#eslint-rule-tester")
+const { RuleTester, isCaseSensitiveFileSystem } = require("#eslint-rule-tester")
 const rule = require("../../../lib/rules/no-missing-import")
 
 const DynamicImportSupported = (() => {
@@ -427,6 +427,7 @@ ruleTester.run("no-missing-import", rule, {
             filename: fixture("test.js"),
             code: "import a from './A.js';",
             errors: cantResolve("./A.js"),
+            skip: !isCaseSensitiveFileSystem,
         },
 
         {
