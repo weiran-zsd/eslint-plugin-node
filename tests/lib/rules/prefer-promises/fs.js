@@ -4,7 +4,7 @@
  */
 "use strict"
 
-const RuleTester = require("#eslint-rule-tester").RuleTester
+const RuleTester = require("#test-helpers").RuleTester
 const rule = require("../../../../lib/rules/prefer-promises/fs")
 
 new RuleTester({

@@ -4,7 +4,7 @@
  */
 "use strict"
 
-const RuleTester = require("#eslint-rule-tester").RuleTester
+const RuleTester = require("#test-helpers").RuleTester
 const rule = require("../../../lib/rules/no-callback-literal")
 const tsParser = require("@typescript-eslint/parser")
 

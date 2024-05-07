@@ -4,7 +4,7 @@
  */
 "use strict"
 
-const RuleTester = require("#eslint-rule-tester").RuleTester
+const RuleTester = require("#test-helpers").RuleTester
 const rule = require("../../../../lib/rules/prefer-global/text-encoder")
 
 new RuleTester().run("prefer-global/text-encoder", rule, {
