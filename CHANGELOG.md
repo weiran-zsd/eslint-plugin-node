@@ -1,5 +1,23 @@
 # Changelog
 
+## [17.5.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.4.0...v17.5.0) (2024-05-07)
+
+
+### 🌟 Features
+
+* **import-target:** Add resolution error reason ([#264](https://github.com/eslint-community/eslint-plugin-n/issues/264)) ([982a723](https://github.com/eslint-community/eslint-plugin-n/commit/982a723dfb81dc141b093e27b41cd67f82ba8587))
+* **node-builtins:** Add node globals ([#261](https://github.com/eslint-community/eslint-plugin-n/issues/261)) ([9466731](https://github.com/eslint-community/eslint-plugin-n/commit/946673149b51b84581f91890495c810a496e0022))
+
+
+### 🩹 Fixes
+
+* remove invalid es-builtins ([#258](https://github.com/eslint-community/eslint-plugin-n/issues/258)) ([ecdf019](https://github.com/eslint-community/eslint-plugin-n/commit/ecdf019c54c5bd720c20d2ea21886559c15f3205))
+
+
+### 🧹 Chores
+
+* update dependency markdownlint-cli to ^0.40.0 ([#263](https://github.com/eslint-community/eslint-plugin-n/issues/263)) ([1e41e7c](https://github.com/eslint-community/eslint-plugin-n/commit/1e41e7cf5328df05d07aeab8bc9c5d0f27d33695))
+
 ## [17.4.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.3.1...v17.4.0) (2024-04-30)
 
 
