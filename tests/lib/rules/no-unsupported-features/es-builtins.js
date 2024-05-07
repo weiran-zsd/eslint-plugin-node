@@ -3,7 +3,7 @@
  * See LICENSE file in root directory for full license.
  */
 "use strict"
-const { RuleTester } = require("#eslint-rule-tester")
+const { RuleTester } = require("#test-helpers")
 const rule = require("../../../../lib/rules/no-unsupported-features/es-builtins")
 const globals = require("globals")
 

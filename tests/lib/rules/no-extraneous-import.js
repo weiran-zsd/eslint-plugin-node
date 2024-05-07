@@ -6,7 +6,7 @@
 
 const path = require("path")
 const { Linter } = require("eslint")
-const { RuleTester } = require("#eslint-rule-tester")
+const { RuleTester } = require("#test-helpers")
 const rule = require("../../../lib/rules/no-extraneous-import")
 
 const DynamicImportSupported = (() => {

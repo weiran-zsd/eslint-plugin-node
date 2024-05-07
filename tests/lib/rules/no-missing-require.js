@@ -5,7 +5,7 @@
 "use strict"
 
 const path = require("path")
-const RuleTester = require("#eslint-rule-tester").RuleTester
+const { RuleTester, isCaseSensitiveFileSystem } = require("../../test-helpers")
 const rule = require("../../../lib/rules/no-missing-require")
 
 const tsReactExtensionMap = [
@@ -23,6 +23,17 @@ const tsReactExtensionMap = [
  */
 function fixture(name) {
     return path.resolve(__dirname, "../../fixtures/no-missing", name)
+}
+
+function cantResolve(name, dir = "") {
+    return [
+        {
+            messageId: "notFound",
+            data: {
+                resolveError: `Can't resolve '${name}' in '${fixture(dir)}'`,
+            },
+        },
+    ]
 }
 
 const ruleTester = new RuleTester()
@@ -333,65 +344,66 @@ ruleTester.run("no-missing-require", rule, {
         {
             filename: fixture("test.js"),
             code: "require('no-exist-package-0');",
-            errors: ['"no-exist-package-0" is not found.'],
+            errors: cantResolve("no-exist-package-0"),
         },
         {
             filename: fixture("test.js"),
             code: "require('@mysticatea/test');",
-            errors: ['"@mysticatea/test" is not found.'],
+            errors: cantResolve("@mysticatea/test"),
         },
         {
             filename: fixture("test.js"),
             code: "require('./c');",
-            errors: ['"./c" is not found.'],
+            errors: cantResolve("./c"),
         },
         {
             filename: fixture("test.js"),
             code: "require('./d');",
-            errors: ['"./d" is not found.'],
+            errors: cantResolve("./d"),
         },
         {
             filename: fixture("test.js"),
             code: "require('./a.json');",
-            errors: ['"./a.json" is not found.'],
+            errors: cantResolve("./a.json"),
         },
 
         // Should work fine if the filename is relative.
         {
             filename: "tests/fixtures/no-missing/test.js",
             code: "require('no-exist-package-0');",
-            errors: ['"no-exist-package-0" is not found.'],
+            errors: cantResolve("no-exist-package-0"),
         },
         {
             filename: "tests/fixtures/no-missing/test.js",
             code: "require('./c');",
-            errors: ['"./c" is not found.'],
+            errors: cantResolve("./c"),
         },
 
         // Relative paths to a directory should work.
         {
             filename: fixture("test.js"),
             code: "require('./bar');",
-            errors: ['"./bar" is not found.'],
+            errors: cantResolve("./bar"),
         },
         {
             filename: fixture("test.js"),
             code: "require('./bar/');",
-            errors: ['"./bar/" is not found.'],
+            errors: cantResolve("./bar/"),
         },
 
         // Case sensitive
         {
             filename: fixture("test.js"),
             code: "require('./A');",
-            errors: ['"./A" is not found.'],
+            errors: cantResolve("./A"),
+            skip: !isCaseSensitiveFileSystem,
         },
 
         // require.resolve
         {
             filename: fixture("test.js"),
             code: "require.resolve('no-exist-package-0');",
-            errors: ['"no-exist-package-0" is not found.'],
+            errors: cantResolve("no-exist-package-0"),
         },
     ],
 })

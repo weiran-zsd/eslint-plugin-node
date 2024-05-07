@@ -4,7 +4,7 @@
  */
 "use strict"
 
-const { RuleTester } = require("#eslint-rule-tester")
+const { RuleTester } = require("#test-helpers")
 const rule = require("../../../lib/rules/no-exports-assign.js")
 
 new RuleTester({

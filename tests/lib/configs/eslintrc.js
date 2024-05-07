@@ -3,8 +3,6 @@
 const assert = require("assert")
 const path = require("path")
 const { LegacyESLint } = require("eslint/use-at-your-own-risk")
-// const {ESLint} = require("eslint")
-const { gtEslintV8 } = require("../../helpers")
 const originalCwd = process.cwd()
 
 // this is needed as `recommended` config was cached
@@ -15,7 +13,7 @@ function clearRequireCache() {
 }
 
 describe("node/recommended config", () => {
-    ;(gtEslintV8 ? describe : describe.skip)("in CJS directory", () => {
+    describe("in CJS directory", () => {
         const root = path.resolve(__dirname, "../../fixtures/configs/cjs/")
 
         /** @type {Linter} */
@@ -84,7 +82,7 @@ describe("node/recommended config", () => {
                     endLine: 1,
                     line: 1,
                     messageId: "notFound",
-                    message: '"foo" is not found.',
+                    message: `Can't resolve 'foo' in '${root}'`,
                     nodeType: "Literal",
                     ruleId: "n/no-missing-import",
                     severity: 2,
@@ -124,34 +122,31 @@ describe("node/recommended config", () => {
                     endLine: 1,
                     line: 1,
                     messageId: "notFound",
-                    message: '"foo" is not found.',
+                    message: `Can't resolve 'foo' in '${root}'`,
                     nodeType: "Literal",
                     ruleId: "n/no-missing-import",
                     severity: 2,
                 },
             ])
         })
-        ;(gtEslintV8 ? it : it.skip)(
-            "*.cjs files should be a script.",
-            async () => {
-                const report = await linter.lintText("import 'foo'", {
-                    filePath: path.join(root, "test.cjs"),
-                })
+        it("*.cjs files should be a script.", async () => {
+            const report = await linter.lintText("import 'foo'", {
+                filePath: path.join(root, "test.cjs"),
+            })
 
-                assert.deepStrictEqual(report[0].messages, [
-                    {
-                        column: 1,
-                        fatal: true,
-                        line: 1,
-                        message:
-                            "Parsing error: 'import' and 'export' may appear only with 'sourceType: module'",
-                        ruleId: null,
-                        nodeType: null,
-                        severity: 2,
-                    },
-                ])
-            }
-        )
+            assert.deepStrictEqual(report[0].messages, [
+                {
+                    column: 1,
+                    fatal: true,
+                    line: 1,
+                    message:
+                        "Parsing error: 'import' and 'export' may appear only with 'sourceType: module'",
+                    ruleId: null,
+                    nodeType: null,
+                    severity: 2,
+                },
+            ])
+        })
 
         it("*.mjs files should be a module.", async () => {
             const report = await linter.lintText("import 'foo'", {
@@ -165,7 +160,7 @@ describe("node/recommended config", () => {
                     endLine: 1,
                     line: 1,
                     messageId: "notFound",
-                    message: '"foo" is not found.',
+                    message: `Can't resolve 'foo' in '${root}'`,
                     nodeType: "Literal",
                     ruleId: "n/no-missing-import",
                     severity: 2,
