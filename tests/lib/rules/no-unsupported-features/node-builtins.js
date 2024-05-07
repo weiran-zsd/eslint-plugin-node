@@ -218,6 +218,10 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         },
                     ],
                 },
+                {
+                    code: "new Buffer(123)",
+                    options: [{ version: "6.0.0" }],
+                },
             ],
             invalid: [
                 {
