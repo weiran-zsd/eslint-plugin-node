@@ -6,7 +6,6 @@
 ### 🌟 Features
 
 * **import-target:** Add resolution error reason ([#264](https://github.com/eslint-community/eslint-plugin-n/issues/264)) ([982a723](https://github.com/eslint-community/eslint-plugin-n/commit/982a723dfb81dc141b093e27b41cd67f82ba8587))
-* node builtins ([ecdf019](https://github.com/eslint-community/eslint-plugin-n/commit/ecdf019c54c5bd720c20d2ea21886559c15f3205))
 * **node-builtins:** Add node globals ([#261](https://github.com/eslint-community/eslint-plugin-n/issues/261)) ([9466731](https://github.com/eslint-community/eslint-plugin-n/commit/946673149b51b84581f91890495c810a496e0022))
 
 
