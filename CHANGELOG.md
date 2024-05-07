@@ -1,5 +1,12 @@
 # Changelog
 
+## [17.5.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.5.0...v17.5.1) (2024-05-07)
+
+
+### 🩹 Fixes
+
+* Add supported version to Buffer constructor ([#266](https://github.com/eslint-community/eslint-plugin-n/issues/266)) ([030f51b](https://github.com/eslint-community/eslint-plugin-n/commit/030f51bacd21918ef6d5b2bba9ec77cd701c3eba))
+
 ## [17.5.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.4.0...v17.5.0) (2024-05-07)
 
 
