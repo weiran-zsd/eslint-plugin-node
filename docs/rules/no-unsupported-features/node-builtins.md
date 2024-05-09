@@ -40,7 +40,7 @@ The `version` option accepts [the valid version range of `node-semver`](https://
 
 This allows you to enable experimental features that are available in your configured node version
 
-The `"allowExperimental"` option accepts a boolean value
+The `"allowExperimental"` option accepts a boolean value (the default value is `false`).
 
 #### ignores
 
