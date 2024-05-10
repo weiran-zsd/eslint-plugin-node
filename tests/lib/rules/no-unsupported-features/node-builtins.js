@@ -5371,5 +5371,44 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                 },
             ],
         },
+
+        {
+            valid: [
+                {
+                    code: "fetch('/asd')",
+                    options: [{ version: "16.16.0", allowExperimental: true }],
+                },
+            ],
+            invalid: [
+                {
+                    code: "fetch('/asd')",
+                    options: [{ version: "16.0.0", allowExperimental: true }],
+                    errors: [
+                        {
+                            messageId: "not-experimental-till",
+                            data: {
+                                name: "fetch",
+                                experimental: "17.5.0 (backported: ^16.15.0)",
+                                version: "16.0.0",
+                            },
+                        },
+                    ],
+                },
+                {
+                    code: "fetch('/asd')",
+                    options: [{ version: "16.16.0", allowExperimental: false }],
+                    errors: [
+                        {
+                            messageId: "not-supported-till",
+                            data: {
+                                name: "fetch",
+                                supported: "21.0.0",
+                                version: "16.16.0",
+                            },
+                        },
+                    ],
+                },
+            ],
+        },
     ])
 )

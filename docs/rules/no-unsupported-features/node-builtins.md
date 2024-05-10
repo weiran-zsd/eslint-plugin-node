@@ -36,6 +36,12 @@ But, you can overwrite the version by `version` option.
 
 The `version` option accepts [the valid version range of `node-semver`](https://github.com/npm/node-semver#range-grammar).
 
+#### allowExperimental
+
+This allows you to enable experimental features that are available in your configured node version
+
+The `"allowExperimental"` option accepts a boolean value (the default value is `false`).
+
 #### ignores
 
 If you are using transpilers, maybe you want to ignore the warnings about some features.
