@@ -1,5 +1,17 @@
 # Changelog
 
+## [17.6.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.5.1...v17.6.0) (2024-05-10)
+
+
+### 🌟 Features
+
+* Add support for ignoring experemental features ([#269](https://github.com/eslint-community/eslint-plugin-n/issues/269)) ([c046376](https://github.com/eslint-community/eslint-plugin-n/commit/c046376fb52bef8104502ffab3c457412d1a1e27))
+
+
+### 📚 Documentation
+
+* add maintainance info ([#271](https://github.com/eslint-community/eslint-plugin-n/issues/271)) ([b454488](https://github.com/eslint-community/eslint-plugin-n/commit/b454488bd63c046d101305c40d24bf44ae83971e)), closes [#194](https://github.com/eslint-community/eslint-plugin-n/issues/194)
+
 ## [17.5.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.5.0...v17.5.1) (2024-05-07)
 
 
