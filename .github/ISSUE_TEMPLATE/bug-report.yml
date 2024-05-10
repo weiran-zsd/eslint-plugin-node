@@ -29,7 +29,7 @@ body:
 - type: input
   attributes:
     label: Link to Minimal Reproducible Example
-    description: 'Link to a [playground](https://eslint-online-playground.netlify.app/), [StackBlitz](https://stackblitz.com), or GitHub repo with a minimal reproduction of the problem. **A minimal reproduction is required** so that others can help debug your issue. If a report is vague (e.g. just a generic error message) and has no reproduction, it may be auto-closed.'
+    description: 'Link to a [playground](https://eslint-online-playground.netlify.app/#eNptjzFuwzAMRa8icGqB2NndtbcoOxgybaiVSUGSgxSG717KUoAMWSiReJ//c4cU7ZXu4xo89T8JBrDCSbTxsryFKJZS6olv7x/IcAFK3nHuFZrdUgVuDRKzYTNHWQ02pAt+Wxx3jKBKZLqf1ETzuPlsvpCN2UsxppJpMLsuOS51GDdPZVQ7o3v5ytK1RJ0mQhiKW4wSESp2lEfLdw0bRvs7LuUuYQ167kLIf4GqdpVJXRBOS4SJbp8UiCdi6ygVptk/jqoyP2ZK+m9JX1z8TLVIBxz/MqF45g==), [StackBlitz](https://stackblitz.com), or GitHub repo with a minimal reproduction of the problem. **A minimal reproduction is required** so that others can help debug your issue. If a report is vague (e.g. just a generic error message) and has no reproduction, it may be auto-closed.'
     placeholder: 'https://eslint-online-playground.netlify.app/#'
   validations:
     required: true
