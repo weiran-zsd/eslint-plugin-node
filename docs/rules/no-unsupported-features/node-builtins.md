@@ -10,6 +10,8 @@ You can check [Node.js Documentation](https://nodejs.org/api/) to know which Nod
 This rule reports unsupported Node.js built-in APIs on the configured Node.js version as lint errors.
 Editor integrations of ESLint would be useful to know it in real-time.
 
+This only supports the static apis, eg `Buffer.from` is supported, but `Buffer#includes` is not.
+
 ## 📖 Rule Details
 
 This rule reports APIs of Node.js built-in APIs on the basis of [Node.js v13.2.0 Documentation](https://nodejs.org/docs/v13.2.0/api/).
