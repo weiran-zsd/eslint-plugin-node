@@ -7,6 +7,8 @@
 Node has many deprecated API.
 The community is going to remove those API from Node in future, so we should not use those.
 
+This only supports the static apis, eg `Buffer.from` is supported, but `Buffer#includes` is not.
+
 ## 📖 Rule Details
 
 Examples of 👎 **incorrect** code for this rule:
