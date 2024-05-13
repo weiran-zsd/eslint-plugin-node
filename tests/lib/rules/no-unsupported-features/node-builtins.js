@@ -433,7 +433,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         {
                             messageId: "not-supported-till",
                             data: {
-                                name: "node:assert",
+                                name: "assert",
                                 supported: "14.13.1 (backported: ^12.20.0)",
                                 version: "3.9.9",
                             },
@@ -447,7 +447,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         {
                             messageId: "not-supported-till",
                             data: {
-                                name: "node:assert",
+                                name: "assert",
                                 supported: "14.13.1 (backported: ^12.20.0)",
                                 version: "3.9.9",
                             },
@@ -626,7 +626,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         {
                             messageId: "not-supported-till",
                             data: {
-                                name: "node:async_hooks",
+                                name: "async_hooks",
                                 supported: "16.4.0",
                                 version: "7.9.9",
                             },
@@ -640,7 +640,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         {
                             messageId: "not-supported-till",
                             data: {
-                                name: "node:async_hooks",
+                                name: "async_hooks",
                                 supported: "16.4.0",
                                 version: "7.9.9",
                             },
@@ -2940,7 +2940,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         {
                             messageId: "not-supported-till",
                             data: {
-                                name: "node:fs/promises",
+                                name: "fs/promises",
                                 supported: "14.13.1",
                                 version: "13.14.0",
                             },
@@ -2954,7 +2954,7 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                         {
                             messageId: "not-supported-till",
                             data: {
-                                name: "node:fs/promises",
+                                name: "fs/promises",
                                 supported: "14.13.1",
                                 version: "13.14.0",
                             },
