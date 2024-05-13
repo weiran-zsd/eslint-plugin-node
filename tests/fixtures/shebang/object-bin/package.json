@@ -4,6 +4,7 @@
     "bin": {
         "a": "./bin/a.js",
         "b": "./bin/b.js",
-        "c": "./bin"
+        "c": "./bin",
+        "t": "./bin/t.ts"
     }
 }

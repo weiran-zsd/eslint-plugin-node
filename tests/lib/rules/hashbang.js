@@ -204,6 +204,20 @@ ruleTester.run("shebang", rule, {
             code: "#!/usr/bin/env node\nhello();",
             options: [{ additionalExecutables: ["*.test.js"] }],
         },
+
+        // executableMap
+        {
+            name: ".ts maps to ts-node",
+            filename: fixture("object-bin/bin/t.ts"),
+            code: "#!/usr/bin/env ts-node\nhello();",
+            options: [{ executableMap: { ".ts": "ts-node" } }],
+        },
+        {
+            name: ".ts maps to ts-node",
+            filename: fixture("object-bin/bin/a.js"),
+            code: "#!/usr/bin/env node\nhello();",
+            options: [{ executableMap: { ".ts": "ts-node" } }],
+        },
     ],
     invalid: [
         {
@@ -460,6 +474,24 @@ ruleTester.run("shebang", rule, {
             options: [{ additionalExecutables: ["*.test.js"] }],
             output: "hello();",
             errors: ["This file needs no shebang."],
+        },
+
+        // executableMap
+        {
+            name: ".ts maps to ts-node",
+            filename: fixture("object-bin/bin/t.ts"),
+            code: "hello();",
+            options: [{ executableMap: { ".ts": "ts-node" } }],
+            output: "#!/usr/bin/env ts-node\nhello();",
+            errors: ['This file needs shebang "#!/usr/bin/env ts-node".'],
+        },
+        {
+            name: ".ts maps to ts-node",
+            filename: fixture("object-bin/bin/t.ts"),
+            code: "#!/usr/bin/env node\nhello();",
+            options: [{ executableMap: { ".ts": "ts-node" } }],
+            output: "#!/usr/bin/env ts-node\nhello();",
+            errors: ['This file needs shebang "#!/usr/bin/env ts-node".'],
         },
     ],
 })
