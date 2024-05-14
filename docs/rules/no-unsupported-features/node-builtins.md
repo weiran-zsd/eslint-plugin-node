@@ -55,7 +55,7 @@ The `"ignores"` option accepts an array of strings.
 > You will see the following error messages:
 >
 > - `The '{{name}}' is not an experimental feature until Node.js {{version}}.`
-> - `The '{{name}}' is still an experimental feature and is not supported until Node.js {{version}}.`gi
+> - `The '{{name}}' is still an experimental feature and is not supported until Node.js {{version}}.`
 > - `The '{{name}}' is still an experimental feature`
 >
 > The "name" property is what you can use in your `ignores` array
