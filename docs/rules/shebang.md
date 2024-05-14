@@ -11,76 +11,7 @@ This rule suggests correct usage of shebang.
 
 ## 📖 Rule Details
 
-This rule looks up `package.json` file from each linting target file.
-Starting from the directory of the target file, it goes up ancestor directories until found.
-
-If `package.json` was not found, this rule does nothing.
-
-This rule checks `bin` field of `package.json`, then if a target file matches one of `bin` files, it checks whether or not there is a correct shebang.
-Otherwise it checks whether or not there is not a shebang.
-
-The following patterns are considered problems for files in `bin` field of `package.json`:
-
-```js
-console.log("hello"); /*error This file needs shebang "#!/usr/bin/env node".*/
-```
-
-```js
-#!/usr/bin/env node  /*error This file must not have Unicode BOM.*/
-console.log("hello");
-// If this file has Unicode BOM.
-```
-
-```js
-#!/usr/bin/env node  /*error This file must have Unix linebreaks (LF).*/
-console.log("hello");
-// If this file has Windows' linebreaks (CRLF).
-```
-
-The following patterns are considered problems for other files:
-
-```js
-#!/usr/bin/env node   /*error This file needs no shebang.*/
-console.log("hello");
-```
-
-The following patterns are not considered problems for files in `bin` field of `package.json`:
-
-```js
-#!/usr/bin/env node
-console.log("hello");
-```
-
-The following patterns are not considered problems for other files:
-
-```js
-console.log("hello");
-```
-
-### Options
-
-```json
-{
-    "n/shebang": ["error", {
-        "convertPath": null,
-        "ignoreUnpublished": false,
-        "additionalExecutables": [],
-    }]
-}
-```
-
-#### convertPath
-
-This can be configured in the rule options or as a shared setting [`settings.convertPath`](../shared-settings.md#convertpath).
-Please see the shared settings documentation for more information.
-
-#### ignoreUnpublished
-
-Allow for files that are not published to npm to be ignored by this rule.
-
-#### additionalExecutables
-
-Mark files as executable that are not referenced by the package.json#bin property
+The details for this rule can be found in [docs/rules/hashbang.md](https://github.com/eslint-community/eslint-plugin-n/blob/HEAD/docs/rules/hashbang.md#-rule-details)
 
 ## 🔎 Implementation
 

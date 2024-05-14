@@ -65,6 +65,9 @@ console.log("hello");
         "convertPath": null,
         "ignoreUnpublished": false,
         "additionalExecutables": [],
+        "executableMap": {
+            ".js": "node"
+        }
     }]
 }
 ```
@@ -81,6 +84,18 @@ Allow for files that are not published to npm to be ignored by this rule.
 #### additionalExecutables
 
 Mark files as executable that are not referenced by the package.json#bin property
+
+#### executableMap
+
+Allow for different executables to be used based on file extension.
+This is in the form `"{extension}": "{binaryName}"`.
+
+```js
+{
+    ".js": "node",
+    ".ts": "ts-node"
+}
+```
 
 ## 🔎 Implementation
 
