@@ -3,7 +3,7 @@
     "version": "17.6.0",
     "description": "Additional ESLint's rules for Node.js",
     "engines": {
-        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+        "node": ">=16.0.0"
     },
     "main": "lib/index.js",
     "types": "types/index.d.ts",

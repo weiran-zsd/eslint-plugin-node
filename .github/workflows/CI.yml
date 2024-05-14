@@ -36,6 +36,12 @@ jobs:
         node: [18.x, 20.x, 22.x]
         include:
           - os: ubuntu-latest
+            node: "16.0.0"
+            eslint: "8.x"
+          - os: ubuntu-latest
+            node: "16.x"
+            eslint: "8.x"
+          - os: ubuntu-latest
             node: "18.18.0"
             eslint: "8.x"
           - os: ubuntu-latest
