@@ -1,5 +1,24 @@
 # Changelog
 
+## [17.7.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.6.0...v17.7.0) (2024-05-14)
+
+
+### 🌟 Features
+
+* **hashbang:** Add support to map extensions to executables ([#278](https://github.com/eslint-community/eslint-plugin-n/issues/278)) ([3fd7639](https://github.com/eslint-community/eslint-plugin-n/commit/3fd7639e4d98d2cd936682197ef4004d59adadfd))
+* **node-builtin:** Add node 20.13.0, 22.0.0, and 22.1.0 support ([#276](https://github.com/eslint-community/eslint-plugin-n/issues/276)) ([4a685c0](https://github.com/eslint-community/eslint-plugin-n/commit/4a685c05e2d5770e22c46dcb78267fa8c484f725))
+
+
+### 🩹 Fixes
+
+* **node-builtins:** Remove "node:" prefix from "ignores" message ([#277](https://github.com/eslint-community/eslint-plugin-n/issues/277)) ([704f0b9](https://github.com/eslint-community/eslint-plugin-n/commit/704f0b9373542e03b42102d30bc44cb7e30fc5d8))
+
+
+### 📚 Documentation
+
+* **node-builtins:** Specify that only static properties are supported ([#272](https://github.com/eslint-community/eslint-plugin-n/issues/272)) ([735a520](https://github.com/eslint-community/eslint-plugin-n/commit/735a5207aee828e324835bdb0c7fa743347ef4b9))
+* Provide an example with eslint-plugin-n to Playground ([#275](https://github.com/eslint-community/eslint-plugin-n/issues/275)) ([cb8ffa6](https://github.com/eslint-community/eslint-plugin-n/commit/cb8ffa62d07869dd23985f7d861ad3c60deec4f8))
+
 ## [17.6.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.5.1...v17.6.0) (2024-05-10)
 
 
