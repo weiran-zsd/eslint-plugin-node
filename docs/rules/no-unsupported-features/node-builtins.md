@@ -59,6 +59,7 @@ The `"ignores"` option accepts an array of strings.
 > - `The '{{name}}' is still an experimental feature`
 >
 > The "name" property is what you can use in your `ignores` array
+> You can find the full tree view of the list of the modules over in [lib/unsupported-features/node-builtins-modules](https://github.com/eslint-community/eslint-plugin-n/tree/HEAD/lib/unsupported-features/node-builtins-modules). and globals over in [lib/unsupported-features/node-globals.js](https://github.com/eslint-community/eslint-plugin-n/blob/HEAD/lib/unsupported-features/node-globals.js)
 
 ### Shared Settings
 
