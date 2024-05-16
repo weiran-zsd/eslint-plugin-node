@@ -318,6 +318,11 @@ ruleTester.run("no-missing-import", rule, {
             code: "import './file.ts';",
         },
 
+        {
+            filename: fixture("test.js"),
+            code: "import plugin from 'eslint-plugin-n';",
+        },
+
         // import()
         ...(DynamicImportSupported
             ? [
