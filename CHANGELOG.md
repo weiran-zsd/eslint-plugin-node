@@ -1,5 +1,23 @@
 # Changelog
 
+## [17.8.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.7.0...v17.8.0) (2024-06-05)
+
+
+### 🌟 Features
+
+* **node-builtin:** Add node 22.2.0 support ([#282](https://github.com/eslint-community/eslint-plugin-n/issues/282)) ([5221c40](https://github.com/eslint-community/eslint-plugin-n/commit/5221c4015fb939cfb33231b7b6f4669cf1197ef7))
+
+
+### 🩹 Fixes
+
+* Allow for misconfigured default exports ([#288](https://github.com/eslint-community/eslint-plugin-n/issues/288)) ([92e18b5](https://github.com/eslint-community/eslint-plugin-n/commit/92e18b572f7bd2427f050eab8484cb393e1dac7a))
+
+
+### 🧹 Chores
+
+* add a test for self-ref ([#280](https://github.com/eslint-community/eslint-plugin-n/issues/280)) ([4f50dfe](https://github.com/eslint-community/eslint-plugin-n/commit/4f50dfe6528e32749aac315e53b351345cfc8c13))
+* update dependency markdownlint-cli to ^0.41.0 ([#287](https://github.com/eslint-community/eslint-plugin-n/issues/287)) ([0efe751](https://github.com/eslint-community/eslint-plugin-n/commit/0efe751b1fa1194ddc58b0934a1299d982e93d35))
+
 ## [17.7.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.6.0...v17.7.0) (2024-05-14)
 
 
