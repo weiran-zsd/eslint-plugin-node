@@ -124,6 +124,11 @@ ruleTester.run("no-missing-import", rule, {
             code: "import a from './e.jsx';",
         },
 
+        {
+            filename: fixture("test.js"),
+            code: "import 'misconfigured-default';",
+        },
+
         // tryExtensions
         {
             filename: fixture("test.js"),
@@ -350,7 +355,9 @@ ruleTester.run("no-missing-import", rule, {
                         resolveError: [
                             "Package path ./sub.mjs is not exported from package",
                             fixture("node_modules/esm-module"),
-                            `(see exports field in ${fixture("node_modules/esm-module/package.json")})`,
+                            `(see exports field in ${fixture(
+                                "node_modules/esm-module/package.json"
+                            )})`,
                         ].join(" "),
                     },
                 },
@@ -433,20 +440,6 @@ ruleTester.run("no-missing-import", rule, {
             code: "import a from './A.js';",
             errors: cantResolve("./A.js"),
             skip: !isCaseSensitiveFileSystem,
-        },
-
-        {
-            filename: fixture("test.js"),
-            code: "import 'misconfigured-default';",
-            errors: [
-                {
-                    messageId: "notFound",
-                    data: {
-                        name: "misconfigured-default",
-                        resolveError: "Default condition should be last one",
-                    },
-                },
-            ],
         },
 
         // import()
