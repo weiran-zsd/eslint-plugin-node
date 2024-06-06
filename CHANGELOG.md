@@ -1,5 +1,13 @@
 # Changelog
 
+## [17.8.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.8.0...v17.8.1) (2024-06-06)
+
+
+### 🩹 Fixes
+
+* hashbang + eslint v8 compat issue ([e82974f](https://github.com/eslint-community/eslint-plugin-n/commit/e82974fc724e4a410f85459f4cd3e5367939cc9c))
+* hashbang + eslint v8 compat issue ([#290](https://github.com/eslint-community/eslint-plugin-n/issues/290)) ([e82974f](https://github.com/eslint-community/eslint-plugin-n/commit/e82974fc724e4a410f85459f4cd3e5367939cc9c))
+
 ## [17.8.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.7.0...v17.8.0) (2024-06-05)
 
 
