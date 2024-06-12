@@ -18,6 +18,9 @@ Then this rule warns `import` declarations in \*published\* files if the `import
 > This intends to prevent "Module Not Found" error after `npm publish`.\
 > 💡 If you want to import `devDependencies`, please write `.npmignore` or `"files"` field of `package.json`.
 
+> Note: This rule does not apply to private projects.  
+> To ensure that you don't use `devDependencies` in your application logic, remove `"private": true` from your `package.json` file.
+
 ### Options
 
 ```json
