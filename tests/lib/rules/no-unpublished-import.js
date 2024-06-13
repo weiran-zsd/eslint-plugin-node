@@ -292,5 +292,13 @@ ruleTester.run("no-unpublished-import", rule, {
             code: "import type foo from 'foo';",
             errors: [{ messageId: "notPublished" }],
         },
+
+        // devDependency in a private package
+        {
+            filename: fixture("private-package/index.js"),
+            code: "import bbb from 'bbb';",
+            errors: ['"bbb" is not published.'],
+            options: [{ ignorePrivate: false }],
+        },
     ],
 })

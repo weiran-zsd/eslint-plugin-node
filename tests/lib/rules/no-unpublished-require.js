@@ -359,5 +359,13 @@ ruleTester.run("no-unpublished-require", rule, {
             code: "require('../2/a.js');",
             errors: ['"../2/a.js" is not published.'],
         },
+
+        // devDependency in a private package
+        {
+            filename: fixture("private-package/index.js"),
+            code: "require('bbb');",
+            errors: ['"bbb" is not published.'],
+            options: [{ ignorePrivate: false }],
+        },
     ],
 })
