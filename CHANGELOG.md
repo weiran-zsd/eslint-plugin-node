@@ -1,5 +1,12 @@
 # Changelog
 
+## [17.9.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.8.1...v17.9.0) (2024-06-14)
+
+
+### 🌟 Features
+
+* Add flag ignorePrivate to no-unpublished-x rules ([#298](https://github.com/eslint-community/eslint-plugin-n/issues/298)) ([0609431](https://github.com/eslint-community/eslint-plugin-n/commit/0609431dabcd9402720071025c0206d2686e1d78))
+
 ## [17.8.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.8.0...v17.8.1) (2024-06-06)
 
 
