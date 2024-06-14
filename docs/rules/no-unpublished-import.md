@@ -66,6 +66,34 @@ In this way, the following code will not be reported:
 import type foo from "foo";
 ```
 
+### ignorePrivate
+
+In a private package you sometimes want to disable checking for unpublished dependencies, e.g. if the package is not published.
+
+However, there are situations where you want to mark it as private, though still ensure only published dependencies are used in your source code.
+An example, for such a case would be a package that is deployed to a server.
+
+Defaults to `true`.
+
+package.json:
+
+```json
+{
+    "private": true,
+    ...
+}
+```
+
+```json
+{
+    "rules": {
+        "n/no-unpublished-import": ["error", {
+            "ignorePrivate": true
+        }]
+    }
+}
+```
+
 ## 🔎 Implementation
 
 - [Rule source](../../lib/rules/no-unpublished-import.js)
