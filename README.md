@@ -49,7 +49,7 @@ const nodePlugin = require("eslint-plugin-n")
 module.exports = [
     {
 		plugins: {
-			n: node
+			n: nodePlugin
 		},
         rules: {
             "n/exports-style": ["error", "module.exports"]
