@@ -2,6 +2,13 @@
 
 /** @type {import('eslint-doc-generator').GenerateOptions} */
 const config = {
+    ignoreConfig: [
+        "recommended",
+        "flat/recommended-script",
+        "flat/recommended-module",
+        "flat/recommended",
+        "flat/mixed-esm-and-cjs",
+    ],
     urlConfigs: "https://github.com/eslint-community/eslint-plugin-n#-configs",
     configEmoji: [
         ["recommended-script", "✅"],

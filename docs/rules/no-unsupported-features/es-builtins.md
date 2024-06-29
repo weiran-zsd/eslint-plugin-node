@@ -1,6 +1,6 @@
 # Disallow unsupported ECMAScript built-ins on the specified version (`n/no-unsupported-features/es-builtins`)
 
-💼 This rule is enabled in the following [configs](https://github.com/eslint-community/eslint-plugin-n#-configs): ☑️ `flat/recommended`, 🟢 `flat/recommended-module`, ✅ `flat/recommended-script`, ☑️ `recommended`, 🟢 `recommended-module`, ✅ `recommended-script`.
+💼 This rule is enabled in the following [configs](https://github.com/eslint-community/eslint-plugin-n#-configs): 🟢 `recommended-module`, ✅ `recommended-script`.
 
 <!-- end auto-generated rule header -->
 
