@@ -48,9 +48,7 @@ const nodePlugin = require("eslint-plugin-n")
 
 module.exports = [
     {
-  plugins: {
-   n: nodePlugin
-  },
+        plugins: {n: nodePlugin},
         rules: {
             "n/exports-style": ["error", "module.exports"]
         }
