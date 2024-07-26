@@ -51,7 +51,7 @@
         "rimraf": "^5.0.7",
         "ts-ignore-import": "^4.0.1",
         "type-fest": "^4.21.0",
-        "typescript": "^5.5.3"
+        "typescript": "~5.4"
     },
     "scripts": {
         "build": "node scripts/update",
