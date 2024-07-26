@@ -1,5 +1,26 @@
 # Changelog
 
+## [17.10.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.9.0...v17.10.0) (2024-07-26)
+
+
+### 🌟 Features
+
+* **no-unsupported:** Support node 20.16.0 ([73e2bed](https://github.com/eslint-community/eslint-plugin-n/commit/73e2bed2e76dc9382069268954ae894665f18538))
+* **no-unsupported:** Support node 22.3.0 and 20.16.0 ([#315](https://github.com/eslint-community/eslint-plugin-n/issues/315)) ([73e2bed](https://github.com/eslint-community/eslint-plugin-n/commit/73e2bed2e76dc9382069268954ae894665f18538))
+* Update to node v22.4.0 ([#310](https://github.com/eslint-community/eslint-plugin-n/issues/310)) ([f7a74eb](https://github.com/eslint-community/eslint-plugin-n/commit/f7a74eb147875d7e2125125863befe61d0be0614)), closes [#308](https://github.com/eslint-community/eslint-plugin-n/issues/308)
+* Update to node v22.5.0 ([#312](https://github.com/eslint-community/eslint-plugin-n/issues/312)) ([2539c9d](https://github.com/eslint-community/eslint-plugin-n/commit/2539c9deaa0c339b520dcd45ba4998dca6b678e3))
+
+
+### 📚 Documentation
+
+* add clarifications to readme ([dbdfa8e](https://github.com/eslint-community/eslint-plugin-n/commit/dbdfa8e0abdeb96f2f843c4112cc43f16f2657ea))
+* fix spacings in the example ([#306](https://github.com/eslint-community/eslint-plugin-n/issues/306)) ([c092cd8](https://github.com/eslint-community/eslint-plugin-n/commit/c092cd893010f8da894f87da567c07d69be6cc0d))
+
+
+### 🧹 Chores
+
+* upgrade compatible deps ([8f6f11d](https://github.com/eslint-community/eslint-plugin-n/commit/8f6f11da5d072fe7b0ca1e916744e527ee260db2))
+
 ## [17.9.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.8.1...v17.9.0) (2024-06-14)
 
 
