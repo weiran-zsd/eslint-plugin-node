@@ -1,5 +1,12 @@
 # Changelog
 
+## [17.10.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.10.0...v17.10.1) (2024-07-26)
+
+
+### 🩹 Fixes
+
+* Revert ts version (5.5 -&gt; 5.4) ([#317](https://github.com/eslint-community/eslint-plugin-n/issues/317)) ([3bee0d9](https://github.com/eslint-community/eslint-plugin-n/commit/3bee0d9b3d6b01c1dffb21aa0ca608045ae4aafd))
+
 ## [17.10.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.9.0...v17.10.0) (2024-07-26)
 
 
