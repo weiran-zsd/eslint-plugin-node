@@ -1,5 +1,12 @@
 # Changelog
 
+## [17.10.2](https://github.com/eslint-community/eslint-plugin-n/compare/v17.10.1...v17.10.2) (2024-08-05)
+
+
+### 🩹 Fixes
+
+* Duplex.from is supported in 16.8.0 ([#325](https://github.com/eslint-community/eslint-plugin-n/issues/325)) ([de5ac0a](https://github.com/eslint-community/eslint-plugin-n/commit/de5ac0a4f4ea3e6de21d765084e03fcc37ef0b68)), closes [#324](https://github.com/eslint-community/eslint-plugin-n/issues/324)
+
 ## [17.10.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.10.0...v17.10.1) (2024-07-26)
 
 
