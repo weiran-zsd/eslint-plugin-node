@@ -16,9 +16,9 @@ function foo(a) {
 }
 ```
 
-ESLint does not address `process.exit()` as stop in code path analysis, then [consistent-return] rule will warn the above code.
+ESLint does not mark code after `process.exit()` calls as unreachable like it does with `throw` and `return` expressions, meaning rules like [consistent-return] will still warn.
 
-If you turn this rule on, ESLint comes to address `process.exit()` as throw in code path analysis. So, above code will get expected code path.
+This rule overrides the default code path analyzer so that code after `process.exit()` calls are marked as unreachable, meaning code like the above will not trigger warnings.
 
 This rule itself never warn code.
 
