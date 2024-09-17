@@ -33,6 +33,8 @@ new RuleTester({
                 const fs = await import(\`fs\`);
             }
         `,
+        // punycode has no `node:` equivelent
+        'import "punycode";',
         'import "punycode/";',
         // https://bun.sh/docs/runtime/bun-apis
         'import "bun";',
