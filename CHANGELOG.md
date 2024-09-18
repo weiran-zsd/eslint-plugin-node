@@ -1,5 +1,17 @@
 # Changelog
 
+## [17.10.3](https://github.com/eslint-community/eslint-plugin-n/compare/v17.10.2...v17.10.3) (2024-09-18)
+
+
+### 🩹 Fixes
+
+* Use our data set to work out if a module is a node module ([#338](https://github.com/eslint-community/eslint-plugin-n/issues/338)) ([6a1b2c5](https://github.com/eslint-community/eslint-plugin-n/commit/6a1b2c5606f0c6a37b38b60d780df8698db22a87))
+
+
+### 📚 Documentation
+
+* **process-exit-as-throw:** update wording ([#323](https://github.com/eslint-community/eslint-plugin-n/issues/323)) ([e5e758e](https://github.com/eslint-community/eslint-plugin-n/commit/e5e758ea0cd238220127ae7bcbd967f1d8920f28))
+
 ## [17.10.2](https://github.com/eslint-community/eslint-plugin-n/compare/v17.10.1...v17.10.2) (2024-08-05)
 
 
