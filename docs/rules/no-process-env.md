@@ -30,6 +30,22 @@ if(config.env === "development") {
 }
 ```
 
+### Options
+
+```json
+{
+    "rules": {
+        "n/no-process-env": ["error", {
+            "allowedVariables": ["NODE_ENV"]
+        }]
+    }
+}
+```
+
+#### allowedVariables
+
+Sometimes you need to allow specific environment variables, this option allows you to exclude specific variables from triggering a linting error.
+
 ## 🔎 Implementation
 
 - [Rule source](../../lib/rules/no-process-env.js)
