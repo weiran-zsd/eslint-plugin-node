@@ -26,6 +26,15 @@ new RuleTester().run("no-process-env", rule, {
             ],
         },
         {
+            code: "process['env']",
+            errors: [
+                {
+                    messageId: "unexpectedProcessEnv",
+                    type: "MemberExpression",
+                },
+            ],
+        },
+        {
             code: "process.env.ENV",
             errors: [
                 {
