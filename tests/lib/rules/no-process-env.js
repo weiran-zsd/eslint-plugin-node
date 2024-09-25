@@ -13,6 +13,26 @@ new RuleTester().run("no-process-env", rule, {
         "process[env]",
         "process.nextTick",
         "process.execArgv",
+
+        // allowedVariables
+        {
+            code: "process.env.NODE_ENV",
+            options: [{ allowedVariables: ["NODE_ENV"] }],
+        },
+        {
+            code: "process.env['NODE_ENV']",
+            options: [{ allowedVariables: ["NODE_ENV"] }],
+        },
+        {
+            code: "process['env'].NODE_ENV",
+            options: [{ allowedVariables: ["NODE_ENV"] }],
+        },
+        {
+            code: "process['env']['NODE_ENV']",
+            options: [{ allowedVariables: ["NODE_ENV"] }],
+        },
+        // "process.env",
+        // "process.env[NODE_ENV]",
     ],
 
     invalid: [
@@ -51,6 +71,38 @@ new RuleTester().run("no-process-env", rule, {
                     type: "MemberExpression",
                 },
             ],
+        },
+
+        // allowedVariables
+        {
+            code: "process.env['OTHER_VARIABLE']",
+            options: [{ allowedVariables: ["NODE_ENV"] }],
+            errors: [{ messageId: "unexpectedProcessEnv" }],
+        },
+        {
+            code: "process.env.OTHER_VARIABLE",
+            options: [{ allowedVariables: ["NODE_ENV"] }],
+            errors: [{ messageId: "unexpectedProcessEnv" }],
+        },
+        {
+            code: "process['env']['OTHER_VARIABLE']",
+            options: [{ allowedVariables: ["NODE_ENV"] }],
+            errors: [{ messageId: "unexpectedProcessEnv" }],
+        },
+        {
+            code: "process['env'].OTHER_VARIABLE",
+            options: [{ allowedVariables: ["NODE_ENV"] }],
+            errors: [{ messageId: "unexpectedProcessEnv" }],
+        },
+        {
+            code: "process.env[NODE_ENV]",
+            options: [{ allowedVariables: ["NODE_ENV"] }],
+            errors: [{ messageId: "unexpectedProcessEnv" }],
+        },
+        {
+            code: "process['env'][NODE_ENV]",
+            options: [{ allowedVariables: ["NODE_ENV"] }],
+            errors: [{ messageId: "unexpectedProcessEnv" }],
         },
     ],
 })
