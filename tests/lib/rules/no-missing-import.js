@@ -306,6 +306,14 @@ ruleTester.run("no-missing-import", rule, {
             filename: fixture("ts-paths/test.ts"),
             code: "import before from '@wild/where.js';",
         },
+        {
+            // name: "tsconfig - compilerOptions.paths - direct reference",
+            filename: fixture("issue-314/src/example.ts"),
+            code: "import('@module');",
+            languageOptions: {
+                ecmaVersion: "latest",
+            },
+        },
 
         {
             // name: 'Ensure type only packages can be imported',
