@@ -4,7 +4,8 @@
 
 <!-- end auto-generated rule header -->
 
-If a `require()`'s target is extraneous (it's not written in `package.json`), the program works in local, but will not work after dependencies are re-installed. It will cause troubles to your team/contributors.
+If a `require()`'s target is extraneous (it's not written in `package.json`), the program works in local, but may not work after dependencies are re-installed. It will cause troubles to your team/contributors. If a target is extraneous yet consistently works for you and your team, it may be a transitive dependency (a dependency of a dependency). Transitive dependencies should still be saved as an explicit dependency in `package.json` to avoid the risk of a dependency changing and removing the dependency of a dependency this `require()` is relying on.
+
 This rule disallows `require()` of extraneous modules.
 
 ## 📖 Rule Details
