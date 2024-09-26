@@ -6,6 +6,8 @@
 
 If a `require()`'s target is extraneous (it's not listed in your `package.json`), the program may work locally but can break after dependencies are re-installed. This can cause issues for your team/contributors. If a declaration source is extraneous yet consistently works for you and your team, it might be a transitive dependency (a dependency of another dependency). Transitive dependencies should still be added as an explicit dependency in your `package.json` to avoid the risk of a dependency potentially changing or removing the transitive dependency.
 
+Additionally, the transitive dependency could be a dev dependency, meaning your code could work in development but not in production.
+
 This rule disallows `require()` of extraneous modules.
 
 ## 📖 Rule Details
