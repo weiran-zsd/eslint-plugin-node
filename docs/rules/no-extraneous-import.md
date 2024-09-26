@@ -4,7 +4,7 @@
 
 <!-- end auto-generated rule header -->
 
-If an `import` declaration's source is extraneous (it's not written in `package.json`), the program works in local, but may not work after dependencies are re-installed. It will cause troubles to your team/contributors. If a declaration source is extraneous yet consistently works for you and your team, it may be a transitive dependency (a dependency of a dependency). Transitive dependencies should still be saved as an explicit dependency in `package.json` to avoid the risk of a dependency changing and removing the dependency of a dependency this `import` is relying on.
+If an `import` declaration's source is extraneous (it's not listed in your `package.json`), the program may work locally but can break after dependencies are re-installed. This can cause issues for your team/contributors. If a declaration source is extraneous yet consistently works for you and your team, it might be a transitive dependency (a dependency of another dependency). Transitive dependencies should still be added as an explicit dependency in your `package.json` to avoid the risk of a dependency potentially changing or removing the transitive dependency.
 
 This rule disallows `import` declarations of extraneous modules.
 
