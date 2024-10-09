@@ -342,6 +342,14 @@ ruleTester.run("no-missing-import", rule, {
             code: "import isIp from '#is-ip';",
         },
 
+        // ignoreTypeImport
+        {
+            filename: fixture("test.ts"),
+            code: "import type missing from '@type/this-does-not-exists';",
+            languageOptions: { parser: require("@typescript-eslint/parser") },
+            options: [{ ignoreTypeImport: true }],
+        },
+
         // import()
         ...(DynamicImportSupported
             ? [
