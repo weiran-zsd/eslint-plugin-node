@@ -31,8 +31,6 @@ new RuleTester().run("no-process-env", rule, {
             code: "process['env']['NODE_ENV']",
             options: [{ allowedVariables: ["NODE_ENV"] }],
         },
-        // "process.env",
-        // "process.env[NODE_ENV]",
     ],
 
     invalid: [
