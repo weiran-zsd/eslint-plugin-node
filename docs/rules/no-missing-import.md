@@ -62,6 +62,26 @@ Please see the shared settings documentation for more information.
 This can be configured in the rule options or as a shared setting [`settings.typescriptExtensionMap`](../shared-settings.md#typescriptextensionmap).
 Please see the shared settings documentation for more information.
 
+### ignoreTypeImport
+
+If using typescript, you may want to ignore type imports.
+
+```json
+{
+    "rules": {
+        "n/no-missing-import": ["error", {
+            "ignoreTypeImport": true
+        }]
+    }
+}
+```
+
+In this way, the following code will not be reported:
+
+```ts
+import type { TypeOnly } from "@types/only-types";
+```
+
 ## 🔎 Implementation
 
 - [Rule source](../../lib/rules/no-missing-import.js)
