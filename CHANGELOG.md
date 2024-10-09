@@ -1,5 +1,25 @@
 # Changelog
 
+## [17.11.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.10.3...v17.11.0) (2024-10-09)
+
+
+### 🌟 Features
+
+* **no-missing-import:** Add `ignoreTypeImport` options ([#344](https://github.com/eslint-community/eslint-plugin-n/issues/344)) ([e022aba](https://github.com/eslint-community/eslint-plugin-n/commit/e022abad91701660ffd3bf52693ae2749a5131ee))
+* **no-process-env:** Allow users to exclude specific variables ([#345](https://github.com/eslint-community/eslint-plugin-n/issues/345)) ([b16a475](https://github.com/eslint-community/eslint-plugin-n/commit/b16a4753c111271325f6dced4936bc9da6162138))
+* Update no-unsupported to node v22.9.0 ([#342](https://github.com/eslint-community/eslint-plugin-n/issues/342)) ([87fb484](https://github.com/eslint-community/eslint-plugin-n/commit/87fb4849ecb52164b24c5ae840fff0b699241fa4))
+
+
+### 🩹 Fixes
+
+* **no-missing-import:** Ignore node builtins in package.json `imports` ([#346](https://github.com/eslint-community/eslint-plugin-n/issues/346)) ([148e47e](https://github.com/eslint-community/eslint-plugin-n/commit/148e47e7502c3784b1f2b86aae594c7fc58b31a3))
+* **no-missing-import:** Resolve tsconfig paths relative to the tsconfig ([#343](https://github.com/eslint-community/eslint-plugin-n/issues/343)) ([6cd7954](https://github.com/eslint-community/eslint-plugin-n/commit/6cd7954ff91818c3bb4d3c2d7a316f2716720276))
+
+
+### 📚 Documentation
+
+* Explain the transitive dependency case for no-extraneous-* ([#347](https://github.com/eslint-community/eslint-plugin-n/issues/347)) ([8c0a2cc](https://github.com/eslint-community/eslint-plugin-n/commit/8c0a2cc515e4541883e1d8aba85fa71d3a865891))
+
 ## [17.10.3](https://github.com/eslint-community/eslint-plugin-n/compare/v17.10.2...v17.10.3) (2024-09-18)
 
 
