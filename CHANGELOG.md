@@ -1,5 +1,12 @@
 # Changelog
 
+## [17.11.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.11.0...v17.11.1) (2024-10-09)
+
+
+### 🩹 Fixes
+
+* **no-deprecated-api:** dedeprecate `process.nextTick` ([#350](https://github.com/eslint-community/eslint-plugin-n/issues/350)) ([dd889ab](https://github.com/eslint-community/eslint-plugin-n/commit/dd889ab9301a72deea32b9f3cf6497864919ff66))
+
 ## [17.11.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.10.3...v17.11.0) (2024-10-09)
 
 
