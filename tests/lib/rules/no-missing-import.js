@@ -336,6 +336,12 @@ ruleTester.run("no-missing-import", rule, {
             code: "import plugin from 'eslint-plugin-n';",
         },
 
+        // imports alias
+        {
+            filename: fixture("issue-285/test.js"),
+            code: "import isIp from '#is-ip';",
+        },
+
         // import()
         ...(DynamicImportSupported
             ? [
