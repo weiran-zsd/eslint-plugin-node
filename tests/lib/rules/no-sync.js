@@ -22,6 +22,11 @@ new RuleTester().run("no-sync", rule, {
             code: "if (true) {fooSync();}",
             options: [{ allowAtRootLevel: true }],
         },
+        // ignores
+        {
+            code: "fooSync();",
+            options: [{ ignores: ["fooSync"] }],
+        },
     ],
     invalid: [
         {
@@ -109,6 +114,23 @@ new RuleTester().run("no-sync", rule, {
         {
             code: "var a = function someFunction() {fs.fooSync();}",
             options: [{ allowAtRootLevel: true }],
+            errors: [
+                {
+                    messageId: "noSync",
+                    data: { propertyName: "fooSync" },
+                    type: "MemberExpression",
+                },
+            ],
+        },
+        // ignores
+        {
+            code: "() => {fs.fooSync();}",
+            options: [
+                {
+                    allowAtRootLevel: true,
+                    ignores: ["barSync"],
+                },
+            ],
             errors: [
                 {
                     messageId: "noSync",
