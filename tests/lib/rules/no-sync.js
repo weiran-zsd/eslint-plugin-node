@@ -10,14 +10,10 @@ const rule = require("../../../lib/rules/no-sync")
 new RuleTester().run("no-sync", rule, {
     valid: [
         "var foo = fs.foo.foo();",
-        {
-            code: "var foo = fs.fooSync;",
-            options: [{ allowAtRootLevel: true }],
-        },
-        {
-            code: "var foo = fooSync;",
-            options: [{ allowAtRootLevel: true }],
-        },
+        // Allow non-function called to be ignored
+        "fs.fooSync;",
+        "fooSync;",
+        "() => fooSync;",
         {
             code: "if (true) {fs.fooSync();}",
             options: [{ allowAtRootLevel: true }],
@@ -81,16 +77,6 @@ new RuleTester().run("no-sync", rule, {
         },
         {
             code: "if (true) {fs.fooSync();}",
-            errors: [
-                {
-                    messageId: "noSync",
-                    data: { propertyName: "fooSync" },
-                    type: "MemberExpression",
-                },
-            ],
-        },
-        {
-            code: "var foo = fs.fooSync;",
             errors: [
                 {
                     messageId: "noSync",
