@@ -1,24 +1,40 @@
 {
+    "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
+        "rootDir": "./lib",
+        "declarationDir": "./types",
+
         "target": "es2022",
-        "moduleResolution": "node16",
-
+        "lib": ["es2023"],
         "module": "nodenext",
-
+        "moduleResolution": "nodenext",
+        "declaration": true,
+        "emitDeclarationOnly": true,
         "allowJs": true,
         "checkJs": true,
 
-        "declaration": true,
-        "emitDeclarationOnly": true,
-        "declarationDir": "./types",
-
         "allowSyntheticDefaultImports": false,
         "esModuleInterop": true,
+
         "resolveJsonModule": true,
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": true,
+        "forceConsistentCasingInFileNames": true,
 
         "strict": true,
-        "skipDefaultLibCheck": false,
-        "skipLibCheck": false
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+        "exactOptionalPropertyTypes": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+
+        "isolatedModules": true,
+
+        "skipLibCheck": true
     },
     "include": ["./lib/eslint-utils.d.ts"],
     "files": ["./lib/index.js"]

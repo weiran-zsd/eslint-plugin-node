@@ -39,7 +39,7 @@ declare module "@eslint-community/eslint-utils" {
         [READ]?: Info;
         [CALL]?: Info;
         [CONSTRUCT]?: Info;
-        [key: string]: TraceMap<Info>;
+        [key: string]: TraceMap<Info> | undefined;
     }
     type RichNode = eslint.Rule.Node | Node;
     type Reference<Info extends unknown> = {
