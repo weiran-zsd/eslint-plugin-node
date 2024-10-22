@@ -14,7 +14,7 @@ function clearRequireCache() {
 
 describe("node/recommended config", () => {
     describe("in CJS directory", () => {
-        const root = path.resolve(__dirname, "../../fixtures/configs/cjs")
+        const root = path.resolve(__dirname, "../../fixtures/configs/cjs/")
 
         /** @type {Linter} */
         let linter = null
@@ -92,7 +92,7 @@ describe("node/recommended config", () => {
     })
 
     describe("in ESM directory", () => {
-        const root = path.resolve(__dirname, "../../fixtures/configs/esm")
+        const root = path.resolve(__dirname, "../../fixtures/configs/esm/")
 
         /** @type {Linter} */
         let linter = null
