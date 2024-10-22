@@ -1,12 +1,9 @@
 declare module "eslint-plugin-es-x" {
-    // @ts-ignore
     export const rules: NonNullable<import('eslint').ESLint.Plugin["rules"]>;
 }
 
 declare module "@eslint-community/eslint-utils" {
-    // @ts-ignore
     import * as estree from 'estree';
-    // @ts-ignore
     import * as eslint from 'eslint';
 
     type Node = estree.Node | estree.Expression;
