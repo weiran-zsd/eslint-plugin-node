@@ -1,12 +1,9 @@
 declare module "eslint-plugin-es-x" {
-    // @ts-ignore
     export const rules: NonNullable<import('eslint').ESLint.Plugin["rules"]>;
 }
 
 declare module "@eslint-community/eslint-utils" {
-    // @ts-ignore
     import * as estree from 'estree';
-    // @ts-ignore
     import * as eslint from 'eslint';
 
     type Node = estree.Node | estree.Expression;
@@ -39,7 +36,7 @@ declare module "@eslint-community/eslint-utils" {
         [READ]?: Info;
         [CALL]?: Info;
         [CONSTRUCT]?: Info;
-        [key: string]: TraceMap<Info>;
+        [key: string]: TraceMap<Info> | undefined;
     }
     type RichNode = eslint.Rule.Node | Node;
     type Reference<Info extends unknown> = {
