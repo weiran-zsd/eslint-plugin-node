@@ -1,5 +1,22 @@
 # Changelog
 
+## [17.13.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.12.0...v17.13.0) (2024-11-05)
+
+
+### 🌟 Features
+
+* **no-unsupported:** support Node 20.18.0 ([#374](https://github.com/eslint-community/eslint-plugin-n/issues/374)) ([d39d99a](https://github.com/eslint-community/eslint-plugin-n/commit/d39d99aecf2e8f0dde59b980f209d1c377af9a46))
+
+
+### 🩹 Fixes
+
+* **no-unsupported:** fix `node:test` module ([#378](https://github.com/eslint-community/eslint-plugin-n/issues/378)) ([0b228dd](https://github.com/eslint-community/eslint-plugin-n/commit/0b228ddece63d2939551ea6ccb73e9dfbefe88ec))
+
+
+### 🧹 Chores
+
+* update dependencies ([#375](https://github.com/eslint-community/eslint-plugin-n/issues/375)) ([8a8104e](https://github.com/eslint-community/eslint-plugin-n/commit/8a8104e27bb278f21f25bd7d9a7acfa1523ccb13))
+
 ## [17.12.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.11.1...v17.12.0) (2024-10-30)
 
 
