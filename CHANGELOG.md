@@ -1,5 +1,12 @@
 # Changelog
 
+## [17.13.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.13.0...v17.13.1) (2024-11-07)
+
+
+### 🩹 Fixes
+
+* exported / referenced plugin same instance ([#380](https://github.com/eslint-community/eslint-plugin-n/issues/380)) ([3c45b67](https://github.com/eslint-community/eslint-plugin-n/commit/3c45b67cc566021399ab8f2bb840fa4c62556b7f))
+
 ## [17.13.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.12.0...v17.13.0) (2024-11-05)
 
 
