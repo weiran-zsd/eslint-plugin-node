@@ -60,6 +60,30 @@ If a path is relative, it will be resolved from CWD.
 { "resolvePaths": [] }
 ```
 
+## resolveModules
+
+Adds additional directories that should be searched when resolving modules.
+
+Absolute and relative paths can both be used, but be aware that they will behave a bit differently.
+
+A relative path will be scanned similarly to how Node scans for node_modules, by looking through the current directory as well as its ancestors (i.e. ./node_modules, ../node_modules, and on).
+
+With an absolute path, it will only search in the given directory.
+
+If a path is relative, it will be resolved from CWD.
+
+### Example resolveModules
+
+```json
+{ "resolveModules": ["/path/to/somewhere", "../relative/path", "node_modules"] }
+```
+
+### Default resolveModules
+
+```json
+{ "resolveModules": ["node_modules"] }
+```
+
 ## convertPath
 
 If we use transpilers (e.g. Babel), perhaps the file path to a source code is never published.
