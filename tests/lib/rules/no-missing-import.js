@@ -181,6 +181,11 @@ ruleTester.run("no-missing-import", rule, {
             code: "import a from './fixtures/no-missing/a.js';",
             options: [{ resolvePaths: ["tests"] }],
         },
+        {
+            filename: fixture("test.js"),
+            code: "import a from './fixtures/no-missing/a.js';",
+            options: [{ resolvePaths: ["scriprs", "tests"] }],
+        },
 
         // typescriptExtensionMap
         {
