@@ -131,13 +131,15 @@ ruleTester.run("no-missing-require", rule, {
             options: [{ resolvePaths: ["tests"] }],
         },
 
-        // resolveModules
+        // resolverConfig
         {
             filename: fixture("test.js"),
             code: "require('a');",
             options: [
                 {
-                    resolveModules: [fixture("./")],
+                    resolverConfig: {
+                        modules: [fixture("./")],
+                    },
                 },
             ],
         },
@@ -147,7 +149,9 @@ ruleTester.run("no-missing-require", rule, {
             code: "require('my-module');",
             options: [
                 {
-                    resolveModules: [fixture("my_modules")],
+                    resolverConfig: {
+                        modules: [fixture("my_modules")],
+                    },
                 },
             ],
         },

@@ -37,9 +37,9 @@ Please see the shared settings documentation for more information.
 This can be configured in the rule options or as a shared setting [`settings.resolvePaths`](../shared-settings.md#resolvepaths).
 Please see the shared settings documentation for more information.
 
-#### resolveModules
+#### resolverConfig
 
-This can be configured in the rule options or as a shared setting [`settings.resolveModules`](../shared-settings.md#resolvemodules).
+This can be configured in the rule options or as a shared setting [`settings.resolverConfig`](../shared-settings.md#resolverconfig).
 Please see the shared settings documentation for more information.
 
 #### convertPath
