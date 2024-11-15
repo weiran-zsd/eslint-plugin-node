@@ -1,5 +1,12 @@
 # Changelog
 
+## [17.13.2](https://github.com/eslint-community/eslint-plugin-n/compare/v17.13.1...v17.13.2) (2024-11-15)
+
+
+### 🩹 Fixes
+
+* **no-missing-require:** handle multiple resolvePaths ([#383](https://github.com/eslint-community/eslint-plugin-n/issues/383)) ([df6ad2a](https://github.com/eslint-community/eslint-plugin-n/commit/df6ad2a3f2cbc2218fe8bd23222e3867642d1e70))
+
 ## [17.13.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.13.0...v17.13.1) (2024-11-07)
 
 
