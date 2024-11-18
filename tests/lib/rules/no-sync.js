@@ -15,6 +15,14 @@ new RuleTester().run("no-sync", rule, {
         "fooSync;",
         "() => fooSync;",
         {
+            code: "var foo = fs.fooSync;",
+            options: [{ allowAtRootLevel: true }],
+        },
+        {
+            code: "var foo = fooSync;",
+            options: [{ allowAtRootLevel: true }],
+        },
+        {
             code: "if (true) {fs.fooSync();}",
             options: [{ allowAtRootLevel: true }],
         },
