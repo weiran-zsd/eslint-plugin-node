@@ -1,5 +1,13 @@
 # Changelog
 
+## [17.14.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.13.2...v17.14.0) (2024-11-21)
+
+
+### 🌟 Features
+
+* **no-sync:** Add ignores option ([#386](https://github.com/eslint-community/eslint-plugin-n/issues/386)) ([c8fbf00](https://github.com/eslint-community/eslint-plugin-n/commit/c8fbf000e337d3b099e89465adda3be8e0541554))
+* **no-unsupported:** support Node 23.2.0 & 23.3.0 ([#390](https://github.com/eslint-community/eslint-plugin-n/issues/390)) ([a52c968](https://github.com/eslint-community/eslint-plugin-n/commit/a52c96813496c346cd9cacc23df8ade2567012af))
+
 ## [17.13.2](https://github.com/eslint-community/eslint-plugin-n/compare/v17.13.1...v17.13.2) (2024-11-15)
 
 
