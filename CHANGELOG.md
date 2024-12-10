@@ -1,5 +1,18 @@
 # Changelog
 
+## [17.15.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.14.0...v17.15.0) (2024-12-10)
+
+
+### 🌟 Features
+
+* **no-unsupported:** support node 22.12.0 ([#393](https://github.com/eslint-community/eslint-plugin-n/issues/393)) ([af4f774](https://github.com/eslint-community/eslint-plugin-n/commit/af4f774be560ac9472d98c99082a678ca5703574))
+* **resolve:** allow overriding enhanced-resolve's options ([#384](https://github.com/eslint-community/eslint-plugin-n/issues/384)) ([1466bec](https://github.com/eslint-community/eslint-plugin-n/commit/1466bec9050606ea874444452a4d58484b480a14))
+
+
+### 🩹 Fixes
+
+* **no-unsupported:** Correctly handle recursive objects on a per module basis ([#396](https://github.com/eslint-community/eslint-plugin-n/issues/396)) ([db384d1](https://github.com/eslint-community/eslint-plugin-n/commit/db384d13ada7d9f48a7f8bf2ae92f76a4e3789aa))
+
 ## [17.14.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.13.2...v17.14.0) (2024-11-21)
 
 
