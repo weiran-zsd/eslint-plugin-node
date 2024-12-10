@@ -4,13 +4,58 @@
  */
 "use strict"
 
+/** @import { Linter } from 'eslint' */
+
 const RuleTester = require("../../../test-helpers").RuleTester
 const rule = require("../../../../lib/rules/no-unsupported-features/node-builtins")
 
 /**
+ * @typedef ValidTestCase
+ * @property {string} [name]
+ * @property {string} code
+ * @property {any} [options]
+ * @property {string | undefined} [filename]
+ * @property {boolean} [only]
+ * @property {Linter.LanguageOptions | undefined} [languageOptions]
+ * @property {{ [name: string]: any } | undefined} [settings]
+ */
+/**
+ * @typedef SuggestionOutput
+ * @property {string} [messageId]
+ * @property {string} [desc]
+ * @property {Record<string, unknown> | undefined} [data]
+ * @property {string} output
+ */
+/**
+ * @typedef InvalidTestExtras
+ * @property {number | Array<TestCaseError | string>} errors
+ * @property {string | null | undefined} [output]
+ */
+/**
+ * @typedef {ValidTestCase & InvalidTestExtras} InvalidTestCase
+ */
+/**
+ * @typedef TestCaseError
+ * @property {string | RegExp} [message]
+ * @property {string} [messageId]
+ * @property {string | undefined} [type]
+ * @property {any} [data]
+ * @property {number | undefined} [line]
+ * @property {number | undefined} [column]
+ * @property {number | undefined} [endLine]
+ * @property {number | undefined} [endColumn]
+ * @property {SuggestionOutput[] | undefined} [suggestions]
+ */
+/**
+ * @typedef Pattern
+ * @property {ValidTestCase[]} [valid]
+ * @property {InvalidTestCase[]} [invalid]
+ */
+
+/**
  * Concatenate patterns.
- * @param {Array<{valid:Array,invalid:Array}>} patterns The patterns to concat.
- * @returns {{valid:Array,invalid:Array}} The concatenated patterns.
+ * @param {Pattern[]} patterns The patterns to concat.
+ * @returns {Pattern} The concatenated patterns.
  */
 function concat(patterns) {
     const ret = {
@@ -5365,6 +5410,47 @@ new RuleTester({ languageOptions: { sourceType: "module" } }).run(
                                 name: "worker_threads",
                                 supported: "12.11.0",
                                 version: "10.5.0",
+                            },
+                        },
+                    ],
+                },
+            ],
+        },
+
+        //----------------------------------------------------------------------
+        // timers/promises
+        //----------------------------------------------------------------------
+        {
+            valid: [
+                {
+                    code: `
+                        import { scheduler } from 'node:timers/promises';
+                        await scheduler.wait( 1000 );
+                    `,
+                    options: [
+                        {
+                            version: ">= 20.0.0",
+                            ignores: ["timers/promises.scheduler.wait"],
+                        },
+                    ],
+                    languageOptions: { ecmaVersion: "latest" },
+                },
+            ],
+            invalid: [
+                {
+                    code: `
+                        import { scheduler } from 'node:timers/promises';
+                        await scheduler.wait( 1000 );
+                    `,
+                    options: [{ version: ">= 20.0.0" }],
+                    languageOptions: { ecmaVersion: "latest" },
+
+                    errors: [
+                        {
+                            messageId: "not-supported-yet",
+                            data: {
+                                name: "timers/promises.scheduler.wait",
+                                version: ">= 20.0.0",
                             },
                         },
                     ],
