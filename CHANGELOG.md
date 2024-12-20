@@ -1,5 +1,12 @@
 # Changelog
 
+## [17.15.1](https://github.com/eslint-community/eslint-plugin-n/compare/v17.15.0...v17.15.1) (2024-12-20)
+
+
+### 🩹 Fixes
+
+* Promise.withResolvers is supported since node 22.11 ([#398](https://github.com/eslint-community/eslint-plugin-n/issues/398)) ([c5bcb3a](https://github.com/eslint-community/eslint-plugin-n/commit/c5bcb3aa9a13f1de1b4aea20cfc08323f31f75ce))
+
 ## [17.15.0](https://github.com/eslint-community/eslint-plugin-n/compare/v17.14.0...v17.15.0) (2024-12-10)
 
 
