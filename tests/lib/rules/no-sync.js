@@ -206,7 +206,6 @@ stylesheet.replaceSync("body { font-size: 1.4em; } p { color: red; }");
 declare function fooSync(): void;
 fooSync();
 `,
-            filename: "foo.ts",
             options: [
                 {
                     ignores: [

@@ -3,6 +3,8 @@
  * @author 唯然<weiran.zsd@outlook.com>
  */
 "use strict"
+
+const path = require("path")
 const eslintVersion = require("eslint/package.json").version
 const { RuleTester } = require("eslint")
 const { FlatRuleTester } = require("eslint/use-at-your-own-risk")
@@ -36,12 +38,12 @@ const defaultConfig = {
 }
 const tsConfig = {
     languageOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
         parser: typescriptParser,
         parserOptions: {
+            tsconfigRootDir: path.join(__dirname, "./ts-fixture"),
             projectService: {
-                allowDefaultProject: ["*.*", "src/*"], // TODO: Don't use default project.
+                // Ensure we're not using the default project
+                maximumDefaultProjectFileMatchCount_THIS_WILL_SLOW_DOWN_LINTING: 0,
             },
         },
     },
@@ -68,7 +70,15 @@ exports.RuleTester = function (config = defaultConfig) {
     return ruleTester
 }
 exports.TsRuleTester = function (config = tsConfig) {
-    return exports.RuleTester.call(this, config)
+    const ruleTester = exports.RuleTester.call(this, config)
+    const $run = ruleTester.run.bind(ruleTester)
+    ruleTester.run = function (name, rule, tests) {
+        tests.valid = tests.valid.map(setTsFilename)
+        tests.invalid = tests.invalid.map(setTsFilename)
+
+        $run(name, rule, tests)
+    }
+    return ruleTester
 }
 Object.setPrototypeOf(
     exports.TsRuleTester.prototype,
@@ -82,4 +92,16 @@ function shouldRun(item) {
     const skip = item.skip
     delete item.skip
     return skip === void 0 || skip === false
+}
+
+function setTsFilename(item) {
+    if (typeof item === "string") {
+        return {
+            code: item,
+            filename: "file.ts",
+        }
+    }
+
+    item.filename ??= "file.ts"
+    return item
 }
