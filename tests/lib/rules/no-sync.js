@@ -183,6 +183,22 @@ fooSync();
                 },
             ],
         },
+        {
+            code: `
+const stylesheet = new CSSStyleSheet();
+stylesheet.replaceSync("body { font-size: 1.4em; } p { color: red; }");
+`,
+            options: [
+                {
+                    ignores: [
+                        {
+                            from: "lib",
+                            name: ["replaceSync"],
+                        },
+                    ],
+                },
+            ],
+        },
     ],
     invalid: [
         {
@@ -229,6 +245,29 @@ fooSync();
                     messageId: "noSync",
                     data: { propertyName: "fooSync" },
                     type: "CallExpression",
+                },
+            ],
+        },
+        {
+            code: `
+const stylesheet = new CSSStyleSheet();
+stylesheet.replaceSync("body { font-size: 1.4em; } p { color: red; }");
+`,
+            options: [
+                {
+                    ignores: [
+                        {
+                            from: "file",
+                            name: ["replaceSync"],
+                        },
+                    ],
+                },
+            ],
+            errors: [
+                {
+                    messageId: "noSync",
+                    data: { propertyName: "replaceSync" },
+                    type: "MemberExpression",
                 },
             ],
         },
