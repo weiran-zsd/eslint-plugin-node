@@ -193,7 +193,7 @@ stylesheet.replaceSync("body { font-size: 1.4em; } p { color: red; }");
                     ignores: [
                         {
                             from: "lib",
-                            name: ["replaceSync"],
+                            name: ["CSSStyleSheet.replaceSync"],
                         },
                     ],
                 },
@@ -257,7 +257,7 @@ stylesheet.replaceSync("body { font-size: 1.4em; } p { color: red; }");
                     ignores: [
                         {
                             from: "file",
-                            name: ["replaceSync"],
+                            name: ["CSSStyleSheet.replaceSync"],
                         },
                     ],
                 },
@@ -265,7 +265,7 @@ stylesheet.replaceSync("body { font-size: 1.4em; } p { color: red; }");
             errors: [
                 {
                     messageId: "noSync",
-                    data: { propertyName: "replaceSync" },
+                    data: { propertyName: "CSSStyleSheet.replaceSync" },
                     type: "MemberExpression",
                 },
             ],
