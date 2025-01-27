@@ -150,7 +150,7 @@ new RuleTester().run("no-sync", rule, {
     ],
 })
 
-new (TsRuleTester("no-sync").run)("no-sync", rule, {
+new (TsRuleTester("no-sync/base").run)("no-sync", rule, {
     valid: [
         {
             code: `
@@ -267,6 +267,53 @@ stylesheet.replaceSync("body { font-size: 1.4em; } p { color: red; }");
                     messageId: "noSync",
                     data: { propertyName: "CSSStyleSheet.replaceSync" },
                     type: "MemberExpression",
+                },
+            ],
+        },
+    ],
+})
+
+new (TsRuleTester("no-sync/ignore-package").run)("no-sync", rule, {
+    valid: [
+        {
+            code: `
+import { fooSync } from "aaa";
+fooSync();
+`,
+            options: [
+                {
+                    ignores: [
+                        {
+                            from: "package",
+                            package: "aaa",
+                            name: ["fooSync"],
+                        },
+                    ],
+                },
+            ],
+        },
+    ],
+    invalid: [
+        {
+            code: `
+import { fooSync } from "aaa";
+fooSync();
+`,
+            options: [
+                {
+                    ignores: [
+                        {
+                            from: "file",
+                            name: ["fooSync"],
+                        },
+                    ],
+                },
+            ],
+            errors: [
+                {
+                    messageId: "noSync",
+                    data: { propertyName: "fooSync" },
+                    type: "CallExpression",
                 },
             ],
         },
