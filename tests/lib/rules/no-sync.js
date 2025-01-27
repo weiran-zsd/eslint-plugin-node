@@ -150,7 +150,7 @@ new RuleTester().run("no-sync", rule, {
     ],
 })
 
-new TsRuleTester().run("no-sync", rule, {
+new (TsRuleTester("no-sync").run)("no-sync", rule, {
     valid: [
         {
             code: `

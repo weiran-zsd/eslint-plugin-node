@@ -36,18 +36,26 @@ const defaultConfig = {
         globals: { ...globals.es2015, ...globals.node },
     },
 }
-const tsConfig = {
-    languageOptions: {
-        parser: typescriptParser,
-        parserOptions: {
-            tsconfigRootDir: path.join(__dirname, "./ts-fixture"),
-            projectService: {
-                // Ensure we're not using the default project
-                maximumDefaultProjectFileMatchCount_THIS_WILL_SLOW_DOWN_LINTING: 0,
+
+/**
+ * @param {string} fixturePath - Path to the fixture directory relative to the fixtures directory
+ * @returns
+ */
+function getTsConfig(fixturePath) {
+    return {
+        languageOptions: {
+            parser: typescriptParser,
+            parserOptions: {
+                tsconfigRootDir: path.join(__dirname, "fixtures", fixturePath),
+                projectService: {
+                    // Ensure we're not using the default project
+                    maximumDefaultProjectFileMatchCount_THIS_WILL_SLOW_DOWN_LINTING: 0,
+                },
             },
         },
-    },
+    }
 }
+
 exports.RuleTester = function (config = defaultConfig) {
     if (config.languageOptions.env?.node === false)
         config.languageOptions.globals = config.languageOptions.globals || {}
@@ -69,7 +77,17 @@ exports.RuleTester = function (config = defaultConfig) {
     }
     return ruleTester
 }
-exports.TsRuleTester = function (config = tsConfig) {
+
+/**
+ * @param {string | import('eslint').Linter.Config} configOrFixturePath
+ * @returns
+ */
+exports.TsRuleTester = function (configOrFixturePath) {
+    const config =
+        typeof configOrFixturePath === "object"
+            ? configOrFixturePath
+            : getTsConfig(configOrFixturePath)
+
     const ruleTester = exports.RuleTester.call(this, config)
     const $run = ruleTester.run.bind(ruleTester)
     ruleTester.run = function (name, rule, tests) {
