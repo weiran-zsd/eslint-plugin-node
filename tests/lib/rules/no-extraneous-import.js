@@ -33,6 +33,11 @@ function fixture(name) {
 
 const ruleTester = new RuleTester({
     languageOptions: { sourceType: "module" },
+    settings: {
+        n: {
+            tryExtensions: [".ts"],
+        },
+    },
 })
 ruleTester.run("no-extraneous-import", rule, {
     valid: [
@@ -77,6 +82,21 @@ ruleTester.run("no-extraneous-import", rule, {
         {
             filename: fixture("dependencies/a.js"),
             code: "import ccc from 'ccc'",
+        },
+
+        // imports using `tsconfig.json > compilerOptions > paths` setting
+        // https://github.com/eslint-community/eslint-plugin-n/issues/379
+        {
+            filename: fixture("tsconfig-paths/index.ts"),
+            code: "import foo from '@configurations/foo'",
+        },
+        {
+            filename: fixture("tsconfig-paths/index.ts"),
+            code: "import foo from '~configurations/foo'",
+        },
+        {
+            filename: fixture("tsconfig-paths/index.ts"),
+            code: "import foo from '#configurations/foo'",
         },
     ],
     invalid: [
